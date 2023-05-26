@@ -2,14 +2,7 @@
 const fs = require("fs")
 
 module.exports = {
-  extends: [
-    "next",
-    "prettier",
-    "react-app",
-    "react-app/jest",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:storybook/recommended",
-  ],
+  extends: ["next", "prettier", "react-app", "react-app/jest", "plugin:@typescript-eslint/recommended"],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve("next/babel")],
