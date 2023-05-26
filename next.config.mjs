@@ -1,20 +1,13 @@
 import withBundleAnalyzer from "@next/bundle-analyzer"
 import withPlugins from "next-compose-plugins"
 
+const shouldAnalyze = process.env.ANALYZE === "true"
+
 /**
  * @type {import('next').NextConfig}
  */
-const config = withPlugins([[withBundleAnalyzer({ enabled: process.env.ANALYZE })]], {
+const config = withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], {
   reactStrictMode: true,
-  experimental: { instrumentationHook: true },
-  rewrites() {
-    return [
-      { source: "/healthz", destination: "/api/health" },
-      { source: "/api/healthz", destination: "/api/health" },
-      { source: "/health", destination: "/api/health" },
-      { source: "/ping", destination: "/api/health" },
-    ]
-  },
 })
 
 export default config

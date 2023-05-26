@@ -12,13 +12,14 @@
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "analyze": "cross-env ANALYZE=true yarn build",
     "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests",
-    "e2e:headless": "playwright test",
-    "e2e:ui": "playwright test --ui",
+    "e2e:headless": "cross-env ANALYZE=false playwright test",
+    "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "postinstall": "npx patch-package -y",
     "preinstall": "npx only-allow yarn",
     "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.eslintrc.js' --image graph.svg"
   },
   "dependencies": {
+    "@next/font": "^13.4.4",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.3",
@@ -41,7 +42,7 @@
     "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^11.0.1",
     "class-variance-authority": "^0.6.0",
-    "next": "^13.3.0",
+    "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.10.0"
