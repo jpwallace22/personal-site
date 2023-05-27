@@ -13,7 +13,6 @@ defaults:
 
 jobs:
   check:
-    timeout-minutes: 60
     name: Check & Test
     runs-on: ubuntu-latest
     steps:
@@ -41,6 +40,7 @@ jobs:
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Playwright tests
+        timeout-minutes: 60
         run: yarn playwright test
       - uses: actions/upload-artifact@v3
         if: always()
