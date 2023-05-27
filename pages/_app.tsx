@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+      {/* @ts-expect-error Next TS bug */}
       <Component {...pageProps} />
     </>
   )
