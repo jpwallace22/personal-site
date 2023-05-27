@@ -13,6 +13,7 @@ defaults:
 
 jobs:
   check:
+    timeout-minutes: 60
     name: Check & Test
     runs-on: ubuntu-latest
     steps:
