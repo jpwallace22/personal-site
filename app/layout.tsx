@@ -1,8 +1,6 @@
 import "./globals.css"
-
-import "../styles/tailwind.css"
-import { Darker_Grotesque, IBM_Plex_Sans } from "@next/font/google"
 import { Metadata } from "next"
+import { Darker_Grotesque, IBM_Plex_Sans } from "next/font/google"
 
 const darkerGrotesque = Darker_Grotesque({
   weight: ["700", "900"],

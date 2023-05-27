@@ -1,21 +1,8 @@
-import { gql } from "@apollo/client"
+import { NextPage } from "next"
 import Head from "next/head"
-import { Button } from "components/Button/Button"
-import { getClient } from "graphql/client"
+import { Button } from "src/components/Button/Button"
 
-export default async function Web() {
-  const query = gql`
-    query MyQuery {
-      allPageGenerators {
-        internalName
-      }
-    }
-  `
-
-  const { data } = await getClient().query({ query })
-
-  console.log("🔍 ~ Web ~  { loading, error, data }:", { data })
-
+const Page: NextPage = () => {
   return (
     <>
       <Head>
@@ -48,3 +35,5 @@ export default async function Web() {
     </>
   )
 }
+
+export default Page

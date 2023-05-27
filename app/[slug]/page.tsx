@@ -1,24 +1,27 @@
-// import { gql } from "@apollo/client"
+import { gql } from "@apollo/client"
 import { NextPage } from "next"
-// import serverQuery from "graphql/serverQuery"
+import serverQuery from "src/graphql/serverQuery"
 
-// export const generateStaticParams = async () => {
-//   const { allPageGenerators } = await serverQuery(gql`
-//     query MyQuery {
-//       allPageGenerators {
-//         slug
-//       }
-//     }
-//   `)
+interface PageProps {
+  params: {
+    slug: string
+  }
+}
 
-//   if (!allPageGenerators) {
-//     return null
-//   }
+export const generateStaticParams = async () => {
+  const { allPageGenerators } = await serverQuery<MyQueryQuery>(gql`
+    query MyQuery {
+      allPageGenerators {
+        slug
+      }
+    }
+  `)
 
-//   return allPageGenerators.filter((page) => page.slug !== "home").map((page) => ({ slug: page.slug }))
-// }
+  return allPageGenerators.filter((page) => page.slug !== "home").map((page) => ({ slug: page.slug }))
+}
 
-const Page: NextPage = () => {
+const Page: NextPage<PageProps> = ({ params }) => {
+  console.log(params.slug)
   return (
     <>
       <section className="grid h-[100vh] place-items-center bg-purple-900">
