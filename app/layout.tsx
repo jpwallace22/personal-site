@@ -1,6 +1,8 @@
+import "./globals.css"
+
 import "../styles/tailwind.css"
 import { Darker_Grotesque, IBM_Plex_Sans } from "@next/font/google"
-import { AppProps } from "next/app"
+import { Metadata } from "next"
 
 const darkerGrotesque = Darker_Grotesque({
   weight: ["700", "900"],
@@ -18,21 +20,14 @@ const ibmPlex = IBM_Plex_Sans({
   variable: "--ibm-plex",
 })
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <style jsx global>
-        {`
-          :root {
-            --darker-grotesque: ${darkerGrotesque.style.fontFamily};
-            --ibm-plex: ${ibmPlex.style.fontFamily};
-          }
-        `}
-      </style>
-      {/* @ts-expect-error Next TS bug */}
-      <Component {...pageProps} />
-    </>
-  )
+export const metadata: Metadata = {
+  title: "Justin Wallace Development",
 }
 
-export default MyApp
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${darkerGrotesque.variable} ${ibmPlex.variable}`}>
+      <body>{children}</body>
+    </html>
+  )
+}

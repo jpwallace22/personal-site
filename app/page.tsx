@@ -1,7 +1,21 @@
+import { gql } from "@apollo/client"
 import Head from "next/head"
 import { Button } from "components/Button/Button"
+import { getClient } from "graphql/client"
 
-export default function Web() {
+export default async function Web() {
+  const query = gql`
+    query MyQuery {
+      allPageGenerators {
+        internalName
+      }
+    }
+  `
+
+  const { data } = await getClient().query({ query })
+
+  console.log("🔍 ~ Web ~  { loading, error, data }:", { data })
+
   return (
     <>
       <Head>
