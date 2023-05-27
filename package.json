@@ -92,6 +92,11 @@
   "engines": {
     "node": ">=18.15.0"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "packageManager": "yarn@1.22.19",
   "release": {
     "branches": [
