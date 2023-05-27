@@ -16,7 +16,7 @@ const button = cva(
   ],
   {
     variants: {
-      intent: {
+      variant: {
         primary: ["bg-blue-400", "text-white", "hover:enabled:bg-blue-700"],
         secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
       },
@@ -27,21 +27,25 @@ const button = cva(
       underline: { true: ["underline"], false: [] },
     },
     defaultVariants: {
-      intent: "primary",
+      variant: "primary",
       size: "lg",
     },
   }
 )
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
+    VariantProps<typeof button> {
   underline?: boolean
-  href: string
+  href?: string
 }
 
-export function Button({ className, intent, size, underline, ...props }: ButtonProps) {
+export function Button({ className, variant, size, underline, href, ...props }: ButtonProps) {
+  const Component = href ? "a" : "button"
+
   return (
-    <a className={twMerge(button({ intent, size, className, underline }))} {...props}>
+    <Component className={twMerge(button({ variant, size, className, underline }))} {...props}>
       {props.children}
-    </a>
+    </Component>
   )
 }
