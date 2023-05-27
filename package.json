@@ -15,11 +15,13 @@
     "e2e:headless": "cross-env ANALYZE=false playwright test",
     "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "types:check": "tsc --noEmit",
+    "types:create": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
     "postinstall": "npx patch-package -y",
     "preinstall": "npx only-allow yarn"
   },
   "dependencies": {
-    "@next/font": "^13.4.4",
+    "@apollo/client": "^3.7.14",
+    "@apollo/experimental-nextjs-app-support": "^0.1.0",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.3",
@@ -42,6 +44,7 @@
     "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^11.0.1",
     "class-variance-authority": "^0.6.0",
+    "graphql": "^16.6.0",
     "lint-staged": "^13.2.2",
     "next": "^13.4.4",
     "react": "^18.2.0",
@@ -52,6 +55,12 @@
     "@babel/core": "^7.0.0",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@graphql-codegen/cli": "^4.0.0",
+    "@graphql-codegen/client-preset": "^4.0.0",
+    "@graphql-codegen/typescript": "^4.0.0",
+    "@graphql-codegen/typescript-graphql-request": "^5.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.0",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@jest/globals": "^29.5.0",
     "@next/bundle-analyzer": "^13.3.0",
     "@playwright/test": "^1.32.3",
@@ -90,7 +99,7 @@
     "vitest": "^0.29.8"
   },
   "engines": {
-    "node": ">=18.15.0"
+    "node": ">=18.6.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": [

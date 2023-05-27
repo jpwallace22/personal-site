@@ -1,12 +1,13 @@
-import Head from "next/head"
-import { Button } from "components/Button/Button"
+import { Metadata, NextPage } from "next"
+import { Button } from "src/components/Button/Button"
 
-export default function Web() {
+export const metadata: Metadata = {
+  title: "Justin Wallace Development",
+}
+
+const Page: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Justin Wallace Development</title>
-      </Head>
       <section className="bg-white">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
@@ -34,3 +35,5 @@ export default function Web() {
     </>
   )
 }
+
+export default Page

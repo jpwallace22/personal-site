@@ -1,0 +1,43 @@
+schema:
+  - https://graphql.datocms.com:
+      headers:
+        Authorization: "Bearer ${NEXT_PUBLIC_DATO_CMS}"
+        "X-Environment": new
+documents:
+  - ./app/**/*.tsx
+  - ./src/**/*.tsx
+config:
+  namingConvention:
+    enumValues: "change-case-all#upperCaseFirst"
+generates:
+  src/graphql/__gen__/types.ts:
+    plugins:
+      - typescript
+      - typescript-operations:
+          globalNamespace: true
+          strictScalars: true
+    config:
+      scalars:
+        BooleanType: boolean
+        CustomData: Record<string, unknown>
+        Date: string
+        DateTime: string
+        FloatType: number
+        IntType: number
+        ItemId: string
+        JsonField: unknown
+        MetaTagAttributes: Record<string, string>
+        UploadId: string
+      declarationKind: "interface"
+      inlineFragmentTypes: "combine"
+  ### ! SDK doesn't work with server components ###
+  # src/graphql/__gen__/sdk.ts:
+  #   plugins:
+  #     - typescript-react-apollo:
+  #         documentVariableSuffix: "Query"
+  #         fragmentVariableSuffix: "Fragment"
+  #         nonOptionalTypename: true
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+    - eslint --fix
