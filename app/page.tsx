@@ -1,13 +1,13 @@
-import { NextPage } from "next"
-import Head from "next/head"
+import { Metadata, NextPage } from "next"
 import { Button } from "src/components/Button/Button"
+
+export const metadata: Metadata = {
+  title: "Justin Wallace Development",
+}
 
 const Page: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Justin Wallace Development</title>
-      </Head>
       <section className="bg-white">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">

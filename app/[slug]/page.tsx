@@ -9,7 +9,7 @@ interface PageProps {
 }
 
 export const generateStaticParams = async () => {
-  const { allPageGenerators } = await serverQuery<MyQueryQuery>(gql`
+  const [{ allPageGenerators }] = await serverQuery<MyQueryQuery>(gql`
     query MyQuery {
       allPageGenerators {
         slug
