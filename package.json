@@ -6,8 +6,8 @@
     "dev": "cross-env FORCE_COLOR=1 next dev --port 3030",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "analyze": "cross-env ANALYZE=true yarn build",
@@ -42,6 +42,7 @@
     "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^11.0.1",
     "class-variance-authority": "^0.6.0",
+    "lint-staged": "^13.2.2",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -53,7 +54,6 @@
     "@commitlint/config-conventional": "^17.6.3",
     "@jest/globals": "^29.5.0",
     "@next/bundle-analyzer": "^13.3.0",
-    "@opentelemetry/api": "^1.4.1",
     "@playwright/test": "^1.32.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -92,9 +92,16 @@
   "engines": {
     "node": ">=18.15.0"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mdx}": [
+      "yarn lint:fix",
+      "yarn prettier:fix"
+    ]
+  },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "packageManager": "yarn@1.22.19",
