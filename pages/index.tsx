@@ -18,9 +18,7 @@ export default function Web() {
               Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
               enjoyable development process.
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3 shadow-xl">
-              Get started
-            </Button>
+            <Button className="mr-[50px]">Get started</Button>
             <Button
               href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
               variant="secondary"
