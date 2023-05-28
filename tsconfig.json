@@ -3,8 +3,9 @@
   "display": "Next.js",
   "compilerOptions": {
     "paths": {
-      "src/*": ["src/*"],
-      "tests/*": ["__tests__/*"]
+      "@molecules/*": ["src/molecules/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

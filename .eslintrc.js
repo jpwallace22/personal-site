@@ -26,29 +26,19 @@ module.exports = {
       },
     ],
     "import/order": [
-      1,
+      "error",
       {
-        groups: ["external", "builtin", "internal", "sibling", "parent", "index"],
+        groups: ["builtin", "external", "internal", "type"],
         pathGroups: [
-          ...getDirectoriesToSort().map((singleDir) => ({
-            pattern: `${singleDir}/**`,
-            group: "internal",
-          })),
           {
-            pattern: "env",
-            group: "internal",
+            pattern: "react",
+            group: "external",
+            position: "before",
           },
-          {
-            pattern: "theme",
-            group: "internal",
-          },
-          {
-            pattern: "public/**",
-            group: "internal",
-            position: "after",
-          },
+          ...renderInternalOrder(),
         ],
-        pathGroupsExcludedImportTypes: ["internal"],
+        pathGroupsExcludedImportTypes: ["react", "builtin", "type"],
+        "newlines-between": "always",
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
@@ -58,7 +48,16 @@ module.exports = {
   },
 }
 
-function getDirectoriesToSort() {
+function renderInternalOrder() {
+  const specifiedPaths = ["@atoms", "@molecules", "@components", "@utils"]
+  return [...specifiedPaths, ...getAllInternalDirectories()].map((singleDir) => ({
+    pattern: `${singleDir}/**`,
+    group: "internal",
+    position: "after",
+  }))
+}
+
+function getAllInternalDirectories() {
   const ignoredSortingDirectories = [".git", ".next", ".vscode", "node_modules"]
   return getDirectories(process.cwd()).filter((f) => !ignoredSortingDirectories.includes(f))
 }
