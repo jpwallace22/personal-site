@@ -55,6 +55,7 @@ jobs:
   analyze:
     name: Bundle Analysis
     needs: ["check"]
+    if: github.event_name != 'push'
     env:
       SKIP_ENV_VALIDATION: true
     runs-on: ubuntu-latest
