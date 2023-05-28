@@ -2,6 +2,11 @@
 const fs = require("fs")
 
 module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   extends: ["next", "prettier", "react-app", "react-app/jest", "plugin:@typescript-eslint/recommended"],
   parserOptions: {
     babelOptions: {
