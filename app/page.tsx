@@ -1,20 +1,31 @@
+"use client"
+
 import { Metadata, NextPage } from "next"
 
 import Button from "@molecules/Button"
 import Link from "@molecules/Link"
+import Switch from "@molecules/Switch"
 
-export const metadata: Metadata = {
-  title: "Justin Wallace Development",
-}
+// export const metadata: Metadata = {
+//   title: "Justin Wallace Development",
+// }
 
 const Page: NextPage = () => {
+  const handleChecked = (checked: boolean) => {
+    if (checked) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }
+
   return (
     <>
-      <section className="h-[100vh] bg-gray-50">
+      <section>
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-8 text-6xl">Next.js Enterprise Boilerplate</h1>
-            <p className="font-regular text-xl text-gray-800 ">
+            <p>
               <Link href="https://www.justinwallace.dev/about" variant="inline">
                 Jumpstart{" "}
               </Link>
@@ -27,11 +38,10 @@ const Page: NextPage = () => {
               Deploy Now
             </Button>
           </div>
+          <Switch id="dark-mode" label={`Hit the lights`} onCheckedChange={(checked) => handleChecked(checked)} />
         </div>
       </section>
-      <section className="bg-white dark:bg-purple-900">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">poop</div>
-      </section>
+      <section className="bg-white dark:bg-purple-900"></section>
     </>
   )
 }

@@ -4354,6 +4354,24 @@ declare global {
 
   export type MyQueryQuery = {
     __typename?: "Query"
-    allPageGenerators: Array<{ __typename?: "PageGeneratorRecord"; slug?: string | null }>
+    blogPost?: {
+      __typename?: "BlogPostRecord"
+      title?: string | null
+      featuredImage?: {
+        __typename?: "FileField"
+        size: number
+        url: string
+        responsiveImage?: {
+          __typename?: "ResponsiveImage"
+          alt?: string | null
+          src: string
+          srcSet: string
+          width: number
+          height: number
+          aspectRatio: number
+          base64?: string | null
+        } | null
+      } | null
+    } | null
   }
 }

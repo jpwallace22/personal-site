@@ -8,6 +8,16 @@ const shouldAnalyze = process.env.ANALYZE === "true"
  */
 const config = withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.datocms-assets.com",
+        port: "",
+        pathname: "**/*",
+      },
+    ],
+  },
 })
 
 export default config
