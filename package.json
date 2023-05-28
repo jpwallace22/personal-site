@@ -11,7 +11,7 @@
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests",
+    "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests --silent",
     "e2e:headless": "cross-env ANALYZE=false playwright test",
     "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "types:check": "tsc --noEmit",
