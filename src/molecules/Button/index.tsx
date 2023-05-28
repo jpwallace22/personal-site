@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { twMerge } from "tailwind-merge"
+
+import parseUrl from "@utils/parseUrl"
 
 const button = cva(
   [
@@ -40,12 +41,15 @@ export interface ButtonProps
   href?: string
 }
 
-export function Button({ className, variant, size, underline, href, ...props }: ButtonProps) {
-  const Component = href ? "a" : "button"
+const Button = ({ className, variant, size, underline, href, ...props }: ButtonProps) => {
+  const { as, ...parsedUrl } = parseUrl(href)
+  const Component = href ? as : "button"
 
   return (
-    <Component className={twMerge(button({ variant, size, className, underline }))} {...props}>
+    <Component className={twMerge(button({ variant, size, className, underline }))} {...parsedUrl} {...props}>
       {props.children}
     </Component>
   )
 }
+
+export default Button

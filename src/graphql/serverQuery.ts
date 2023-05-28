@@ -1,6 +1,8 @@
-import type { ApolloError } from "@apollo/client"
 import { DocumentNode } from "graphql"
+
 import { getClient } from "src/graphql/client"
+
+import type { ApolloError } from "@apollo/client"
 
 type ServerQueryResponse<T> = [T, { loading: boolean; error?: ApolloError }]
 

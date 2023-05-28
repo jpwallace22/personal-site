@@ -6,12 +6,13 @@
     "dev": "cross-env FORCE_COLOR=1 next dev --port 3030",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,mdx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx,mdx}\" --fix",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+    "format": "yarn lint:fix && yarn prettier:fix",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests",
+    "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests --silent",
     "e2e:headless": "cross-env ANALYZE=false playwright test",
     "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "types:check": "tsc --noEmit",
@@ -75,7 +76,8 @@
     "all-contributors-cli": "^6.24.0",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
-    "eslint": "8.41.0",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.41.0",
     "eslint-config-next": "13.4.3",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^7.0.1",
@@ -103,8 +105,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": [
-      "yarn lint:fix",
-      "yarn prettier:fix"
+      "yarn format"
     ]
   },
   "husky": {

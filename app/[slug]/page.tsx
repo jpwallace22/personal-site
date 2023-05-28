@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client"
 import { NextPage } from "next"
+
 import serverQuery from "src/graphql/serverQuery"
 
 interface PageProps {
