@@ -1,49 +1,21 @@
+@import url(../src/styles/utilities/);
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  @apply focus:ring-purple-400 focus:dark:ring-primary-400;
-}
+@layer base {
+  :root {
+    @apply focus:ring-purple-400 focus:dark:ring-primary-400;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-heading font-extrabold text-common-black dark:text-common-white;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-extrabold text-common-black dark:text-common-white;
+  }
 
-body {
-  @apply bg-gray-50 font-body text-lg text-gray-800 dark:bg-purple-900 dark:text-gray-400;
-}
-
-@layer utilities {
-  .underline-animation {
-    position: relative;
-    transition: filter 0.3s ease 0s;
-    cursor: pointer;
-    &::after {
-      content: "";
-      background: none repeat scroll 0 0 transparent;
-      bottom: -2px;
-      display: block;
-      border-radius: 5px;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transition-property: width, left;
-      transition: 0.3s ease 0s;
-      background: theme(colors.gray.500);
-      width: 0;
-    }
-    &:hover:after {
-      width: 100%;
-      left: 0;
-    }
-    &:hover {
-      filter: brightness(1.2);
-    }
+  body {
+    @apply bg-gray-50 font-body text-lg text-gray-800 dark:bg-purple-900 dark:text-gray-400;
   }
 }

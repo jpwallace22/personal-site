@@ -42,6 +42,7 @@ const Page: NextPage = () => {
             </Button>
           </div>
           <Switch id="dark-mode" label={`Hit the lights`} onCheckedChange={(checked) => handleChecked(checked)} />
+          <div className="border-gradient before:gradient-primary mt-16 h-[200px] w-[200px] rounded-lg bg-purple-900"></div>
         </div>
       </section>
       <section className="bg-white dark:bg-purple-900"></section>
