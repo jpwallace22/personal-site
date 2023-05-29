@@ -10,26 +10,35 @@ const button = cva(
     "items-center",
     "rounded-xl",
     "text-center",
-    "border",
-    "border-blue-400",
-    "transition-colors",
+    "transition-all",
+    "duration-300",
     "delay-50",
+    "font-heading",
+    "font-extrabold",
   ],
   {
     variants: {
       variant: {
-        primary: ["bg-blue-400", "text-white", "hover:enabled:bg-blue-700"],
-        secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
+        contained: [
+          "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-xl",
+          "dark:bg-gray-200 dark:text-common-black dark:hover:bg-primary-600",
+        ],
+        outlined: [
+          "text-common-black border border-primary-500 hover:bg-gray-200 hover:border-primary-400",
+          "dark:text-common-white dark:border-gray-200 dark:hover:bg-purple-800 dark:hover:border-primary-600",
+        ],
+        text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
       },
       size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-sm", "py-1.5", "px-4"],
-        lg: ["min-w-32", "h-full", "min-h-12", "text-lg", "py-2.5", "px-6"],
+        sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "pt-1", "pb-2", "px-6"],
+        md: ["min-w-32", "h-full", "min-h-12", "pt-2", "pb-3", "px-8", "text-2xl"],
+        lg: ["min-w-36", "h-full", "min-h-14", "pt-3", "pb-4", "px-9", "text-2xl"],
+        link: [],
       },
-      underline: { true: ["underline"], false: [] },
     },
     defaultVariants: {
-      variant: "primary",
-      size: "lg",
+      variant: "contained",
+      size: "md",
     },
   }
 )
@@ -41,12 +50,12 @@ export interface ButtonProps
   href?: string
 }
 
-const Button = ({ className, variant, size, underline, href, ...props }: ButtonProps) => {
-  const { as, ...parsedUrl } = parseUrl(href)
+const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
+  const { as, tabIndex: _tabIndex, ...parsedUrl } = parseUrl(href)
   const Component = href ? as : "button"
 
   return (
-    <Component className={twMerge(button({ variant, size, className, underline }))} {...parsedUrl} {...props}>
+    <Component className={twMerge(button({ variant, size, className }))} {...parsedUrl} {...props}>
       {props.children}
     </Component>
   )

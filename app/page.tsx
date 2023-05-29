@@ -34,7 +34,10 @@ const Page: NextPage = () => {
               development process.
             </p>
             <Button className="mr-8">Get started</Button>
-            <Button href="/about" variant="secondary">
+            <Button href="/about" variant="outlined">
+              Deploy Now
+            </Button>
+            <Button href="/about" variant="text">
               Deploy Now
             </Button>
           </div>

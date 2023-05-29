@@ -15,7 +15,9 @@ const link = cva(["cursor-pointer"], {
   },
 })
 
-export type LinkProps = React.LinkHTMLAttributes<HTMLAnchorElement> & VariantProps<typeof link>
+export interface LinkProps extends React.LinkHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof link> {
+  href: string
+}
 
 const Link = ({ className, variant, href, ...props }: LinkProps) => {
   const { as: Component, ...parsedUrl } = parseUrl(href)
