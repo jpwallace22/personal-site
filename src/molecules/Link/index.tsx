@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 
 import parseUrl from "@utils/parseUrl"
 
-const link = cva(["cursor-pointer"], {
+const link = cva(["cursor-pointer", "font-bold"], {
   variants: {
     variant: {
       unstyled: [],

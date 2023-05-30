@@ -16,10 +16,10 @@
     "e2e:headless": "cross-env ANALYZE=false playwright test",
     "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "types:check": "tsc --noEmit",
-    "types:create": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
     "postinstall": "npx patch-package -y",
     "preinstall": "npx only-allow yarn",
-    "source-icons": "node lib/gen-sprite.mjs -s src/assets/svg -o public/sprite.svg"
+    "gen:types": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
+    "gen:icons": "node lib/gen-sprite.mjs -s src/assets/svg -o public/sprite.svg"
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",

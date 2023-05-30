@@ -5,10 +5,11 @@ import parseUrl, { baseState } from "@utils/parseUrl"
 describe("parseUrl Utility", () => {
   it("should return a base state", () => {
     let toTest = parseUrl("")
-
     expect(toTest).toMatchObject(baseState)
+
     toTest = parseUrl()
     expect(toTest).toMatchObject(baseState)
+
     toTest = parseUrl("asdkflhasdf")
     expect(toTest).toMatchObject(baseState)
   })
@@ -22,8 +23,10 @@ describe("parseUrl Utility", () => {
       target: undefined,
     }
     expect(toTest).toMatchObject(result)
+
     toTest = parseUrl("/about")
     expect(toTest).toMatchObject({ as: result.as, href: result.href })
+
     toTest = parseUrl("/#about")
     expect(toTest).toMatchObject({ as: result.as, href: "/#about" })
   })
