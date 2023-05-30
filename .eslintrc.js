@@ -2,6 +2,7 @@
 const fs = require("fs")
 
 module.exports = {
+  ignorePatterns: ["**/*.cjs"],
   env: {
     browser: true,
     es2021: true,
