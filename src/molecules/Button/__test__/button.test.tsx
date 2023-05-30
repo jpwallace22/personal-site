@@ -2,25 +2,33 @@ import { render } from "@testing-library/react"
 
 import Button from "@molecules/Button"
 
-it("should render", () => {
-  const { getByRole } = render(<Button>test</Button>)
+describe("Render with correct DOM nodes", () => {
+  it("should render as a button", () => {
+    const { getByRole } = render(<Button>test</Button>)
+    const button = getByRole("button")
 
-  expect(getByRole("button")).toBeTruthy()
-})
-
-describe("correct DOM node", () => {
-  it("should render a button", () => {
-    const { getByText } = render(<Button>test</Button>)
-    const button = getByText("test")
-
-    expect(button.nodeName).toBe("BUTTON")
+    expect(button).toBeInTheDocument()
   })
 
-  it("should render an anchor", () => {
-    const { getByText } = render(<Button href="https://www.justinwallace.dev">test</Button>)
-    const button = getByText("test")
+  it("should render as an anchor", () => {
+    const { getByRole } = render(<Button href="https://www.justinwallace.dev">test</Button>)
+    const button = getByRole("link")
 
-    expect(button.nodeName).toBe("A")
+    expect(button).toBeInTheDocument()
+  })
+
+  it("should render a start icon", () => {
+    const { getByTestId } = render(<Button startIcon="next">test</Button>)
+    const icon = getByTestId("button-icon")
+
+    expect(icon).toBeInTheDocument()
+  })
+
+  it("should render an end icon", () => {
+    const { getByTestId } = render(<Button endIcon="next">test</Button>)
+    const icon = getByTestId("button-icon")
+
+    expect(icon).toBeInTheDocument()
   })
 })
 

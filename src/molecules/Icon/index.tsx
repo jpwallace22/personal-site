@@ -6,7 +6,7 @@ import hexOrTailwindColor from "@utils/hexOrTailwindColor"
 
 import type { IconIds } from "@molecules/Icon/iconIds"
 
-interface IconProps {
+interface IconProps extends React.SVGAttributes<SVGElement> {
   id: IconIds
   size?: number | string
   className?: string
@@ -14,8 +14,8 @@ interface IconProps {
   stroke?: string
 }
 
-export const Icon: FC<IconProps> = ({ id, size, className, fill, stroke }) => (
-  <svg width={size || 24} height={size || 24} className={twMerge("inline", className)}>
+export const Icon: FC<IconProps> = ({ id, size, className, fill, stroke, ...props }) => (
+  <svg width={size || 24} height={size || 24} className={twMerge("inline", className)} role="img" {...props}>
     <use
       href={`/sprite.svg#${id}`}
       fill={hexOrTailwindColor(fill) || "currentColor"}

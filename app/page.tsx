@@ -33,10 +33,10 @@ const Page: NextPage = () => {
               And a bunch of random text that should be the right colors and change when in dark and light mode
             </p>
             <Button className="mr-8">Get started</Button>
-            <Button href="/about" variant="outlined">
+            <Button href="/about" variant="outlined" startIcon="next">
               Deploy Now
             </Button>
-            <Button href="/about" variant="text">
+            <Button href="/about" variant="text" endIcon="next">
               Deploy Now
             </Button>
           </div>

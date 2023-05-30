@@ -1,7 +1,11 @@
 import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
+import Icon from "@molecules/Icon"
+
 import parseUrl from "@utils/parseUrl"
+
+import type { IconIds } from "@molecules/Icon/iconIds"
 
 const button = cva(
   [
@@ -15,6 +19,7 @@ const button = cva(
     "delay-50",
     "font-heading",
     "font-extrabold",
+    "gap-2",
   ],
   {
     variants: {
@@ -30,9 +35,9 @@ const button = cva(
         text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
       },
       size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "pt-1", "pb-2", "px-6"],
-        md: ["min-w-32", "h-full", "min-h-12", "pt-2", "pb-3", "px-8", "text-2xl"],
-        lg: ["min-w-36", "h-full", "min-h-14", "pt-3", "pb-4", "px-9", "text-2xl"],
+        sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "py-1", "px-6"],
+        md: ["min-w-32", "h-full", "min-h-12", "py-2", "px-8", "text-2xl"],
+        lg: ["min-w-36", "h-full", "min-h-14", "py-3", "px-9", "text-2xl"],
         link: [],
       },
     },
@@ -48,15 +53,35 @@ export interface ButtonProps
     VariantProps<typeof button> {
   underline?: boolean
   href?: string
+  startIcon?: IconIds
+  endIcon?: IconIds
+  iconSize?: number | string
 }
 
-const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
+const Button = ({
+  className,
+  variant,
+  size,
+  href,
+  iconSize: inputIconSize,
+  startIcon,
+  endIcon,
+  ...props
+}: ButtonProps) => {
   const { as, tabIndex: _tabIndex, ...parsedUrl } = parseUrl(href)
   const Component = href ? as : "button"
+  const iconSize = inputIconSize || (size === "sm" ? 14 : 20)
+  const iconProps = {
+    size: iconSize,
+    "aria-hidden": true,
+    "data-testid": "button-icon",
+  }
 
   return (
     <Component className={twMerge(button({ variant, size, className }))} {...parsedUrl} {...props}>
-      {props.children}
+      {startIcon && <Icon id={startIcon} {...iconProps} />}
+      <span className="mb-1">{props.children}</span>
+      {endIcon && <Icon id={endIcon} {...iconProps} />}
     </Component>
   )
 }
