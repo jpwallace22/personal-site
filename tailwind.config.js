@@ -68,13 +68,6 @@ module.exports = {
       6: "6px",
       8: "8px",
     },
-    screens: {
-      xs: "375px",
-      sm: "576px",
-      md: "704px",
-      lg: "912px",
-      xl: "1280px",
-    },
     boxShadow: {
       xs: "0px 1px 2px rgba(16, 24, 40, 0.05)",
       sm: "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
@@ -83,6 +76,11 @@ module.exports = {
       xl: "0px 20px 24px -4px rgba(16, 24, 40, 0.1), 0px 8px 8px -4px rgba(16, 24, 40, 0.04)",
       xxl: "0px 24px 48px -12px rgba(16, 24, 40, 0.25)",
       xxxl: "0px 32px 64px -12px rgba(16, 24, 40, 0.2)",
+    },
+    extend: {
+      screens: {
+        xs: "375px",
+      },
     },
   },
   plugins: [],
