@@ -16,9 +16,10 @@
     "e2e:headless": "cross-env ANALYZE=false playwright test",
     "e2e:ui": "cross-env ANALYZE=false playwright test --ui",
     "types:check": "tsc --noEmit",
-    "types:create": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
     "postinstall": "npx patch-package -y",
-    "preinstall": "npx only-allow yarn"
+    "preinstall": "npx only-allow yarn",
+    "gen:types": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
+    "gen:icons": "node lib/gen-sprite.mjs -s src/assets/svg -o public/sprite.svg"
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
@@ -49,6 +50,7 @@
     "lint-staged": "^13.2.2",
     "next": "^13.4.4",
     "react": "^18.2.0",
+    "react-datocms": "^4.0.15",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.10.0"
   },
@@ -94,6 +96,7 @@
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "semantic-release": "^21.0.1",
+    "svg-spreact": "^1.3.2",
     "tailwindcss": "^3.2.7",
     "ts-jest": "^29.1.0",
     "tsc": "^2.0.4",

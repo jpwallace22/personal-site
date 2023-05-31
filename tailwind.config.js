@@ -11,6 +11,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      transparent: "transparent",
       common: { white: "#ffffff", black: "#000000" },
       gray: {
         default: "#A2ABB3",
@@ -27,32 +28,32 @@ module.exports = {
         950: "#282D31",
       },
       primary: {
-        default: "#007173",
-        50: "#2CEDFF",
-        100: "#17EDFF",
-        200: "#00DFED",
-        300: "#00BBC5",
-        400: "#00979C",
+        DEFAULT: "#007173",
+        50: "#009FA1",
+        100: "#009A9C",
+        200: "#009092",
+        300: "#008587",
+        400: "#007B7D",
         500: "#007173", // primary
-        600: "#005E5F",
-        700: "#004A49",
-        800: "#003634",
-        900: "#002120",
-        950: "#001716",
+        600: "#005D5F",
+        700: "#00494A",
+        800: "#003536",
+        900: "#002121",
+        950: "#001717",
       },
       purple: {
-        default: "#40367A",
-        50: "#D3CFEA",
-        100: "#C6C1E4",
-        200: "#ACA5D7",
-        300: "#9289CB",
-        400: "#786CBE",
-        500: "#5E50B2",
-        600: "#4F4396",
-        700: "#40367A", // brand color
-        800: "#2C2553",
-        900: "#17142C", // background
-        950: "#0D0B19",
+        DEFAULT: "#40367A",
+        50: "#9F97D1",
+        100: "#9289CB",
+        200: "#786CBE",
+        300: "#5E50B2",
+        400: "#4F4396",
+        500: "#40367A", // brand color
+        600: "#372E68",
+        700: "#2D2657",
+        800: "#241F45",
+        900: "#1B1733",
+        950: "#16132A",
       },
     },
     fontFamily: {
@@ -68,13 +69,6 @@ module.exports = {
       6: "6px",
       8: "8px",
     },
-    screens: {
-      xs: "375px",
-      sm: "576px",
-      md: "704px",
-      lg: "912px",
-      xl: "1280px",
-    },
     boxShadow: {
       xs: "0px 1px 2px rgba(16, 24, 40, 0.05)",
       sm: "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
@@ -83,6 +77,14 @@ module.exports = {
       xl: "0px 20px 24px -4px rgba(16, 24, 40, 0.1), 0px 8px 8px -4px rgba(16, 24, 40, 0.04)",
       xxl: "0px 24px 48px -12px rgba(16, 24, 40, 0.25)",
       xxxl: "0px 32px 64px -12px rgba(16, 24, 40, 0.2)",
+    },
+    extend: {
+      screens: {
+        xs: "375px",
+      },
+      fontSize: {
+        "8xl": ["6rem", ".8"],
+      },
     },
   },
   plugins: [],

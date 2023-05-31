@@ -11,10 +11,9 @@ type ParseUrl = (href?: string) => {
   target?: string
 }
 
-const baseState = {
+export const baseState = {
   as: "div",
   tabIndex: -1,
-  isInternal: false,
 } as const
 
 const parseUrl: ParseUrl = (href) => {

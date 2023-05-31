@@ -1,9 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
-
 import parseUrl from "@utils/parseUrl"
 
-const link = cva(["cursor-pointer"], {
+const link = cva(["cursor-pointer", "font-bold"], {
   variants: {
     variant: {
       unstyled: [],
@@ -15,7 +14,9 @@ const link = cva(["cursor-pointer"], {
   },
 })
 
-export type LinkProps = React.LinkHTMLAttributes<HTMLAnchorElement> & VariantProps<typeof link>
+export interface LinkProps extends React.LinkHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof link> {
+  href: string
+}
 
 const Link = ({ className, variant, href, ...props }: LinkProps) => {
   const { as: Component, ...parsedUrl } = parseUrl(href)
