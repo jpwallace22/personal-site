@@ -1,0 +1,7 @@
+query SiteLogo {
+  _site {
+    favicon {
+      ...Image
+    }
+  }
+}
