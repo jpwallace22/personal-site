@@ -340,12 +340,14 @@ export interface ButtonModelFilter {
   _updatedAt?: InputMaybe<UpdatedAtFilter>
   createdAt?: InputMaybe<CreatedAtFilter>
   disabled?: InputMaybe<BooleanFilter>
-  icon?: InputMaybe<StringFilter>
+  endIcon?: InputMaybe<StringFilter>
   id?: InputMaybe<ItemIdFilter>
   internalName?: InputMaybe<StringFilter>
-  title?: InputMaybe<StringFilter>
+  label?: InputMaybe<StringFilter>
+  startIcon?: InputMaybe<StringFilter>
   updatedAt?: InputMaybe<UpdatedAtFilter>
   url?: InputMaybe<StringFilter>
+  variant?: InputMaybe<StringFilter>
 }
 
 export enum ButtonModelOrderBy {
@@ -369,18 +371,22 @@ export enum ButtonModelOrderBy {
   CreatedAt_DESC = "createdAt_DESC",
   Disabled_ASC = "disabled_ASC",
   Disabled_DESC = "disabled_DESC",
-  Icon_ASC = "icon_ASC",
-  Icon_DESC = "icon_DESC",
+  EndIcon_ASC = "endIcon_ASC",
+  EndIcon_DESC = "endIcon_DESC",
   Id_ASC = "id_ASC",
   Id_DESC = "id_DESC",
   InternalName_ASC = "internalName_ASC",
   InternalName_DESC = "internalName_DESC",
-  Title_ASC = "title_ASC",
-  Title_DESC = "title_DESC",
+  Label_ASC = "label_ASC",
+  Label_DESC = "label_DESC",
+  StartIcon_ASC = "startIcon_ASC",
+  StartIcon_DESC = "startIcon_DESC",
   UpdatedAt_ASC = "updatedAt_ASC",
   UpdatedAt_DESC = "updatedAt_DESC",
   Url_ASC = "url_ASC",
   Url_DESC = "url_DESC",
+  Variant_ASC = "variant_ASC",
+  Variant_DESC = "variant_DESC",
 }
 
 /** Record of type Button (button) */
@@ -399,12 +405,14 @@ export interface ButtonRecord extends RecordInterface {
   _updatedAt: Scalars["DateTime"]["output"]
   createdAt: Scalars["DateTime"]["output"]
   disabled?: Maybe<Scalars["BooleanType"]["output"]>
-  icon?: Maybe<Scalars["String"]["output"]>
+  endIcon?: Maybe<Scalars["String"]["output"]>
   id: Scalars["ItemId"]["output"]
   internalName?: Maybe<Scalars["String"]["output"]>
-  title?: Maybe<Scalars["String"]["output"]>
+  label?: Maybe<Scalars["String"]["output"]>
+  startIcon?: Maybe<Scalars["String"]["output"]>
   updatedAt: Scalars["DateTime"]["output"]
   url?: Maybe<Scalars["String"]["output"]>
+  variant?: Maybe<Scalars["String"]["output"]>
 }
 
 /** Record of type Button (button) */
@@ -4350,11 +4358,18 @@ export interface FocalPoint {
 }
 
 declare global {
-  export type SiteLogoQueryVariables = Exact<{ [key: string]: never }>
+  export type GlobalNavFragment = {
+    __typename?: "GlobalNavRecord"
+    id: string
+    links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+  }
 
-  export type SiteLogoQuery = {
+  export type GlobalNavComponentQueryVariables = Exact<{ [key: string]: never }>
+
+  export type GlobalNavComponentQuery = {
     __typename?: "Query"
     _site: { __typename?: "Site"; favicon?: ({ __typename?: "FileField" } & ImageFragment) | null }
+    globalNav?: ({ __typename?: "GlobalNavRecord" } & GlobalNavFragment) | null
   }
 
   export type ImageFragment = {
@@ -4365,5 +4380,16 @@ declare global {
     height?: number | null
     width?: number | null
     url: string
+  }
+
+  export type ButtonFragment = {
+    __typename?: "ButtonRecord"
+    id: string
+    variant?: string | null
+    label?: string | null
+    url?: string | null
+    disabled?: boolean | null
+    startIcon?: string | null
+    endIcon?: string | null
   }
 }

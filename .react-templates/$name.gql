@@ -1,0 +1,11 @@
+fragment $Name on $NameRecord {
+    __typename
+  id
+
+}
+
+query $NameComponent {
+   $name {
+    ...$Name
+  }
+}

@@ -1,4 +1,6 @@
 @import url(./utilities/);
+@import url(../components/GlobalNav/Burger/burger.css);
+@tailwind components;
 @tailwind base;
 
 @layer base {

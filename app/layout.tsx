@@ -1,6 +1,7 @@
 import "src/styles/global.css"
 import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Sans } from "next/font/google"
+import GlobalNav from "@components/GlobalNav"
 
 const darkerGrotesque = Darker_Grotesque({
   weight: ["700", "900"],
@@ -25,7 +26,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${darkerGrotesque.variable} ${ibmPlex.variable} dark`}>
-      <body>{children}</body>
+      <body>
+        {/* @ts-expect-error Async Server Component (fix in TS 5.1) */}
+        <GlobalNav />
+        {children}
+      </body>
     </html>
   )
 }

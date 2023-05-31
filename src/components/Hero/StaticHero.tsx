@@ -1,15 +1,10 @@
 import Image from "next/image"
 import { twJoin } from "tailwind-merge"
-import { SiteLogoQuery } from "@codegen/sdk"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
-import makeServerQuery from "src/graphql/makeServerQuery"
+import logoPath from "src/assets/svg/logo-gradient.svg"
 
 const StaticHero = async () => {
-  const {
-    _site: { favicon },
-  } = await makeServerQuery<SiteLogoQuery>(SiteLogoQuery)
-
   const styles = {
     image: ["mb-8 mr-8", "lg:float-left lg:mb-0"],
     h1: [
@@ -34,12 +29,12 @@ const StaticHero = async () => {
         <Circle size="lg" contrast="low" className="bottom-1/2 right-1/3 lg:right-1/2" />
         <Circle className="left-3/4 top-12" />
         <div className={twJoin(styles.wrapper)}>
-          {favicon?.url && (
+          {logoPath && (
             <Image
-              src={favicon?.url}
+              src={logoPath}
               width={128}
               height={128}
-              alt={favicon.alt || ""}
+              alt="A take on the Typescript logo with JW in the place of TS"
               className={twJoin(styles.image)}
             />
           )}
