@@ -1,0 +1,17 @@
+fragment GlobalNav on GlobalNavRecord {
+  id
+  links {
+    ...Button
+  }
+}
+
+query GlobalNavComponent {
+  _site {
+    favicon {
+      ...Image
+    }
+  }
+  globalNav {
+    ...GlobalNav
+  }
+}
