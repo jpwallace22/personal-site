@@ -1,4 +1,4 @@
-import "./globals.css"
+import "src/styles/global.css"
 import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Sans } from "next/font/google"
 

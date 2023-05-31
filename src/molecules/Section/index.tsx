@@ -2,7 +2,7 @@ import { FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
-const section = cva(["max-w-7xl mx-auto py-12 sm:py-16 lg:py-20"], {
+const section = cva(["max-w-screen-2xl mx-auto py-12 sm:py-16 lg:py-20"], {
   variants: {
     fullWidth: {
       true: ["max-w-full"],

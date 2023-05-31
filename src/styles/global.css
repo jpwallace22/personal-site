@@ -1,4 +1,4 @@
-@import url(../src/styles/utilities/);
+@import url(./utilities/);
 @tailwind base;
 
 @layer base {

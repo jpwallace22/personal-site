@@ -20,8 +20,8 @@ const StaticHero = async () => {
     wrapper: ["absolute top-24", "lg:top-[40%]"],
     hand: ["text-5xl", "sm:text-6xl"],
     tagline: [
-      "absolute right-12 -bottom-12 -rotate-[10deg]",
-      "text-2xl dark:text-gray-500 font-thin",
+      "absolute -bottom-12 -rotate-[10deg] whitespace-nowrap",
+      "text-2xl dark:text-gray-500 dark:font-thin",
       "sm:text-4xl sm:right-1",
       "lg:text-5xl lg:-bottom-8 lg:-right-16",
     ],
