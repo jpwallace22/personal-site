@@ -1,5 +1,4 @@
 import { fireEvent, render } from "@testing-library/react"
-
 import Switch from "@molecules/Switch"
 
 describe("Switch molecule", () => {

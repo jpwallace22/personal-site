@@ -1,9 +1,6 @@
 import { FC } from "react"
-
 import { twMerge } from "tailwind-merge"
-
 import { IconIds, iconValues } from "@molecules/Icon/iconIds"
-
 import hexOrTailwindColor from "@utils/hexOrTailwindColor"
 
 interface IconProps extends React.SVGAttributes<SVGElement> {

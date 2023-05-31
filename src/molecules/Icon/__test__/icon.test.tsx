@@ -1,8 +1,6 @@
 import fs from "fs/promises"
 import path from "path"
-
 import { cleanup, render } from "@testing-library/react"
-
 import Icon from "@molecules/Icon"
 import { IconIds } from "@molecules/Icon/iconIds"
 

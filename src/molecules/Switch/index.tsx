@@ -1,7 +1,6 @@
 "use client"
 
 import { FC } from "react"
-
 import * as Radix from "@radix-ui/react-switch"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
@@ -18,7 +17,7 @@ const switchBase = cva(
       variant: {
         primary: [
           "data-[state=checked]:bg-purple-600 data-[state=checked]:dark:bg-primary-500",
-          "data-[state=unchecked]:bg-gray-200",
+          "data-[state=unchecked]:bg-gray-200 data-[state=unchecked]:dark:bg-gray-700",
           "border-2 border-transparent",
         ],
       },

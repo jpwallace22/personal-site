@@ -1,10 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
-
 import Icon from "@molecules/Icon"
-
 import parseUrl from "@utils/parseUrl"
-
 import type { IconIds } from "@molecules/Icon/iconIds"
 
 const button = cva(
@@ -74,7 +71,6 @@ const Button = ({
   const iconProps = {
     size: iconSize,
     "aria-hidden": true,
-    "data-testid": "button-icon",
   }
 
   return (

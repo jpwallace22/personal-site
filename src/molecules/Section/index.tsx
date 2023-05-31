@@ -1,5 +1,4 @@
 import { FC } from "react"
-
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
@@ -11,7 +10,7 @@ const section = cva(["max-w-7xl mx-auto py-12 sm:py-16 lg:py-20"], {
   },
 })
 
-interface SectionProps extends React.InputHTMLAttributes<HTMLSelectElement>, VariantProps<typeof section> {
+export interface SectionProps extends React.InputHTMLAttributes<HTMLSelectElement>, VariantProps<typeof section> {
   className?: string
   wrapperClass?: string
 }
