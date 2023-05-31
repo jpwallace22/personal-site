@@ -19,7 +19,7 @@
     "postinstall": "npx patch-package -y",
     "preinstall": "npx only-allow yarn",
     "gen:types": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
-    "gen:icons": "node lib/gen-sprite.mjs -s src/assets/svg -o public/sprite.svg"
+    "gen:icons": "node lib/gen-sprite.mjs -s src/assets/icons -o public/sprite.svg"
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
