@@ -11,6 +11,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      transparent: "transparent",
       common: { white: "#ffffff", black: "#000000" },
       gray: {
         default: "#A2ABB3",
@@ -41,18 +42,30 @@ module.exports = {
         950: "#001717",
       },
       purple: {
-        default: "#40367A",
-        50: "#D3CFEA",
-        100: "#C6C1E4",
-        200: "#ACA5D7",
-        300: "#9289CB",
-        400: "#786CBE",
-        500: "#5E50B2",
-        600: "#4F4396",
-        700: "#40367A", // brand color
-        800: "#2C2553",
-        900: "#17142C", // background
-        950: "#0D0B19",
+        DEFAULT: "#40367A",
+        50: "#9F97D1",
+        100: "#9289CB",
+        200: "#786CBE",
+        300: "#5E50B2",
+        400: "#4F4396",
+        500: "#40367A", // brand color
+        600: "#372E68",
+        700: "#2D2657",
+        800: "#241F45",
+        900: "#1B1733",
+        950: "#16132A",
+        // default: "#40367A",
+        // 50: "#D3CFEA",
+        // 100: "#C6C1E4",
+        // 200: "#ACA5D7",
+        // 300: "#9289CB",
+        // 400: "#786CBE",
+        // 500: "#5E50B2",
+        // 600: "#4F4396",
+        // 700: "#40367A", // brand color
+        // 800: "#2C2553",
+        // 900: "#17142C", // background
+        // 950: "#0D0B19",
       },
     },
     fontFamily: {
@@ -80,6 +93,9 @@ module.exports = {
     extend: {
       screens: {
         xs: "375px",
+      },
+      fontSize: {
+        "8xl": ["6rem", ".8"],
       },
     },
   },

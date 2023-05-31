@@ -44,7 +44,7 @@ module.exports = {
           ...renderInternalOrder(),
         ],
         pathGroupsExcludedImportTypes: ["react", "builtin", "type"],
-        "newlines-between": "always",
+        "newlines-between": "never",
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
@@ -55,7 +55,7 @@ module.exports = {
 }
 
 function renderInternalOrder() {
-  const specifiedPaths = ["@atoms", "@molecules", "@components", "@utils"]
+  const specifiedPaths = ["@codegen", "@atoms", "@molecules", "@components", "@utils"]
   return [...specifiedPaths, ...getAllInternalDirectories()].map((singleDir) => ({
     pattern: `${singleDir}/**`,
     group: "internal",

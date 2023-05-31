@@ -1,6 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client"
 import { registerApolloClient } from "@apollo/experimental-nextjs-app-support/rsc"
-
 import { DATO_CMS_ENVIRONMENT, DATO_CMS_URI } from "@utils/constants"
 
 export const { getClient } = registerApolloClient(() => {

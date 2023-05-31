@@ -4350,28 +4350,20 @@ export interface FocalPoint {
 }
 
 declare global {
-  export type MyQueryQueryVariables = Exact<{ [key: string]: never }>
+  export type SiteLogoQueryVariables = Exact<{ [key: string]: never }>
 
-  export type MyQueryQuery = {
+  export type SiteLogoQuery = {
     __typename?: "Query"
-    blogPost?: {
-      __typename?: "BlogPostRecord"
-      title?: string | null
-      featuredImage?: {
-        __typename?: "FileField"
-        size: number
-        url: string
-        responsiveImage?: {
-          __typename?: "ResponsiveImage"
-          alt?: string | null
-          src: string
-          srcSet: string
-          width: number
-          height: number
-          aspectRatio: number
-          base64?: string | null
-        } | null
-      } | null
-    } | null
+    _site: { __typename?: "Site"; favicon?: ({ __typename?: "FileField" } & ImageFragment) | null }
+  }
+
+  export type ImageFragment = {
+    __typename: "FileField"
+    id: string
+    alt?: string | null
+    blurhash?: string | null
+    height?: number | null
+    width?: number | null
+    url: string
   }
 }

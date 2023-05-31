@@ -1,5 +1,4 @@
 import NextLink from "next/link"
-
 import parseUrl, { baseState } from "@utils/parseUrl"
 
 describe("parseUrl Utility", () => {

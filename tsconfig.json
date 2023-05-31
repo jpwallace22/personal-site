@@ -5,7 +5,8 @@
     "paths": {
       "@molecules/*": ["src/molecules/*"],
       "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@codegen/*": ["src/graphql/__gen__/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

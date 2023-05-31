@@ -18,10 +18,14 @@
     }
   }
   .gradient-primary {
-    @apply bg-gradient-to-r from-purple-600 to-primary-500;
+    @apply bg-gradient-to-r from-purple-400 to-primary-500;
   }
 
   .border-gradient-primary {
     @apply border-gradient before:gradient-primary;
+  }
+
+  .text-gradient-primary {
+    @apply gradient-primary bg-clip-text text-transparent;
   }
 }
