@@ -9,7 +9,7 @@ import makeServerQuery from "src/graphql/makeServerQuery"
 const GlobalNav = async () => {
   const {
     _site: { favicon },
-    // globalNav,
+    globalNav,
   } = await makeServerQuery<GlobalNavComponentQuery>(GlobalNavComponentQuery)
 
   const styles = {
@@ -20,7 +20,7 @@ const GlobalNav = async () => {
   return (
     <div className={twMerge(styles.wrapper)}>
       <nav className={twMerge(styles.nav)}>
-        <MobileSlideOut />
+        <MobileSlideOut logo={favicon} links={globalNav?.links} />
         {favicon?.url && (
           <Link href="/">
             <Image src={favicon?.url} width={50} height={50} alt={favicon.alt || ""} />

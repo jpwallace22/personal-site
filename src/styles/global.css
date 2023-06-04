@@ -1,5 +1,5 @@
 @import url(./utilities/);
-@import url(../components/GlobalNav/Burger/burger.css);
+@import url(../components/GlobalNav/styles/burger.css);
 @tailwind components;
 @tailwind base;
 
@@ -14,7 +14,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-extrabold text-purple-900 dark:text-common-white;
+    @apply font-heading font-extrabold text-purple-900 dark:font-extrabold dark:text-common-white;
   }
 
   body {

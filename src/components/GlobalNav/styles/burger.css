@@ -19,7 +19,7 @@
   }
   .line {
     fill: none;
-    stroke: theme(colors.gray.100);
+    stroke: currentColor;
     stroke-width: 6px;
     stroke-linecap: round;
     stroke-linejoin: round;

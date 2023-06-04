@@ -38,4 +38,8 @@
   .contain-none {
     contain: none;
   }
+  .h-screen-dvh {
+    height: 100vh;
+    height: 100dvh;
+  }
 }

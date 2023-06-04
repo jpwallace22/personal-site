@@ -4,7 +4,7 @@ import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import logoPath from "src/assets/svg/logo-gradient.svg"
 
-const StaticHero = async () => {
+const StaticHero = () => {
   const styles = {
     image: ["mb-8 mr-8", "lg:float-left lg:mb-0"],
     h1: [

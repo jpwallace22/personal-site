@@ -2,11 +2,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import parseUrl from "@utils/parseUrl"
 
-const link = cva(["cursor-pointer", "font-bold"], {
+const link = cva(["cursor-pointer"], {
   variants: {
     variant: {
       unstyled: [],
-      inline: ["text-purple-400", "dark:text-primary-400", "underline-animation"],
+      inline: ["text-purple-400", "font-bold", "dark:text-primary-400", "underline-animation"],
     },
   },
   defaultVariants: {

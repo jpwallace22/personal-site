@@ -3,7 +3,6 @@ import Button from "@molecules/Button"
 import Icon from "@molecules/Icon"
 import Section from "@molecules/Section"
 import StaticHero from "@components/Hero/StaticHero"
-import { ModeChanger } from "@components/TEMP"
 
 export const metadata: Metadata = {
   title: "Justin Wallace Development",
@@ -12,9 +11,7 @@ export const metadata: Metadata = {
 const Page: NextPage = () => {
   return (
     <>
-      {/* @ts-expect-error Async Server Component (fix in TS 5.1) */}
       <StaticHero />
-      <ModeChanger />
       <Section>
         <Button className="mr-8">Get started</Button>
         <Button href="/about" variant="outlined" startIcon="next">

@@ -7,10 +7,10 @@ interface BurgerProps {
 }
 
 const Burger: FC<BurgerProps> = ({ className, open }) => {
-  const styles = ["-translate-x-6 -translate-y-5", open && "active"]
+  const styles = ["plate", "-translate-x-6 -translate-y-5", open && "active"]
 
   return (
-    <div className={twMerge("plate", styles, className)}>
+    <div className={twMerge(styles, className)}>
       <svg className="burger" version="1.1" viewBox="0 0 100 100">
         <path className="line top" d="M 30,65 H 70" />
         <path
