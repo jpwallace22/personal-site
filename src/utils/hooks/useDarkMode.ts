@@ -8,9 +8,9 @@ import useStore from "src/store/useStore"
 const useDarkMode = (): [boolean, () => void] => {
   const isDark = useStore((state) => state.isDark)
   const setIsDark = useStore((state) => state.setIsDark)
-  const body = document.documentElement
 
   const toggleDarkMode = () => {
+    const body = document.documentElement
     if (isDark) {
       body.classList.remove("dark")
     } else {
