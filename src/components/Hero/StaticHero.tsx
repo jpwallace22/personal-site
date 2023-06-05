@@ -10,7 +10,7 @@ const StaticHero = () => {
     image: ["mb-8 mr-8", "lg:float-left lg:mb-0"],
     h1: [
       "-mt-4 max-w-[360px] text-6xl leading-[0.8]",
-      "sm:max-w-[575px] sm:text-8xl sm:leading-[0.7]",
+      "sm:max-w-[575px] sm:text-8xl sm:leading-[0.75]",
       "lg:max-w-[920px]",
     ],
     wrapper: ["absolute top-24", "lg:top-[40%]"],

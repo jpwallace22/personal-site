@@ -22,9 +22,11 @@ const Link = ({ className, variant, href, ...props }: LinkProps) => {
   const { as: Component, ...parsedUrl } = parseUrl(href)
 
   return (
-    <Component className={twMerge(link({ variant, className }))} {...parsedUrl} {...props}>
-      {props.children}
-    </Component>
+    Component !== "div" && (
+      <Component className={twMerge(link({ variant, className }))} {...parsedUrl} {...props}>
+        {props.children}
+      </Component>
+    )
   )
 }
 
