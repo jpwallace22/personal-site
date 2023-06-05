@@ -14,7 +14,7 @@ module.exports = {
       transparent: "transparent",
       common: { white: "#ffffff", black: "#000000" },
       gray: {
-        default: "#A2ABB3",
+        DEFAULT: "#A2ABB3",
         50: "#EEF0F1",
         100: "#E6E8EA",
         200: "#D5D9DD",
@@ -53,7 +53,8 @@ module.exports = {
         700: "#2D2657",
         800: "#241F45",
         900: "#1B1733",
-        950: "#16132A",
+        950: "#110e2d",
+        // 950: "#16132A", maybe?
       },
     },
     fontFamily: {
@@ -84,6 +85,9 @@ module.exports = {
       },
       fontSize: {
         "8xl": ["6rem", ".8"],
+      },
+      animation: {
+        draw: "draw 1s ease-in forwards",
       },
     },
   },

@@ -1,6 +1,4 @@
-import { useState } from "react"
-
-// TODO maybe add this to a linked state/server friendly global state
+import useStore from "src/store/useStore"
 
 /**
  * A custom React hook to manage dark mode state.
@@ -8,8 +6,9 @@ import { useState } from "react"
  * @returns {[boolean, () => void]} A tuple containing the current state of dark mode (`isDark`) and a function to toggle dark mode (`toggleDarkMode`).
  */
 const useDarkMode = (): [boolean, () => void] => {
+  const isDark = useStore((state) => state.isDark)
+  const setIsDark = useStore((state) => state.setIsDark)
   const body = document.documentElement
-  const [isDark, setIsDark] = useState(body.classList.contains("dark"))
 
   const toggleDarkMode = () => {
     if (isDark) {

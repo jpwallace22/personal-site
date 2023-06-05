@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge"
 import Burger from "@components/GlobalNav/Burger"
 import NavMenu from "@components/GlobalNav/NavMenu"
 import useOpenState from "@utils/hooks/useOpenState"
-import type { FC } from "react"
+import type { FC, HTMLAttributes } from "react"
 
 const styles = {
   common: ["will-change-transform", "bg-gray-200/95", "dark:bg-purple-800/95", "-ml-4", "sm:-ml-6"],
@@ -14,12 +14,12 @@ const styles = {
   burger: ["text-primary-900", "dark:text-common-white"],
 }
 
-interface MobileSlideOutProps {
+interface MobileSlideOutProps extends HTMLAttributes<HTMLDivElement> {
   logo?: Maybe<ImageFragment>
   links?: GlobalNavFragment["links"]
 }
 
-const MobileSlideOut: FC<MobileSlideOutProps> = ({ logo, links }) => {
+const MobileSlideOut: FC<MobileSlideOutProps> = ({ logo, links, ...props }) => {
   const { ref, open, setOpen } = useOpenState<HTMLDivElement>(false)
   const duration = 0.3
   const delay = 0.1
@@ -43,7 +43,7 @@ const MobileSlideOut: FC<MobileSlideOutProps> = ({ logo, links }) => {
   }
 
   return (
-    <div ref={ref} className="lg:hidden">
+    <div ref={ref} {...props}>
       <MotionConfig transition={{ duration }}>
         <motion.div
           initial={{ translateX: 0 }}
