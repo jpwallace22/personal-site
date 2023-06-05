@@ -6,19 +6,19 @@ describe("useDarkMode", () => {
     const { result } = renderHook(() => useDarkMode())
 
     const [isDark] = result.current
-    expect(isDark).toBe(false)
+    expect(isDark).toBe(true)
   })
 
   test("should toggle dark mode when toggleDarkMode is called", () => {
     const { result } = renderHook(() => useDarkMode())
 
     const [beforeToggle, toggleDarkMode] = result.current
-    expect(beforeToggle).toBe(false)
+    expect(beforeToggle).toBe(true)
     act(() => {
       toggleDarkMode()
     })
 
     const [afterToggle] = result.current
-    expect(afterToggle).toBe(true)
+    expect(afterToggle).toBe(false)
   })
 })

@@ -10,6 +10,7 @@ const config = {
   testEnvironment: "jest-environment-jsdom",
   modulePathIgnorePatterns: ["<rootDir>/dist/"],
   testPathIgnorePatterns: ["<rootDir>/e2e"],
+  modulePaths: ["<rootDir>"],
   moduleDirectories: ["node_modules", "src"],
 }
 
