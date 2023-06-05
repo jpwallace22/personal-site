@@ -1,0 +1,88 @@
+@tailwind utilities;
+
+@layer utilities {
+  .border-gradient {
+    background-clip: padding-box;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -4px;
+      border-radius: inherit;
+    }
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-purple-400 to-primary-500;
+  }
+
+  .border-gradient-primary {
+    @apply border-gradient before:gradient-primary;
+  }
+
+  .text-gradient-primary {
+    @apply gradient-primary bg-clip-text text-transparent;
+  }
+
+  .underline-animation {
+    position: relative;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+    &::after {
+      content: "";
+      background: none repeat scroll 0 0 transparent;
+      bottom: -2px;
+      display: block;
+      border-radius: 5px;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transition-property: width, left;
+      transition: 0.3s ease 0s;
+      width: 0;
+      @apply bg-purple-700 dark:bg-gray-500;
+    }
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+
+  .contain-none {
+    contain: none;
+  }
+
+  .h-screen-dvh {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+}

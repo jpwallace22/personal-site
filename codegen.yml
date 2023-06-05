@@ -2,16 +2,15 @@ schema:
   - https://graphql.datocms.com:
       headers:
         Authorization: "Bearer ${NEXT_PUBLIC_DATO_CMS}"
-        "X-Environment": new
+        X-Environment: new
 documents:
   - ./{app,src}/**/*.{ts,tsx,gql}
 config:
   namingConvention:
     enumValues: "change-case-all#upperCaseFirst"
 generates:
-  src/graphql/__gen__/types.ts:
+  src/graphql/__gen__/types.d.ts:
     plugins:
-      - typescript
       - typescript-operations:
           globalNamespace: true
           strictScalars: true
@@ -29,6 +28,7 @@ generates:
         UploadId: string
       declarationKind: "interface"
       inlineFragmentTypes: "combine"
+      nonOptionalTypename: true
   src/graphql/__gen__/sdk.ts:
     plugins:
       - typescript-react-apollo:
@@ -37,5 +37,6 @@ generates:
           nonOptionalTypename: true
 hooks:
   afterAllFileWrite:
+    - node lib/add-export.mjs
     - prettier --write
     - eslint --fix

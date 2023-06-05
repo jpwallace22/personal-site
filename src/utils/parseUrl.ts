@@ -3,6 +3,7 @@ import NextLink from "next/link"
 const DOMAIN = "justinwallace.dev"
 
 type ParseUrl = (href?: string) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   as: React.ElementType<any> | string
   isInternal?: boolean
   tabIndex?: number

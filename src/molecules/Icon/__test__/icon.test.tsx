@@ -6,7 +6,7 @@ import { IconIds } from "@molecules/Icon/iconIds"
 
 it("should render an <svg> for each icon", async () => {
   const filename = new URL(import.meta.url).pathname
-  const svgDir = path.resolve(filename, "../../../../assets/svg")
+  const svgDir = path.resolve(filename, "../../../../assets/icons")
   const files = await fs.readdir(svgDir)
   const iconIds = files.filter((filename) => filename.endsWith(".svg")).map((fileName) => fileName.replace(".svg", ""))
 

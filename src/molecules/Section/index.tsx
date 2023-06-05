@@ -2,7 +2,10 @@ import { FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
-const section = cva(["max-w-7xl mx-auto py-12 sm:py-16 lg:py-20"], {
+export const GLOBAL_MAX_WIDTH = "max-w-screen-2xl mx-auto"
+export const GLOBAL_PADDING = "px-4 sm:px-6 lg:px-8"
+
+const section = cva([GLOBAL_MAX_WIDTH, "py-12 sm:py-16 lg:py-20"], {
   variants: {
     fullWidth: {
       true: ["max-w-full"],
@@ -17,7 +20,7 @@ export interface SectionProps extends React.InputHTMLAttributes<HTMLSelectElemen
 
 const Section: FC<SectionProps> = ({ children, className, wrapperClass, fullWidth, ...props }) => {
   return (
-    <div className={twMerge("px-4 sm:px-6 lg:px-8", wrapperClass)}>
+    <div className={twMerge(GLOBAL_PADDING, wrapperClass)}>
       <section className={twMerge(section({ fullWidth, className }))} {...props}>
         {children}
       </section>

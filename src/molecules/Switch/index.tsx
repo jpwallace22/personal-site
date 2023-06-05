@@ -1,6 +1,6 @@
 "use client"
 
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import * as Radix from "@radix-ui/react-switch"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
@@ -65,7 +65,7 @@ const switchLabel = cva(["mr-3"], {
 
 interface SwitchProps extends VariantProps<typeof switchBase>, Radix.SwitchProps {
   id: string
-  label?: string
+  label?: ReactNode
   className?: string
 }
 

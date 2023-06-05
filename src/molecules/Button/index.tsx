@@ -35,7 +35,6 @@ const button = cva(
         sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "py-1", "px-6"],
         md: ["min-w-32", "h-full", "min-h-12", "py-2", "px-8", "text-2xl"],
         lg: ["min-w-36", "h-full", "min-h-14", "py-3", "px-9", "text-2xl"],
-        link: [],
       },
     },
     defaultVariants: {
