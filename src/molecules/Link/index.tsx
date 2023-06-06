@@ -1,8 +1,8 @@
-import { cva, type VariantProps } from "class-variance-authority"
-import { twMerge } from "tailwind-merge"
+import { tv, type VariantProps } from "tailwind-variants"
 import parseUrl from "@utils/parseUrl"
 
-const link = cva(["cursor-pointer"], {
+const link = tv({
+  base: ["cursor-pointer"],
   variants: {
     variant: {
       unstyled: [],
@@ -23,7 +23,7 @@ const Link = ({ className, variant, href, ...props }: LinkProps) => {
 
   return (
     Component !== "div" && (
-      <Component className={twMerge(link({ variant, className }))} {...parsedUrl} {...props}>
+      <Component className={link({ variant, className })} {...parsedUrl} {...props}>
         {props.children}
       </Component>
     )

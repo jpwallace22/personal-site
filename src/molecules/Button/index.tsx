@@ -1,11 +1,10 @@
-import { cva, type VariantProps } from "class-variance-authority"
-import { twMerge } from "tailwind-merge"
+import { tv, type VariantProps } from "tailwind-variants"
 import Icon from "@molecules/Icon"
 import parseUrl from "@utils/parseUrl"
 import type { IconIds } from "@molecules/Icon/iconIds"
 
-const button = cva(
-  [
+const button = tv({
+  base: [
     "justify-center",
     "inline-flex",
     "items-center",
@@ -18,31 +17,29 @@ const button = cva(
     "font-extrabold",
     "gap-2",
   ],
-  {
-    variants: {
-      variant: {
-        contained: [
-          "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-xl",
-          "dark:bg-gray-200 dark:text-common-black dark:hover:bg-primary-600",
-        ],
-        outlined: [
-          "text-common-black border border-primary-500 hover:bg-gray-200 hover:border-primary-400",
-          "dark:text-common-white dark:border-gray-200 dark:hover:bg-purple-800 dark:hover:border-primary-600",
-        ],
-        text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
-      },
-      size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "py-1", "px-6"],
-        md: ["min-w-32", "h-full", "min-h-12", "py-2", "px-8", "text-2xl"],
-        lg: ["min-w-36", "h-full", "min-h-14", "py-3", "px-9", "text-2xl"],
-      },
+  variants: {
+    variant: {
+      contained: [
+        "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-xl",
+        "dark:bg-gray-200 dark:text-common-black dark:hover:bg-primary-600",
+      ],
+      outlined: [
+        "text-common-black border border-primary-500 hover:bg-gray-200 hover:border-primary-400",
+        "dark:text-common-white dark:border-gray-200 dark:hover:bg-purple-800 dark:hover:border-primary-600",
+      ],
+      text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
     },
-    defaultVariants: {
-      variant: "contained",
-      size: "md",
+    size: {
+      sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "py-1", "px-6"],
+      md: ["min-w-32", "h-full", "min-h-12", "py-2", "px-8", "text-2xl"],
+      lg: ["min-w-36", "h-full", "min-h-14", "py-3", "px-9", "text-2xl"],
     },
-  }
-)
+  },
+  defaultVariants: {
+    variant: "contained",
+    size: "md",
+  },
+})
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
@@ -73,7 +70,7 @@ const Button = ({
   }
 
   return (
-    <Component className={twMerge(button({ variant, size, className }))} {...parsedUrl} {...props}>
+    <Component className={button({ variant, size, className })} {...parsedUrl} {...props}>
       {startIcon && <Icon id={startIcon} {...iconProps} />}
       <span className="mb-1">{props.children}</span>
       {endIcon && <Icon id={endIcon} {...iconProps} />}

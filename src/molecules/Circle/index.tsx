@@ -1,11 +1,11 @@
 import { FC } from "react"
-import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
-import { twMerge } from "tailwind-merge"
+import { tv, VariantProps } from "tailwind-variants"
 import dotsPath from "src/assets/images/dots.webp"
 
-const baseStyles = ["-z-10", "absolute"]
-const circle = cva(["rounded-full", ...baseStyles], {
+const baseCircle = tv({ base: ["rounded-full", "-z-10", "absolute"] })
+const solidCircle = tv({
+  extend: baseCircle,
   variants: {
     size: {
       md: ["w-[580px] h-[580px]"],
@@ -22,7 +22,7 @@ const circle = cva(["rounded-full", ...baseStyles], {
   },
 })
 
-export interface CircleProps extends VariantProps<typeof circle> {
+export interface CircleProps extends VariantProps<typeof solidCircle> {
   className?: string
   dots?: boolean
 }
@@ -35,11 +35,11 @@ const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) 
       width={635}
       height={629}
       alt=""
-      className={twMerge(baseStyles, className)}
+      className={baseCircle({ className })}
       {...props}
     />
   ) : (
-    <div aria-hidden role="img" className={twMerge(circle({ size, contrast, className }))} {...props} />
+    <div aria-hidden role="img" className={solidCircle({ size, contrast, className })} {...props} />
   )
 }
 
