@@ -3,7 +3,7 @@ import { twJoin } from "tailwind-merge"
 import Circle from "@molecules/Circle"
 import DrawnArrow from "@molecules/DrawnArrow"
 import Section from "@molecules/Section"
-import logoPath from "src/assets/svg/logo-gradient.svg"
+import logoPath from "src/assets/images/logo-gradient.webp"
 
 const StaticHero = () => {
   const styles = {
@@ -34,8 +34,8 @@ const StaticHero = () => {
           {logoPath && (
             <Image
               src={logoPath}
-              width={128}
-              height={128}
+              width={130}
+              height={130}
               alt="A take on the Typescript logo with JW in the place of TS"
               className={twJoin(styles.image)}
             />

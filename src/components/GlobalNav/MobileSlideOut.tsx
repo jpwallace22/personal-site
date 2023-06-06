@@ -38,7 +38,7 @@ const MobileSlideOut: FC<MobileSlideOutProps> = ({ logo, links, ...props }) => {
 
   const spring = {
     type: "spring",
-    damping: 12,
+    damping: 15,
     stiffness: 100,
   }
 
