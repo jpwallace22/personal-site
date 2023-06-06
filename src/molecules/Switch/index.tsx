@@ -77,7 +77,7 @@ const Switch: FC<SwitchProps> = ({ variant, size, id, label, className, ...props
       </label>
     )}
     <Radix.Root className={twMerge(switchBase({ variant, size, className }))} id={id} {...props}>
-      <Radix.Thumb className={twMerge(switchThumb({ variant, size }))} />
+      <Radix.Thumb className={switchThumb({ variant, size })} />
     </Radix.Root>
   </div>
 )

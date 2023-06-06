@@ -32,6 +32,25 @@ export const ImageFragment = gql`
     url
   }
 `
+export const SwitchbackFragment = gql`
+  fragment Switchback on SwitchbackRecord {
+    designAccent
+    heading
+    headingAs
+    id
+    reverse
+    sectionId
+    bgColor
+    body {
+      value
+      links
+    }
+    image {
+      ...Image
+    }
+  }
+  ${ImageFragment}
+`
 export const GlobalNavComponentQuery = gql`
   query GlobalNavComponent {
     _site {
@@ -88,6 +107,9 @@ export const StpTestQuery = gql`
     blogPost(filter: { slug: { eq: "test" } }) {
       body {
         value
+        links {
+          ...Button
+        }
         blocks {
           id
           media {
@@ -104,6 +126,7 @@ export const StpTestQuery = gql`
       }
     }
   }
+  ${ButtonFragment}
 `
 
 /**

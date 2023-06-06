@@ -15,6 +15,7 @@ module.exports = {
     },
   },
   rules: {
+    "no-console": ["warn", { allow: ["warn", "error"] }],
     "testing-library/prefer-screen-queries": "off",
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/no-unused-vars": [

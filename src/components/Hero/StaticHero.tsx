@@ -28,7 +28,7 @@ const StaticHero = () => {
       <div className="contain-layout relative h-screen">
         <Circle dots className="left-1/2" />
         <Circle size="lg" contrast="low" className="bottom-1/2 right-1/3 lg:right-1/2" />
-        <Circle className="left-3/4 top-12" />
+        <Circle size="md" contrast="high" className="left-3/4 top-12" />
         <div className={twJoin(styles.wrapper)}>
           <DrawnArrow className="absolute bottom-[115%] right-3/4 hidden w-96 lg:block" animated />
           {logoPath && (

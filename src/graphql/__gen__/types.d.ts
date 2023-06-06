@@ -13,6 +13,19 @@ declare global {
     globalNav?: ({ __typename: "GlobalNavRecord" } & GlobalNavFragment) | null
   }
 
+  export type SwitchbackFragment = {
+    __typename: "SwitchbackRecord"
+    designAccent?: string | null
+    heading?: string | null
+    headingAs?: string | null
+    id: string
+    reverse?: boolean | null
+    sectionId?: string | null
+    bgColor?: string | null
+    body?: { __typename: "SwitchbackModelBodyField"; value: unknown; links: Array<string> } | null
+    image?: ({ __typename: "FileField" } & ImageFragment) | null
+  }
+
   export type StpTestQueryVariables = Exact<{ [key: string]: never }>
 
   export type StpTestQuery = {
@@ -22,6 +35,7 @@ declare global {
       body?: {
         __typename: "BlogPostModelBodyField"
         value: unknown
+        links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
         blocks: Array<{
           __typename: "ImageRecord"
           id: string

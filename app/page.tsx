@@ -3,6 +3,7 @@ import Button from "@molecules/Button"
 import Icon from "@molecules/Icon"
 import Section from "@molecules/Section"
 import StaticHero from "@components/Hero/StaticHero"
+import Switchback from "@components/Switchback"
 
 export const metadata: Metadata = {
   title: "Justin Wallace Development",
@@ -12,12 +13,13 @@ const Page: NextPage = () => {
   return (
     <>
       <StaticHero />
+      <Switchback />
       <Section>
         <Button className="mr-8">Get started</Button>
-        <Button href="/about" variant="outlined" startIcon="next">
+        <Button url="/about" variant="outlined" startIcon="next">
           Deploy Now
         </Button>
-        <Button href="/about" variant="text" endIcon="next">
+        <Button url="/about" variant="text" endIcon="next">
           Deploy Now
         </Button>
       </Section>
