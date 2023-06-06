@@ -1,0 +1,20 @@
+query stpTest {
+  blogPost(filter: { slug: { eq: "test" } }) {
+    body {
+      value
+      blocks {
+        id
+        media {
+          title
+          __typename
+          id
+          alt
+          blurhash
+          height
+          width
+          url
+        }
+      }
+    }
+  }
+}

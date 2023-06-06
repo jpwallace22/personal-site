@@ -19,7 +19,7 @@ module.exports = {
         100: "#E6E8EA",
         200: "#D5D9DD",
         300: "#C4C9CF",
-        400: "#B3BAC1", // brand color
+        400: "#B3BAC1", // primary
         500: "#A2ABB3",
         600: "#848F9A",
         700: "#67737E",
@@ -48,7 +48,7 @@ module.exports = {
         200: "#786CBE",
         300: "#5E50B2",
         400: "#4F4396",
-        500: "#40367A", // brand color
+        500: "#40367A", // primary
         600: "#372E68",
         700: "#2D2657",
         800: "#241F45",
@@ -58,8 +58,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      body: ["var(--ibm-plex)"],
+      body: [`var(--ibm-plex)`],
       heading: ["var(--darker-grotesque)"],
+      mono: ["var(--plex-mono)"],
     },
     borderWidth: {
       DEFAULT: "1px",
@@ -85,6 +86,13 @@ module.exports = {
       },
       fontSize: {
         "8xl": ["6rem", ".8"],
+        "7xl": ["4.5rem", ".8"],
+        "6xl": ["3.75rem", ".8"],
+        "5xl": ["3rem", ".8"],
+        "4xl": ["2.25rem", ".8"],
+        "3xl": ["1.975rem", ".8"],
+        lg: ["1.125rem", "1.75"],
+        xl: ["1.25rem", "1.85"],
       },
       animation: {
         draw: "draw 1s ease-in forwards",

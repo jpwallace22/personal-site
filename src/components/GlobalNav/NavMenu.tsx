@@ -27,7 +27,7 @@ const styles = {
     "w-full lg:w-fit",
     "py-5 lg:py-0",
     "text-center text-4xl sm:text-5xl font-bold lg:text-2xl lg:font-thin",
-    "text-purple-900 hover:text-gray-200 dark:text-common-white lg:hover:dark:text-primary-500 lg:hover:text-purple-600",
+    "text-purple-900 hover:text-gray-200 dark:text-common-white lg:hover:dark:text-common-white lg:hover:text-purple-900",
     "hover:bg-primary-500 dark:hover:bg-purple-700 lg:hover:bg-transparent lg:hover:dark:bg-transparent",
     "lg:underline-animation",
   ],

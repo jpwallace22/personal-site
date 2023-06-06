@@ -13,6 +13,33 @@ declare global {
     globalNav?: ({ __typename: "GlobalNavRecord" } & GlobalNavFragment) | null
   }
 
+  export type StpTestQueryVariables = Exact<{ [key: string]: never }>
+
+  export type StpTestQuery = {
+    __typename: "Query"
+    blogPost?: {
+      __typename: "BlogPostRecord"
+      body?: {
+        __typename: "BlogPostModelBodyField"
+        value: unknown
+        blocks: Array<{
+          __typename: "ImageRecord"
+          id: string
+          media?: {
+            __typename: "FileField"
+            title?: string | null
+            id: string
+            alt?: string | null
+            blurhash?: string | null
+            height?: number | null
+            width?: number | null
+            url: string
+          } | null
+        }>
+      } | null
+    } | null
+  }
+
   export type ImageFragment = {
     __typename: "FileField"
     id: string
