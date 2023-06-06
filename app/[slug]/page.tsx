@@ -1,6 +1,6 @@
 import { StpTestQuery } from "@codegen/sdk"
 import Section from "@molecules/Section"
-import StructuredText from "@molecules/StructuredText"
+import StructuredText from "@components/StructuredText"
 import makeServerQuery from "src/graphql/makeServerQuery"
 
 const Page = async () => {

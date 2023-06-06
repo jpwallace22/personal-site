@@ -1,7 +1,3 @@
-export const HEADING_VAR = "--darker-grotesque"
-export const BODY_VAR = "--ibm-plex"
-export const MONO_VAR = "--plex-mono"
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -96,6 +92,7 @@ module.exports = {
         "4xl": ["2.25rem", ".8"],
         "3xl": ["1.975rem", ".8"],
         lg: ["1.125rem", "1.75"],
+        xl: ["1.25rem", "1.85"],
       },
       animation: {
         draw: "draw 1s ease-in forwards",
