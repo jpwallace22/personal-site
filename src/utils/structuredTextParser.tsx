@@ -60,7 +60,7 @@ const structuredTextParser = (data?: StructuredData) => {
                       <Icon
                         id="check"
                         size={16}
-                        className="mt-3 flex-shrink-0 self-start text-purple-400 dark:text-primary-500"
+                        className="mt-2.5 flex-shrink-0 self-start text-purple-400 dark:text-primary-500"
                       />
                       {child}
                     </li>
