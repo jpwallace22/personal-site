@@ -22,7 +22,11 @@ declare global {
     reverse?: boolean | null
     sectionId?: string | null
     bgColor?: string | null
-    body?: { __typename: "SwitchbackModelBodyField"; value: unknown; links: Array<string> } | null
+    body?: {
+      __typename: "SwitchbackModelBodyField"
+      value: unknown
+      links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+    } | null
     image?: ({ __typename: "FileField" } & ImageFragment) | null
   }
 
@@ -62,6 +66,28 @@ declare global {
     height?: number | null
     width?: number | null
     url: string
+  }
+
+  export type PageFragment = {
+    __typename: "TemplatePageRecord"
+    id: string
+    slug?: string | null
+    components: Array<{ __typename: "SwitchbackRecord" } & SwitchbackFragment>
+    seo?: {
+      __typename: "SeoField"
+      description?: string | null
+      title?: string | null
+      image?: ({ __typename: "FileField" } & ImageFragment) | null
+    } | null
+  }
+
+  export type TemplatePageQueryVariables = Exact<{
+    slug?: InputMaybe<Scalars["String"]["input"]>
+  }>
+
+  export type TemplatePageQuery = {
+    __typename: "Query"
+    templatePage?: ({ __typename: "TemplatePageRecord" } & PageFragment) | null
   }
 
   export type ButtonFragment = {

@@ -8,7 +8,7 @@ interface StructuredTextProps extends HTMLAttributes<HTMLDivElement> {
 
 const StructuredText: FC<StructuredTextProps> = ({ data, className, ...props }) => {
   return (
-    <div className={twMerge("flex flex-col gap-6 text-xl", className)} {...props}>
+    <div className={twMerge("flex flex-col gap-6", className)} {...props}>
       {structuredTextParser(data)}
     </div>
   )

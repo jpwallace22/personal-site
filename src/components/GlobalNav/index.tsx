@@ -5,7 +5,7 @@ import Link from "@molecules/Link"
 import { GLOBAL_MAX_WIDTH, GLOBAL_PADDING } from "@molecules/Section"
 import MobileSlideOut from "@components/GlobalNav/MobileSlideOut"
 import NavMenu from "@components/GlobalNav/NavMenu"
-import makeServerQuery from "src/graphql/makeServerQuery"
+import makeServerQuery from "@utils/makeServerQuery"
 
 const GlobalNav = async () => {
   const {

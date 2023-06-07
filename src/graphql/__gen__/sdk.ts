@@ -43,12 +43,33 @@ export const SwitchbackFragment = gql`
     bgColor
     body {
       value
-      links
+      links {
+        ...Button
+      }
     }
     image {
       ...Image
     }
   }
+  ${ButtonFragment}
+  ${ImageFragment}
+`
+export const PageFragment = gql`
+  fragment Page on TemplatePageRecord {
+    id
+    slug
+    components {
+      ...Switchback
+    }
+    seo {
+      description
+      title
+      image {
+        ...Image
+      }
+    }
+  }
+  ${SwitchbackFragment}
   ${ImageFragment}
 `
 export const GlobalNavComponentQuery = gql`
@@ -155,3 +176,43 @@ export function useStpTestLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<St
 export type StpTestQueryHookResult = ReturnType<typeof useStpTestQuery>
 export type StpTestLazyQueryHookResult = ReturnType<typeof useStpTestLazyQuery>
 export type StpTestQueryResult = Apollo.QueryResult<StpTestQuery, StpTestQueryVariables>
+export const TemplatePageQuery = gql`
+  query templatePage($slug: String) {
+    templatePage(filter: { slug: { eq: $slug } }) {
+      ...Page
+    }
+  }
+  ${PageFragment}
+`
+
+/**
+ * __useTemplatePageQuery__
+ *
+ * To run a query within a React component, call `useTemplatePageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTemplatePageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTemplatePageQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useTemplatePageQuery(
+  baseOptions?: Apollo.QueryHookOptions<TemplatePageQuery, TemplatePageQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TemplatePageQuery, TemplatePageQueryVariables>(TemplatePageQuery, options)
+}
+export function useTemplatePageLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<TemplatePageQuery, TemplatePageQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TemplatePageQuery, TemplatePageQueryVariables>(TemplatePageQuery, options)
+}
+export type TemplatePageQueryHookResult = ReturnType<typeof useTemplatePageQuery>
+export type TemplatePageLazyQueryHookResult = ReturnType<typeof useTemplatePageLazyQuery>
+export type TemplatePageQueryResult = Apollo.QueryResult<TemplatePageQuery, TemplatePageQueryVariables>

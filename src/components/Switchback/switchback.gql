@@ -8,7 +8,9 @@ fragment Switchback on SwitchbackRecord {
   bgColor
   body {
     value
-    links
+    links {
+      ...Button
+    }
   }
   image {
     ...Image

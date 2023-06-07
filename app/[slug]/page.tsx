@@ -1,9 +1,15 @@
 import { StpTestQuery } from "@codegen/sdk"
 import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
-import makeServerQuery from "src/graphql/makeServerQuery"
+import makeServerQuery from "@utils/makeServerQuery"
 
-const Page = async () => {
+type Props = {
+  params: {
+    slug?: string
+  }
+}
+
+const Page = async ({ params: { slug } }: Props) => {
   const { blogPost: body } = await makeServerQuery<StpTestQuery>(StpTestQuery)
 
   return (
