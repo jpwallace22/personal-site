@@ -1,4 +1,4 @@
-import { Children } from "react"
+import { Children, ReactElement } from "react"
 import {
   isBlockquote,
   isCode,
@@ -10,22 +10,38 @@ import {
   Record as NodeType,
 } from "datocms-structured-text-utils"
 import dynamic from "next/dynamic"
-import { renderMarkRule, renderNodeRule, StructuredText, StructuredTextGraphQlResponse } from "react-datocms"
+import {
+  RenderInlineRecordContext,
+  renderMarkRule,
+  renderNodeRule,
+  StructuredText,
+  StructuredTextGraphQlResponse,
+} from "react-datocms"
+import Button, { ButtonProps } from "@molecules/Button"
 
 const Icon = dynamic(() => import("@molecules/Icon"))
 const Image = dynamic(() => import("next/image"))
 const CodeBlock = dynamic(() => import("@molecules/CodeBlock"))
 const Link = dynamic(() => import("@molecules/Link"))
 
+type MakeInline<T, TN> = T & {
+  __typename: TN
+  id: string
+  [prop: string]: unknown
+}
+
+type InlineRecords = MakeInline<ButtonProps, "ButtonRecord">
 export type StructuredData = StructuredTextGraphQlResponse | Record<string, unknown> | null
 
 // TODO write tests
 
 const structuredTextParser = (data?: StructuredData) => {
+  const { wrapButtons, firstButton, secondButton, skipId } = buttonWrapper(data?.links as InlineRecords[])
+
   if (data?.value) {
     return (
       <StructuredText
-        data={data as StructuredTextGraphQlResponse}
+        data={data as Omit<StructuredTextGraphQlResponse, "links">}
         customNodeRules={[
           renderNodeRule(isHeading, ({ node, children, key }) => {
             const Component = `h${node.level}` as const
@@ -44,7 +60,7 @@ const structuredTextParser = (data?: StructuredData) => {
                       <Icon
                         id="check"
                         size={16}
-                        className="mt-3 flex-shrink-0 self-start text-purple-400 dark:text-primary-500"
+                        className="mt-2.5 flex-shrink-0 self-start text-purple-400 dark:text-primary-500"
                       />
                       {child}
                     </li>
@@ -71,7 +87,13 @@ const structuredTextParser = (data?: StructuredData) => {
           )),
           renderNodeRule(isCode, ({ node, children: _, key }) => <CodeBlock key={key} node={node} />),
           renderNodeRule(isBlockquote, ({ node: _, children, key }) => <div key={key}>{children}</div>),
-          renderNodeRule(isParagraph, ({ children, key }) => <p key={key}>{children}</p>),
+          renderNodeRule(isParagraph, ({ children, key }) => {
+            // prevents linked items from being wrapped in a <p> tag
+            const nodeData = children && (children[0] as ReactElement)
+            const isText = nodeData?.props.children && typeof nodeData.props.children[0] === "string"
+
+            return isText ? <p key={key}>{children}</p> : <div key={key}>{children}</div>
+          }),
         ]}
         customMarkRules={[
           renderMarkRule("strong", ({ children, key }) => <strong key={key}>{children}</strong>),
@@ -84,6 +106,26 @@ const structuredTextParser = (data?: StructuredData) => {
             </span>
           )),
         ]}
+        renderInlineRecord={({ record }: RenderInlineRecordContext<InlineRecords>) => {
+          switch (record.__typename) {
+            case "ButtonRecord":
+              if (skipId === record.id) {
+                return null
+              }
+              if (wrapButtons) {
+                return (
+                  <div className="flex flex-col gap-6 sm:flex-row">
+                    <Button {...firstButton} />
+                    <Button {...secondButton} />
+                  </div>
+                )
+              }
+
+              return <Button {...record} />
+            default:
+              return null
+          }
+        }}
         renderBlock={({ record }) => {
           record = record.media as NodeType
           switch (record.__typename) {
@@ -107,6 +149,39 @@ const structuredTextParser = (data?: StructuredData) => {
       />
     )
   }
+}
+
+const buttonWrapper = (arr: InlineRecords[]) => {
+  const defaultReturn = {
+    wrapButtons: false as const,
+    firstButton: undefined,
+    secondButton: undefined,
+    skipId: undefined,
+  }
+
+  if (!arr) {
+    return defaultReturn
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    const firstButton = arr[i]
+    const secondButton = arr[i + 1]
+    if (
+      firstButton &&
+      secondButton &&
+      firstButton.__typename === "ButtonRecord" &&
+      secondButton.__typename === "ButtonRecord"
+    ) {
+      return {
+        wrapButtons: true as const,
+        firstButton,
+        secondButton,
+        skipId: secondButton.id,
+      }
+    }
+  }
+
+  return defaultReturn
 }
 
 export default structuredTextParser

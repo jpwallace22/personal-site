@@ -13,6 +13,23 @@ declare global {
     globalNav?: ({ __typename: "GlobalNavRecord" } & GlobalNavFragment) | null
   }
 
+  export type SwitchbackFragment = {
+    __typename: "SwitchbackRecord"
+    designAccent?: string | null
+    heading?: string | null
+    headingAs?: string | null
+    id: string
+    reverse?: boolean | null
+    sectionId?: string | null
+    bgColor?: string | null
+    body?: {
+      __typename: "SwitchbackModelBodyField"
+      value: unknown
+      links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+    } | null
+    image?: ({ __typename: "FileField" } & ImageFragment) | null
+  }
+
   export type StpTestQueryVariables = Exact<{ [key: string]: never }>
 
   export type StpTestQuery = {
@@ -22,6 +39,7 @@ declare global {
       body?: {
         __typename: "BlogPostModelBodyField"
         value: unknown
+        links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
         blocks: Array<{
           __typename: "ImageRecord"
           id: string
@@ -48,6 +66,28 @@ declare global {
     height?: number | null
     width?: number | null
     url: string
+  }
+
+  export type PageFragment = {
+    __typename: "TemplatePageRecord"
+    id: string
+    slug?: string | null
+    components: Array<{ __typename: "SwitchbackRecord" } & SwitchbackFragment>
+    seo?: {
+      __typename: "SeoField"
+      description?: string | null
+      title?: string | null
+      image?: ({ __typename: "FileField" } & ImageFragment) | null
+    } | null
+  }
+
+  export type TemplatePageQueryVariables = Exact<{
+    slug?: InputMaybe<Scalars["String"]["input"]>
+  }>
+
+  export type TemplatePageQuery = {
+    __typename: "Query"
+    templatePage?: ({ __typename: "TemplatePageRecord" } & PageFragment) | null
   }
 
   export type ButtonFragment = {

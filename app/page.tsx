@@ -1,36 +1,21 @@
-import { Metadata, NextPage } from "next"
-import Button from "@molecules/Button"
-import Icon from "@molecules/Icon"
-import Section from "@molecules/Section"
+import { Metadata } from "next"
 import StaticHero from "@components/Hero/StaticHero"
+import Page from "src/templates/page"
 
 export const metadata: Metadata = {
-  title: "Justin Wallace Development",
+  title: {
+    default: "Justin Wallace Development",
+    template: "%s | Justin Wallace Development",
+  },
 }
 
-const Page: NextPage = () => {
+const NextPage = async () => {
   return (
     <>
       <StaticHero />
-      <Section>
-        <Button className="mr-8">Get started</Button>
-        <Button href="/about" variant="outlined" startIcon="next">
-          Deploy Now
-        </Button>
-        <Button href="/about" variant="text" endIcon="next">
-          Deploy Now
-        </Button>
-      </Section>
-      <Section>
-        <div className="border-gradient before:gradient-primary my-3 h-[200px] w-[200px] rounded-lg bg-purple-900"></div>
-        <div className="flex items-center gap-8">
-          <Icon id="typescript" size={100} />
-          <Icon id="node" size={80} />
-          <Icon id="react" size={80} className="text-common-black dark:text-common-white" />
-        </div>
-      </Section>
+      <Page slug="home" />
     </>
   )
 }
 
-export default Page
+export default NextPage

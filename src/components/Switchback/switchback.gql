@@ -1,0 +1,18 @@
+fragment Switchback on SwitchbackRecord {
+  designAccent
+  heading
+  headingAs
+  id
+  reverse
+  sectionId
+  bgColor
+  body {
+    value
+    links {
+      ...Button
+    }
+  }
+  image {
+    ...Image
+  }
+}

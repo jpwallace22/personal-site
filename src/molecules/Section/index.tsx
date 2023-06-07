@@ -20,7 +20,7 @@ export interface SectionProps extends React.InputHTMLAttributes<HTMLSelectElemen
 
 const Section: FC<SectionProps> = ({ children, className, wrapperClass, fullWidth, ...props }) => {
   return (
-    <div className={twMerge(GLOBAL_PADDING, wrapperClass)}>
+    <div className={twMerge(GLOBAL_PADDING, wrapperClass, "contain-layout")}>
       <section className={twMerge(section({ fullWidth, className }))} {...props}>
         {children}
       </section>

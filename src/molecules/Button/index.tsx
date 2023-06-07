@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import Icon from "@molecules/Icon"
@@ -17,6 +18,8 @@ const button = cva(
     "font-heading",
     "font-extrabold",
     "gap-2",
+    "w-full",
+    "sm:w-fit",
   ],
   {
     variants: {
@@ -32,9 +35,9 @@ const button = cva(
         text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
       },
       size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-lg", "py-1", "px-6"],
-        md: ["min-w-32", "h-full", "min-h-12", "py-2", "px-8", "text-2xl"],
-        lg: ["min-w-36", "h-full", "min-h-14", "py-3", "px-9", "text-2xl"],
+        sm: ["min-w-20", "h-fit", "min-h-10", "text-lg", "py-1", "px-6"],
+        md: ["min-w-32", "h-fit", "min-h-12", "py-2", "px-8", "text-2xl"],
+        lg: ["min-w-36", "h-fit", "min-h-14", "py-3", "px-9", "text-2xl"],
       },
     },
     defaultVariants: {
@@ -48,24 +51,26 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
     VariantProps<typeof button> {
   underline?: boolean
-  href?: string
+  url?: string
   startIcon?: IconIds
   endIcon?: IconIds
   iconSize?: number | string
+  label?: ReactNode
 }
 
 const Button = ({
   className,
   variant,
   size,
-  href,
+  url,
   iconSize: inputIconSize,
   startIcon,
   endIcon,
+  label,
   ...props
 }: ButtonProps) => {
-  const { as, tabIndex: _tabIndex, ...parsedUrl } = parseUrl(href)
-  const Component = href ? as : "button"
+  const { as, tabIndex: _tabIndex, ...parsedUrl } = parseUrl(url)
+  const Component = url ? as : "button"
   const iconSize = inputIconSize || (size === "sm" ? 14 : 20)
   const iconProps = {
     size: iconSize,
@@ -75,7 +80,7 @@ const Button = ({
   return (
     <Component className={twMerge(button({ variant, size, className }))} {...parsedUrl} {...props}>
       {startIcon && <Icon id={startIcon} {...iconProps} />}
-      <span className="mb-1">{props.children}</span>
+      <span className="mb-1">{props.children || label}</span>
       {endIcon && <Icon id={endIcon} {...iconProps} />}
     </Component>
   )

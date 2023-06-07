@@ -1,0 +1,20 @@
+fragment Page on TemplatePageRecord {
+  id
+  slug
+  components {
+    ...Switchback
+  }
+  seo {
+    description
+    title
+    image {
+      ...Image
+    }
+  }
+}
+
+query templatePage($slug: String) {
+  templatePage(filter: { slug: { eq: $slug } }) {
+    ...Page
+  }
+}

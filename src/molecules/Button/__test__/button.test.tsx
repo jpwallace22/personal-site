@@ -15,7 +15,7 @@ describe("Button molecule", () => {
   })
 
   it("should render as an anchor", () => {
-    setup({ href: "https://www.justinwallace.dev" })
+    setup({ url: "https://www.justinwallace.dev" })
     const button = renderResult.getByRole("link")
 
     expect(button).toBeInTheDocument()

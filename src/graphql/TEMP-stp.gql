@@ -2,6 +2,9 @@ query stpTest {
   blogPost(filter: { slug: { eq: "test" } }) {
     body {
       value
+      links {
+        ...Button
+      }
       blocks {
         id
         media {

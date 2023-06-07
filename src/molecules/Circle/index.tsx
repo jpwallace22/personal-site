@@ -4,8 +4,7 @@ import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import dotsPath from "src/assets/images/dots.webp"
 
-const baseStyles = ["-z-10", "absolute"]
-const circle = cva(["rounded-full", ...baseStyles], {
+const circle = cva(["rounded-full", "-z-10", "absolute"], {
   variants: {
     size: {
       md: ["w-[580px] h-[580px]"],
@@ -15,16 +14,14 @@ const circle = cva(["rounded-full", ...baseStyles], {
       low: ["bg-gray-100", "dark:bg-purple-900"],
       high: ["bg-gray-200", "dark:bg-purple-800"],
     },
-  },
-  defaultVariants: {
-    size: "md",
-    contrast: "high",
+    dots: {
+      true: [],
+    },
   },
 })
 
 export interface CircleProps extends VariantProps<typeof circle> {
   className?: string
-  dots?: boolean
 }
 
 const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) => {
@@ -35,7 +32,7 @@ const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) 
       width={635}
       height={629}
       alt=""
-      className={twMerge(baseStyles, className)}
+      className={twMerge(circle({ dots, className }))}
       {...props}
     />
   ) : (
