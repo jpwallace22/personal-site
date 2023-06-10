@@ -85,4 +85,21 @@
   .animation-delay-1000 {
     animation-delay: 1s;
   }
+
+  .shadow-standard {
+    @apply shadow-lg shadow-gray-700/30 dark:shadow-xl dark:shadow-common-black/20;
+  }
+
+  .shadow-standard-dark {
+    @apply shadow-lg shadow-gray-700/40 dark:shadow-lg dark:shadow-common-black/30;
+  }
+
+  .card {
+    @apply rounded-lg bg-gray-50 p-6;
+    @apply dark:bg-purple-900;
+  }
+
+  .eyebrow {
+    @apply text-sm font-extrabold uppercase leading-none tracking-wide text-primary-500 dark:text-purple-300;
+  }
 }

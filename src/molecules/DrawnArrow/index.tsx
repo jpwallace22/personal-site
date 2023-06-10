@@ -23,13 +23,13 @@ const DrawnArrow: FC<DrawnArrowProps> = ({ className, animated }) => {
           />
         </clipPath>
         <path
-          clip-path="url(#clipper)"
+          clipPath="url(#clipper)"
           fill="none"
           stroke="currentColor"
-          stroke-width="20px"
-          stroke-miterlimit={10}
-          stroke-dasharray={1000}
-          stroke-dashoffset={1000}
+          strokeWidth="20px"
+          strokeMiterlimit={10}
+          strokeDasharray={1000}
+          strokeDashoffset={1000}
           d="M9.18,95.02C29.86,47.21,103.7-38.98,213.97,45.8c142.87,109.84,96.01,189.85,105.8,207.12,1.03,1.82,10.16-6.04-44.89-78.93-19.1-25.29,32.17,155,95.4-3.09"
           className={twMerge(drawnArrow({ animated }))}
         />

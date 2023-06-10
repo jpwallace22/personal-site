@@ -8,6 +8,11 @@
     @apply focus:ring-purple-400 focus:dark:ring-primary-400;
   }
 
+  body {
+    @apply bg-common-white font-body text-lg text-gray-800 dark:bg-purple-950 dark:font-light dark:text-gray-400;
+    @apply shadow-common-black hover:shadow-common-black;
+  }
+
   h1,
   h2,
   h3,
@@ -15,10 +20,6 @@
   h5,
   h6 {
     @apply font-heading font-extrabold text-purple-900 dark:font-extrabold dark:text-common-white;
-  }
-
-  body {
-    @apply bg-common-white font-body text-lg text-gray-800 dark:bg-purple-950 dark:font-light dark:text-gray-400;
   }
 
   h1 {

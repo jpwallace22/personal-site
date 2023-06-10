@@ -1,3 +1,5 @@
+// TODO move to theme directory
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -77,8 +79,8 @@ module.exports = {
       md: "0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
       lg: "0px 12px 16px -4px rgba(16, 24, 40, 0.1), 0px 4px 6px -2px rgba(16, 24, 40, 0.05)",
       xl: "0px 20px 24px -4px rgba(16, 24, 40, 0.1), 0px 8px 8px -4px rgba(16, 24, 40, 0.04)",
-      xxl: "0px 24px 48px -12px rgba(16, 24, 40, 0.25)",
-      xxxl: "0px 32px 64px -12px rgba(16, 24, 40, 0.2)",
+      "2xl": "0px 24px 48px -12px rgba(16, 24, 40, 0.25)",
+      "3xl": "0px 32px 64px -12px rgba(16, 24, 40, 0.2)",
     },
     extend: {
       screens: {
@@ -91,8 +93,8 @@ module.exports = {
         "5xl": ["3rem", ".8"],
         "4xl": ["2.25rem", ".8"],
         "3xl": ["1.975rem", ".8"],
-        lg: ["1.125rem", "1.75"],
         xl: ["1.25rem", "1.85"],
+        lg: ["1.125rem", "1.75"],
       },
       animation: {
         draw: "draw 1s ease-in forwards",

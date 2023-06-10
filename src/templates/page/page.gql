@@ -3,6 +3,7 @@ fragment Page on TemplatePageRecord {
   slug
   components {
     ...Switchback
+    ...ProjectListing
   }
   seo {
     description
