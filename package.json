@@ -119,7 +119,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn types:check && yarn test && yarn build"
     }
   },
   "packageManager": "yarn@1.22.19",
