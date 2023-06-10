@@ -25,7 +25,7 @@ const socials = cva(["flex items-center"], {
   defaultVariants: { size: "md", colors: "standard" },
 })
 
-const sizeMap = {
+export const sizeMap = {
   sm: 32,
   md: 48,
   lg: 56,
@@ -37,7 +37,7 @@ const Socials: FC<SocialProps> = ({ size, colors, className }) => {
   return (
     <div className={twMerge(socials({ size, className }))}>
       {Object.entries(SOCIAL_DATA).map(([social, link]) => (
-        <Link key={social} href={link}>
+        <Link key={social} href={link} aria-label={social}>
           <Icon size={sizeMap[size || "sm"]} id={social as IconIds} className={twMerge(socials({ colors }))} />
         </Link>
       ))}

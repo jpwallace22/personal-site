@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes } from "react"
 import { twMerge } from "tailwind-merge"
-import structuredTextParser, { StructuredData } from "@utils/structuredTextParser"
+import structuredTextParser, { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
 
 interface StructuredTextProps extends HTMLAttributes<HTMLDivElement> {
   data?: StructuredData

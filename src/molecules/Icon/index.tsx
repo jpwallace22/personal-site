@@ -13,7 +13,14 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 
 export const Icon: FC<IconProps> = ({ id, size, className, fill, stroke, ...props }) =>
   iconValues.has(id) ? (
-    <svg width={size || 24} height={size || 24} className={twMerge("inline", className)} role="img" {...props}>
+    <svg
+      width={size || 24}
+      height={size || 24}
+      className={twMerge("inline", className)}
+      role="img"
+      aria-label={id}
+      {...props}
+    >
       <use
         href={`/sprite.svg#${id}`}
         fill={hexOrTailwindColor(fill) || "currentColor"}

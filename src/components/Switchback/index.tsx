@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
+import circleStyeFromCMS from "@components/Switchback/utils/circleStyleFromCMS"
 
 const wrapper = cva(["flex", "w-full", "flex-col lg:flex-row", "items-center", "gap-12 xl:gap-32"], {
   variants: {
@@ -25,24 +26,6 @@ const circle = cva([], {
 const content = cva(["w-full lg:w-7/12 xl:w-1/2", "flex flex-col gap-8"])
 const asset = cva(["relative", "lg:w-5/12 xl:w-1/2"])
 const headingStyles = cva(["text-5xl sm:text-6xl xl:text-7xl"])
-
-const circleMap = {
-  lg: {
-    size: "lg",
-    contrast: "low",
-    dots: false,
-  },
-  md: {
-    size: "md",
-    contrast: "high",
-    dots: false,
-  },
-  dots: {
-    size: undefined,
-    contrast: undefined,
-    dots: true,
-  },
-} as const
 
 export type SwitchbackProps = SwitchbackFragment & ElementAttributes<HTMLDivElement> & VariantProps<typeof circle>
 
@@ -66,7 +49,7 @@ const Switchback: FC<SwitchbackProps> = ({
           <StructuredText data={body} />
         </div>
         <div className={asset()}>
-          {designAccent && <Circle {...circleMap[designAccent]} className={circle({ designAccent })} />}
+          {designAccent && <Circle {...circleStyeFromCMS(designAccent)} className={circle({ designAccent })} />}
           {image?.url && <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />}
         </div>
       </div>

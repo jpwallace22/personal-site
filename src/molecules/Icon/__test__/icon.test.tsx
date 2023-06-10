@@ -16,7 +16,8 @@ it("should render an <svg> for each icon", async () => {
       expect(getByRole("img")).toBeTruthy()
       cleanup()
     } catch (error) {
-      throw new Error(`Icon molecule does not contain a '${id}' id. Try running "yarn gen:icons"`)
+      throw new Error(`Icon molecule does not contain a '${id}' id. Try running "yarn gen:icons"
+      ${error}`)
     }
   }
 })

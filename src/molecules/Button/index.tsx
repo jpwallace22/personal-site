@@ -25,7 +25,7 @@ const button = cva(
     variants: {
       variant: {
         contained: [
-          "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-xl",
+          "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-standard",
           "dark:bg-gray-200 dark:text-common-black dark:hover:bg-primary-600",
         ],
         outlined: [
