@@ -1,0 +1,32 @@
+fragment ProjectCard on ProjectRecord {
+  title
+  subtitle
+  slug
+  excerpt {
+    value
+    links
+  }
+  techStack {
+    title
+    thumbnail {
+      ...Image
+    }
+  }
+  bannerImage {
+    ...Image
+  }
+}
+
+fragment ProjectListing on ProjectListingRecord {
+  id
+  heading
+  headingAs
+  sectionId
+  bgColor
+  body {
+    value
+  }
+  cards {
+    ...ProjectCard
+  }
+}

@@ -54,12 +54,50 @@ export const SwitchbackFragment = gql`
   ${ButtonFragment}
   ${ImageFragment}
 `
+export const ProjectCardFragment = gql`
+  fragment ProjectCard on ProjectRecord {
+    title
+    subtitle
+    slug
+    excerpt {
+      value
+      links
+    }
+    techStack {
+      title
+      thumbnail {
+        ...Image
+      }
+    }
+    bannerImage {
+      ...Image
+    }
+  }
+  ${ImageFragment}
+`
+export const ProjectListingFragment = gql`
+  fragment ProjectListing on ProjectListingRecord {
+    id
+    heading
+    headingAs
+    sectionId
+    bgColor
+    body {
+      value
+    }
+    cards {
+      ...ProjectCard
+    }
+  }
+  ${ProjectCardFragment}
+`
 export const PageFragment = gql`
   fragment Page on TemplatePageRecord {
     id
     slug
     components {
       ...Switchback
+      ...ProjectListing
     }
     seo {
       description
@@ -70,6 +108,7 @@ export const PageFragment = gql`
     }
   }
   ${SwitchbackFragment}
+  ${ProjectListingFragment}
   ${ImageFragment}
 `
 export const GlobalNavComponentQuery = gql`
