@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import { ComponentPropsWithoutRef, type FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
@@ -26,18 +26,26 @@ const image = cva(
   }
 )
 
-export interface ProjectCardProps
-  extends ProjectCardFragment,
-    ElementAttributes<HTMLDivElement>,
-    VariantProps<typeof wrapper> {}
+export type ProjectCardProps = ProjectCardFragment &
+  Omit<ComponentPropsWithoutRef<"a">, "title"> &
+  VariantProps<typeof wrapper>
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, bannerImage, reverse, excerpt, subtitle, techStack, slug }) => {
+const ProjectCard: FC<ProjectCardProps> = ({
+  title,
+  bannerImage,
+  reverse,
+  excerpt,
+  subtitle,
+  techStack,
+  slug,
+  ...props
+}) => {
   const slideFrom = reverse ? "right" : "left"
 
   return (
     <article aria-labelledby="project-heading">
       <SlideIn from={slideFrom}>
-        <Link href={`/${slug}`} className={twMerge(wrapper({ reverse }))}>
+        <Link href={`/${slug}`} className={twMerge(wrapper({ reverse }))} {...props}>
           {bannerImage?.url && (
             <Image
               src={bannerImage?.url}
