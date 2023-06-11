@@ -17,15 +17,16 @@ import {
   StructuredText,
   StructuredTextGraphQlResponse,
 } from "react-datocms"
-import Button, { ButtonProps } from "@molecules/Button"
+import { ButtonProps } from "@molecules/Button"
 
+const Button = dynamic(() => import("@molecules/Button"))
 const Icon = dynamic(() => import("@molecules/Icon"))
 const Image = dynamic(() => import("next/image"))
 const CodeBlock = dynamic(() => import("@molecules/CodeBlock"))
 const Link = dynamic(() => import("@molecules/Link"))
 
-type MakeInline<T, TN> = T & {
-  __typename: TN
+type MakeInline<T, Typename> = T & {
+  __typename: Typename
   id: string
   [prop: string]: unknown
 }
@@ -88,7 +89,7 @@ const structuredTextParser = (data?: StructuredData) => {
           renderNodeRule(isCode, ({ node, children: _, key }) => <CodeBlock key={key} node={node} />),
           renderNodeRule(isBlockquote, ({ node: _, children, key }) => <div key={key}>{children}</div>),
           renderNodeRule(isParagraph, ({ children, key }) => {
-            // prevents linked items from being wrapped in a <p> tag
+            // prevents linked records from being wrapped in a <p> tag
             const nodeData = children && (children[0] as ReactElement)
             const isText = nodeData?.props.children && typeof nodeData.props.children[0] === "string"
 

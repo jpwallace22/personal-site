@@ -1,3 +1,5 @@
+import { ZusSlice } from "@utils/utils"
+
 export interface ClipboardSlice {
   clipBoard: string
   setClipBoard: (arg: string) => void

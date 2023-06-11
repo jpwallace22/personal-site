@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import { ComponentPropsWithoutRef, type FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import Heading from "@molecules/Heading"
@@ -26,10 +26,9 @@ const projectInfo = cva(
   }
 )
 
-export interface ProjectInfoProps
-  extends Omit<ProjectCardFragment, "__typename">,
-    ElementAttributes,
-    VariantProps<typeof projectInfo> {}
+export type ProjectInfoProps = Omit<ProjectCardFragment, "__typename"> &
+  Omit<ComponentPropsWithoutRef<"div">, "title"> &
+  VariantProps<typeof projectInfo>
 
 const ProjectInfo: FC<ProjectInfoProps> = ({ title, reverse, excerpt, subtitle, techStack, className, ...props }) => {
   return (

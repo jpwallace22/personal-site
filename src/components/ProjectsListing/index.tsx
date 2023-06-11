@@ -1,11 +1,11 @@
-import { FC } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 import Circle from "@molecules/Circle"
 import Heading, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
 import ProjectCard from "@components/ProjectsListing/ProjectCard"
 import StructuredText from "@components/StructuredText"
 
-export type ProjectListingProps = ProjectListingFragment & ElementAttributes<HTMLDivElement>
+export type ProjectListingProps = ProjectListingFragment & ComponentPropsWithoutRef<"div">
 
 const ProjectListing: FC<ProjectListingProps> = ({ cards, bgColor, heading, headingAs, sectionId, body }) => {
   return (

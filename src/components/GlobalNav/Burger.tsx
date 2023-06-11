@@ -1,4 +1,5 @@
 import { FC } from "react"
+import { cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 interface BurgerProps {
@@ -6,11 +7,17 @@ interface BurgerProps {
   className?: string
 }
 
-const Burger: FC<BurgerProps> = ({ className, open }) => {
-  const styles = ["plate", "-translate-x-6 -translate-y-5", open && "active"]
+const burger = cva(["plate", "-translate-x-6 -translate-y-5"], {
+  variants: {
+    open: {
+      true: ["active"],
+    },
+  },
+})
 
+const Burger: FC<BurgerProps> = ({ className, open }) => {
   return (
-    <div className={twMerge(styles, className)}>
+    <div className={twMerge(burger({ open, className }))}>
       <svg className="burger" version="1.1" viewBox="0 0 100 100">
         <path className="line top" d="M 30,65 H 70" />
         <path
