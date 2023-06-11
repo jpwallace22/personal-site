@@ -1,3 +1,5 @@
+import { ZusSlice } from "@utils/utils"
+
 export interface ModeSlice {
   isDark: boolean
   setIsDark: (arg: boolean) => void
