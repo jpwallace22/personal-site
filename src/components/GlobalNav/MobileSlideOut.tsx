@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge"
 import Burger from "@components/GlobalNav/Burger"
 import NavMenu from "@components/GlobalNav/NavMenu"
 import useOpenState from "@utils/hooks/useOpenState"
-import type { FC, HTMLAttributes } from "react"
+import type { ComponentPropsWithoutRef, FC } from "react"
 
 const styles = {
   common: ["will-change-transform", "bg-gray-200/95", "dark:bg-purple-800/95", "-ml-4", "sm:-ml-6"],
@@ -14,7 +14,7 @@ const styles = {
   burger: ["text-primary-900", "dark:text-common-white"],
 }
 
-interface MobileSlideOutProps extends HTMLAttributes<HTMLDivElement> {
+interface MobileSlideOutProps extends ComponentPropsWithoutRef<"div"> {
   logo?: Maybe<ImageFragment>
   links?: GlobalNavFragment["links"]
 }

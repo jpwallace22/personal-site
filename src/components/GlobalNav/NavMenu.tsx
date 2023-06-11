@@ -1,6 +1,6 @@
 "use client"
 
-import { Dispatch, FC, HTMLAttributes, SetStateAction } from "react"
+import { ComponentPropsWithoutRef, Dispatch, FC, SetStateAction } from "react"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import Icon from "@molecules/Icon"
@@ -9,7 +9,7 @@ import Socials from "@molecules/Socials"
 import Switch from "@molecules/Switch"
 import useDarkMode from "@utils/hooks/useDarkMode"
 
-export interface NavMenuProps extends HTMLAttributes<HTMLDivElement> {
+export interface NavMenuProps extends ComponentPropsWithoutRef<"div"> {
   logo?: Maybe<ImageFragment>
   links?: GlobalNavFragment["links"]
   setOpen?: Dispatch<SetStateAction<boolean>>
@@ -33,9 +33,10 @@ const styles = {
   ],
 }
 
-const NavMenu: FC<NavMenuProps> = ({ logo, links, setOpen, className }) => {
+const NavMenu: FC<NavMenuProps> = ({ logo, links, setOpen, className, ...props }) => {
   const [isDark, toggleDarkMode] = useDarkMode()
   const iconSize = 32
+
   const handleClick = () => {
     if (setOpen) {
       setOpen(false)
@@ -43,7 +44,7 @@ const NavMenu: FC<NavMenuProps> = ({ logo, links, setOpen, className }) => {
   }
 
   return (
-    <div className={twMerge(styles.wrapper, className)}>
+    <div className={twMerge(styles.wrapper, className)} {...props}>
       {logo && (
         <Link href="/" onClick={handleClick} className="mb-5">
           <Image src={logo?.url} width={200} height={200} alt={logo.alt || ""} />
