@@ -1,4 +1,6 @@
-const circleStyeFromCMS = (cmsInput: string) => {
+import { SwitchbackProps } from "@components/Switchback"
+
+const circleStyleFromCMS = (cmsInput: SwitchbackProps["designAccent"]) => {
   const circleMap = {
     lg: {
       size: "lg",
@@ -17,7 +19,7 @@ const circleStyeFromCMS = (cmsInput: string) => {
     },
   } as const
 
-  if (!Object.keys(circleMap).includes(cmsInput)) {
+  if (!cmsInput || !Object.keys(circleMap).includes(cmsInput)) {
     console.warn(`Incorrect input for circle style. 
         Expected: 'lg | md | dots'
         Received: ${cmsInput}`)
@@ -25,7 +27,7 @@ const circleStyeFromCMS = (cmsInput: string) => {
     return circleMap.dots
   }
 
-  return circleMap[cmsInput as keyof typeof circleMap]
+  return circleMap[cmsInput]
 }
 
-export default circleStyeFromCMS
+export default circleStyleFromCMS
