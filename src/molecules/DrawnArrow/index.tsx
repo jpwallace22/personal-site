@@ -1,6 +1,8 @@
-import { FC, HTMLAttributes } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
+
+interface DrawnArrowProps extends VariantProps<typeof drawnArrow>, ComponentPropsWithoutRef<"svg"> {}
 
 const drawnArrow = cva(["text-purple-400 dark:text-primary-500"], {
   variants: {
@@ -10,11 +12,14 @@ const drawnArrow = cva(["text-purple-400 dark:text-primary-500"], {
   },
 })
 
-interface DrawnArrowProps extends VariantProps<typeof drawnArrow>, HTMLAttributes<HTMLOrSVGElement> {}
-
-const DrawnArrow: FC<DrawnArrowProps> = ({ className, animated }) => {
+const DrawnArrow: FC<DrawnArrowProps> = ({ className, animated, ...props }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379.57 263.14" className={twMerge(drawnArrow({ className }))}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 379.57 263.14"
+      className={twMerge(drawnArrow({ className }))}
+      {...props}
+    >
       <g>
         <clipPath id="clipper">
           <path

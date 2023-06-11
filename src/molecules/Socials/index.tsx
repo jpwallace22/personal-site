@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import Icon from "@molecules/Icon"
@@ -10,6 +10,8 @@ const SOCIAL_DATA = {
   linkedIn: "https://www.linkedin.com/in/thejustinwallace",
   instagram: "https://www.instagram.com/van.surf.climb",
 }
+
+interface SocialProps extends VariantProps<typeof socials>, ComponentPropsWithoutRef<"div"> {}
 
 const socials = cva(["flex items-center"], {
   variants: {
@@ -31,11 +33,9 @@ export const sizeMap = {
   lg: 56,
 }
 
-type SocialProps = VariantProps<typeof socials> & HTMLAttributes<"div">
-
-const Socials: FC<SocialProps> = ({ size, colors, className }) => {
+const Socials: FC<SocialProps> = ({ size, colors, className, ...props }) => {
   return (
-    <div className={twMerge(socials({ size, className }))}>
+    <div className={twMerge(socials({ size, className }))} {...props}>
       {Object.entries(SOCIAL_DATA).map(([social, link]) => (
         <Link key={social} href={link} aria-label={social}>
           <Icon size={sizeMap[size || "sm"]} id={social as IconIds} className={twMerge(socials({ colors }))} />

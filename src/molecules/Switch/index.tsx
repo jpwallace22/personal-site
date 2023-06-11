@@ -5,6 +5,10 @@ import * as Radix from "@radix-ui/react-switch"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
+interface SwitchProps extends VariantProps<typeof switchBase>, Radix.SwitchProps {
+  label?: ReactNode
+}
+
 const defaultVariants = {
   variant: "primary",
   size: "md",
@@ -62,12 +66,6 @@ const switchLabel = cva(["mr-3"], {
   },
   defaultVariants,
 })
-
-interface SwitchProps extends VariantProps<typeof switchBase>, Radix.SwitchProps {
-  id: string
-  label?: ReactNode
-  className?: string
-}
 
 const Switch: FC<SwitchProps> = ({ variant, size, id, label, className, ...props }) => (
   <div className="flex items-center">

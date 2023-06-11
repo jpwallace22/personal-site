@@ -1,9 +1,18 @@
-import { ReactNode } from "react"
+import { ComponentPropsWithoutRef, ReactNode } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import Icon from "@molecules/Icon"
 import parseUrl from "@utils/parseUrl"
 import type { IconIds } from "@molecules/Icon/iconIds"
+
+export interface ButtonProps extends ComponentPropsWithoutRef<"a">, VariantProps<typeof button> {
+  underline?: boolean
+  url?: string
+  startIcon?: IconIds
+  endIcon?: IconIds
+  iconSize?: number | string
+  label?: ReactNode
+}
 
 const button = cva(
   [
@@ -46,17 +55,6 @@ const button = cva(
     },
   }
 )
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
-    VariantProps<typeof button> {
-  underline?: boolean
-  url?: string
-  startIcon?: IconIds
-  endIcon?: IconIds
-  iconSize?: number | string
-  label?: ReactNode
-}
 
 const Button = ({
   className,

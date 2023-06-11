@@ -1,14 +1,11 @@
-import { FC } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 import { twMerge } from "tailwind-merge"
 import { IconIds, iconValues } from "@molecules/Icon/iconIds"
 import hexOrTailwindColor from "@utils/hexOrTailwindColor"
 
-interface IconProps extends React.SVGAttributes<SVGElement> {
+interface IconProps extends ComponentPropsWithoutRef<"svg"> {
   id: IconIds
   size?: number | string
-  className?: string
-  fill?: string
-  stroke?: string
 }
 
 export const Icon: FC<IconProps> = ({ id, size, className, fill, stroke, ...props }) =>

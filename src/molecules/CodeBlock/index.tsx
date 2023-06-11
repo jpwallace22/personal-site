@@ -14,7 +14,7 @@ interface CodeBlockProps {
 const CodeBlock: FC<CodeBlockProps> = ({ node }) => {
   const [copied, copy] = useCopyToClipboard()
 
-  // split the Prism and css load
+  // split the Prism and css load (kinda hefty)
   useEffect(() => {
     import("prismjs").then((Prism) => {
       require("./styles/prism-theme.css")

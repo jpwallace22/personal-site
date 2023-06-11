@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react"
+import { ComponentPropsWithoutRef, FC, ReactNode } from "react"
 import { cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 export type HeadingLevels = 1 | 2 | 3 | 4 | 5 | 6
 export type HeadingMarkup = `h${HeadingLevels}`
 
-interface HeadingProps extends ElementAttributes<HTMLHeadingElement> {
+interface HeadingProps extends ComponentPropsWithoutRef<"h1"> {
   headline: ReactNode
   as?: HeadingMarkup
   eyebrow?: ReactNode

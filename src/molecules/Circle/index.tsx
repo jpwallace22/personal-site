@@ -4,6 +4,10 @@ import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import dotsPath from "src/assets/images/dots.webp"
 
+export interface CircleProps extends VariantProps<typeof circle> {
+  className?: string
+}
+
 const circle = cva(["rounded-full", "-z-10", "absolute"], {
   variants: {
     size: {
@@ -19,10 +23,6 @@ const circle = cva(["rounded-full", "-z-10", "absolute"], {
     },
   },
 })
-
-export interface CircleProps extends VariantProps<typeof circle> {
-  className?: string
-}
 
 const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) => {
   return dots ? (
