@@ -9,7 +9,16 @@ import type { ComponentPropsWithoutRef, FC } from "react"
 
 const styles = {
   common: ["will-change-transform", "bg-gray-200/95", "dark:bg-purple-800/95", "-ml-4", "sm:-ml-6"],
-  tab: ["w-fit", "py-3", "pl-6", "pr-4", "rounded-r-lg", "text-common-white", "sm:pl-7", "cursor-pointer"],
+  tab: [
+    "w-fit",
+    "py-3",
+    "pl-6",
+    "pr-4",
+    "rounded-r-lg",
+    "text-common-white",
+    "sm:pl-7",
+    "cursor-pointer",
+  ],
   box: ["absolute", "top-0", "h-screen-dvh", "w-[71vw]"],
   burger: ["text-primary-900", "dark:text-common-white"],
 }

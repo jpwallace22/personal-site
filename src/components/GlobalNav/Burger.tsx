@@ -1,3 +1,4 @@
+import "./styles/burger.css"
 import { FC } from "react"
 import { cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
