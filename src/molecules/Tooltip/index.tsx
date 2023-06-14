@@ -33,7 +33,9 @@ const tooltipArrow = cva([], {
   },
 })
 
-export interface TooltipProps extends VariantProps<typeof tooltipContent>, RadixTooltip.TooltipProps {
+export interface TooltipProps
+  extends VariantProps<typeof tooltipContent>,
+    RadixTooltip.TooltipProps {
   explainer: React.ReactElement | string
   children: React.ReactElement
   className?: string
@@ -55,7 +57,12 @@ export function Tooltip({
 }: TooltipProps) {
   return (
     <RadixTooltip.Provider>
-      <RadixTooltip.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange} delayDuration={200}>
+      <RadixTooltip.Root
+        open={open}
+        defaultOpen={defaultOpen}
+        onOpenChange={onOpenChange}
+        delayDuration={200}
+      >
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content
@@ -64,7 +71,9 @@ export function Tooltip({
             className={twMerge(tooltipContent({ intent, size, className }))}
           >
             {explainer}
-            {withArrow ? <RadixTooltip.Arrow className={twMerge(tooltipArrow({ intent, size, className }))} /> : null}
+            {withArrow ? (
+              <RadixTooltip.Arrow className={twMerge(tooltipArrow({ intent, size, className }))} />
+            ) : null}
           </RadixTooltip.Content>
         </RadixTooltip.Portal>
       </RadixTooltip.Root>

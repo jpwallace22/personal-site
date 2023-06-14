@@ -15,7 +15,11 @@ const defaultVariants = {
 } as const
 
 const switchBase = cva(
-  ["duration-200 ease-in-out", "relative inline-flex flex-shrink-0 cursor-pointer rounded-full", "transition-colors"],
+  [
+    "duration-200 ease-in-out",
+    "relative inline-flex flex-shrink-0 cursor-pointer rounded-full",
+    "transition-colors",
+  ],
   {
     variants: {
       variant: {

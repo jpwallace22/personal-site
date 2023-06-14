@@ -5,7 +5,9 @@ import Icon from "@molecules/Icon"
 import parseUrl from "@utils/parseUrl"
 import type { IconIds } from "@molecules/Icon/iconIds"
 
-export interface ButtonProps extends ComponentPropsWithoutRef<"a">, VariantProps<typeof button> {
+export interface ButtonProps
+  extends ComponentPropsWithoutRef<"button">,
+    VariantProps<typeof button> {
   underline?: boolean
   url?: string
   startIcon?: IconIds
@@ -19,7 +21,7 @@ const button = cva(
     "justify-center",
     "inline-flex",
     "items-center",
-    "rounded-xl",
+    "rounded-lg",
     "text-center",
     "transition-all",
     "duration-300",
@@ -41,7 +43,10 @@ const button = cva(
           "text-common-black border border-primary-500 hover:bg-gray-200 hover:border-primary-400",
           "dark:text-common-white dark:border-gray-200 dark:hover:bg-purple-800 dark:hover:border-primary-600",
         ],
-        text: ["text-common-black hover:text-purple-600", "dark:text-common-white dark:hover:text-gray-500"],
+        text: [
+          "text-common-black hover:text-purple-600",
+          "dark:text-common-white dark:hover:text-primary-500",
+        ],
       },
       size: {
         sm: ["min-w-20", "h-fit", "min-h-10", "text-lg", "py-1", "px-6"],
@@ -53,6 +58,13 @@ const button = cva(
       variant: "contained",
       size: "md",
     },
+    compoundVariants: [
+      {
+        variant: ["text"],
+        size: ["lg", "md", "sm"],
+        className: ["min-w-0", "min-h-0", "py-0", "px-0"],
+      },
+    ],
   }
 )
 

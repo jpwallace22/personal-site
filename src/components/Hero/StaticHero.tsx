@@ -42,7 +42,8 @@ const StaticHero = () => {
           )}
           <h1 className={twJoin(styles.h1)}>
             Oh, hello there!<span className={twJoin(styles.hand)}> 👋🏼</span> I&apos;m{" "}
-            <span className="text-gradient-primary">Justin Wallace</span> A dedicated developer & designer
+            <span className="text-gradient-primary">Justin Wallace</span> A dedicated developer &
+            designer
           </h1>
           <span className={twJoin(styles.tagline)}>(Don&apos;t you just love alliteration?)</span>
         </div>

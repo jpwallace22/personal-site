@@ -7,16 +7,26 @@ import Link from "@molecules/Link"
 import ProjectInfo from "@components/ProjectsListing/ProjectInfo"
 
 const transition = "transition-transform duration-1000 ease-in-out"
-const wrapper = cva(["flex", "w-screen max-w-6xl", "items-center", "group", "md:w-fit", "min-h-[325px]"], {
-  variants: {
-    reverse: {
-      true: ["flex-row-reverse"],
+const wrapper = cva(
+  ["flex", "w-screen max-w-6xl", "items-center", "group", "md:w-fit", "min-h-[325px]"],
+  {
+    variants: {
+      reverse: {
+        true: ["flex-row-reverse"],
+      },
     },
-  },
-})
+  }
+)
 
 const image = cva(
-  ["opacity-20", "dark:brightness-75", "group-hover:rotate-3", "md:translate-x-20", "md:opacity-100", transition],
+  [
+    "opacity-20",
+    "dark:brightness-75",
+    "group-hover:rotate-3",
+    "md:translate-x-20",
+    "md:opacity-100",
+    transition,
+  ],
   {
     variants: {
       reverse: {

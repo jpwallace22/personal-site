@@ -33,7 +33,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${darkerGrotesque.variable} ${ibmPlex.variable} ${plexMono.variable} dark`}>
+    <html
+      lang="en"
+      className={`${darkerGrotesque.variable} ${ibmPlex.variable} ${plexMono.variable} dark`}
+    >
       <body>
         <GlobalNav />
         {children}

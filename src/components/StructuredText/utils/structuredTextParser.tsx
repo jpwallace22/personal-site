@@ -37,7 +37,9 @@ export type StructuredData = StructuredTextGraphQlResponse | Record<string, unkn
 // TODO write tests
 
 const structuredTextParser = (data?: StructuredData) => {
-  const { wrapButtons, firstButton, secondButton, skipId } = buttonWrapper(data?.links as InlineRecords[])
+  const { wrapButtons, firstButton, secondButton, skipId } = buttonWrapper(
+    data?.links as InlineRecords[]
+  )
 
   if (data?.value) {
     return (
@@ -86,12 +88,17 @@ const structuredTextParser = (data?: StructuredData) => {
               {children}
             </Link>
           )),
-          renderNodeRule(isCode, ({ node, children: _, key }) => <CodeBlock key={key} node={node} />),
-          renderNodeRule(isBlockquote, ({ node: _, children, key }) => <div key={key}>{children}</div>),
+          renderNodeRule(isCode, ({ node, children: _, key }) => (
+            <CodeBlock key={key} node={node} />
+          )),
+          renderNodeRule(isBlockquote, ({ node: _, children, key }) => (
+            <div key={key}>{children}</div>
+          )),
           renderNodeRule(isParagraph, ({ children, key }) => {
             // prevents linked records from being wrapped in a <p> tag
             const nodeData = children && (children[0] as ReactElement)
-            const isText = nodeData?.props.children && typeof nodeData.props.children[0] === "string"
+            const isText =
+              nodeData?.props.children && typeof nodeData.props.children[0] === "string"
 
             return isText ? <p key={key}>{children}</p> : <div key={key}>{children}</div>
           }),
@@ -140,7 +147,9 @@ const structuredTextParser = (data?: StructuredData) => {
                     width={record.width as number}
                     height={record.height as number}
                   />
-                  {typeof record?.title === "string" && <div className="text-center text-base">{record?.title}</div>}
+                  {typeof record?.title === "string" && (
+                    <div className="text-center text-base">{record?.title}</div>
+                  )}
                 </div>
               )
             default:

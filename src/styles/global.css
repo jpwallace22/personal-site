@@ -1,5 +1,4 @@
 @import url(./utilities.css);
-@import url(../components/GlobalNav/styles/burger.css);
 @tailwind components;
 @tailwind base;
 
@@ -11,6 +10,10 @@
   body {
     @apply bg-common-white font-body text-lg text-gray-800 dark:bg-purple-950 dark:font-light dark:text-gray-400;
     @apply shadow-common-black hover:shadow-common-black;
+  }
+
+  strong {
+    @apply font-bold;
   }
 
   h1,

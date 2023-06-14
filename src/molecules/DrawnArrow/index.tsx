@@ -2,7 +2,9 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
-interface DrawnArrowProps extends VariantProps<typeof drawnArrow>, ComponentPropsWithoutRef<"svg"> {}
+interface DrawnArrowProps
+  extends VariantProps<typeof drawnArrow>,
+    ComponentPropsWithoutRef<"svg"> {}
 
 const drawnArrow = cva(["text-purple-400 dark:text-primary-500"], {
   variants: {

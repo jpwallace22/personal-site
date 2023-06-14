@@ -13,7 +13,13 @@ describe("ProjectInfo", () => {
     const className = "custom-class"
 
     const { container, getByRole, getByText } = render(
-      <ProjectInfo title={title} reverse={reverse} subtitle={subtitle} techStack={fakeTechs} className={className} />
+      <ProjectInfo
+        title={title}
+        reverse={reverse}
+        subtitle={subtitle}
+        techStack={fakeTechs}
+        className={className}
+      />
     )
 
     const headingElement = getByRole("heading", { name: "Project Title" })
