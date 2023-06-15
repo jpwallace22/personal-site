@@ -43,7 +43,8 @@ export const fakeStructuredText = {
             },
             {
               type: "span",
-              value: " libero eget elit. Aliquam quam felis, sagittis vitae felis aliquam, mollis vehicula ex. ",
+              value:
+                " libero eget elit. Aliquam quam felis, sagittis vitae felis aliquam, mollis vehicula ex. ",
             },
             {
               type: "span",
@@ -157,7 +158,8 @@ export const fakeStructuredText = {
             {
               type: "span",
               marks: ["underline"],
-              value: " Phasellus ut iaculis metus. Fusce eget feugiat justo. Nullam non blandit magna.",
+              value:
+                " Phasellus ut iaculis metus. Fusce eget feugiat justo. Nullam non blandit magna.",
             },
             {
               type: "span",

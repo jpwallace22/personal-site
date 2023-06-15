@@ -7,3 +7,24 @@ fragment Image on FileField {
   width
   url
 }
+
+fragment Company on CompanyRecord {
+  name
+  logo {
+    ...Image
+  }
+  website
+}
+
+fragment Person on PersonRecord {
+  firstName
+  lastName
+  role
+  thumbnail {
+    ...Image
+  }
+  company {
+    ...Company
+  }
+  website
+}

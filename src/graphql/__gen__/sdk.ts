@@ -91,6 +91,51 @@ export const ProjectListingFragment = gql`
   }
   ${ProjectCardFragment}
 `
+export const CompanyFragment = gql`
+  fragment Company on CompanyRecord {
+    name
+    logo {
+      ...Image
+    }
+    website
+  }
+  ${ImageFragment}
+`
+export const PersonFragment = gql`
+  fragment Person on PersonRecord {
+    firstName
+    lastName
+    role
+    thumbnail {
+      ...Image
+    }
+    company {
+      ...Company
+    }
+    website
+  }
+  ${ImageFragment}
+  ${CompanyFragment}
+`
+export const TestimonialCardFragment = gql`
+  fragment TestimonialCard on TestimonialCardRecord {
+    quote {
+      value
+    }
+    person {
+      ...Person
+    }
+  }
+  ${PersonFragment}
+`
+export const CarouselFragment = gql`
+  fragment Carousel on CarouselRecord {
+    cards {
+      ...TestimonialCard
+    }
+  }
+  ${TestimonialCardFragment}
+`
 export const PageFragment = gql`
   fragment Page on TemplatePageRecord {
     id
@@ -98,6 +143,7 @@ export const PageFragment = gql`
     components {
       ...Switchback
       ...ProjectListing
+      ...Carousel
     }
     seo {
       description
@@ -109,6 +155,7 @@ export const PageFragment = gql`
   }
   ${SwitchbackFragment}
   ${ProjectListingFragment}
+  ${CarouselFragment}
   ${ImageFragment}
 `
 export const GlobalNavComponentQuery = gql`
@@ -145,10 +192,16 @@ export function useGlobalNavComponentQuery(
   baseOptions?: Apollo.QueryHookOptions<GlobalNavComponentQuery, GlobalNavComponentQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<GlobalNavComponentQuery, GlobalNavComponentQueryVariables>(GlobalNavComponentQuery, options)
+  return Apollo.useQuery<GlobalNavComponentQuery, GlobalNavComponentQueryVariables>(
+    GlobalNavComponentQuery,
+    options
+  )
 }
 export function useGlobalNavComponentLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<GlobalNavComponentQuery, GlobalNavComponentQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GlobalNavComponentQuery,
+    GlobalNavComponentQueryVariables
+  >
 ) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useLazyQuery<GlobalNavComponentQuery, GlobalNavComponentQueryVariables>(
@@ -157,7 +210,9 @@ export function useGlobalNavComponentLazyQuery(
   )
 }
 export type GlobalNavComponentQueryHookResult = ReturnType<typeof useGlobalNavComponentQuery>
-export type GlobalNavComponentLazyQueryHookResult = ReturnType<typeof useGlobalNavComponentLazyQuery>
+export type GlobalNavComponentLazyQueryHookResult = ReturnType<
+  typeof useGlobalNavComponentLazyQuery
+>
 export type GlobalNavComponentQueryResult = Apollo.QueryResult<
   GlobalNavComponentQuery,
   GlobalNavComponentQueryVariables
@@ -204,11 +259,15 @@ export const StpTestQuery = gql`
  *   },
  * });
  */
-export function useStpTestQuery(baseOptions?: Apollo.QueryHookOptions<StpTestQuery, StpTestQueryVariables>) {
+export function useStpTestQuery(
+  baseOptions?: Apollo.QueryHookOptions<StpTestQuery, StpTestQueryVariables>
+) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useQuery<StpTestQuery, StpTestQueryVariables>(StpTestQuery, options)
 }
-export function useStpTestLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<StpTestQuery, StpTestQueryVariables>) {
+export function useStpTestLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<StpTestQuery, StpTestQueryVariables>
+) {
   const options = { ...defaultOptions, ...baseOptions }
   return Apollo.useLazyQuery<StpTestQuery, StpTestQueryVariables>(StpTestQuery, options)
 }
@@ -250,8 +309,14 @@ export function useTemplatePageLazyQuery(
   baseOptions?: Apollo.LazyQueryHookOptions<TemplatePageQuery, TemplatePageQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<TemplatePageQuery, TemplatePageQueryVariables>(TemplatePageQuery, options)
+  return Apollo.useLazyQuery<TemplatePageQuery, TemplatePageQueryVariables>(
+    TemplatePageQuery,
+    options
+  )
 }
 export type TemplatePageQueryHookResult = ReturnType<typeof useTemplatePageQuery>
 export type TemplatePageLazyQueryHookResult = ReturnType<typeof useTemplatePageLazyQuery>
-export type TemplatePageQueryResult = Apollo.QueryResult<TemplatePageQuery, TemplatePageQueryVariables>
+export type TemplatePageQueryResult = Apollo.QueryResult<
+  TemplatePageQuery,
+  TemplatePageQueryVariables
+>

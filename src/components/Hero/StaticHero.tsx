@@ -26,14 +26,13 @@ const StaticHero = () => {
   return (
     <Section>
       <div className="relative h-[80vh]">
-        <Circle dots className="left-1/2" />
+        <Circle dots className="left-1/2" priority />
         <Circle size="lg" contrast="low" className="bottom-1/2 right-1/3 lg:right-1/2" />
         <Circle size="md" contrast="high" className="left-3/4 top-12" />
         <div className={twJoin(styles.wrapper)}>
           <DrawnArrow className="absolute bottom-[115%] right-3/4 hidden w-96 lg:block" animated />
           {logoPath && (
             <Image
-              priority
               src={logoPath}
               width={130}
               height={130}
@@ -43,7 +42,8 @@ const StaticHero = () => {
           )}
           <h1 className={twJoin(styles.h1)}>
             Oh, hello there!<span className={twJoin(styles.hand)}> 👋🏼</span> I&apos;m{" "}
-            <span className="text-gradient-primary">Justin Wallace</span> A dedicated developer & designer
+            <span className="text-gradient-primary">Justin Wallace</span> A dedicated developer &
+            designer
           </h1>
           <span className={twJoin(styles.tagline)}>(Don&apos;t you just love alliteration?)</span>
         </div>

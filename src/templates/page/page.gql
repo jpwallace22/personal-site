@@ -4,6 +4,7 @@ fragment Page on TemplatePageRecord {
   components {
     ...Switchback
     ...ProjectListing
+    ...Carousel
   }
   seo {
     description

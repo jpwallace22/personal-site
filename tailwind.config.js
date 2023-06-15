@@ -56,7 +56,6 @@ module.exports = {
         800: "#241F45",
         900: "#1B1733",
         950: "#110e2d",
-        // 950: "#16132A", maybe?
       },
     },
     fontFamily: {
@@ -91,13 +90,24 @@ module.exports = {
         "7xl": ["4.5rem", ".8"],
         "6xl": ["3.75rem", ".8"],
         "5xl": ["3rem", ".8"],
-        "4xl": ["2.25rem", ".8"],
-        "3xl": ["1.975rem", ".8"],
+        "4xl": ["2.25rem", "1.25"],
+        "3xl": ["1.975rem", "1.25"],
         xl: ["1.25rem", "1.85"],
         lg: ["1.125rem", "1.75"],
       },
       animation: {
         draw: "draw 1s ease-in forwards",
+      },
+      flex: {
+        full: "0 0 100%",
+        "1/2": "0 0 50%",
+        "1/3": "0 0 33%",
+      },
+      gradientColorStopPositions: {
+        5: "5%",
+      },
+      scale: {
+        "-1": "-1",
       },
     },
   },

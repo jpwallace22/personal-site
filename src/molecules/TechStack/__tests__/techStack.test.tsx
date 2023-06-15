@@ -10,7 +10,9 @@ export const fakeTechs = [
 
 describe("TechStack Component", () => {
   it("renders the component with horizontal direction and no reverse", () => {
-    const { getByRole } = render(<TechStack techs={fakeTechs} direction="horizontal" reverse={false} />)
+    const { getByRole } = render(
+      <TechStack techs={fakeTechs} direction="horizontal" reverse={false} />
+    )
     const techStackElement = getByRole("list")
 
     expect(techStackElement).toBeInTheDocument()
@@ -21,7 +23,9 @@ describe("TechStack Component", () => {
   })
 
   it("renders the component with vertical direction and reverse", () => {
-    const { getByRole } = render(<TechStack techs={fakeTechs} direction="vertical" reverse={true} />)
+    const { getByRole } = render(
+      <TechStack techs={fakeTechs} direction="vertical" reverse={true} />
+    )
     const techStackElement = getByRole("list")
 
     expect(techStackElement).toBeInTheDocument()

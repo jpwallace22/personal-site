@@ -4,4 +4,8 @@ type Props = {
   data?: StructuredData
 }
 
-export type StructuredTextProps<V extends VariantFunc = never> = ComponentProps<Props, HTMLDivElement, V>
+export type StructuredTextProps<V extends VariantFunc = never> = ComponentProps<
+  Props,
+  HTMLDivElement,
+  V
+>

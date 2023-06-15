@@ -1,4 +1,15 @@
 declare global {
+  export type TestimonialCardFragment = {
+    __typename: "TestimonialCardRecord"
+    quote?: { __typename: "TestimonialCardModelQuoteField"; value: unknown } | null
+    person?: ({ __typename: "PersonRecord" } & PersonFragment) | null
+  }
+
+  export type CarouselFragment = {
+    __typename: "CarouselRecord"
+    cards: Array<{ __typename: "TestimonialCardRecord" } & TestimonialCardFragment>
+  }
+
   export type GlobalNavFragment = {
     __typename: "GlobalNavRecord"
     id: string
@@ -18,7 +29,11 @@ declare global {
     title?: string | null
     subtitle?: string | null
     slug?: string | null
-    excerpt?: { __typename: "ProjectModelExcerptField"; value: unknown; links: Array<string> } | null
+    excerpt?: {
+      __typename: "ProjectModelExcerptField"
+      value: unknown
+      links: Array<string>
+    } | null
     techStack: Array<{
       __typename: "TechStackRecord"
       title?: string | null
@@ -93,6 +108,23 @@ declare global {
     url: string
   }
 
+  export type CompanyFragment = {
+    __typename: "CompanyRecord"
+    name?: string | null
+    website?: string | null
+    logo?: ({ __typename: "FileField" } & ImageFragment) | null
+  }
+
+  export type PersonFragment = {
+    __typename: "PersonRecord"
+    firstName?: string | null
+    lastName?: string | null
+    role?: string | null
+    website?: string | null
+    thumbnail?: ({ __typename: "FileField" } & ImageFragment) | null
+    company?: ({ __typename: "CompanyRecord" } & CompanyFragment) | null
+  }
+
   export type ButtonFragment = {
     __typename: "ButtonRecord"
     id: string
@@ -109,6 +141,7 @@ declare global {
     id: string
     slug?: string | null
     components: Array<
+      | ({ __typename: "CarouselRecord" } & CarouselFragment)
       | ({ __typename: "ProjectListingRecord" } & ProjectListingFragment)
       | ({ __typename: "SwitchbackRecord" } & SwitchbackFragment)
     >

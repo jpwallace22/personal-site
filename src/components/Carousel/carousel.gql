@@ -1,0 +1,14 @@
+fragment TestimonialCard on TestimonialCardRecord {
+  quote {
+    value
+  }
+  person {
+    ...Person
+  }
+}
+
+fragment Carousel on CarouselRecord {
+  cards {
+    ...TestimonialCard
+  }
+}

@@ -23,7 +23,9 @@ describe("Switch molecule", () => {
 
   it("calls the onCheckedChange function with the correct value when clicked", () => {
     const onCheckedChange = jest.fn()
-    const { getByRole } = render(<Switch id="switchId" checked={false} onCheckedChange={onCheckedChange} />)
+    const { getByRole } = render(
+      <Switch id="switchId" checked={false} onCheckedChange={onCheckedChange} />
+    )
     const switchInput = getByRole("switch")
 
     fireEvent.click(switchInput)

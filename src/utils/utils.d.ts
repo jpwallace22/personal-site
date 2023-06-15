@@ -7,6 +7,10 @@ declare global {
    * Generic for Type or Null
    */
   type Maybe<T> = T | null
+  /**
+   * Removes required data from CMS
+   */
+  type Clean<T> = Omit<T, "__typename">
 }
 
 export {}

@@ -35,7 +35,14 @@ const techStack = cva(["flex", "gap-6"], {
   ],
 })
 
-const TechStack: FC<TechStackProps> = ({ techs, direction, className, reverse, thumbSize = 32, ...props }) => {
+const TechStack: FC<TechStackProps> = ({
+  techs,
+  direction,
+  className,
+  reverse,
+  thumbSize = 32,
+  ...props
+}) => {
   return (
     <ul className={twMerge(techStack({ direction, reverse, className }))} {...props}>
       {techs.map(

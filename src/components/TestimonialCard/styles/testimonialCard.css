@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .testimonial-card strong {
+    @apply font-body text-primary-500;
+  }
+}

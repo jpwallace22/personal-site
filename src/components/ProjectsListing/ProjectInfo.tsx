@@ -30,7 +30,15 @@ export type ProjectInfoProps = Omit<ProjectCardFragment, "__typename"> &
   Omit<ComponentPropsWithoutRef<"div">, "title"> &
   VariantProps<typeof projectInfo>
 
-const ProjectInfo: FC<ProjectInfoProps> = ({ title, reverse, excerpt, subtitle, techStack, className, ...props }) => {
+const ProjectInfo: FC<ProjectInfoProps> = ({
+  title,
+  reverse,
+  excerpt,
+  subtitle,
+  techStack,
+  className,
+  ...props
+}) => {
   return (
     <div className={twMerge(projectInfo({ reverse, className }))} {...props}>
       <Heading

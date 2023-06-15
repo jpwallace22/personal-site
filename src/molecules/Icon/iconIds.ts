@@ -1,5 +1,6 @@
 export const iconValues = new Set([
   "check",
+  "chevron-right",
   "copy",
   "github",
   "instagram",
@@ -7,12 +8,14 @@ export const iconValues = new Set([
   "moon",
   "next",
   "node",
+  "quote",
   "react",
   "sun",
   "typescript",
 ])
 export type IconIds =
   | "check"
+  | "chevron-right"
   | "copy"
   | "github"
   | "instagram"
@@ -20,6 +23,7 @@ export type IconIds =
   | "moon"
   | "next"
   | "node"
+  | "quote"
   | "react"
   | "sun"
   | "typescript"

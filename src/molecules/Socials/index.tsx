@@ -21,7 +21,10 @@ const socials = cva(["flex items-center"], {
       lg: ["gap-7"],
     },
     colors: {
-      standard: ["text-purple-800 dark:text-gray-200", "hover:text-primary-500 dark:hover:text-primary-500"],
+      standard: [
+        "text-purple-800 dark:text-gray-200",
+        "hover:text-primary-500 dark:hover:text-primary-500",
+      ],
     },
   },
   defaultVariants: { size: "md", colors: "standard" },
@@ -38,7 +41,11 @@ const Socials: FC<SocialProps> = ({ size, colors, className, ...props }) => {
     <div className={twMerge(socials({ size, className }))} {...props}>
       {Object.entries(SOCIAL_DATA).map(([social, link]) => (
         <Link key={social} href={link} aria-label={social}>
-          <Icon size={sizeMap[size || "sm"]} id={social as IconIds} className={twMerge(socials({ colors }))} />
+          <Icon
+            size={sizeMap[size || "sm"]}
+            id={social as IconIds}
+            className={twMerge(socials({ colors }))}
+          />
         </Link>
       ))}
     </div>

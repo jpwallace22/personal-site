@@ -6,6 +6,7 @@ import dotsPath from "src/assets/images/dots.webp"
 
 export interface CircleProps extends VariantProps<typeof circle> {
   className?: string
+  priority?: boolean
 }
 
 const circle = cva(["rounded-full", "-z-10", "absolute"], {
@@ -24,9 +25,10 @@ const circle = cva(["rounded-full", "-z-10", "absolute"], {
   },
 })
 
-const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) => {
+const Circle: FC<CircleProps> = ({ size, contrast, className, dots, priority, ...props }) => {
   return dots ? (
     <Image
+      priority={priority}
       aria-hidden
       src={dotsPath}
       width={635}
@@ -36,7 +38,12 @@ const Circle: FC<CircleProps> = ({ size, contrast, className, dots, ...props }) 
       {...props}
     />
   ) : (
-    <div aria-hidden role="img" className={twMerge(circle({ size, contrast, className }))} {...props} />
+    <div
+      aria-hidden
+      role="img"
+      className={twMerge(circle({ size, contrast, className }))}
+      {...props}
+    />
   )
 }
 

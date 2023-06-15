@@ -4,6 +4,9 @@ import { IconIds, iconValues } from "@molecules/Icon/iconIds"
 import hexOrTailwindColor from "@utils/hexOrTailwindColor"
 
 interface IconProps extends ComponentPropsWithoutRef<"svg"> {
+  /**
+   * string name of icon to be rendered
+   */
   id: IconIds
   size?: number | string
 }

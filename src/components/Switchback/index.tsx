@@ -7,13 +7,16 @@ import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
 import circleStyleFromCMS from "@components/Switchback/utils/circleStyleFromCMS"
 
-const wrapper = cva(["flex", "w-full", "flex-col lg:flex-row", "items-center", "gap-12 xl:gap-32"], {
-  variants: {
-    reverse: {
-      true: ["lg:flex-row-reverse"],
+const wrapper = cva(
+  ["flex", "w-full", "flex-col lg:flex-row", "items-center", "gap-12 xl:gap-32"],
+  {
+    variants: {
+      reverse: {
+        true: ["lg:flex-row-reverse"],
+      },
     },
-  },
-})
+  }
+)
 const circle = cva([], {
   variants: {
     designAccent: {
@@ -51,7 +54,9 @@ const Switchback: FC<SwitchbackProps> = ({
           <StructuredText data={body} />
         </div>
         <div className={asset()}>
-          {designAccent && <Circle {...circleStyleFromCMS(designAccent)} className={circle({ designAccent })} />}
+          {designAccent && (
+            <Circle {...circleStyleFromCMS(designAccent)} className={circle({ designAccent })} />
+          )}
           {image?.url && <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />}
         </div>
       </div>
