@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import Section, { SectionProps } from "@molecules/Section"
 
 describe("Section Component", () => {
+  expect.extend(toHaveNoViolations)
+
   const setup = (props?: SectionProps) => {
     return render(<Section {...props}>Test Content</Section>)
   }
@@ -31,5 +34,10 @@ describe("Section Component", () => {
     setup({ fullWidth: true })
     const sectionElement = screen.getByText("Test Content")
     expect(sectionElement).toHaveClass("max-w-full")
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<Section>Test Content</Section>)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

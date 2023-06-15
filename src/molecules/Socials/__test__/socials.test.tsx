@@ -1,7 +1,10 @@
 import { cleanup, render } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import Socials, { sizeMap } from "../"
 
 describe("Socials component", () => {
+  expect.extend(toHaveNoViolations)
+
   it("renders social icons with correct links", () => {
     const { getByRole } = render(<Socials />)
 
@@ -41,5 +44,10 @@ describe("Socials component", () => {
         ${error}`)
       }
     }
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<Socials />)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import { fakeImage } from "@utils/mockDataForTest"
-import TechStack from "../"
+import TechStack from ".."
 
 export const fakeTechs = [
   { __typename: "TechStackRecord" as const, title: "Tech 1", thumbnail: fakeImage },
@@ -9,6 +10,8 @@ export const fakeTechs = [
 ]
 
 describe("TechStack Component", () => {
+  expect.extend(toHaveNoViolations)
+
   it("renders the component with horizontal direction and no reverse", () => {
     const { getByRole } = render(
       <TechStack techs={fakeTechs} direction="horizontal" reverse={false} />
@@ -51,5 +54,10 @@ describe("TechStack Component", () => {
       expect(isNextSrc).toBeTruthy()
       expect(image).toHaveAttribute("alt", fakeTechs[index].title)
     })
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<TechStack techs={fakeTechs} />)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

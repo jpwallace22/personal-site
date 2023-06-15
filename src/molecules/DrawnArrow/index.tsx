@@ -20,6 +20,7 @@ const DrawnArrow: FC<DrawnArrowProps> = ({ className, animated, ...props }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 379.57 263.14"
       className={twMerge(drawnArrow({ className }))}
+      role="img"
       {...props}
     >
       <g>
