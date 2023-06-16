@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef, ElementType, type FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
-import Button from "@molecules/Button"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
@@ -61,7 +60,6 @@ const Switchback: FC<SwitchbackProps> = ({
           {image?.url && <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />}
         </div>
       </div>
-      <Button label="For Demonstration" size="md" variant="contained" />
     </Section>
   )
 }
