@@ -1,6 +1,6 @@
 import { cleanup, render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import Socials, { sizeMap } from "../"
+import Socials, { sizeMap } from ".."
 
 describe("Socials component", () => {
   expect.extend(toHaveNoViolations)

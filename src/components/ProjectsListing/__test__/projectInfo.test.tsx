@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import { fakeTechs } from "@molecules/TechStack/__tests__/techStack.test"
+import { fakeTechs } from "@molecules/TechStack/__test__/techStack.test"
 import ProjectInfo from "../ProjectInfo"
 
 describe("ProjectInfo", () => {

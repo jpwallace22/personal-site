@@ -1,12 +1,11 @@
 import { render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import { fakeTechs } from "@molecules/TechStack/__tests__/techStack.test"
+import { fakeTechs } from "@molecules/TechStack/__test__/techStack.test"
 import { fakeImage } from "@utils/mockDataForTest"
 import ProjectCard from "../ProjectCard"
 
 describe("ProjectCard", () => {
   beforeEach(() => {
-    // IntersectionObserver isn't available in test environment
     const mockIntersectionObserver = jest.fn()
     mockIntersectionObserver.mockReturnValue({
       observe: () => null,

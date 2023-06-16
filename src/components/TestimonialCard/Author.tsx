@@ -22,9 +22,9 @@ const Author: FC<AuthorProps> = ({
     <Link
       rel="author"
       href={website || ""}
-      className="transition-all duration-300 hover:brightness-110"
+      className="w-fit transition-all duration-300 hover:brightness-110"
     >
-      <div className={twMerge("flex flex-row items-center gap-4", className)}>
+      <div className={twMerge("flex w-fit flex-row items-center gap-4", className)}>
         {image && (
           <Image src={image.url} alt={altText} width={80} height={80} className="rounded-full" />
         )}

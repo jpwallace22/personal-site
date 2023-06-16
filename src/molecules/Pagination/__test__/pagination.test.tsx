@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import Pagination from "../"
+import Pagination from ".."
 
 describe("Pagination component", () => {
   expect.extend(toHaveNoViolations)

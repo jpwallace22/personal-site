@@ -36,16 +36,22 @@ const button = cva(
     variants: {
       variant: {
         contained: [
-          "bg-primary-500 text-common-white hover:bg-primary-600 hover:shadow-standard",
-          "dark:bg-gray-200 dark:text-common-black dark:hover:bg-primary-600",
+          "bg-primary-500 text-common-white",
+          "hover:bg-primary-600 hover:shadow-standard",
+          "dark:bg-gray-200 dark:text-common-black",
+          "dark:hover:bg-primary-600",
         ],
         outlined: [
-          "text-common-black border border-primary-500 hover:bg-gray-200 hover:border-primary-400",
-          "dark:text-common-white dark:border-gray-200 dark:hover:bg-purple-800 dark:hover:border-primary-600",
+          "text-common-black border border-primary-500",
+          "hover:bg-gray-200 hover:border-primary-400",
+          "dark:text-common-white dark:border-gray-200",
+          "dark:hover:bg-purple-800 dark:hover:border-primary-600",
         ],
         text: [
-          "text-common-black hover:text-purple-600",
-          "dark:text-common-white dark:hover:text-primary-500",
+          "text-common-black",
+          "hover:text-purple-600",
+          "dark:text-common-white",
+          "dark:hover:text-primary-500",
         ],
       },
       size: {
