@@ -32,13 +32,30 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <div className={twMerge(wrapper({ className }))}>
-      <PaginationButton side="left" onClick={handleLeftArrowClick} disabled={firstActive} />
+      <PaginationButton
+        side="left"
+        onClick={handleLeftArrowClick}
+        disabled={firstActive}
+        aria-hidden={firstActive}
+        aria-label="Left arrow"
+      />
       <div className={twMerge(dotWrapper())} {...props}>
         {Array.from({ length: count }, (_, i) => (
-          <PaginationDot key={i} active={activeDot === i} onClick={() => handleActiveDot(i)} />
+          <PaginationDot
+            key={i}
+            index={i}
+            active={activeDot === i}
+            onClick={() => handleActiveDot(i)}
+            onKeyDown={({ key }) => key === "Enter" && handleActiveDot(i)}
+          />
         ))}
       </div>
-      <PaginationButton onClick={handleRightArrowClick} disabled={lastActive} />
+      <PaginationButton
+        onClick={handleRightArrowClick}
+        disabled={lastActive}
+        aria-hidden={lastActive}
+        aria-label="Right arrow"
+      />
     </div>
   )
 }

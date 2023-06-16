@@ -96,7 +96,7 @@ module.exports = {
         lg: ["1.125rem", "1.75"],
       },
       animation: {
-        draw: "draw 1s ease-in forwards",
+        draw: "draw 1s ease-in 700ms forwards",
       },
       flex: {
         full: "0 0 100%",

@@ -52,7 +52,12 @@ const NavMenu: FC<NavMenuProps> = ({ logo, links, setOpen, className, ...props }
       )}
       <div className={twMerge(styles.switch)}>
         <Icon id="moon" size={iconSize} />
-        <Switch size="lg" id="dark-mode" checked={!isDark} onCheckedChange={toggleDarkMode} />
+        <Switch
+          size="lg"
+          aria-label="Switch between light and dark modes"
+          checked={!isDark}
+          onCheckedChange={toggleDarkMode}
+        />
         <Icon id="sun" size={iconSize} />
       </div>
       <ul className={twMerge(styles.list)}>

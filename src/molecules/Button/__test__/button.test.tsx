@@ -1,7 +1,9 @@
 import { render, RenderResult } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import Button, { ButtonProps } from "@molecules/Button"
 
 describe("Button molecule", () => {
+  expect.extend(toHaveNoViolations)
   let renderResult: RenderResult
 
   const setup = (props?: ButtonProps) => {
@@ -39,5 +41,10 @@ describe("Button molecule", () => {
     const buttonElement = renderResult.getByRole("button")
     expect(buttonElement).not.toHaveClass("text-2xl")
     expect(buttonElement).toHaveClass(className)
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<Button>test</Button>)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

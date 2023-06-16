@@ -1,7 +1,9 @@
 import { fireEvent, render } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import Switch from "@molecules/Switch"
 
 describe("Switch molecule", () => {
+  expect.extend(toHaveNoViolations)
   it("should render a <button> with a switch role", () => {
     const { getByRole } = render(<Switch id="test">test</Switch>)
 
@@ -32,5 +34,10 @@ describe("Switch molecule", () => {
 
     expect(onCheckedChange).toHaveBeenCalledTimes(1)
     expect(onCheckedChange).toHaveBeenCalledWith(true)
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<Switch id="switchId" aria-label="switch" />)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

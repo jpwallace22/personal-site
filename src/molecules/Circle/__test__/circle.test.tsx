@@ -1,7 +1,9 @@
 import { render, RenderResult } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
 import Circle, { CircleProps } from "@molecules/Circle"
 
 describe("Circle Component", () => {
+  expect.extend(toHaveNoViolations)
   let renderResult: RenderResult
 
   const setup = (props?: CircleProps) => {
@@ -41,5 +43,15 @@ describe("Circle Component", () => {
     const circleElement = renderResult.getByRole("img", { hidden: true })
     expect(circleElement).toHaveClass("bg-gray-100")
     expect(circleElement).toHaveClass("dark:bg-purple-900")
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<Circle />)
+    expect(await axe(container)).toHaveNoViolations()
+  })
+
+  it("renders without accessibility violations with dots", async () => {
+    const { container } = render(<Circle dots />)
+    expect(await axe(container)).toHaveNoViolations()
   })
 })

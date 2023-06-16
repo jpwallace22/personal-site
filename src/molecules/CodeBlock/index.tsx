@@ -13,8 +13,6 @@ interface CodeBlockProps {
 
 const CodeBlock: FC<CodeBlockProps> = ({ node }) => {
   const [copied, copy] = useCopyToClipboard()
-
-  // split the Prism and css load (kinda hefty)
   useEffect(() => {
     import("prismjs").then((Prism) => {
       require("./styles/prism-theme.css")
@@ -27,21 +25,24 @@ const CodeBlock: FC<CodeBlockProps> = ({ node }) => {
   const label = inClipboard ? "Copied" : "Copy"
 
   return (
-    <pre className="relative block overflow-auto whitespace-pre rounded-lg border-2 border-primary-500 p-4">
-      <Button
-        className={twMerge([
-          "absolute right-0 top-0 z-10 h-fit hover:text-purple-200 hover:dark:text-purple-200",
-          buttonColor,
-        ])}
-        variant="text"
-        size="sm"
-        startIcon="copy"
-        onClick={() => copy(node.code)}
-      >
-        {label}
-      </Button>
+    <pre className="relative block overflow-auto whitespace-pre rounded-lg border border-primary-500">
+      <div className="flex h-10 items-center justify-between border-b border-b-gray-800 bg-gray-950 px-4">
+        <span className="font-body text-sm text-common-white">{node.language}</span>
+        <Button
+          className={twMerge([
+            "w-fit hover:text-purple-200 hover:dark:text-purple-200",
+            buttonColor,
+          ])}
+          variant="text"
+          size="sm"
+          startIcon="copy"
+          onClick={() => copy(node.code)}
+        >
+          {label}
+        </Button>
+      </div>
       <code
-        className={`language-${node.language} block w-full overflow-auto whitespace-pre text-base`}
+        className={`language-${node.language} block w-full overflow-auto whitespace-pre p-4 text-base`}
         style={{ fontFamily: "var(--plex-mono)" }}
       >
         {node.code}
