@@ -21,7 +21,7 @@ const parseUrl: ParseUrl = (href) => {
     return baseState
   }
 
-  if (href[0] === "/") {
+  if (href.startsWith("/")) {
     return {
       href,
       as: NextLink,
@@ -31,6 +31,7 @@ const parseUrl: ParseUrl = (href) => {
   try {
     const url = new URL(href)
     const isInternalLink = url.hostname === `www.${DOMAIN}` || url.hostname === DOMAIN
+
     return {
       as: isInternalLink ? NextLink : "a",
       href: isInternalLink ? url.href.split(url.host)[1] : href,

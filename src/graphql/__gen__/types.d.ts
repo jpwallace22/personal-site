@@ -41,11 +41,7 @@ declare global {
       value: unknown
       links: Array<string>
     } | null
-    techStack: Array<{
-      __typename: "TechStackRecord"
-      title?: string | null
-      thumbnail?: ({ __typename: "FileField" } & ImageFragment) | null
-    }>
+    techStack: Array<{ __typename: "TechStackRecord" } & TechStackFragment>
     bannerImage?: ({ __typename: "FileField" } & ImageFragment) | null
   }
 
@@ -143,6 +139,13 @@ declare global {
     endIcon?: string | null
   }
 
+  export type TechStackFragment = {
+    __typename: "TechStackRecord"
+    id: string
+    title?: string | null
+    thumbnail?: ({ __typename: "FileField" } & ImageFragment) | null
+  }
+
   export type PageFragment = {
     __typename: "TemplatePageRecord"
     id: string
@@ -167,6 +170,34 @@ declare global {
   export type TemplatePageQuery = {
     __typename: "Query"
     templatePage?: ({ __typename: "TemplatePageRecord" } & PageFragment) | null
+  }
+
+  export type ProjectFragment = {
+    __typename: "ProjectRecord"
+    id: string
+    slug?: string | null
+    subtitle?: string | null
+    title?: string | null
+    techStack: Array<{ __typename: "TechStackRecord" } & TechStackFragment>
+    body?: { __typename: "ProjectModelBodyField"; value: unknown } | null
+    ctas: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+    bannerImage?: ({ __typename: "FileField" } & ImageFragment) | null
+  }
+
+  export type AllProjectSlugsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllProjectSlugsQuery = {
+    __typename: "Query"
+    allProjects: Array<{ __typename: "ProjectRecord"; slug?: string | null }>
+  }
+
+  export type ProjectPageQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type ProjectPageQuery = {
+    __typename: "Query"
+    project?: ({ __typename: "ProjectRecord" } & ProjectFragment) | null
   }
 }
 export {}

@@ -38,6 +38,7 @@ const Footer = async ({ full }: { full?: boolean }) => {
 
   return (
     <Section
+      id="page-footer"
       as="footer"
       className={twMerge(wrapper({ full }))}
       wrapperClass="bg-gray-50 dark:bg-purple-900 gradient-radial-mono border-t dark:border-gray-900 border-gray-500"

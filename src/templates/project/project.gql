@@ -1,0 +1,30 @@
+fragment Project on ProjectRecord {
+  id
+  slug
+  subtitle
+  techStack {
+    ...TechStack
+  }
+  title
+  body {
+    value
+  }
+  ctas {
+    ...Button
+  }
+  bannerImage {
+    ...Image
+  }
+}
+
+query AllProjectSlugs {
+  allProjects {
+    slug
+  }
+}
+
+query ProjectPage($slug: String!) {
+  project(filter: { slug: { eq: $slug } }) {
+    ...Project
+  }
+}
