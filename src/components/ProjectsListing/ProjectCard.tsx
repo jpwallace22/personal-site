@@ -55,7 +55,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   return (
     <article aria-labelledby="project-heading">
       <SlideIn from={slideFrom}>
-        <Link href={`/${slug}`} className={twMerge(wrapper({ reverse }))} {...props}>
+        <Link href={`/projects/${slug}`} className={twMerge(wrapper({ reverse }))} {...props}>
           {bannerImage?.url && (
             <Image
               src={bannerImage?.url}

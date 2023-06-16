@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 import Heading from "@molecules/Heading"
 import TechStack from "@molecules/TechStack"
-import structuredTextParser from "@components/StructuredText/utils/structuredTextParser"
+import StructuredText from "@components/StructuredText"
 
 const projectInfo = cva(
   [
@@ -48,7 +48,9 @@ const ProjectInfo: FC<ProjectInfoProps> = ({
         eyebrow={subtitle}
         className="text-4xl drop-shadow-md sm:text-4xl xl:text-4xl"
       />
-      <div className="card shadow-standard text-left">{structuredTextParser(excerpt)}</div>
+      <div className="card shadow-standard text-left">
+        <StructuredText data={excerpt} />
+      </div>
       <TechStack techs={techStack} thumbSize={24} direction="horizontal" reverse={!reverse} />
     </div>
   )
