@@ -5,6 +5,7 @@ export const iconValues = new Set([
   "github",
   "instagram",
   "linkedIn",
+  "mail",
   "moon",
   "next",
   "node",
@@ -20,6 +21,7 @@ export type IconIds =
   | "github"
   | "instagram"
   | "linkedIn"
+  | "mail"
   | "moon"
   | "next"
   | "node"

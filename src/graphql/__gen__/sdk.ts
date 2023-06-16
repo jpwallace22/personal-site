@@ -158,6 +158,53 @@ export const PageFragment = gql`
   ${CarouselFragment}
   ${ImageFragment}
 `
+export const SiteMetaDataQuery = gql`
+  query SiteMetaData {
+    _site {
+      favicon {
+        ...Image
+      }
+    }
+  }
+  ${ImageFragment}
+`
+
+/**
+ * __useSiteMetaDataQuery__
+ *
+ * To run a query within a React component, call `useSiteMetaDataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSiteMetaDataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSiteMetaDataQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSiteMetaDataQuery(
+  baseOptions?: Apollo.QueryHookOptions<SiteMetaDataQuery, SiteMetaDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<SiteMetaDataQuery, SiteMetaDataQueryVariables>(SiteMetaDataQuery, options)
+}
+export function useSiteMetaDataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<SiteMetaDataQuery, SiteMetaDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<SiteMetaDataQuery, SiteMetaDataQueryVariables>(
+    SiteMetaDataQuery,
+    options
+  )
+}
+export type SiteMetaDataQueryHookResult = ReturnType<typeof useSiteMetaDataQuery>
+export type SiteMetaDataLazyQueryHookResult = ReturnType<typeof useSiteMetaDataLazyQuery>
+export type SiteMetaDataQueryResult = Apollo.QueryResult<
+  SiteMetaDataQuery,
+  SiteMetaDataQueryVariables
+>
 export const GlobalNavComponentQuery = gql`
   query GlobalNavComponent {
     _site {

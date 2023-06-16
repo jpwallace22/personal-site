@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, ElementType, type FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
+import { FadeIn } from "@molecules/animations"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
@@ -48,18 +49,22 @@ const Switchback: FC<SwitchbackProps> = ({
 }) => {
   return (
     <Section wrapperClass={`bg-${bgColor}`} id={sectionId || undefined}>
-      <div className={twMerge(wrapper({ reverse }))}>
-        <div className={content()}>
-          <Heading className={headingStyles()}>{heading}</Heading>
-          <StructuredText data={body} />
+      <FadeIn>
+        <div className={twMerge(wrapper({ reverse }))}>
+          <div className={content()}>
+            <Heading className={headingStyles()}>{heading}</Heading>
+            <StructuredText data={body} />
+          </div>
+          <div className={asset()}>
+            {designAccent && (
+              <Circle {...circleStyleFromCMS(designAccent)} className={circle({ designAccent })} />
+            )}
+            {image?.url && (
+              <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />
+            )}
+          </div>
         </div>
-        <div className={asset()}>
-          {designAccent && (
-            <Circle {...circleStyleFromCMS(designAccent)} className={circle({ designAccent })} />
-          )}
-          {image?.url && <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />}
-        </div>
-      </div>
+      </FadeIn>
     </Section>
   )
 }

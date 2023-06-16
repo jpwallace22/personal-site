@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Footer from "@components/Footer"
 import StaticHero from "@components/Hero/StaticHero"
 import Page from "src/templates/page"
 
@@ -14,6 +15,7 @@ const NextPage = async () => {
     <>
       <StaticHero />
       <Page slug="home" />
+      <Footer full />
     </>
   )
 }

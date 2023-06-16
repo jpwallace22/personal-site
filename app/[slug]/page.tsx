@@ -1,5 +1,6 @@
 import { StpTestQuery } from "@codegen/sdk"
 import Section from "@molecules/Section"
+import Footer from "@components/Footer"
 import StructuredText from "@components/StructuredText"
 import makeServerQuery from "@utils/makeServerQuery"
 
@@ -20,6 +21,7 @@ const Page = async ({ params: { slug } }: Props) => {
       <Section>
         <StructuredText data={body?.body} />
       </Section>
+      <Footer />
     </>
   )
 }
