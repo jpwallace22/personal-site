@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC } from "react"
+import { ComponentPropsWithoutRef, ElementType, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
@@ -9,6 +9,7 @@ export interface SectionProps
   extends ComponentPropsWithoutRef<"section">,
     VariantProps<typeof section> {
   wrapperClass?: string
+  as?: ElementType
 }
 const section = cva([GLOBAL_MAX_WIDTH, "py-12 sm:py-16 lg:py-20"], {
   variants: {
@@ -18,12 +19,19 @@ const section = cva([GLOBAL_MAX_WIDTH, "py-12 sm:py-16 lg:py-20"], {
   },
 })
 
-const Section: FC<SectionProps> = ({ children, className, wrapperClass, fullWidth, ...props }) => {
+const Section: FC<SectionProps> = ({
+  children,
+  className,
+  wrapperClass,
+  fullWidth,
+  as: Component = "section",
+  ...props
+}) => {
   return (
     <div className={twMerge(GLOBAL_PADDING, wrapperClass, "contain-layout")}>
-      <section className={twMerge(section({ fullWidth, className }))} {...props}>
+      <Component className={twMerge(section({ fullWidth, className }))} {...props}>
         {children}
-      </section>
+      </Component>
     </div>
   )
 }

@@ -79,7 +79,11 @@ const Carousel: FC<CarouselProps> = ({ children, width, scrollSnap, pagination =
       <div ref={scrollBoxRef} className={twMerge(scrollBox({ scrollSnap }))}>
         {Children.map(children, (child, i) => {
           return (
-            <div key={i} ref={refs[i]} className={twMerge(card({ width, scrollSnap }))}>
+            <div
+              key={`carousel-card-${i}`}
+              ref={refs[i]}
+              className={twMerge(card({ width, scrollSnap }))}
+            >
               {child}
             </div>
           )

@@ -10,6 +10,13 @@ declare global {
     cards: Array<{ __typename: "TestimonialCardRecord" } & TestimonialCardFragment>
   }
 
+  export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never }>
+
+  export type SiteMetaDataQuery = {
+    __typename: "Query"
+    _site: { __typename: "Site"; favicon?: ({ __typename: "FileField" } & ImageFragment) | null }
+  }
+
   export type GlobalNavFragment = {
     __typename: "GlobalNavRecord"
     id: string
