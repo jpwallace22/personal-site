@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, FC } from "react"
 import Circle from "@molecules/Circle"
+import Heading, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
-import Heading, { HeadingMarkup } from "@components/Heading"
 import ProjectCard from "@components/ProjectsListing/ProjectCard"
 import StructuredText from "@components/StructuredText"
 

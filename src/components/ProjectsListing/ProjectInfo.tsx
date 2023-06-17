@@ -1,8 +1,8 @@
 import { ComponentPropsWithoutRef, type FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
+import Heading from "@molecules/Heading"
 import TechStack from "@molecules/TechStack"
-import Heading from "@components/Heading"
 import StructuredText from "@components/StructuredText"
 
 const projectInfo = cva(
