@@ -9,6 +9,7 @@ interface TechStackProps extends VariantProps<typeof techStack>, ComponentPropsW
     thumbnail?: Maybe<ImageFragment>
   }[]
   thumbSize?: number
+  showTitles?: boolean
 }
 
 const techStack = cva(["flex", "gap-6"], {
@@ -35,12 +36,23 @@ const techStack = cva(["flex", "gap-6"], {
   ],
 })
 
+const titleStyles = cva([
+  "hidden",
+  "font-medium",
+  "font-heading",
+  "dark:text-gray-100",
+  "md:block",
+  "tracking-wide",
+  "text-purple-900",
+])
+
 const TechStack: FC<TechStackProps> = ({
   techs,
   direction,
   className,
   reverse,
   thumbSize = 32,
+  showTitles = false,
   ...props
 }) => {
   return (
@@ -48,8 +60,15 @@ const TechStack: FC<TechStackProps> = ({
       {techs.map(
         ({ title, thumbnail }) =>
           thumbnail?.url && (
-            <li key={title}>
-              <Image src={thumbnail?.url} width={thumbSize} height={thumbSize} alt={title || ""} />
+            <li key={title} className="flex flex-col items-center gap-2">
+              <Image
+                src={thumbnail?.url}
+                width={thumbSize}
+                height={thumbSize}
+                alt={title || ""}
+                className="aspect-square"
+              />
+              {showTitles && <span className={titleStyles()}>{title}</span>}
             </li>
           )
       )}

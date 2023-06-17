@@ -170,13 +170,17 @@ export const ProjectFragment = gql`
   fragment Project on ProjectRecord {
     id
     slug
+    title
     subtitle
     techStack {
       ...TechStack
     }
-    title
+    heading
     body {
       value
+      links {
+        ...Button
+      }
     }
     ctas {
       ...Button

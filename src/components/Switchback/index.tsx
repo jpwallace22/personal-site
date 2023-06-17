@@ -21,7 +21,7 @@ const wrapper = cva(
     },
   }
 )
-const circle = cva([], {
+const circle = cva(["-z-10"], {
   variants: {
     designAccent: {
       md: ["-right-full -top-1/4 sm:-right-3/4"],
@@ -38,6 +38,8 @@ export type SwitchbackProps = Clean<SwitchbackFragment> &
   ComponentPropsWithoutRef<"div"> &
   VariantProps<typeof circle> & {
     headingAs: ElementType
+    animated?: boolean
+    imageTop?: boolean
   }
 
 const Switchback: FC<SwitchbackProps> = ({
@@ -49,8 +51,8 @@ const Switchback: FC<SwitchbackProps> = ({
   bgColor,
   sectionId,
   designAccent,
-  imageTop,
-  animated,
+  imageTop = false,
+  animated = true,
 }) => {
   return (
     <Section wrapperClass={`bg-${bgColor}`} id={sectionId || undefined}>

@@ -2,10 +2,10 @@ export const iconValues = new Set([
   "check",
   "chevron-right",
   "copy",
+  "external",
   "github",
   "instagram",
   "linkedIn",
-  "mail",
   "moon",
   "next",
   "node",
@@ -18,10 +18,10 @@ export type IconIds =
   | "check"
   | "chevron-right"
   | "copy"
+  | "external"
   | "github"
   | "instagram"
   | "linkedIn"
-  | "mail"
   | "moon"
   | "next"
   | "node"

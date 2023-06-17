@@ -176,10 +176,15 @@ declare global {
     __typename: "ProjectRecord"
     id: string
     slug?: string | null
-    subtitle?: string | null
     title?: string | null
+    subtitle?: string | null
+    heading?: string | null
     techStack: Array<{ __typename: "TechStackRecord" } & TechStackFragment>
-    body?: { __typename: "ProjectModelBodyField"; value: unknown } | null
+    body?: {
+      __typename: "ProjectModelBodyField"
+      value: unknown
+      links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+    } | null
     ctas: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
     bannerImage?: ({ __typename: "FileField" } & ImageFragment) | null
   }
