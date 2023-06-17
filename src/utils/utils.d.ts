@@ -10,7 +10,7 @@ declare global {
   /**
    * Removes required data from CMS
    */
-  type Clean<T> = Omit<T, "__typename">
+  type Clean<T> = Omit<T, "__typename", "id">
 }
 
 export {}
