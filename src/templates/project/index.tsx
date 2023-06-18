@@ -5,6 +5,7 @@ import { SlideIn } from "@molecules/animations"
 import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import TechStack from "@molecules/TechStack"
+import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import Switchback from "@components/Switchback"
 import makeServerQuery from "@utils/makeServerQuery"
 
@@ -13,11 +14,11 @@ interface ProjectPageProps {
 }
 
 const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
-  const { project } = await makeServerQuery<ProjectPageQuery>(ProjectPageQuery, { slug })
-  if (!project) {
+  const { templateProject } = await makeServerQuery<ProjectPageQuery>(ProjectPageQuery, { slug })
+  if (!templateProject) {
     return notFound()
   }
-  const { title, subtitle, heading, bannerImage, body, techStack } = project
+  const { title, subtitle, heading, bannerImage, body, techStack, switchbacks } = templateProject
 
   return (
     <>
@@ -30,7 +31,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
         headingAs="h2"
         heading={heading}
         image={bannerImage}
-        body={body}
+        body={body as SwitchbackFragment["body"]}
         animated={false}
         designAccent="dots"
         reverse
@@ -44,6 +45,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
           showTitles
         />
       </Section>
+      {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
     </>
   )
 }

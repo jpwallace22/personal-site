@@ -1,4 +1,4 @@
-fragment ProjectCard on ProjectRecord {
+fragment ProjectCard on TemplateProjectRecord {
   title
   subtitle
   slug

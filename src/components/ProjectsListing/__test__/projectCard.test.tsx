@@ -25,7 +25,7 @@ describe("ProjectCard", () => {
 
     const { container, getByRole } = render(
       <ProjectCard
-        __typename="ProjectRecord"
+        __typename="TemplateProjectRecord"
         title={title}
         bannerImage={fakeImage}
         reverse={reverse}

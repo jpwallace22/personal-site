@@ -1,11 +1,8 @@
-fragment Project on ProjectRecord {
+fragment Project on TemplateProjectRecord {
   id
   slug
   title
   subtitle
-  techStack {
-    ...TechStack
-  }
   heading
   body {
     value
@@ -13,22 +10,25 @@ fragment Project on ProjectRecord {
       ...Button
     }
   }
-  ctas {
-    ...Button
-  }
   bannerImage {
     ...Image
+  }
+  techStack {
+    ...TechStack
+  }
+  switchbacks {
+    ...ScrollingSwitchback
   }
 }
 
 query AllProjectSlugs {
-  allProjects {
+  allTemplateProjects {
     slug
   }
 }
 
 query ProjectPage($slug: String!) {
-  project(filter: { slug: { eq: $slug } }) {
+  templateProject(filter: { slug: { eq: $slug } }) {
     ...Project
   }
 }

@@ -23,7 +23,6 @@ export const GlobalNavFragment = gql`
 `
 export const ImageFragment = gql`
   fragment Image on FileField {
-    __typename
     id
     alt
     blurhash
@@ -65,7 +64,7 @@ export const TechStackFragment = gql`
   ${ImageFragment}
 `
 export const ProjectCardFragment = gql`
-  fragment ProjectCard on ProjectRecord {
+  fragment ProjectCard on TemplateProjectRecord {
     title
     subtitle
     slug
@@ -144,6 +143,19 @@ export const CarouselFragment = gql`
   }
   ${TestimonialCardFragment}
 `
+export const ScrollingSwitchbackFragment = gql`
+  fragment ScrollingSwitchback on ScrollingSwitchbackRecord {
+    id
+    heading
+    body {
+      value
+    }
+    switchbacks {
+      ...Switchback
+    }
+  }
+  ${SwitchbackFragment}
+`
 export const PageFragment = gql`
   fragment Page on TemplatePageRecord {
     id
@@ -152,6 +164,7 @@ export const PageFragment = gql`
       ...Switchback
       ...ProjectListing
       ...Carousel
+      ...ScrollingSwitchback
     }
     seo {
       description
@@ -164,17 +177,15 @@ export const PageFragment = gql`
   ${SwitchbackFragment}
   ${ProjectListingFragment}
   ${CarouselFragment}
+  ${ScrollingSwitchbackFragment}
   ${ImageFragment}
 `
 export const ProjectFragment = gql`
-  fragment Project on ProjectRecord {
+  fragment Project on TemplateProjectRecord {
     id
     slug
     title
     subtitle
-    techStack {
-      ...TechStack
-    }
     heading
     body {
       value
@@ -182,16 +193,20 @@ export const ProjectFragment = gql`
         ...Button
       }
     }
-    ctas {
-      ...Button
-    }
     bannerImage {
       ...Image
     }
+    techStack {
+      ...TechStack
+    }
+    switchbacks {
+      ...ScrollingSwitchback
+    }
   }
-  ${TechStackFragment}
   ${ButtonFragment}
   ${ImageFragment}
+  ${TechStackFragment}
+  ${ScrollingSwitchbackFragment}
 `
 export const SiteMetaDataQuery = gql`
   query SiteMetaData {
@@ -404,7 +419,7 @@ export type TemplatePageQueryResult = Apollo.QueryResult<
 >
 export const AllProjectSlugsQuery = gql`
   query AllProjectSlugs {
-    allProjects {
+    allTemplateProjects {
       slug
     }
   }
@@ -451,7 +466,7 @@ export type AllProjectSlugsQueryResult = Apollo.QueryResult<
 >
 export const ProjectPageQuery = gql`
   query ProjectPage($slug: String!) {
-    project(filter: { slug: { eq: $slug } }) {
+    templateProject(filter: { slug: { eq: $slug } }) {
       ...Project
     }
   }

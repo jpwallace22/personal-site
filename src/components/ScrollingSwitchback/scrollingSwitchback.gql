@@ -1,0 +1,10 @@
+fragment ScrollingSwitchback on ScrollingSwitchbackRecord {
+  id
+  heading
+  body {
+    value
+  }
+  switchbacks {
+    ...Switchback
+  }
+}

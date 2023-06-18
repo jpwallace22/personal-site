@@ -1,63 +1,71 @@
 declare global {
   export type TestimonialCardFragment = {
-    __typename: "TestimonialCardRecord"
-    quote?: { __typename: "TestimonialCardModelQuoteField"; value: unknown } | null
-    person?: ({ __typename: "PersonRecord" } & PersonFragment) | null
+    __typename?: "TestimonialCardRecord"
+    quote?: { __typename?: "TestimonialCardModelQuoteField"; value: unknown } | null
+    person?: ({ __typename?: "PersonRecord" } & PersonFragment) | null
   }
 
   export type CarouselFragment = {
-    __typename: "CarouselRecord"
-    cards: Array<{ __typename: "TestimonialCardRecord" } & TestimonialCardFragment>
+    __typename?: "CarouselRecord"
+    cards: Array<{ __typename?: "TestimonialCardRecord" } & TestimonialCardFragment>
   }
 
   export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never }>
 
   export type SiteMetaDataQuery = {
-    __typename: "Query"
-    _site: { __typename: "Site"; favicon?: ({ __typename: "FileField" } & ImageFragment) | null }
+    __typename?: "Query"
+    _site: { __typename?: "Site"; favicon?: ({ __typename?: "FileField" } & ImageFragment) | null }
   }
 
   export type GlobalNavFragment = {
-    __typename: "GlobalNavRecord"
+    __typename?: "GlobalNavRecord"
     id: string
-    links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+    links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
   }
 
   export type GlobalNavComponentQueryVariables = Exact<{ [key: string]: never }>
 
   export type GlobalNavComponentQuery = {
-    __typename: "Query"
-    _site: { __typename: "Site"; favicon?: ({ __typename: "FileField" } & ImageFragment) | null }
-    globalNav?: ({ __typename: "GlobalNavRecord" } & GlobalNavFragment) | null
+    __typename?: "Query"
+    _site: { __typename?: "Site"; favicon?: ({ __typename?: "FileField" } & ImageFragment) | null }
+    globalNav?: ({ __typename?: "GlobalNavRecord" } & GlobalNavFragment) | null
   }
 
   export type ProjectCardFragment = {
-    __typename: "ProjectRecord"
+    __typename?: "TemplateProjectRecord"
     title?: string | null
     subtitle?: string | null
     slug?: string | null
     excerpt?: {
-      __typename: "ProjectModelExcerptField"
+      __typename?: "TemplateProjectModelExcerptField"
       value: unknown
       links: Array<string>
     } | null
-    techStack: Array<{ __typename: "TechStackRecord" } & TechStackFragment>
-    bannerImage?: ({ __typename: "FileField" } & ImageFragment) | null
+    techStack: Array<{ __typename?: "TechStackRecord" } & TechStackFragment>
+    bannerImage?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
   export type ProjectListingFragment = {
-    __typename: "ProjectListingRecord"
+    __typename?: "ProjectListingRecord"
     id: string
     heading?: string | null
     headingAs?: string | null
     sectionId?: string | null
     bgColor?: string | null
-    body?: { __typename: "ProjectListingModelBodyField"; value: unknown } | null
-    cards: Array<{ __typename: "ProjectRecord" } & ProjectCardFragment>
+    body?: { __typename?: "ProjectListingModelBodyField"; value: unknown } | null
+    cards: Array<{ __typename?: "TemplateProjectRecord" } & ProjectCardFragment>
+  }
+
+  export type ScrollingSwitchbackFragment = {
+    __typename?: "ScrollingSwitchbackRecord"
+    id: string
+    heading?: string | null
+    body?: { __typename?: "ScrollingSwitchbackModelBodyField"; value: unknown } | null
+    switchbacks: Array<{ __typename?: "SwitchbackRecord" } & SwitchbackFragment>
   }
 
   export type SwitchbackFragment = {
-    __typename: "SwitchbackRecord"
+    __typename?: "SwitchbackRecord"
     designAccent?: string | null
     heading?: string | null
     headingAs?: string | null
@@ -66,25 +74,25 @@ declare global {
     sectionId?: string | null
     bgColor?: string | null
     body?: {
-      __typename: "SwitchbackModelBodyField"
+      __typename?: "SwitchbackModelBodyField"
       value: unknown
-      links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
     } | null
-    image?: ({ __typename: "FileField" } & ImageFragment) | null
+    image?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
   export type StpTestQueryVariables = Exact<{ [key: string]: never }>
 
   export type StpTestQuery = {
-    __typename: "Query"
+    __typename?: "Query"
     blogPost?: {
-      __typename: "BlogPostRecord"
+      __typename?: "BlogPostRecord"
       body?: {
-        __typename: "BlogPostModelBodyField"
+        __typename?: "BlogPostModelBodyField"
         value: unknown
-        links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+        links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
         blocks: Array<{
-          __typename: "ImageRecord"
+          __typename?: "ImageRecord"
           id: string
           media?: {
             __typename: "FileField"
@@ -102,7 +110,7 @@ declare global {
   }
 
   export type ImageFragment = {
-    __typename: "FileField"
+    __typename?: "FileField"
     id: string
     alt?: string | null
     blurhash?: string | null
@@ -112,24 +120,24 @@ declare global {
   }
 
   export type CompanyFragment = {
-    __typename: "CompanyRecord"
+    __typename?: "CompanyRecord"
     name?: string | null
     website?: string | null
-    logo?: ({ __typename: "FileField" } & ImageFragment) | null
+    logo?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
   export type PersonFragment = {
-    __typename: "PersonRecord"
+    __typename?: "PersonRecord"
     firstName?: string | null
     lastName?: string | null
     role?: string | null
     website?: string | null
-    thumbnail?: ({ __typename: "FileField" } & ImageFragment) | null
-    company?: ({ __typename: "CompanyRecord" } & CompanyFragment) | null
+    thumbnail?: ({ __typename?: "FileField" } & ImageFragment) | null
+    company?: ({ __typename?: "CompanyRecord" } & CompanyFragment) | null
   }
 
   export type ButtonFragment = {
-    __typename: "ButtonRecord"
+    __typename?: "ButtonRecord"
     id: string
     variant?: string | null
     label?: string | null
@@ -140,26 +148,27 @@ declare global {
   }
 
   export type TechStackFragment = {
-    __typename: "TechStackRecord"
+    __typename?: "TechStackRecord"
     id: string
     title?: string | null
-    thumbnail?: ({ __typename: "FileField" } & ImageFragment) | null
+    thumbnail?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
   export type PageFragment = {
-    __typename: "TemplatePageRecord"
+    __typename?: "TemplatePageRecord"
     id: string
     slug?: string | null
     components: Array<
-      | ({ __typename: "CarouselRecord" } & CarouselFragment)
-      | ({ __typename: "ProjectListingRecord" } & ProjectListingFragment)
-      | ({ __typename: "SwitchbackRecord" } & SwitchbackFragment)
+      | ({ __typename?: "CarouselRecord" } & CarouselFragment)
+      | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
+      | ({ __typename?: "ScrollingSwitchbackRecord" } & ScrollingSwitchbackFragment)
+      | ({ __typename?: "SwitchbackRecord" } & SwitchbackFragment)
     >
     seo?: {
-      __typename: "SeoField"
+      __typename?: "SeoField"
       description?: string | null
       title?: string | null
-      image?: ({ __typename: "FileField" } & ImageFragment) | null
+      image?: ({ __typename?: "FileField" } & ImageFragment) | null
     } | null
   }
 
@@ -168,32 +177,34 @@ declare global {
   }>
 
   export type TemplatePageQuery = {
-    __typename: "Query"
-    templatePage?: ({ __typename: "TemplatePageRecord" } & PageFragment) | null
+    __typename?: "Query"
+    templatePage?: ({ __typename?: "TemplatePageRecord" } & PageFragment) | null
   }
 
   export type ProjectFragment = {
-    __typename: "ProjectRecord"
+    __typename?: "TemplateProjectRecord"
     id: string
     slug?: string | null
     title?: string | null
     subtitle?: string | null
     heading?: string | null
-    techStack: Array<{ __typename: "TechStackRecord" } & TechStackFragment>
     body?: {
-      __typename: "ProjectModelBodyField"
+      __typename?: "TemplateProjectModelBodyField"
       value: unknown
-      links: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
     } | null
-    ctas: Array<{ __typename: "ButtonRecord" } & ButtonFragment>
-    bannerImage?: ({ __typename: "FileField" } & ImageFragment) | null
+    bannerImage?: ({ __typename?: "FileField" } & ImageFragment) | null
+    techStack: Array<{ __typename?: "TechStackRecord" } & TechStackFragment>
+    switchbacks?:
+      | ({ __typename?: "ScrollingSwitchbackRecord" } & ScrollingSwitchbackFragment)
+      | null
   }
 
   export type AllProjectSlugsQueryVariables = Exact<{ [key: string]: never }>
 
   export type AllProjectSlugsQuery = {
-    __typename: "Query"
-    allProjects: Array<{ __typename: "ProjectRecord"; slug?: string | null }>
+    __typename?: "Query"
+    allTemplateProjects: Array<{ __typename?: "TemplateProjectRecord"; slug?: string | null }>
   }
 
   export type ProjectPageQueryVariables = Exact<{
@@ -201,8 +212,8 @@ declare global {
   }>
 
   export type ProjectPageQuery = {
-    __typename: "Query"
-    project?: ({ __typename: "ProjectRecord" } & ProjectFragment) | null
+    __typename?: "Query"
+    templateProject?: ({ __typename?: "TemplateProjectRecord" } & ProjectFragment) | null
   }
 }
 export {}

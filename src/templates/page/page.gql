@@ -5,6 +5,7 @@ fragment Page on TemplatePageRecord {
     ...Switchback
     ...ProjectListing
     ...Carousel
+    ...ScrollingSwitchback
   }
   seo {
     description

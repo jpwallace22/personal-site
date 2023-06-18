@@ -28,7 +28,6 @@ generates:
         UploadId: string
       declarationKind: "interface"
       inlineFragmentTypes: "combine"
-      nonOptionalTypename: true
   src/graphql/__gen__/sdk.ts:
     plugins:
       - typescript-react-apollo:

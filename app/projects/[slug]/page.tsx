@@ -10,9 +10,9 @@ type Params = {
 }
 
 export const generateStaticParams = async () => {
-  const { allProjects } = await makeServerQuery<AllProjectSlugsQuery>(AllProjectSlugsQuery)
+  const { allTemplateProjects } = await makeServerQuery<AllProjectSlugsQuery>(AllProjectSlugsQuery)
 
-  return allProjects.map(({ slug }) => ({
+  return allTemplateProjects.map(({ slug }) => ({
     params: {
       slug,
     },

@@ -4,9 +4,9 @@ import { fakeImage } from "@utils/mockDataForTest"
 import TechStack from ".."
 
 export const fakeTechs = [
-  { __typename: "TechStackRecord" as const, title: "Tech 1", thumbnail: fakeImage },
-  { __typename: "TechStackRecord" as const, title: "Tech 2", thumbnail: fakeImage },
-  { __typename: "TechStackRecord" as const, title: "Tech 3", thumbnail: fakeImage },
+  { __typename: "TechStackRecord" as const, title: "Tech 1", thumbnail: fakeImage, id: "1" },
+  { __typename: "TechStackRecord" as const, title: "Tech 2", thumbnail: fakeImage, id: "1" },
+  { __typename: "TechStackRecord" as const, title: "Tech 3", thumbnail: fakeImage, id: "1" },
 ]
 
 describe("TechStack Component", () => {
