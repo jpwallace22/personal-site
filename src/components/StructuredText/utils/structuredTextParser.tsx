@@ -122,7 +122,7 @@ const structuredTextParser = (data?: StructuredData) => {
               }
               if (wrapButtons) {
                 return (
-                  <div className="flex flex-col gap-6 sm:flex-row">
+                  <div className="flex flex-col gap-6 md:flex-row">
                     <Button {...firstButton} />
                     <Button {...secondButton} />
                   </div>

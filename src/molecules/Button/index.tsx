@@ -30,7 +30,7 @@ const button = cva(
     "font-extrabold",
     "gap-2",
     "w-full",
-    "sm:w-fit",
+    "md:w-fit",
   ],
   {
     variants: {

@@ -1,4 +1,4 @@
-fragment ProjectCard on ProjectRecord {
+fragment ProjectCard on TemplateProjectRecord {
   title
   subtitle
   slug
@@ -7,10 +7,7 @@ fragment ProjectCard on ProjectRecord {
     links
   }
   techStack {
-    title
-    thumbnail {
-      ...Image
-    }
+    ...TechStack
   }
   bannerImage {
     ...Image

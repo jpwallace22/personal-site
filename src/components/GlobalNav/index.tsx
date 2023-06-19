@@ -14,7 +14,7 @@ const GlobalNav = async () => {
   } = await makeServerQuery<GlobalNavComponentQuery>(GlobalNavComponentQuery)
 
   const styles = {
-    wrapper: [GLOBAL_PADDING, "w-screen z-10 fixed py-2", "lg:backdrop-blur-sm"],
+    wrapper: [GLOBAL_PADDING, "w-screen z-10 sticky top-0 py-2", "lg:backdrop-blur-sm"],
     nav: [
       GLOBAL_MAX_WIDTH,
       "flex justify-between items-center lg:flex-row-reverse",

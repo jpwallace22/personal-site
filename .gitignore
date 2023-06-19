@@ -15,6 +15,7 @@ build
 .vscode/
 .DS_Store
 *.pem
+report.html
 
 # debug
 npm-debug.log*

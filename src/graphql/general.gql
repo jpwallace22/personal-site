@@ -1,5 +1,4 @@
 fragment Image on FileField {
-  __typename
   id
   alt
   blurhash

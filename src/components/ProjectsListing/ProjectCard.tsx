@@ -53,9 +53,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
   const slideFrom = reverse ? "right" : "left"
 
   return (
-    <article aria-labelledby="project-heading">
+    <article>
       <SlideIn from={slideFrom}>
-        <Link href={`/${slug}`} className={twMerge(wrapper({ reverse }))} {...props}>
+        <Link href={`/projects/${slug}`} className={twMerge(wrapper({ reverse }))} {...props}>
           {bannerImage?.url && (
             <Image
               src={bannerImage?.url}

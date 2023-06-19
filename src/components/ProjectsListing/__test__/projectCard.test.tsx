@@ -25,7 +25,7 @@ describe("ProjectCard", () => {
 
     const { container, getByRole } = render(
       <ProjectCard
-        __typename="ProjectRecord"
+        __typename="TemplateProjectRecord"
         title={title}
         bannerImage={fakeImage}
         reverse={reverse}
@@ -38,12 +38,10 @@ describe("ProjectCard", () => {
     const articleElement = getByRole("article")
     const linkElement = getByRole("link")
     const imageElement = getByRole("img", { name: "Fake Image" })
-    const projectInfoElement = getByRole("article", { name: title })
 
     expect(articleElement).toBeInTheDocument()
     expect(linkElement).toBeInTheDocument()
     expect(imageElement).toBeInTheDocument()
-    expect(projectInfoElement).toBeInTheDocument()
 
     expect(await axe(container)).toHaveNoViolations()
   })

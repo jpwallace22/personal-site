@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import CarouselComponent from "@components/Carousel"
 import ProjectListing, { ProjectListingProps } from "@components/ProjectsListing"
+import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import Switchback, { SwitchbackProps } from "@components/Switchback"
 
 const ComponentRenderer = (components?: PageFragment["components"]) => {
@@ -13,6 +14,8 @@ const ComponentRenderer = (components?: PageFragment["components"]) => {
         return <ProjectListing {...(component as ProjectListingProps)} />
       case "CarouselRecord":
         return <CarouselComponent {...component} />
+      case "ScrollingSwitchbackRecord":
+        return <ScrollingSwitchbackComponent {...component} />
       default:
         return null
     }

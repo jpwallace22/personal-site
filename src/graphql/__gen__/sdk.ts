@@ -23,7 +23,6 @@ export const GlobalNavFragment = gql`
 `
 export const ImageFragment = gql`
   fragment Image on FileField {
-    __typename
     id
     alt
     blurhash
@@ -54,8 +53,18 @@ export const SwitchbackFragment = gql`
   ${ButtonFragment}
   ${ImageFragment}
 `
+export const TechStackFragment = gql`
+  fragment TechStack on TechStackRecord {
+    id
+    title
+    thumbnail {
+      ...Image
+    }
+  }
+  ${ImageFragment}
+`
 export const ProjectCardFragment = gql`
-  fragment ProjectCard on ProjectRecord {
+  fragment ProjectCard on TemplateProjectRecord {
     title
     subtitle
     slug
@@ -64,15 +73,13 @@ export const ProjectCardFragment = gql`
       links
     }
     techStack {
-      title
-      thumbnail {
-        ...Image
-      }
+      ...TechStack
     }
     bannerImage {
       ...Image
     }
   }
+  ${TechStackFragment}
   ${ImageFragment}
 `
 export const ProjectListingFragment = gql`
@@ -136,6 +143,19 @@ export const CarouselFragment = gql`
   }
   ${TestimonialCardFragment}
 `
+export const ScrollingSwitchbackFragment = gql`
+  fragment ScrollingSwitchback on ScrollingSwitchbackRecord {
+    id
+    heading
+    body {
+      value
+    }
+    switchbacks {
+      ...Switchback
+    }
+  }
+  ${SwitchbackFragment}
+`
 export const PageFragment = gql`
   fragment Page on TemplatePageRecord {
     id
@@ -144,6 +164,7 @@ export const PageFragment = gql`
       ...Switchback
       ...ProjectListing
       ...Carousel
+      ...ScrollingSwitchback
     }
     seo {
       description
@@ -156,7 +177,42 @@ export const PageFragment = gql`
   ${SwitchbackFragment}
   ${ProjectListingFragment}
   ${CarouselFragment}
+  ${ScrollingSwitchbackFragment}
   ${ImageFragment}
+`
+export const ProjectFragment = gql`
+  fragment Project on TemplateProjectRecord {
+    id
+    slug
+    title
+    subtitle
+    heading
+    body {
+      value
+      links {
+        ...Button
+      }
+    }
+    extraInformation {
+      value
+      links {
+        ...Button
+      }
+    }
+    bannerImage {
+      ...Image
+    }
+    techStack {
+      ...TechStack
+    }
+    switchbacks {
+      ...ScrollingSwitchback
+    }
+  }
+  ${ButtonFragment}
+  ${ImageFragment}
+  ${TechStackFragment}
+  ${ScrollingSwitchbackFragment}
 `
 export const SiteMetaDataQuery = gql`
   query SiteMetaData {
@@ -367,3 +423,96 @@ export type TemplatePageQueryResult = Apollo.QueryResult<
   TemplatePageQuery,
   TemplatePageQueryVariables
 >
+export const AllProjectSlugsQuery = gql`
+  query AllProjectSlugs {
+    allTemplateProjects {
+      slug
+    }
+  }
+`
+
+/**
+ * __useAllProjectSlugsQuery__
+ *
+ * To run a query within a React component, call `useAllProjectSlugsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAllProjectSlugsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAllProjectSlugsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAllProjectSlugsQuery(
+  baseOptions?: Apollo.QueryHookOptions<AllProjectSlugsQuery, AllProjectSlugsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AllProjectSlugsQuery, AllProjectSlugsQueryVariables>(
+    AllProjectSlugsQuery,
+    options
+  )
+}
+export function useAllProjectSlugsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<AllProjectSlugsQuery, AllProjectSlugsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AllProjectSlugsQuery, AllProjectSlugsQueryVariables>(
+    AllProjectSlugsQuery,
+    options
+  )
+}
+export type AllProjectSlugsQueryHookResult = ReturnType<typeof useAllProjectSlugsQuery>
+export type AllProjectSlugsLazyQueryHookResult = ReturnType<typeof useAllProjectSlugsLazyQuery>
+export type AllProjectSlugsQueryResult = Apollo.QueryResult<
+  AllProjectSlugsQuery,
+  AllProjectSlugsQueryVariables
+>
+export const ProjectPageQuery = gql`
+  query ProjectPage($slug: String!) {
+    templateProject(filter: { slug: { eq: $slug } }) {
+      ...Project
+    }
+    templatePage(filter: { slug: { eq: "home" } }) {
+      components {
+        ...ProjectListing
+      }
+    }
+  }
+  ${ProjectFragment}
+  ${ProjectListingFragment}
+`
+
+/**
+ * __useProjectPageQuery__
+ *
+ * To run a query within a React component, call `useProjectPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useProjectPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useProjectPageQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useProjectPageQuery(
+  baseOptions: Apollo.QueryHookOptions<ProjectPageQuery, ProjectPageQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProjectPageQuery, ProjectPageQueryVariables>(ProjectPageQuery, options)
+}
+export function useProjectPageLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<ProjectPageQuery, ProjectPageQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProjectPageQuery, ProjectPageQueryVariables>(ProjectPageQuery, options)
+}
+export type ProjectPageQueryHookResult = ReturnType<typeof useProjectPageQuery>
+export type ProjectPageLazyQueryHookResult = ReturnType<typeof useProjectPageLazyQuery>
+export type ProjectPageQueryResult = Apollo.QueryResult<ProjectPageQuery, ProjectPageQueryVariables>
