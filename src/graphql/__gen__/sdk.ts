@@ -21,6 +21,12 @@ export const GlobalNavFragment = gql`
   }
   ${ButtonFragment}
 `
+export const CategoryFragment = gql`
+  fragment Category on CategoryRecord {
+    name
+    slug
+  }
+`
 export const ImageFragment = gql`
   fragment Image on FileField {
     id
@@ -30,6 +36,27 @@ export const ImageFragment = gql`
     width
     url
   }
+`
+export const BlogFragment = gql`
+  fragment Blog on TemplateBlogPostRecord {
+    id
+    internalName
+    title
+    subtitle
+    publishDate
+    categories {
+      ...Category
+    }
+    slug
+    body {
+      value
+    }
+    featuredImage {
+      ...Image
+    }
+  }
+  ${CategoryFragment}
+  ${ImageFragment}
 `
 export const SwitchbackFragment = gql`
   fragment Switchback on SwitchbackRecord {
@@ -467,6 +494,102 @@ export function useStpTestLazyQuery(
 export type StpTestQueryHookResult = ReturnType<typeof useStpTestQuery>
 export type StpTestLazyQueryHookResult = ReturnType<typeof useStpTestLazyQuery>
 export type StpTestQueryResult = Apollo.QueryResult<StpTestQuery, StpTestQueryVariables>
+export const TemplateBlogPostQuery = gql`
+  query TemplateBlogPost($slug: String!) {
+    templateBlogPost(filter: { slug: { eq: $slug } }) {
+      ...Blog
+    }
+  }
+  ${BlogFragment}
+`
+
+/**
+ * __useTemplateBlogPostQuery__
+ *
+ * To run a query within a React component, call `useTemplateBlogPostQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTemplateBlogPostQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTemplateBlogPostQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useTemplateBlogPostQuery(
+  baseOptions: Apollo.QueryHookOptions<TemplateBlogPostQuery, TemplateBlogPostQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TemplateBlogPostQuery, TemplateBlogPostQueryVariables>(
+    TemplateBlogPostQuery,
+    options
+  )
+}
+export function useTemplateBlogPostLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<TemplateBlogPostQuery, TemplateBlogPostQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TemplateBlogPostQuery, TemplateBlogPostQueryVariables>(
+    TemplateBlogPostQuery,
+    options
+  )
+}
+export type TemplateBlogPostQueryHookResult = ReturnType<typeof useTemplateBlogPostQuery>
+export type TemplateBlogPostLazyQueryHookResult = ReturnType<typeof useTemplateBlogPostLazyQuery>
+export type TemplateBlogPostQueryResult = Apollo.QueryResult<
+  TemplateBlogPostQuery,
+  TemplateBlogPostQueryVariables
+>
+export const AllBlogPostSlugsQuery = gql`
+  query AllBlogPostSlugs {
+    allTemplateBlogPosts {
+      slug
+    }
+  }
+`
+
+/**
+ * __useAllBlogPostSlugsQuery__
+ *
+ * To run a query within a React component, call `useAllBlogPostSlugsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAllBlogPostSlugsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAllBlogPostSlugsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAllBlogPostSlugsQuery(
+  baseOptions?: Apollo.QueryHookOptions<AllBlogPostSlugsQuery, AllBlogPostSlugsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AllBlogPostSlugsQuery, AllBlogPostSlugsQueryVariables>(
+    AllBlogPostSlugsQuery,
+    options
+  )
+}
+export function useAllBlogPostSlugsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<AllBlogPostSlugsQuery, AllBlogPostSlugsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AllBlogPostSlugsQuery, AllBlogPostSlugsQueryVariables>(
+    AllBlogPostSlugsQuery,
+    options
+  )
+}
+export type AllBlogPostSlugsQueryHookResult = ReturnType<typeof useAllBlogPostSlugsQuery>
+export type AllBlogPostSlugsLazyQueryHookResult = ReturnType<typeof useAllBlogPostSlugsLazyQuery>
+export type AllBlogPostSlugsQueryResult = Apollo.QueryResult<
+  AllBlogPostSlugsQuery,
+  AllBlogPostSlugsQueryVariables
+>
 export const AllTemplatePageSlugsQuery = gql`
   query AllTemplatePageSlugs {
     allTemplatePages {

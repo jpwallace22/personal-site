@@ -1,0 +1,29 @@
+fragment Blog on TemplateBlogPostRecord {
+  id
+  internalName
+  title
+  subtitle
+  publishDate
+  categories {
+    ...Category
+  }
+  slug
+  body {
+    value
+  }
+  featuredImage {
+    ...Image
+  }
+}
+
+query TemplateBlogPost($slug: String!) {
+  templateBlogPost(filter: { slug: { eq: $slug } }) {
+    ...Blog
+  }
+}
+
+query AllBlogPostSlugs {
+  allTemplateBlogPosts {
+    slug
+  }
+}

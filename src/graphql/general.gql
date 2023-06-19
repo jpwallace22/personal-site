@@ -27,3 +27,8 @@ fragment Person on PersonRecord {
   }
   website
 }
+
+fragment Category on CategoryRecord {
+  name
+  slug
+}

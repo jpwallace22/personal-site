@@ -172,6 +172,12 @@ declare global {
     company?: ({ __typename?: "CompanyRecord" } & CompanyFragment) | null
   }
 
+  export type CategoryFragment = {
+    __typename?: "CategoryRecord"
+    name?: string | null
+    slug?: string | null
+  }
+
   export type ButtonFragment = {
     __typename?: "ButtonRecord"
     id: string
@@ -188,6 +194,35 @@ declare global {
     id: string
     title?: string | null
     thumbnail?: ({ __typename?: "FileField" } & ImageFragment) | null
+  }
+
+  export type BlogFragment = {
+    __typename?: "TemplateBlogPostRecord"
+    id: string
+    internalName?: string | null
+    title?: string | null
+    subtitle?: string | null
+    publishDate?: string | null
+    slug?: string | null
+    categories: Array<{ __typename?: "CategoryRecord" } & CategoryFragment>
+    body?: { __typename?: "TemplateBlogPostModelBodyField"; value: unknown } | null
+    featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
+  }
+
+  export type TemplateBlogPostQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type TemplateBlogPostQuery = {
+    __typename?: "Query"
+    templateBlogPost?: ({ __typename?: "TemplateBlogPostRecord" } & BlogFragment) | null
+  }
+
+  export type AllBlogPostSlugsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllBlogPostSlugsQuery = {
+    __typename?: "Query"
+    allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord"; slug?: string | null }>
   }
 
   export type PageFragment = {

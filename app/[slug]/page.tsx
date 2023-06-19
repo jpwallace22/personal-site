@@ -1,5 +1,4 @@
 import { AllTemplatePageSlugsQuery } from "@codegen/sdk"
-import Footer from "@components/Footer"
 import makeServerQuery from "@utils/makeServerQuery"
 import Page from "src/templates/page"
 
@@ -22,12 +21,7 @@ export const generateStaticParams = async () => {
 }
 
 const NextPage = async ({ params: { slug } }: Params) => {
-  return (
-    <>
-      <Page slug={slug} />
-      <Footer />
-    </>
-  )
+  return <Page slug={slug} />
 }
 
 export default NextPage
