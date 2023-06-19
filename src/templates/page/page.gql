@@ -6,6 +6,8 @@ fragment Page on TemplatePageRecord {
     ...ProjectListing
     ...Carousel
     ...ScrollingSwitchback
+    ...BlogListing
+    ...SingleUseComponent
   }
   seo {
     description
@@ -13,6 +15,12 @@ fragment Page on TemplatePageRecord {
     image {
       ...Image
     }
+  }
+}
+
+query AllTemplatePageSlugs {
+  allTemplatePages {
+    slug
   }
 }
 

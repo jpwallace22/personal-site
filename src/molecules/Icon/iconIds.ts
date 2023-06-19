@@ -11,6 +11,7 @@ export const iconValues = new Set([
   "node",
   "quote",
   "react",
+  "right-arrow",
   "sun",
   "typescript",
 ])
@@ -27,5 +28,6 @@ export type IconIds =
   | "node"
   | "quote"
   | "react"
+  | "right-arrow"
   | "sun"
   | "typescript"

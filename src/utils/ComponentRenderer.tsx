@@ -1,7 +1,9 @@
 import { Fragment } from "react"
+import BlogListing from "@components/BlogListing"
 import CarouselComponent from "@components/Carousel"
 import ProjectListing, { ProjectListingProps } from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
+import SingleUseComponent from "@components/SingleUseComponent"
 import Switchback, { SwitchbackProps } from "@components/Switchback"
 
 const ComponentRenderer = (components?: PageFragment["components"]) => {
@@ -16,6 +18,10 @@ const ComponentRenderer = (components?: PageFragment["components"]) => {
         return <CarouselComponent {...component} />
       case "ScrollingSwitchbackRecord":
         return <ScrollingSwitchbackComponent {...component} />
+      case "BlogListingRecord":
+        return <BlogListing {...component} />
+      case "SingleUseComponentRecord":
+        return <SingleUseComponent {...component} />
       default:
         return null
     }
@@ -24,7 +30,7 @@ const ComponentRenderer = (components?: PageFragment["components"]) => {
   return (
     <>
       {components.map((component) => {
-        return <Fragment key={component.__typename}>{componentChecker(component)}</Fragment>
+        return <Fragment key={component.id}>{componentChecker(component)}</Fragment>
       })}
     </>
   )
