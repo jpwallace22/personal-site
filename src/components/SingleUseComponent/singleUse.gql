@@ -1,0 +1,4 @@
+fragment SingleUseComponent on SingleUseComponentRecord {
+  id
+  componentName
+}
