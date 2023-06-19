@@ -193,6 +193,12 @@ export const ProjectFragment = gql`
         ...Button
       }
     }
+    extraInformation {
+      value
+      links {
+        ...Button
+      }
+    }
     bannerImage {
       ...Image
     }
@@ -469,8 +475,14 @@ export const ProjectPageQuery = gql`
     templateProject(filter: { slug: { eq: $slug } }) {
       ...Project
     }
+    templatePage(filter: { slug: { eq: "home" } }) {
+      components {
+        ...ProjectListing
+      }
+    }
   }
   ${ProjectFragment}
+  ${ProjectListingFragment}
 `
 
 /**

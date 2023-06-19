@@ -193,6 +193,11 @@ declare global {
       value: unknown
       links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
     } | null
+    extraInformation?: {
+      __typename?: "TemplateProjectModelExtraInformationField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+    } | null
     bannerImage?: ({ __typename?: "FileField" } & ImageFragment) | null
     techStack: Array<{ __typename?: "TechStackRecord" } & TechStackFragment>
     switchbacks?:
@@ -214,6 +219,15 @@ declare global {
   export type ProjectPageQuery = {
     __typename?: "Query"
     templateProject?: ({ __typename?: "TemplateProjectRecord" } & ProjectFragment) | null
+    templatePage?: {
+      __typename?: "TemplatePageRecord"
+      components: Array<
+        | { __typename?: "CarouselRecord" }
+        | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
+        | { __typename?: "ScrollingSwitchbackRecord" }
+        | { __typename?: "SwitchbackRecord" }
+      >
+    } | null
   }
 }
 export {}
