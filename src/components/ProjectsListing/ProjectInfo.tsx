@@ -43,7 +43,6 @@ const ProjectInfo: FC<ProjectInfoProps> = ({
     <div className={twMerge(projectInfo({ reverse, className }))} {...props}>
       <Heading
         as="h3"
-        id="project-heading"
         headline={title}
         eyebrow={subtitle}
         className="text-4xl drop-shadow-md sm:text-4xl xl:text-4xl"
