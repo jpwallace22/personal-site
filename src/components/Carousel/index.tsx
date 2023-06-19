@@ -3,7 +3,9 @@ import Section from "@molecules/Section"
 import Carousel from "@components/Carousel/Carousel"
 import TestimonialCard from "@components/TestimonialCard"
 
-interface CarouselComponentProps extends ComponentPropsWithoutRef<"section">, CarouselFragment {}
+interface CarouselComponentProps
+  extends ComponentPropsWithoutRef<"section">,
+    Clean<CarouselFragment> {}
 
 const cardChooser = (card: CarouselFragment["cards"][number]) => {
   switch (card.__typename) {
