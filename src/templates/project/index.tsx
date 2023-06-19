@@ -5,20 +5,29 @@ import { SlideIn } from "@molecules/animations"
 import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import TechStack from "@molecules/TechStack"
+import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
+import StructuredText from "@components/StructuredText"
 import Switchback from "@components/Switchback"
 import makeServerQuery from "@utils/makeServerQuery"
+import { nextProjectFromPage } from "src/templates/project/utils/nextProjectFromPage"
 
 interface ProjectPageProps {
   slug?: string
 }
 
 const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
-  const { templateProject } = await makeServerQuery<ProjectPageQuery>(ProjectPageQuery, { slug })
-  if (!templateProject) {
+  const { templateProject, templatePage } = await makeServerQuery<ProjectPageQuery>(
+    ProjectPageQuery,
+    { slug }
+  )
+  if (!templateProject || !slug) {
     return notFound()
   }
-  const { title, subtitle, heading, bannerImage, body, techStack, switchbacks } = templateProject
+
+  const nextProjectCard = nextProjectFromPage(templatePage, slug)
+  const { title, subtitle, heading, bannerImage, body, techStack, switchbacks, extraInformation } =
+    templateProject
 
   return (
     <>
@@ -46,6 +55,10 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
         />
       </Section>
       {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
+      <Section>
+        <StructuredText data={extraInformation} />
+      </Section>
+      {nextProjectCard && <ProjectListing heading="Next Project" cards={nextProjectCard} />}
     </>
   )
 }

@@ -10,6 +10,12 @@ fragment Project on TemplateProjectRecord {
       ...Button
     }
   }
+  extraInformation {
+    value
+    links {
+      ...Button
+    }
+  }
   bannerImage {
     ...Image
   }
@@ -30,5 +36,10 @@ query AllProjectSlugs {
 query ProjectPage($slug: String!) {
   templateProject(filter: { slug: { eq: $slug } }) {
     ...Project
+  }
+  templatePage(filter: { slug: { eq: "home" } }) {
+    components {
+      ...ProjectListing
+    }
   }
 }
