@@ -4,6 +4,7 @@ import { ComponentPropsWithoutRef, createRef, FC } from "react"
 import { cva } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
+import Circle from "@molecules/Circle"
 import { separateSwitchbacks } from "@components/ScrollingSwitchback/utils/separateSwitchbacks"
 import StructuredText from "@components/StructuredText"
 import { useIntersection } from "@utils/hooks/useIntersectionObserver"
@@ -33,7 +34,9 @@ const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
 
   return (
     <div className={twMerge("relative flex gap-12", className)} {...props}>
-      <div className="flex-auto">
+      <div className="relative flex-auto">
+        <Circle className="absolute -left-2/3 -top-20" size="lg" contrast="low" />
+        <Circle className="absolute -left-1/3 bottom-0" size="md" contrast="high" />
         {image && (
           <Image
             src={image.url}
@@ -44,7 +47,8 @@ const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
           />
         )}
       </div>
-      <div className="flex w-5/12 flex-col gap-[60vh] py-32">
+      <div className="relative flex w-5/12 flex-col gap-[63vh] py-32">
+        <Circle className="absolute left-2/3 top-1/3" size="lg" contrast="low" />
         {contentArray.map(({ heading, body }, i) => (
           <div
             key={heading}

@@ -9,6 +9,9 @@ const makeServerQuery = async <T>(
   variables?: OperationVariables
 ): Promise<ServerQueryResponse<T>> => {
   const { data, loading, error } = await getClient().query<T>({ query, variables })
+  if (error) {
+    console.error(error)
+  }
 
   return { ...data, loading, error }
 }
