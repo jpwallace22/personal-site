@@ -1,5 +1,5 @@
 query stpTest {
-  blogPost(filter: { slug: { eq: "test" } }) {
+  templateBlogPost(filter: { slug: { eq: "test" } }) {
     body {
       value
       links {

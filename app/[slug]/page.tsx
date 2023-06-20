@@ -1,29 +1,27 @@
-import { StpTestQuery } from "@codegen/sdk"
-import Section from "@molecules/Section"
-import Footer from "@components/Footer"
-import StructuredText from "@components/StructuredText"
+import { AllTemplatePageSlugsQuery } from "@codegen/sdk"
 import makeServerQuery from "@utils/makeServerQuery"
+import Page from "src/templates/page"
 
-type Props = {
+type Params = {
   params: {
     slug?: string
   }
 }
 
-const Page = async ({ params: { slug } }: Props) => {
-  const { blogPost: body } = await makeServerQuery<StpTestQuery>(StpTestQuery)
-
-  return (
-    <>
-      <Section>
-        <h1>page</h1>
-      </Section>
-      <Section>
-        <StructuredText data={body?.body} />
-      </Section>
-      <Footer />
-    </>
+export const generateStaticParams = async () => {
+  const { allTemplatePages } = await makeServerQuery<AllTemplatePageSlugsQuery>(
+    AllTemplatePageSlugsQuery
   )
+
+  return allTemplatePages.map(({ slug }) => ({
+    params: {
+      slug,
+    },
+  }))
 }
 
-export default Page
+const NextPage = async ({ params: { slug } }: Params) => {
+  return <Page slug={slug} />
+}
+
+export default NextPage

@@ -1,0 +1,35 @@
+fragment BlogCard on TemplateBlogPostRecord {
+  id
+  internalName
+  title
+  publishDate
+  slug
+  body {
+    value
+  }
+  featuredImage {
+    ...Image
+  }
+  excerpt {
+    value
+  }
+}
+
+fragment BlogListing on BlogListingRecord {
+  id
+  heading
+  headingAs
+  eyebrow
+  body {
+    value
+  }
+  cards {
+    ...BlogCard
+  }
+}
+
+query AllBlogCards {
+  allTemplateBlogPosts(orderBy: publishDate_DESC) {
+    ...BlogCard
+  }
+}

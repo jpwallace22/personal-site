@@ -1,4 +1,33 @@
 declare global {
+  export type BlogCardFragment = {
+    __typename?: "TemplateBlogPostRecord"
+    id: string
+    internalName?: string | null
+    title?: string | null
+    publishDate?: string | null
+    slug?: string | null
+    body?: { __typename?: "TemplateBlogPostModelBodyField"; value: unknown } | null
+    featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
+    excerpt?: { __typename?: "TemplateBlogPostModelExcerptField"; value: unknown } | null
+  }
+
+  export type BlogListingFragment = {
+    __typename?: "BlogListingRecord"
+    id: string
+    heading?: string | null
+    headingAs?: string | null
+    eyebrow?: string | null
+    body?: { __typename?: "BlogListingModelBodyField"; value: unknown } | null
+    cards: Array<{ __typename?: "TemplateBlogPostRecord" } & BlogCardFragment>
+  }
+
+  export type AllBlogCardsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllBlogCardsQuery = {
+    __typename?: "Query"
+    allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord" } & BlogCardFragment>
+  }
+
   export type TestimonialCardFragment = {
     __typename?: "TestimonialCardRecord"
     quote?: { __typename?: "TestimonialCardModelQuoteField"; value: unknown } | null
@@ -7,6 +36,7 @@ declare global {
 
   export type CarouselFragment = {
     __typename?: "CarouselRecord"
+    id: string
     cards: Array<{ __typename?: "TestimonialCardRecord" } & TestimonialCardFragment>
   }
 
@@ -64,6 +94,12 @@ declare global {
     switchbacks: Array<{ __typename?: "SwitchbackRecord" } & SwitchbackFragment>
   }
 
+  export type SingleUseComponentFragment = {
+    __typename?: "SingleUseComponentRecord"
+    id: string
+    componentName?: string | null
+  }
+
   export type SwitchbackFragment = {
     __typename?: "SwitchbackRecord"
     designAccent?: string | null
@@ -85,10 +121,10 @@ declare global {
 
   export type StpTestQuery = {
     __typename?: "Query"
-    blogPost?: {
-      __typename?: "BlogPostRecord"
+    templateBlogPost?: {
+      __typename?: "TemplateBlogPostRecord"
       body?: {
-        __typename?: "BlogPostModelBodyField"
+        __typename?: "TemplateBlogPostModelBodyField"
         value: unknown
         links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
         blocks: Array<{
@@ -136,6 +172,12 @@ declare global {
     company?: ({ __typename?: "CompanyRecord" } & CompanyFragment) | null
   }
 
+  export type CategoryFragment = {
+    __typename?: "CategoryRecord"
+    name?: string | null
+    slug?: string | null
+  }
+
   export type ButtonFragment = {
     __typename?: "ButtonRecord"
     id: string
@@ -154,14 +196,63 @@ declare global {
     thumbnail?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
+  export type BlogFragment = {
+    __typename?: "TemplateBlogPostRecord"
+    id: string
+    internalName?: string | null
+    title?: string | null
+    subtitle?: string | null
+    publishDate?: string | null
+    slug?: string | null
+    categories: Array<{ __typename?: "CategoryRecord" } & CategoryFragment>
+    body?: {
+      __typename?: "TemplateBlogPostModelBodyField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+      blocks: Array<{
+        __typename?: "ImageRecord"
+        id: string
+        media?: {
+          __typename: "FileField"
+          title?: string | null
+          id: string
+          alt?: string | null
+          blurhash?: string | null
+          height?: number | null
+          width?: number | null
+          url: string
+        } | null
+      }>
+    } | null
+    featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
+  }
+
+  export type TemplateBlogPostQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type TemplateBlogPostQuery = {
+    __typename?: "Query"
+    templateBlogPost?: ({ __typename?: "TemplateBlogPostRecord" } & BlogFragment) | null
+  }
+
+  export type AllBlogPostSlugsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllBlogPostSlugsQuery = {
+    __typename?: "Query"
+    allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord"; slug?: string | null }>
+  }
+
   export type PageFragment = {
     __typename?: "TemplatePageRecord"
     id: string
     slug?: string | null
     components: Array<
+      | ({ __typename?: "BlogListingRecord" } & BlogListingFragment)
       | ({ __typename?: "CarouselRecord" } & CarouselFragment)
       | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
       | ({ __typename?: "ScrollingSwitchbackRecord" } & ScrollingSwitchbackFragment)
+      | ({ __typename?: "SingleUseComponentRecord" } & SingleUseComponentFragment)
       | ({ __typename?: "SwitchbackRecord" } & SwitchbackFragment)
     >
     seo?: {
@@ -170,6 +261,13 @@ declare global {
       title?: string | null
       image?: ({ __typename?: "FileField" } & ImageFragment) | null
     } | null
+  }
+
+  export type AllTemplatePageSlugsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllTemplatePageSlugsQuery = {
+    __typename?: "Query"
+    allTemplatePages: Array<{ __typename?: "TemplatePageRecord"; slug?: string | null }>
   }
 
   export type TemplatePageQueryVariables = Exact<{
@@ -222,9 +320,11 @@ declare global {
     templatePage?: {
       __typename?: "TemplatePageRecord"
       components: Array<
+        | { __typename?: "BlogListingRecord" }
         | { __typename?: "CarouselRecord" }
         | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
         | { __typename?: "ScrollingSwitchbackRecord" }
+        | { __typename?: "SingleUseComponentRecord" }
         | { __typename?: "SwitchbackRecord" }
       >
     } | null

@@ -4,8 +4,8 @@ import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import { FadeIn } from "@molecules/animations"
 import Circle from "@molecules/Circle"
+import HeadingComp, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
-import StructuredText from "@components/StructuredText"
 import circleStyleFromCMS from "@components/Switchback/utils/circleStyleFromCMS"
 
 const wrapper = cva(
@@ -32,7 +32,6 @@ const circle = cva(["-z-10"], {
 })
 const content = cva(["w-full lg:w-7/12 xl:w-1/2", "flex flex-col gap-8"])
 const asset = cva(["relative", "lg:w-5/12 xl:w-1/2"])
-const headingStyles = cva(["text-5xl sm:text-6xl xl:text-7xl"])
 
 export type SwitchbackProps = Clean<SwitchbackFragment> &
   ComponentPropsWithoutRef<"div"> &
@@ -44,7 +43,7 @@ export type SwitchbackProps = Clean<SwitchbackFragment> &
 
 const Switchback: FC<SwitchbackProps> = ({
   heading,
-  headingAs: Heading = "h2",
+  headingAs = "h2",
   image,
   reverse,
   body,
@@ -59,8 +58,7 @@ const Switchback: FC<SwitchbackProps> = ({
       <FadeIn animated={animated}>
         <div className={twMerge(wrapper({ reverse, imageTop }))}>
           <div className={content()}>
-            <Heading className={headingStyles()}>{heading}</Heading>
-            <StructuredText data={body} />
+            <HeadingComp headline={heading} as={headingAs as HeadingMarkup} body={body} />
           </div>
           <div className={asset()}>
             {designAccent && (

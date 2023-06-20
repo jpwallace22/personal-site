@@ -8,6 +8,7 @@ fragment TestimonialCard on TestimonialCardRecord {
 }
 
 fragment Carousel on CarouselRecord {
+  id
   cards {
     ...TestimonialCard
   }

@@ -3,6 +3,7 @@ export const iconValues = new Set([
   "chevron-right",
   "copy",
   "external",
+  "facebook",
   "github",
   "instagram",
   "linkedIn",
@@ -11,7 +12,9 @@ export const iconValues = new Set([
   "node",
   "quote",
   "react",
+  "right-arrow",
   "sun",
+  "twitter",
   "typescript",
 ])
 export type IconIds =
@@ -19,6 +22,7 @@ export type IconIds =
   | "chevron-right"
   | "copy"
   | "external"
+  | "facebook"
   | "github"
   | "instagram"
   | "linkedIn"
@@ -27,5 +31,7 @@ export type IconIds =
   | "node"
   | "quote"
   | "react"
+  | "right-arrow"
   | "sun"
+  | "twitter"
   | "typescript"

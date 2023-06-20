@@ -19,7 +19,7 @@ export const generateStaticParams = async () => {
   }))
 }
 
-const Page = async ({ params: { slug } }: Params) => {
+const Page = ({ params: { slug } }: Params) => {
   return (
     <>
       <ProjectPage slug={slug} />
