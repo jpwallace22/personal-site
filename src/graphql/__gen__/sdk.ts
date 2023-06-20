@@ -50,12 +50,29 @@ export const BlogFragment = gql`
     slug
     body {
       value
+      links {
+        ...Button
+      }
+      blocks {
+        id
+        media {
+          title
+          __typename
+          id
+          alt
+          blurhash
+          height
+          width
+          url
+        }
+      }
     }
     featuredImage {
       ...Image
     }
   }
   ${CategoryFragment}
+  ${ButtonFragment}
   ${ImageFragment}
 `
 export const SwitchbackFragment = gql`

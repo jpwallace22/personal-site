@@ -5,15 +5,31 @@ import Icon from "@molecules/Icon"
 import { IconIds } from "@molecules/Icon/iconIds"
 import Link from "@molecules/Link"
 
-const SOCIAL_DATA = {
-  github: "https://www.github.com/jpwallace22",
-  linkedIn: "https://www.linkedin.com/in/thejustinwallace",
-  instagram: "https://www.instagram.com/van.surf.climb",
+interface SocialData {
+  social: IconIds
+  link: string
 }
 
-interface SocialProps extends VariantProps<typeof socials>, ComponentPropsWithoutRef<"div"> {}
+interface SocialProps extends VariantProps<typeof styles>, ComponentPropsWithoutRef<"div"> {
+  socials?: SocialData[]
+}
 
-const socials = cva(["flex items-center"], {
+const defaultSocialData = [
+  {
+    social: "github",
+    link: "https://www.github.com/jpwallace22",
+  },
+  {
+    social: "linkedIn",
+    link: "https://www.linkedin.com/in/thejustinwallace",
+  },
+  {
+    social: "instagram",
+    link: "https://www.instagram.com/van.surf.climb",
+  },
+]
+
+const styles = cva(["flex items-center"], {
   variants: {
     size: {
       sm: ["gap-4"],
@@ -36,15 +52,21 @@ export const sizeMap = {
   lg: 56,
 }
 
-const Socials: FC<SocialProps> = ({ size, colors, className, ...props }) => {
+const Socials: FC<SocialProps> = ({
+  size,
+  colors,
+  className,
+  socials = defaultSocialData,
+  ...props
+}) => {
   return (
-    <div className={twMerge(socials({ size, className }))} {...props}>
-      {Object.entries(SOCIAL_DATA).map(([social, link]) => (
+    <div className={twMerge(styles({ size, className }))} {...props}>
+      {socials.map(({ social, link }) => (
         <Link key={social} href={link} aria-label={social}>
           <Icon
             size={sizeMap[size || "sm"]}
             id={social as IconIds}
-            className={twMerge(socials({ colors }))}
+            className={twMerge(styles({ colors }))}
           />
         </Link>
       ))}

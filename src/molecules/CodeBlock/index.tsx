@@ -16,6 +16,10 @@ const CodeBlock: FC<CodeBlockProps> = ({ node }) => {
   useEffect(() => {
     import("prismjs").then((Prism) => {
       require("./styles/prism-theme.css")
+      require("prismjs/components/prism-typescript.min.js")
+      require("prismjs/components/prism-shell-session.min.js")
+      require("prismjs/components/prism-jsx.min.js")
+      require("prismjs/components/prism-tsx.min.js")
       Prism.highlightAll()
     })
   }, [])

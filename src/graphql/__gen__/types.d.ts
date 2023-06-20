@@ -205,7 +205,25 @@ declare global {
     publishDate?: string | null
     slug?: string | null
     categories: Array<{ __typename?: "CategoryRecord" } & CategoryFragment>
-    body?: { __typename?: "TemplateBlogPostModelBodyField"; value: unknown } | null
+    body?: {
+      __typename?: "TemplateBlogPostModelBodyField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+      blocks: Array<{
+        __typename?: "ImageRecord"
+        id: string
+        media?: {
+          __typename: "FileField"
+          title?: string | null
+          id: string
+          alt?: string | null
+          blurhash?: string | null
+          height?: number | null
+          width?: number | null
+          url: string
+        } | null
+      }>
+    } | null
     featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 

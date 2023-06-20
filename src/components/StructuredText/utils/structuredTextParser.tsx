@@ -1,5 +1,6 @@
 import { Children, ReactElement } from "react"
 import {
+  Heading as HeadingType,
   isBlockquote,
   isCode,
   isHeading,
@@ -8,6 +9,7 @@ import {
   isListItem,
   isParagraph,
   Record as NodeType,
+  Span,
 } from "datocms-structured-text-utils"
 import dynamic from "next/dynamic"
 import {
@@ -18,6 +20,7 @@ import {
   StructuredTextGraphQlResponse,
 } from "react-datocms"
 import { ButtonProps } from "@molecules/Button"
+import { convertToKebabCase } from "@utils/toKebabCase"
 
 const Button = dynamic(() => import("@molecules/Button"))
 const Icon = dynamic(() => import("@molecules/Icon"))
@@ -49,7 +52,7 @@ const structuredTextParser = (data?: StructuredData) => {
           renderNodeRule(isHeading, ({ node, children, key }) => {
             const Component = `h${node.level}` as const
             return (
-              <Component key={key} className="mt-8">
+              <Component key={key} className="mt-8" id={headingToId(node)}>
                 {children}
               </Component>
             )
@@ -159,6 +162,12 @@ const structuredTextParser = (data?: StructuredData) => {
       />
     )
   }
+}
+
+export const headingToId = (node: HeadingType) => {
+  const headingContent = node && (node.children[0] as Span).value?.toString()
+
+  return convertToKebabCase(headingContent) ?? undefined
 }
 
 const buttonWrapper = (arr: InlineRecords[]) => {

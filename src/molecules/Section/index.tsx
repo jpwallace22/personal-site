@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 export const GLOBAL_MAX_WIDTH = "max-w-screen-2xl mx-auto"
-export const GLOBAL_PADDING = "px-4 sm:px-6 lg:px-8"
+export const GLOBAL_PADDING = "px-4 sm:px-6 lg:px-8 xl:px-20"
 
 export interface SectionProps
   extends ComponentPropsWithoutRef<"section">,
