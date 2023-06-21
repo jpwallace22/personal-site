@@ -40,6 +40,31 @@ declare global {
     cards: Array<{ __typename?: "TestimonialCardRecord" } & TestimonialCardFragment>
   }
 
+  export type FeatureCardFragment = {
+    __typename?: "FeatureHighlightCardRecord"
+    id: string
+    heading?: string | null
+    body?: {
+      __typename?: "FeatureHighlightCardModelBodyField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+    } | null
+    image?: ({ __typename?: "FileField" } & ImageFragment) | null
+  }
+
+  export type FeatureHighlightFragment = {
+    __typename?: "FeatureHighlightRecord"
+    id: string
+    heading?: string | null
+    eyebrow?: string | null
+    body?: {
+      __typename?: "FeatureHighlightModelBodyField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+    } | null
+    cards: Array<{ __typename?: "FeatureHighlightCardRecord" } & FeatureCardFragment>
+  }
+
   export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never }>
 
   export type SiteMetaDataQuery = {
@@ -250,6 +275,7 @@ declare global {
     components: Array<
       | ({ __typename?: "BlogListingRecord" } & BlogListingFragment)
       | ({ __typename?: "CarouselRecord" } & CarouselFragment)
+      | ({ __typename?: "FeatureHighlightRecord" } & FeatureHighlightFragment)
       | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
       | ({ __typename?: "ScrollingSwitchbackRecord" } & ScrollingSwitchbackFragment)
       | ({ __typename?: "SingleUseComponentRecord" } & SingleUseComponentFragment)
@@ -322,6 +348,7 @@ declare global {
       components: Array<
         | { __typename?: "BlogListingRecord" }
         | { __typename?: "CarouselRecord" }
+        | { __typename?: "FeatureHighlightRecord" }
         | ({ __typename?: "ProjectListingRecord" } & ProjectListingFragment)
         | { __typename?: "ScrollingSwitchbackRecord" }
         | { __typename?: "SingleUseComponentRecord" }

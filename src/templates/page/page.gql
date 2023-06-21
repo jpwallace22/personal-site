@@ -8,6 +8,7 @@ fragment Page on TemplatePageRecord {
     ...ScrollingSwitchback
     ...BlogListing
     ...SingleUseComponent
+    ...FeatureHighlight
   }
   seo {
     description

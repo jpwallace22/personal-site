@@ -241,6 +241,41 @@ export const SingleUseComponentFragment = gql`
     componentName
   }
 `
+export const FeatureCardFragment = gql`
+  fragment FeatureCard on FeatureHighlightCardRecord {
+    id
+    heading
+    body {
+      value
+      links {
+        ...Button
+      }
+    }
+    image {
+      ...Image
+    }
+  }
+  ${ButtonFragment}
+  ${ImageFragment}
+`
+export const FeatureHighlightFragment = gql`
+  fragment FeatureHighlight on FeatureHighlightRecord {
+    id
+    heading
+    eyebrow
+    body {
+      value
+      links {
+        ...Button
+      }
+    }
+    cards {
+      ...FeatureCard
+    }
+  }
+  ${ButtonFragment}
+  ${FeatureCardFragment}
+`
 export const PageFragment = gql`
   fragment Page on TemplatePageRecord {
     id
@@ -252,6 +287,7 @@ export const PageFragment = gql`
       ...ScrollingSwitchback
       ...BlogListing
       ...SingleUseComponent
+      ...FeatureHighlight
     }
     seo {
       description
@@ -267,6 +303,7 @@ export const PageFragment = gql`
   ${ScrollingSwitchbackFragment}
   ${BlogListingFragment}
   ${SingleUseComponentFragment}
+  ${FeatureHighlightFragment}
   ${ImageFragment}
 `
 export const ProjectFragment = gql`

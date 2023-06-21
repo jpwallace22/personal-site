@@ -1,6 +1,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .gradient-primary {
+    @apply bg-gradient-to-r from-purple-400 to-primary-500;
+  }
+
   .border-gradient {
     position: relative;
     &:before {
@@ -13,10 +17,6 @@
       z-index: -1;
       border-radius: inherit;
     }
-  }
-
-  .gradient-primary {
-    @apply bg-gradient-to-r from-purple-400 to-primary-500;
   }
 
   .border-gradient-primary {
@@ -123,12 +123,6 @@
     @apply text-sm font-extrabold uppercase leading-none tracking-wide text-primary-500 dark:text-purple-300;
   }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
