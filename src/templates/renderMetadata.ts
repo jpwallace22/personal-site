@@ -11,10 +11,10 @@ interface SEO {
   >
 }
 
-const metaData = (slug?: Maybe<string>, seo?: Maybe<SEO>): Metadata => {
+const renderMetadata = (slug?: Maybe<string>, seo?: Maybe<SEO>): Metadata => {
   const description =
     seo?.description ||
-    "This is the personal site and portfolio of Justin Wallace. Here I showcase some works and the progress of my career. I also write about dev-related experiences."
+    "The personal site and portfolio of Justin Wallace the Software Engineer. Here I showcase some projects and the progress of my career. I also write about dev-related experiences."
   const title = seo?.title || "Justin Wallace | Software Engineer"
   const images = [seo?.image?.url || "https://www.datocms-assets.com/85391/1670693320-jwdev.webp"]
   const url = `https://www.justinwallace.dev/${slug || ""}`
@@ -31,4 +31,4 @@ const metaData = (slug?: Maybe<string>, seo?: Maybe<SEO>): Metadata => {
   }
 }
 
-export default metaData
+export default renderMetadata

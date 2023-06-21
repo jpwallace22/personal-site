@@ -43,3 +43,16 @@ query ProjectPage($slug: String!) {
     }
   }
 }
+
+query ProjectPageMetadata($slug: String!) {
+  metaData: templateProject(filter: { slug: { eq: $slug } }) {
+    id
+    seo {
+      title
+      description
+      image {
+        ...Image
+      }
+    }
+  }
+}

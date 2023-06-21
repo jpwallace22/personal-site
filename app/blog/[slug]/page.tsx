@@ -3,7 +3,7 @@ import { AllBlogPostSlugsQuery, BlogMetaDataQuery } from "@codegen/sdk"
 import Footer from "@components/Footer"
 import makeServerQuery from "@utils/makeServerQuery"
 import BlogPost from "src/templates/blogDetails"
-import metaData from "src/templates/metaData"
+import renderMetadata from "src/templates/renderMetadata"
 
 type Params = {
   params: {
@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params: { slug } }: Params): Promise<Me
     slug,
   })
 
-  return metaData(slug, blogMetaData?.seo)
+  return renderMetadata(slug, blogMetaData?.seo)
 }
 
 export const generateStaticParams = async () => {

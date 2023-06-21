@@ -755,7 +755,7 @@ export type AllTemplatePageSlugsQueryResult = Apollo.QueryResult<
   AllTemplatePageSlugsQueryVariables
 >
 export const TemplatePageQuery = gql`
-  query templatePage($slug: String) {
+  query TemplatePage($slug: String) {
     templatePage(filter: { slug: { eq: $slug } }) {
       ...Page
     }
@@ -799,6 +799,70 @@ export type TemplatePageLazyQueryHookResult = ReturnType<typeof useTemplatePageL
 export type TemplatePageQueryResult = Apollo.QueryResult<
   TemplatePageQuery,
   TemplatePageQueryVariables
+>
+export const TemplatePageMetadataQuery = gql`
+  query TemplatePageMetadata($slug: String) {
+    metaData: templatePage(filter: { slug: { eq: $slug } }) {
+      id
+      seo {
+        description
+        title
+        image {
+          ...Image
+        }
+      }
+    }
+  }
+  ${ImageFragment}
+`
+
+/**
+ * __useTemplatePageMetadataQuery__
+ *
+ * To run a query within a React component, call `useTemplatePageMetadataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTemplatePageMetadataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTemplatePageMetadataQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useTemplatePageMetadataQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    TemplatePageMetadataQuery,
+    TemplatePageMetadataQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TemplatePageMetadataQuery, TemplatePageMetadataQueryVariables>(
+    TemplatePageMetadataQuery,
+    options
+  )
+}
+export function useTemplatePageMetadataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    TemplatePageMetadataQuery,
+    TemplatePageMetadataQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TemplatePageMetadataQuery, TemplatePageMetadataQueryVariables>(
+    TemplatePageMetadataQuery,
+    options
+  )
+}
+export type TemplatePageMetadataQueryHookResult = ReturnType<typeof useTemplatePageMetadataQuery>
+export type TemplatePageMetadataLazyQueryHookResult = ReturnType<
+  typeof useTemplatePageMetadataLazyQuery
+>
+export type TemplatePageMetadataQueryResult = Apollo.QueryResult<
+  TemplatePageMetadataQuery,
+  TemplatePageMetadataQueryVariables
 >
 export const AllProjectSlugsQuery = gql`
   query AllProjectSlugs {
@@ -893,3 +957,64 @@ export function useProjectPageLazyQuery(
 export type ProjectPageQueryHookResult = ReturnType<typeof useProjectPageQuery>
 export type ProjectPageLazyQueryHookResult = ReturnType<typeof useProjectPageLazyQuery>
 export type ProjectPageQueryResult = Apollo.QueryResult<ProjectPageQuery, ProjectPageQueryVariables>
+export const ProjectPageMetadataQuery = gql`
+  query ProjectPageMetadata($slug: String!) {
+    metaData: templateProject(filter: { slug: { eq: $slug } }) {
+      id
+      seo {
+        title
+        description
+        image {
+          ...Image
+        }
+      }
+    }
+  }
+  ${ImageFragment}
+`
+
+/**
+ * __useProjectPageMetadataQuery__
+ *
+ * To run a query within a React component, call `useProjectPageMetadataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useProjectPageMetadataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useProjectPageMetadataQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useProjectPageMetadataQuery(
+  baseOptions: Apollo.QueryHookOptions<ProjectPageMetadataQuery, ProjectPageMetadataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProjectPageMetadataQuery, ProjectPageMetadataQueryVariables>(
+    ProjectPageMetadataQuery,
+    options
+  )
+}
+export function useProjectPageMetadataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    ProjectPageMetadataQuery,
+    ProjectPageMetadataQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProjectPageMetadataQuery, ProjectPageMetadataQueryVariables>(
+    ProjectPageMetadataQuery,
+    options
+  )
+}
+export type ProjectPageMetadataQueryHookResult = ReturnType<typeof useProjectPageMetadataQuery>
+export type ProjectPageMetadataLazyQueryHookResult = ReturnType<
+  typeof useProjectPageMetadataLazyQuery
+>
+export type ProjectPageMetadataQueryResult = Apollo.QueryResult<
+  ProjectPageMetadataQuery,
+  ProjectPageMetadataQueryVariables
+>
