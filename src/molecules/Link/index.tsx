@@ -20,10 +20,10 @@ const link = cva(["cursor-pointer"], {
   },
 })
 
-const Link = ({ className, variant, href, ...props }: LinkProps) => {
+const Link = ({ className, variant: variantProp, href, ...props }: LinkProps) => {
   const { as: Component, ...parsedUrl } = parseUrl(href)
   const asDiv = Component === "div"
-  variant = asDiv ? "unstyled" : variant
+  const variant = asDiv ? "unstyled" : variantProp
 
   return (
     <Component className={twMerge(link({ variant, className, asDiv }))} {...parsedUrl} {...props}>

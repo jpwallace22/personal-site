@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import BlogListing from "@components/BlogListing"
 import CarouselComponent from "@components/Carousel"
+import FeatureHighlight from "@components/FeatureHighlight"
 import ProjectListing, { ProjectListingProps } from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import SingleUseComponent from "@components/SingleUseComponent"
@@ -22,6 +23,8 @@ const ComponentRenderer = (components?: PageFragment["components"]) => {
         return <BlogListing {...component} />
       case "SingleUseComponentRecord":
         return <SingleUseComponent {...component} />
+      case "FeatureHighlightRecord":
+        return <FeatureHighlight {...component} />
       default:
         return null
     }

@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef, ElementType, type FC } from "react"
 import { cva } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
-import { FadeIn } from "@molecules/animations"
 import { BreadCrumbs } from "@molecules/BreadCrumbs"
 import HeadingComp, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
@@ -58,29 +57,27 @@ const BlogHero: FC<BlogHeroProps> = ({
   return (
     <Section id={sectionId || undefined}>
       <BreadCrumbs breadcrumbs={breadcrumbs} />
-      <FadeIn>
-        <div className={twMerge(wrapper())}>
-          <div className={content()}>
-            <HeadingComp headline={heading} as={headingAs as HeadingMarkup} />
-            <h2 className="text-4xl !font-normal text-gray-800 dark:text-gray-500">{subtitle}</h2>
-            <div className="text-purple-900 dark:text-common-white">
-              {formattedDate && <span>{formattedDate} • </span>}
-              {<span>{timeToReadStructuredText(body)} minute read</span>}
-            </div>
-          </div>
-          <div className={asset()}>
-            {image?.url && (
-              <Image
-                src={image?.url}
-                width={700}
-                height={700}
-                alt={image.alt || ""}
-                className="rounded-lg"
-              />
-            )}
+      <div className={twMerge(wrapper())}>
+        <div className={content()}>
+          <HeadingComp headline={heading} as={headingAs as HeadingMarkup} />
+          <h2 className="text-4xl !font-normal text-gray-800 dark:text-gray-500">{subtitle}</h2>
+          <div className="text-purple-900 dark:text-common-white">
+            {formattedDate && <span>{formattedDate} • </span>}
+            {<span>{timeToReadStructuredText(body)} minute read</span>}
           </div>
         </div>
-      </FadeIn>
+        <div className={asset()}>
+          {image?.url && (
+            <Image
+              src={image?.url}
+              width={700}
+              height={700}
+              alt={image.alt || ""}
+              className="rounded-lg"
+            />
+          )}
+        </div>
+      </div>
     </Section>
   )
 }

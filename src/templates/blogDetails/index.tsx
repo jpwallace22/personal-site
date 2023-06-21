@@ -50,6 +50,7 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
         subtitle={subtitle}
         publishDate={publishDate}
         body={body}
+        animated={false}
       />
       <Section>
         <div className="grid-cols-12 gap-16 md:grid">

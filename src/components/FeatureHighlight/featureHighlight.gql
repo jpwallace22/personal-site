@@ -1,0 +1,28 @@
+fragment FeatureCard on FeatureHighlightCardRecord {
+  id
+  heading
+  body {
+    value
+    links {
+      ...Button
+    }
+  }
+  image {
+    ...Image
+  }
+}
+
+fragment FeatureHighlight on FeatureHighlightRecord {
+  id
+  heading
+  eyebrow
+  body {
+    value
+    links {
+      ...Button
+    }
+  }
+  cards {
+    ...FeatureCard
+  }
+}
