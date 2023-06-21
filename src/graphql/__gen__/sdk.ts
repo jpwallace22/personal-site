@@ -644,6 +644,61 @@ export type AllBlogPostSlugsQueryResult = Apollo.QueryResult<
   AllBlogPostSlugsQuery,
   AllBlogPostSlugsQueryVariables
 >
+export const BlogMetaDataQuery = gql`
+  query BlogMetaData($slug: String!) {
+    blogMetaData: templateBlogPost(filter: { slug: { eq: $slug } }) {
+      id
+      title
+      publishDate
+      seo {
+        description
+        title
+        image {
+          ...Image
+        }
+      }
+    }
+  }
+  ${ImageFragment}
+`
+
+/**
+ * __useBlogMetaDataQuery__
+ *
+ * To run a query within a React component, call `useBlogMetaDataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogMetaDataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogMetaDataQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useBlogMetaDataQuery(
+  baseOptions: Apollo.QueryHookOptions<BlogMetaDataQuery, BlogMetaDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<BlogMetaDataQuery, BlogMetaDataQueryVariables>(BlogMetaDataQuery, options)
+}
+export function useBlogMetaDataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<BlogMetaDataQuery, BlogMetaDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<BlogMetaDataQuery, BlogMetaDataQueryVariables>(
+    BlogMetaDataQuery,
+    options
+  )
+}
+export type BlogMetaDataQueryHookResult = ReturnType<typeof useBlogMetaDataQuery>
+export type BlogMetaDataLazyQueryHookResult = ReturnType<typeof useBlogMetaDataLazyQuery>
+export type BlogMetaDataQueryResult = Apollo.QueryResult<
+  BlogMetaDataQuery,
+  BlogMetaDataQueryVariables
+>
 export const AllTemplatePageSlugsQuery = gql`
   query AllTemplatePageSlugs {
     allTemplatePages {

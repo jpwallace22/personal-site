@@ -268,6 +268,26 @@ declare global {
     allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord"; slug?: string | null }>
   }
 
+  export type BlogMetaDataQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type BlogMetaDataQuery = {
+    __typename?: "Query"
+    blogMetaData?: {
+      __typename?: "TemplateBlogPostRecord"
+      id: string
+      title?: string | null
+      publishDate?: string | null
+      seo?: {
+        __typename?: "SeoField"
+        description?: string | null
+        title?: string | null
+        image?: ({ __typename?: "FileField" } & ImageFragment) | null
+      } | null
+    } | null
+  }
+
   export type PageFragment = {
     __typename?: "TemplatePageRecord"
     id: string

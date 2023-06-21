@@ -43,3 +43,18 @@ query AllBlogPostSlugs {
     slug
   }
 }
+
+query BlogMetaData($slug: String!) {
+  blogMetaData: templateBlogPost(filter: { slug: { eq: $slug } }) {
+    id
+    title
+    publishDate
+    seo {
+      description
+      title
+      image {
+        ...Image
+      }
+    }
+  }
+}
