@@ -268,6 +268,26 @@ declare global {
     allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord"; slug?: string | null }>
   }
 
+  export type BlogMetaDataQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type BlogMetaDataQuery = {
+    __typename?: "Query"
+    blogMetaData?: {
+      __typename?: "TemplateBlogPostRecord"
+      id: string
+      title?: string | null
+      publishDate?: string | null
+      seo?: {
+        __typename?: "SeoField"
+        description?: string | null
+        title?: string | null
+        image?: ({ __typename?: "FileField" } & ImageFragment) | null
+      } | null
+    } | null
+  }
+
   export type PageFragment = {
     __typename?: "TemplatePageRecord"
     id: string
@@ -303,6 +323,24 @@ declare global {
   export type TemplatePageQuery = {
     __typename?: "Query"
     templatePage?: ({ __typename?: "TemplatePageRecord" } & PageFragment) | null
+  }
+
+  export type TemplatePageMetadataQueryVariables = Exact<{
+    slug?: InputMaybe<Scalars["String"]["input"]>
+  }>
+
+  export type TemplatePageMetadataQuery = {
+    __typename?: "Query"
+    metaData?: {
+      __typename?: "TemplatePageRecord"
+      id: string
+      seo?: {
+        __typename?: "SeoField"
+        description?: string | null
+        title?: string | null
+        image?: ({ __typename?: "FileField" } & ImageFragment) | null
+      } | null
+    } | null
   }
 
   export type ProjectFragment = {
@@ -354,6 +392,24 @@ declare global {
         | { __typename?: "SingleUseComponentRecord" }
         | { __typename?: "SwitchbackRecord" }
       >
+    } | null
+  }
+
+  export type ProjectPageMetadataQueryVariables = Exact<{
+    slug: Scalars["String"]["input"]
+  }>
+
+  export type ProjectPageMetadataQuery = {
+    __typename?: "Query"
+    metaData?: {
+      __typename?: "TemplateProjectRecord"
+      id: string
+      seo?: {
+        __typename?: "SeoField"
+        title?: string | null
+        description?: string | null
+        image?: ({ __typename?: "FileField" } & ImageFragment) | null
+      } | null
     } | null
   }
 }

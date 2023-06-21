@@ -25,8 +25,21 @@ query AllTemplatePageSlugs {
   }
 }
 
-query templatePage($slug: String) {
+query TemplatePage($slug: String) {
   templatePage(filter: { slug: { eq: $slug } }) {
     ...Page
+  }
+}
+
+query TemplatePageMetadata($slug: String) {
+  metaData: templatePage(filter: { slug: { eq: $slug } }) {
+    id
+    seo {
+      description
+      title
+      image {
+        ...Image
+      }
+    }
   }
 }
