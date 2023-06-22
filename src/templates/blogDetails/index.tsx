@@ -2,6 +2,7 @@ import { FC } from "react"
 import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
 import { TemplateBlogPostQuery } from "@codegen/sdk"
+import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import Socials from "@molecules/Socials"
 import BlogHero from "@components/BlogHero"
@@ -53,8 +54,11 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
         animated={false}
       />
       <Section>
-        <div className="grid-cols-12 gap-16 md:grid">
+        <div className="contain-layout grid-cols-12 gap-16 md:grid ">
+          <Circle dots className="absolute left-3/4 top-0 -z-10" />
+          <Circle size="md" contrast="high" className="absolute -bottom-64 left-3/4" />
           <div className="sticky top-24 col-span-3 hidden self-start lg:block xl:col-start-2">
+            <Circle size="lg" contrast="low" className="absolute right-full top-0" />
             <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
               In this Article
             </p>

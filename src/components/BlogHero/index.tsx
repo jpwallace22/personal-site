@@ -55,7 +55,10 @@ const BlogHero: FC<BlogHeroProps> = ({
     })
 
   return (
-    <Section id={sectionId || undefined}>
+    <Section
+      id={sectionId || undefined}
+      wrapperClass="bg-gradient-to-t from-gray-50 dark:from-purple-900 to-transparent"
+    >
       <BreadCrumbs breadcrumbs={breadcrumbs} />
       <div className={twMerge(wrapper())}>
         <div className={content()}>
@@ -69,6 +72,7 @@ const BlogHero: FC<BlogHeroProps> = ({
         <div className={asset()}>
           {image?.url && (
             <Image
+              priority
               src={image?.url}
               width={700}
               height={700}

@@ -39,6 +39,7 @@ export type SwitchbackProps = Clean<SwitchbackFragment> &
     headingAs: ElementType
     animated?: boolean
     imageTop?: boolean
+    priority?: boolean
   }
 
 const Switchback: FC<SwitchbackProps> = ({
@@ -52,6 +53,7 @@ const Switchback: FC<SwitchbackProps> = ({
   designAccent,
   imageTop = false,
   animated = true,
+  priority = false,
 }) => {
   return (
     <Section wrapperClass={`bg-${bgColor}`} id={sectionId || undefined}>
@@ -65,7 +67,13 @@ const Switchback: FC<SwitchbackProps> = ({
               <Circle {...circleStyleFromCMS(designAccent)} className={circle({ designAccent })} />
             )}
             {image?.url && (
-              <Image src={image?.url} width={700} height={700} alt={image.alt || ""} />
+              <Image
+                src={image?.url}
+                width={700}
+                height={700}
+                alt={image.alt || ""}
+                priority={priority}
+              />
             )}
           </div>
         </div>

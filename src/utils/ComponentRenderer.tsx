@@ -2,19 +2,19 @@ import { Fragment } from "react"
 import BlogListing from "@components/BlogListing"
 import CarouselComponent from "@components/Carousel"
 import FeatureHighlight from "@components/FeatureHighlight"
-import ProjectListing, { ProjectListingProps } from "@components/ProjectsListing"
+import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import SingleUseComponent from "@components/SingleUseComponent"
 import Switchback, { SwitchbackProps } from "@components/Switchback"
 
 const ComponentRenderer = (components?: PageFragment["components"]) => {
   if (!components || !components.length) return null
-  const componentChecker = (component: PageFragment["components"][number]) => {
+  const componentChecker = (component: PageFragment["components"][number], index: number) => {
     switch (component.__typename) {
       case "SwitchbackRecord":
-        return <Switchback {...(component as SwitchbackProps)} />
+        return <Switchback {...(component as SwitchbackProps)} priority={index === 0} /> // prefetch image if first component
       case "ProjectListingRecord":
-        return <ProjectListing {...(component as ProjectListingProps)} />
+        return <ProjectListing {...component} />
       case "CarouselRecord":
         return <CarouselComponent {...component} />
       case "ScrollingSwitchbackRecord":
@@ -32,8 +32,8 @@ const ComponentRenderer = (components?: PageFragment["components"]) => {
 
   return (
     <>
-      {components.map((component) => {
-        return <Fragment key={component.id}>{componentChecker(component)}</Fragment>
+      {components.map((component, i) => {
+        return <Fragment key={component.id}>{componentChecker(component, i)}</Fragment>
       })}
     </>
   )
