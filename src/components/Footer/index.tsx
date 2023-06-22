@@ -67,7 +67,7 @@ const Footer = async ({ full }: { full?: boolean }) => {
         )}
         <small className="text-md text-center leading-none">
           {`Designed & Developed by ©JW Development 2019-${new Date().getFullYear()} • `}
-          <Link href="/resume.pdf" className="text-purple-400 dark:text-common-white">
+          <Link href="/resume.pdf" className="text-purple-400 dark:text-common-white" download>
             Resume
           </Link>
         </small>
