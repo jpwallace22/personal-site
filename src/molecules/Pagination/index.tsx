@@ -12,7 +12,7 @@ interface PaginationProps extends ComponentPropsWithoutRef<"div"> {
   onRightClick: () => void
 }
 
-const dotWrapper = cva(["flex", "gap-3"])
+const dotWrapper = cva(["flex", "gap-3", "hidden md:flex"])
 const wrapper = cva(["flex", "justify-center", "items-center", "gap-8"])
 
 const Pagination: FC<PaginationProps> = ({
