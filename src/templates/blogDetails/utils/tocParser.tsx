@@ -2,7 +2,8 @@ import { isHeading } from "datocms-structured-text-utils"
 import { Heading } from "datocms-structured-text-utils"
 import { renderNodeRule, StructuredText } from "react-datocms"
 import Link from "@molecules/Link"
-import { headingToId, StructuredData } from "@components/StructuredText/utils/structuredTextParser"
+import headingToId from "@components/StructuredText/utils/headingToId"
+import { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
 
 export type TocData = StructuredData & {
   value: {
