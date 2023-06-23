@@ -1,0 +1,22 @@
+fragment Info on TemplateInfoRecord {
+  id
+  slug
+  information {
+    value
+    links {
+      ...Button
+    }
+  }
+}
+
+query AllTemplateInfoSlugs {
+  slugs: allTemplateInfos {
+    slug
+  }
+}
+
+query TemplateInfo($slug: String) {
+  templateInfo(filter: { slug: { eq: $slug } }) {
+    ...Info
+  }
+}
