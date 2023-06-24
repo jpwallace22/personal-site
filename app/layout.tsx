@@ -2,6 +2,8 @@ import "src/styles/global.css"
 import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google"
 import GlobalNav from "@components/GlobalNav"
+import GoogleAnalytics from "@components/GoogleAnalytics"
+import renderMetadata from "src/templates/renderMetadata"
 
 const darkerGrotesque = Darker_Grotesque({
   weight: ["700", "900", "600"],
@@ -27,9 +29,7 @@ const plexMono = IBM_Plex_Mono({
   variable: "--plex-mono",
 })
 
-export const metadata: Metadata = {
-  title: "Justin Wallace Development",
-}
+export const metadata: Metadata = renderMetadata()
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <GlobalNav />
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   )
