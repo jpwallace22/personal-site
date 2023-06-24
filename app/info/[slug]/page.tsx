@@ -1,6 +1,6 @@
 import { AllTemplateInfoSlugsQuery } from "@codegen/sdk"
 import makeServerQuery from "@utils/makeServerQuery"
-import Info from "src/templates/Info"
+import Info from "src/template/Info"
 
 type Params = {
   params: {

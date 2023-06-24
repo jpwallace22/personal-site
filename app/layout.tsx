@@ -3,7 +3,7 @@ import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google"
 import GlobalNav from "@components/GlobalNav"
 import GoogleAnalytics from "@components/GoogleAnalytics"
-import renderMetadata from "src/templates/renderMetadata"
+import renderMetadata from "src/template/renderMetadata"
 
 const darkerGrotesque = Darker_Grotesque({
   weight: ["700", "900", "600"],
