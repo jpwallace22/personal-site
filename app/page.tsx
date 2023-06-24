@@ -1,10 +1,6 @@
-import { Metadata } from "next"
 import Footer from "@components/Footer"
 import StaticHero from "@components/Hero/StaticHero"
-import Page from "src/templates/page"
-import renderMetadata from "src/templates/renderMetadata"
-
-export const metadata: Metadata = renderMetadata()
+import Page from "src/template/Page"
 
 const NextPage = async () => {
   return (

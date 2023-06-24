@@ -288,6 +288,33 @@ declare global {
     } | null
   }
 
+  export type InfoFragment = {
+    __typename?: "TemplateInfoRecord"
+    id: string
+    slug?: string | null
+    information?: {
+      __typename?: "TemplateInfoModelInformationField"
+      value: unknown
+      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
+    } | null
+  }
+
+  export type AllTemplateInfoSlugsQueryVariables = Exact<{ [key: string]: never }>
+
+  export type AllTemplateInfoSlugsQuery = {
+    __typename?: "Query"
+    slugs: Array<{ __typename?: "TemplateInfoRecord"; slug?: string | null }>
+  }
+
+  export type TemplateInfoQueryVariables = Exact<{
+    slug?: InputMaybe<Scalars["String"]["input"]>
+  }>
+
+  export type TemplateInfoQuery = {
+    __typename?: "Query"
+    templateInfo?: ({ __typename?: "TemplateInfoRecord" } & InfoFragment) | null
+  }
+
   export type PageFragment = {
     __typename?: "TemplatePageRecord"
     id: string

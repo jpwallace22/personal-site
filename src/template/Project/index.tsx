@@ -10,7 +10,7 @@ import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import StructuredText from "@components/StructuredText"
 import Switchback from "@components/Switchback"
 import makeServerQuery from "@utils/makeServerQuery"
-import { nextProjectFromPage } from "src/templates/project/utils/nextProjectFromPage"
+import { nextProjectFromPage } from "src/template/Project/utils/nextProjectFromPage"
 
 interface ProjectPageProps {
   slug?: string

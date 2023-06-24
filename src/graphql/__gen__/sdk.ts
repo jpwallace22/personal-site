@@ -75,6 +75,19 @@ export const BlogFragment = gql`
   ${ButtonFragment}
   ${ImageFragment}
 `
+export const InfoFragment = gql`
+  fragment Info on TemplateInfoRecord {
+    id
+    slug
+    information {
+      value
+      links {
+        ...Button
+      }
+    }
+  }
+  ${ButtonFragment}
+`
 export const SwitchbackFragment = gql`
   fragment Switchback on SwitchbackRecord {
     designAccent
@@ -698,6 +711,107 @@ export type BlogMetaDataLazyQueryHookResult = ReturnType<typeof useBlogMetaDataL
 export type BlogMetaDataQueryResult = Apollo.QueryResult<
   BlogMetaDataQuery,
   BlogMetaDataQueryVariables
+>
+export const AllTemplateInfoSlugsQuery = gql`
+  query AllTemplateInfoSlugs {
+    slugs: allTemplateInfos {
+      slug
+    }
+  }
+`
+
+/**
+ * __useAllTemplateInfoSlugsQuery__
+ *
+ * To run a query within a React component, call `useAllTemplateInfoSlugsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAllTemplateInfoSlugsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAllTemplateInfoSlugsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAllTemplateInfoSlugsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    AllTemplateInfoSlugsQuery,
+    AllTemplateInfoSlugsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AllTemplateInfoSlugsQuery, AllTemplateInfoSlugsQueryVariables>(
+    AllTemplateInfoSlugsQuery,
+    options
+  )
+}
+export function useAllTemplateInfoSlugsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    AllTemplateInfoSlugsQuery,
+    AllTemplateInfoSlugsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AllTemplateInfoSlugsQuery, AllTemplateInfoSlugsQueryVariables>(
+    AllTemplateInfoSlugsQuery,
+    options
+  )
+}
+export type AllTemplateInfoSlugsQueryHookResult = ReturnType<typeof useAllTemplateInfoSlugsQuery>
+export type AllTemplateInfoSlugsLazyQueryHookResult = ReturnType<
+  typeof useAllTemplateInfoSlugsLazyQuery
+>
+export type AllTemplateInfoSlugsQueryResult = Apollo.QueryResult<
+  AllTemplateInfoSlugsQuery,
+  AllTemplateInfoSlugsQueryVariables
+>
+export const TemplateInfoQuery = gql`
+  query TemplateInfo($slug: String) {
+    templateInfo(filter: { slug: { eq: $slug } }) {
+      ...Info
+    }
+  }
+  ${InfoFragment}
+`
+
+/**
+ * __useTemplateInfoQuery__
+ *
+ * To run a query within a React component, call `useTemplateInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTemplateInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTemplateInfoQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useTemplateInfoQuery(
+  baseOptions?: Apollo.QueryHookOptions<TemplateInfoQuery, TemplateInfoQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TemplateInfoQuery, TemplateInfoQueryVariables>(TemplateInfoQuery, options)
+}
+export function useTemplateInfoLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<TemplateInfoQuery, TemplateInfoQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TemplateInfoQuery, TemplateInfoQueryVariables>(
+    TemplateInfoQuery,
+    options
+  )
+}
+export type TemplateInfoQueryHookResult = ReturnType<typeof useTemplateInfoQuery>
+export type TemplateInfoLazyQueryHookResult = ReturnType<typeof useTemplateInfoLazyQuery>
+export type TemplateInfoQueryResult = Apollo.QueryResult<
+  TemplateInfoQuery,
+  TemplateInfoQueryVariables
 >
 export const AllTemplatePageSlugsQuery = gql`
   query AllTemplatePageSlugs {

@@ -19,14 +19,24 @@ const useOpenState = <T extends HTMLElement>(defaultState = false) => {
       }
     }
 
-    document.addEventListener("mousedown", handleClickAway)
-    document.addEventListener("touchstart", handleClickAway)
+    const handleKeydown = ({ key }: KeyboardEvent) => {
+      if (key === "Escape") {
+        setOpen(false)
+      }
+    }
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickAway)
+      document.addEventListener("touchstart", handleClickAway)
+      document.addEventListener("keydown", handleKeydown)
+    }
 
     return () => {
       document.removeEventListener("mousedown", handleClickAway)
       document.removeEventListener("touchstart", handleClickAway)
+      document.removeEventListener("keydown", handleKeydown)
     }
-  }, [ref])
+  }, [ref, open])
 
   useEffect(() => {
     const body = document.body
