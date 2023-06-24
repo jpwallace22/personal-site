@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { AllProjectSlugsQuery, ProjectPageMetadataQuery } from "@codegen/sdk"
 import Footer from "@components/Footer"
 import makeServerQuery from "@utils/makeServerQuery"
-import ProjectPage from "src/templates/project"
+import ProjectPage from "src/templates/Project"
 import renderMetadata from "src/templates/renderMetadata"
 
 type Params = {

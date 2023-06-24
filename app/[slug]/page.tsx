@@ -1,6 +1,6 @@
 import { AllTemplatePageSlugsQuery } from "@codegen/sdk"
 import makeServerQuery from "@utils/makeServerQuery"
-import Page from "src/templates/page"
+import Page from "src/templates/Page"
 
 type Params = {
   params: {

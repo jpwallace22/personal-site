@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { AllBlogPostSlugsQuery, BlogMetaDataQuery } from "@codegen/sdk"
 import Footer from "@components/Footer"
 import makeServerQuery from "@utils/makeServerQuery"
-import BlogPost from "src/templates/blogDetails"
+import BlogPost from "src/templates/BlogDetails"
 import renderMetadata from "src/templates/renderMetadata"
 
 type Params = {
