@@ -8,7 +8,7 @@ import Socials from "@molecules/Socials"
 import BlogHero from "@components/BlogHero"
 import StructuredText from "@components/StructuredText"
 import makeServerQuery from "@utils/makeServerQuery"
-import tocParser, { TocData } from "src/templates/blogDetails/utils/tocParser"
+import tocParser, { TocData } from "src/templates/BlogDetails/utils/tocParser"
 
 const ScrollPercentageBar = dynamic(() => import("@components/ScrollPercentageBar"))
 
