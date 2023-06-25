@@ -1,0 +1,19 @@
+import { ComponentPropsWithoutRef, FC } from "react"
+import { cva } from "class-variance-authority"
+import { twMerge } from "tailwind-merge"
+
+interface {{ pascalCase name }}Props extends ComponentPropsWithoutRef<"div"> {
+  placeHolder?: string
+}
+
+const wrapper = cva([])
+
+const {{ pascalCase name }}: FC<{{ pascalCase name }}Props> = ({ className, ...props }) => {
+  return (
+    <div className={twMerge({{ lowerCase name }}({ className }))} {...props}>
+      {{ upperCase name }}
+    </div>
+  )
+}
+
+export default {{ pascalCase name }}
