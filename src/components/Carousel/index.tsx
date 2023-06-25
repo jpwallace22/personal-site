@@ -10,7 +10,7 @@ interface CarouselComponentProps
 const cardChooser = (card: CarouselFragment["cards"][number]) => {
   switch (card.__typename) {
     case "TestimonialCardRecord":
-      return <TestimonialCard {...card} />
+      return <TestimonialCard key={card.person?.lastName} {...card} />
     default:
       return null
   }

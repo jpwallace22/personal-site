@@ -16,10 +16,12 @@ const useCookieBanner = () => {
   )
 
   useEffect(() => {
-    if (cookieConsent && cookieConsent !== CookieConsent.UNSET) {
-      window.gtag("consent", "update", {
-        analytics_storage: cookieConsent,
-      })
+    if ("gtag" in window) {
+      if (cookieConsent && cookieConsent !== CookieConsent.UNSET) {
+        window.gtag("consent", "update", {
+          analytics_storage: cookieConsent,
+        })
+      }
     }
   }, [cookieConsent])
 
