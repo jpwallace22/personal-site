@@ -1,0 +1,18 @@
+import { render } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
+import {{ pascalCase name }} from "../"
+
+describe("{{ pascalCase name }} component", () => {
+  expect.extend(toHaveNoViolations)
+
+  test("renders the {{ lowerCase name }}", () => {
+    // const { getByRole } = render(<{{ pascalCase name }}  />)
+    // const {{ lowerCase name }} = getByRole()
+    // expect(codeElement).toBeInTheDocument()
+  })
+
+  it("renders without accessibility violations", async () => {
+    const { container } = render(<{{ pascalCase name }}  />)
+    expect(await axe(container)).toHaveNoViolations()
+  })
+})
