@@ -29,7 +29,10 @@ const plexMono = IBM_Plex_Mono({
   variable: "--plex-mono",
 })
 
-export const metadata: Metadata = renderMetadata()
+export const metadata: Metadata = {
+  metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
+  ...renderMetadata(),
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

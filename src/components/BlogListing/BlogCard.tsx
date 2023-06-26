@@ -32,6 +32,8 @@ const BlogCard: FC<BlogCardProps> = ({
   body,
   slug,
   className,
+  internalName: _internalName,
+  publishDate: _publishDate,
   ...props
 }) => {
   const minutes = timeToReadStructuredText(body)
