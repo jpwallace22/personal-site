@@ -13,14 +13,14 @@ const projectInfo = cva(
     "gap-6",
     "text-right",
     "leading-normal",
-    "md:relative md:left-0 md:right-0",
-    "md:max-w-lg",
-    "md:-translate-x-20",
+    "lg:relative lg:left-0 lg:right-0",
+    "lg:max-w-lg",
+    "lg:-translate-x-20",
   ],
   {
     variants: {
       reverse: {
-        true: ["text-left", "md:translate-x-20"],
+        true: ["text-left", "lg:translate-x-20"],
       },
     },
   }
@@ -47,7 +47,7 @@ const ProjectInfo: FC<ProjectInfoProps> = ({
         eyebrow={subtitle}
         className="text-4xl drop-shadow-md sm:text-4xl xl:text-4xl"
       />
-      <div className="card shadow-standard text-left">
+      <div className="card shadow-standard border border-gray-300 text-left dark:border-purple-700">
         <StructuredText data={excerpt} />
       </div>
       <TechStack techs={techStack} thumbSize={24} direction="horizontal" reverse={!reverse} />
