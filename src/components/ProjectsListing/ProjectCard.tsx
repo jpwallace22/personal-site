@@ -8,7 +8,7 @@ import ProjectInfo from "@components/ProjectsListing/ProjectInfo"
 
 const transition = "transition-transform duration-1000 ease-in-out"
 const wrapper = cva(
-  ["flex", "w-screen max-w-6xl", "items-center", "group", "md:w-fit", "min-h-[325px]"],
+  ["flex", "w-screen max-w-3xl", "items-center", "group", "lg:w-fit lg:max-w-6xl", "min-h-[325px]"],
   {
     variants: {
       reverse: {
@@ -23,14 +23,14 @@ const image = cva(
     "opacity-20",
     "dark:brightness-75",
     "group-hover:rotate-3",
-    "md:translate-x-20",
-    "md:opacity-100",
+    "lg:translate-x-20",
+    "lg:opacity-100",
     transition,
   ],
   {
     variants: {
       reverse: {
-        true: ["md:-translate-x-20", "group-hover:-rotate-3"],
+        true: ["lg:-translate-x-20", "group-hover:-rotate-3"],
       },
     },
   }
