@@ -28,7 +28,7 @@ fragment Project on TemplateProjectRecord {
 }
 
 query AllProjectSlugs {
-  allTemplateProjects {
+  allSlugs: allTemplateProjects {
     slug
   }
 }

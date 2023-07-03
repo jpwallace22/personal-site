@@ -20,9 +20,9 @@ export const generateMetadata = async ({ params: { slug } }: Params): Promise<Me
 }
 
 export const generateStaticParams = async () => {
-  const { allTemplateProjects } = await makeServerQuery<AllProjectSlugsQuery>(AllProjectSlugsQuery)
+  const { allSlugs } = await makeServerQuery<AllProjectSlugsQuery>(AllProjectSlugsQuery)
 
-  return allTemplateProjects.map(({ slug }) => ({
+  return allSlugs.map(({ slug }) => ({
     params: {
       slug,
     },

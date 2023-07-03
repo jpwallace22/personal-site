@@ -41,6 +41,11 @@
     );
   }
 
+  .border-image-gradient-primary {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(0deg, rgba(79, 67, 150, 1) 0%, rgba(0, 113, 115, 1) 100%);
+  }
+
   .text-gradient-primary {
     @apply gradient-primary bg-clip-text text-transparent;
   }

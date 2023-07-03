@@ -8,7 +8,13 @@ interface BlogListingProps extends Clean<BlogListingFragment>, ComponentPropsWit
 const BlogListing: FC<BlogListingProps> = ({ heading, headingAs, eyebrow, body, cards }) => {
   return (
     <Section>
-      <Heading as={headingAs as HeadingMarkup} headline={heading} eyebrow={eyebrow} body={body} />
+      <Heading
+        as={headingAs as HeadingMarkup}
+        headline={heading}
+        eyebrow={eyebrow}
+        body={body}
+        className="mb-4"
+      />
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
           <BlogCard key={card.id} {...card} />

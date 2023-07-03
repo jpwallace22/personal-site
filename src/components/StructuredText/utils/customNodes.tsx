@@ -33,8 +33,11 @@ export const codeBlock = renderNodeRule(isCode, ({ node, children: _, key }) => 
   <CodeBlock key={key} node={node} />
 ))
 
-export const blockQuote = renderNodeRule(isBlockquote, ({ node: _, children, key }) => (
-  <div key={key}>{children}</div>
+export const blockQuote = renderNodeRule(isBlockquote, ({ node, children, key }) => (
+  <div key={key} className="border-image-gradient-primary border-l-8 pl-6 ">
+    <div className="dark:text-common-white">{children}</div>
+    {node.attribution && <em className="text-sm">-{node.attribution}</em>}
+  </div>
 ))
 
 export const paragraph = renderNodeRule(isParagraph, ({ children, key }) => {
