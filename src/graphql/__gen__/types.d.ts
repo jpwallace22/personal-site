@@ -398,7 +398,7 @@ declare global {
 
   export type AllProjectSlugsQuery = {
     __typename?: "Query"
-    allTemplateProjects: Array<{ __typename?: "TemplateProjectRecord"; slug?: string | null }>
+    allSlugs: Array<{ __typename?: "TemplateProjectRecord"; slug?: string | null }>
   }
 
   export type ProjectPageQueryVariables = Exact<{

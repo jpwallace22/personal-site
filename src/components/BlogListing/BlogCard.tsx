@@ -20,7 +20,7 @@ const blogCard = cva([
   "border",
   "border-gray-300",
   "dark:border-purple-700",
-  "hover:shadow-standard hover:-translate-y-2 transition-all duration-300",
+  "hover:shadow-standard hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300",
 ])
 const content = cva(["gradient-radial-mono grid flex-1 gap-4 rounded-t-none p-6"])
 const footer = cva(["mt-auto flex items-center justify-between"])

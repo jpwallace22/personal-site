@@ -980,7 +980,7 @@ export type TemplatePageMetadataQueryResult = Apollo.QueryResult<
 >
 export const AllProjectSlugsQuery = gql`
   query AllProjectSlugs {
-    allTemplateProjects {
+    allSlugs: allTemplateProjects {
       slug
     }
   }

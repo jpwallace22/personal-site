@@ -46,18 +46,22 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
         reverse
         imageTop
       />
-      <Section paddingTop="none">
-        <TechStack
-          techs={techStack}
-          thumbSize={60}
-          className="justify-center lg:gap-12"
-          showTitles
-        />
-      </Section>
+      {techStack && (
+        <Section paddingTop="none">
+          <TechStack
+            techs={techStack}
+            thumbSize={60}
+            className="justify-center lg:gap-12"
+            showTitles
+          />
+        </Section>
+      )}
       {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
-      <Section>
-        <StructuredText data={extraInformation} />
-      </Section>
+      {extraInformation && (
+        <Section>
+          <StructuredText data={extraInformation} />
+        </Section>
+      )}
       {nextProjectCard && <ProjectListing heading="Next Project" cards={nextProjectCard} />}
     </>
   )
