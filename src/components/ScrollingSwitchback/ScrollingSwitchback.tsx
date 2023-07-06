@@ -43,6 +43,7 @@ const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
             width={500}
             height={200}
             alt={image.alt || ""}
+            loading="eager"
             className="sticky top-1/4 w-full rounded-lg"
           />
         )}
