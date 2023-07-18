@@ -18,6 +18,13 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], {
       },
     ],
   },
+  redirects: async () => [
+    {
+      source: "/resume",
+      destination: "/resume.pdf",
+      permanent: true,
+    },
+  ],
 })
 
 export default config
