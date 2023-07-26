@@ -27,6 +27,10 @@ const defaultSocialData = [
     social: "instagram",
     link: "https://www.instagram.com/van.surf.climb",
   },
+  {
+    social: "threads",
+    link: "https://www.threads.net/@thejustinwallace",
+  },
 ]
 
 const styles = cva(["flex items-center"], {
