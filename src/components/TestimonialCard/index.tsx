@@ -8,7 +8,7 @@ interface TestimonialCardProps extends TestimonialCardFragment, ComponentPropsWi
 
 const TestimonialCard: FC<TestimonialCardProps> = ({ quote, person }) => {
   return (
-    <div className="testimonial-card h-full pt-10">
+    <div className="testimonial-card h-full w-[90vw] max-w-3xl pt-10">
       <article className="card border-gradient-primary shadow-standard gradient-radial-mono relative m-1 flex h-full flex-col justify-center gap-8 p-6 pt-12 lg:p-12">
         <Icon
           id="quote"

@@ -1,0 +1,7 @@
+@tailwind utilities;
+
+@layer utilities {
+  .scroll-padding {
+    scroll-padding-right: calc(100vw - 100%);
+  }
+}
