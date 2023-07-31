@@ -65,7 +65,7 @@
     "@graphql-codegen/typescript-operations": "^4.0.0",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@jest/globals": "^29.5.0",
-    "@next/bundle-analyzer": "^13.3.0",
+    "@next/bundle-analyzer": "^13.4.12",
     "@playwright/test": "^1.32.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^9.0.2",
