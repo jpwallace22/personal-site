@@ -14,6 +14,7 @@ export const iconValues = new Set([
   "react",
   "right-arrow",
   "sun",
+  "threads",
   "twitter",
   "typescript",
 ])
@@ -33,5 +34,6 @@ export type IconIds =
   | "react"
   | "right-arrow"
   | "sun"
+  | "threads"
   | "twitter"
   | "typescript"
