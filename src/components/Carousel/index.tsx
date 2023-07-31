@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, FC } from "react"
+import Carousel from "@molecules/Carousel"
 import Section from "@molecules/Section"
-import Carousel from "@components/Carousel/Carousel"
 import TestimonialCard from "@components/TestimonialCard"
 
 interface CarouselComponentProps
