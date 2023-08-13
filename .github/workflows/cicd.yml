@@ -42,7 +42,7 @@ jobs:
   analyze:
     name: Bundle Analysis
     needs: ["check"]
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' && github.actor != 'dependabot[bot]'
     env:
       SKIP_ENV_VALIDATION: true
     runs-on: ubuntu-latest
