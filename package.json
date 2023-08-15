@@ -97,7 +97,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.2",
     "next-compose-plugins": "^2.2.1",
-    "patch-package": "^7.0.0",
+    "patch-package": "^8.0.0",
     "postcss": "^8.4.21",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
