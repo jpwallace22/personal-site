@@ -98,7 +98,7 @@
     "lint-staged": "^13.2.2",
     "next-compose-plugins": "^2.2.1",
     "patch-package": "^8.0.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.28",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
