@@ -1,4 +1,4 @@
-# The personal website of Justin Wallace
+# The personal website of me, Justin Wallace
 
 This is still a work in progress. It IS live and good enough for me to use, but I'm still tuning it, adding features, and managing technical debt.
 
