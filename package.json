@@ -43,7 +43,7 @@
     "framer-motion": "^10.12.16",
     "graphql": "^16.6.0",
     "jest-axe": "^8.0.0",
-    "next": "^13.4.7",
+    "next": "^13.5.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-datocms": "^4.1.0",
