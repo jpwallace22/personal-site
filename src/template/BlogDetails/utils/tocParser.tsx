@@ -11,7 +11,7 @@ import { smoothScrollToItem } from "@utils/smoothScrollToItem"
 import { useBlogContext } from "src/contexts/BlogContext"
 
 const styles = cva(
-  "hover:border-gradient-primary rounded-lg bg-transparent p-4 hover:bg-gray-50 hover:dark:bg-purple-900 cursor-pointer",
+  "hover:border-gradient-primary rounded-lg bg-transparent px-4 py-2 hover:bg-gray-50 hover:dark:bg-purple-900 cursor-pointer my-2",
   {
     variants: {
       active: {

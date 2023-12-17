@@ -72,7 +72,7 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
             </div>
             <StructuredText
               data={body}
-              className="col-span-10 col-start-2 text-xl dark:text-gray-300 lg:col-span-9 lg:col-start-4 xl:col-span-7"
+              className="col-span-10 col-start-2 gap-8 text-xl dark:text-gray-300 lg:col-span-9 lg:col-start-4 xl:col-span-7"
             />
           </div>
         </BlogContextProvider>
