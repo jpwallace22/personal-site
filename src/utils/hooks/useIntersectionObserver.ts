@@ -24,7 +24,7 @@ const defaultInit: IntersectionObserverInit = {
  * and the index of the intersecting element (if applicable).
  */
 export const useIntersection = <T extends HTMLElement>(
-  refs: React.RefObject<T>[] | React.MutableRefObject<T>,
+  refs: React.RefObject<T>[] | React.MutableRefObject<T> | React.RefObject<T>,
   { init, ...utils }: UseIntersectionArgs = {
     init: defaultInit,
   }

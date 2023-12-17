@@ -1,3 +1,5 @@
+"use client"
+
 import { ComponentPropsWithoutRef, FC } from "react"
 import { twMerge } from "tailwind-merge"
 import structuredTextParser, {

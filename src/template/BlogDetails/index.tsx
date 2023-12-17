@@ -8,7 +8,8 @@ import Socials from "@molecules/Socials"
 import BlogHero from "@components/BlogHero"
 import StructuredText from "@components/StructuredText"
 import makeServerQuery from "@utils/makeServerQuery"
-import tocParser, { TocData } from "src/template/BlogDetails/utils/tocParser"
+import { BlogContextProvider } from "src/contexts/BlogContext"
+import TocParser, { TocData } from "src/template/BlogDetails/utils/tocParser"
 
 const ScrollPercentageBar = dynamic(() => import("@components/ScrollPercentageBar"))
 
@@ -54,25 +55,27 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
         animated={false}
       />
       <Section>
-        <div className="contain-layout grid-cols-12 gap-16 md:grid ">
-          <Circle dots className="absolute left-3/4 top-0 -z-10" />
-          <Circle size="md" contrast="high" className="absolute -bottom-64 left-3/4" />
-          <div className="sticky top-24 col-span-3 hidden self-start lg:block xl:col-start-2">
-            <Circle size="lg" contrast="low" className="absolute right-full top-0" />
-            <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
-              In this Article
-            </p>
-            {tocParser(body as TocData, slug)}
-            <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
-              Share
-            </p>
-            <Socials size="sm" className="p-4" socials={sharingSocials} />
+        <BlogContextProvider>
+          <div className="contain-layout grid-cols-12 gap-16 md:grid ">
+            <Circle dots className="absolute left-3/4 top-0 -z-10" />
+            <Circle size="md" contrast="high" className="absolute -bottom-64 left-3/4" />
+            <div className="sticky top-24 col-span-3 hidden self-start lg:block xl:col-start-2">
+              <Circle size="lg" contrast="low" className="absolute right-full top-0" />
+              <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
+                In this Article
+              </p>
+              <TocParser data={body as TocData} />
+              <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
+                Share
+              </p>
+              <Socials size="sm" className="p-4" socials={sharingSocials} />
+            </div>
+            <StructuredText
+              data={body}
+              className="col-span-10 col-start-2 gap-8 text-xl dark:text-gray-300 lg:col-span-9 lg:col-start-4 xl:col-span-7"
+            />
           </div>
-          <StructuredText
-            data={body}
-            className="col-span-10 col-start-2 text-xl dark:text-gray-300 lg:col-span-9 lg:col-start-4 xl:col-span-7"
-          />
-        </div>
+        </BlogContextProvider>
         <div className="mt-12 flex w-full flex-col items-center lg:hidden">
           <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
             Share
