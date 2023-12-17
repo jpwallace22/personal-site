@@ -1,4 +1,4 @@
-import { Children, ReactElement } from "react"
+import { Children, ReactElement, useRef } from "react"
 import { renderNodeRule } from "datocms-structured-text-to-plain-text"
 import {
   isBlockquote,
@@ -13,11 +13,19 @@ import CodeBlock from "@molecules/CodeBlock"
 import Icon from "@molecules/Icon"
 import Link from "@molecules/Link"
 import headingToId from "@components/StructuredText/utils/headingToId"
+import { useIntersection } from "@utils/hooks/useIntersectionObserver"
+import { useBlogContext } from "src/contexts/BlogContext"
 
 export const heading = renderNodeRule(isHeading, ({ node, children, key }) => {
+  const ref = useRef<HTMLHeadingElement>(null)
+  const { setActiveHeading } = useBlogContext()
+  const id = headingToId(node)
+  useIntersection(ref, { onIntersection: () => setActiveHeading(id || "") })
+
   const Component = `h${node.level}` as const
+
   return (
-    <Component key={key} className="mt-8" id={headingToId(node)}>
+    <Component ref={ref} key={key} className="mt-8" id={headingToId(node)}>
       {children}
     </Component>
   )
