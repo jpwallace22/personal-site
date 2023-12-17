@@ -9,7 +9,7 @@ import BlogHero from "@components/BlogHero"
 import StructuredText from "@components/StructuredText"
 import makeServerQuery from "@utils/makeServerQuery"
 import { BlogContextProvider } from "src/contexts/BlogContext"
-import TocParser, { TocData } from "src/template/BlogDetails/utils/tocParser"
+import TableOfContents, { TocData } from "src/template/BlogDetails/TableOfContents"
 
 const ScrollPercentageBar = dynamic(() => import("@components/ScrollPercentageBar"))
 
@@ -64,7 +64,7 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
               <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
                 In this Article
               </p>
-              <TocParser data={body as TocData} />
+              <TableOfContents data={body as TocData} />
               <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
                 Share
               </p>

@@ -11,17 +11,17 @@ import { smoothScrollToItem } from "@utils/smoothScrollToItem"
 import { useBlogContext } from "src/contexts/BlogContext"
 
 const styles = cva(
-  "hover:border-gradient-primary rounded-lg bg-transparent px-4 py-2 hover:bg-gray-50 hover:dark:bg-purple-900 cursor-pointer my-2",
+  "cursor-pointer my-2 rounded-lg px-4 py-2 hover:bg-gray-50 hover:dark:bg-purple-900 hover:border-gradient-primary",
   {
     variants: {
       active: {
-        true: "border-gradient-primary dark:bg-purple-900",
+        true: "border-gradient-primary bg-gray-50 dark:bg-purple-900",
       },
     },
   }
 )
 
-interface TocParserProps {
+interface TableOfContentsProps {
   data?: TocData
   slug?: string | null
 }
@@ -34,7 +34,7 @@ export type TocData = StructuredData & {
   }
 }
 
-const TocParser: FC<TocParserProps> = ({ data }) => {
+const TableOfContents: FC<TableOfContentsProps> = ({ data }) => {
   const { activeHeading } = useBlogContext()
 
   if (!data?.value) {
@@ -73,4 +73,4 @@ const TocParser: FC<TocParserProps> = ({ data }) => {
   )
 }
 
-export default TocParser
+export default TableOfContents
