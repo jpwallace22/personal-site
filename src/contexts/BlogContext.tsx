@@ -1,22 +1,23 @@
 "use client"
 
-import { createContext, PropsWithChildren, useContext, useState } from "react"
+import { PropsWithChildren, useState } from "react"
+import { createQuickContext } from "src/contexts/QuickContext"
 
 interface BlogContextProps {
   activeHeading: string
   setActiveHeading: (heading: string) => void
 }
 
-const Context = createContext<BlogContextProps>({ activeHeading: "", setActiveHeading: () => null })
+const [Provider, useBlogContext] = createQuickContext<BlogContextProps>()
 
 export const BlogContextProvider = ({ children, ...props }: PropsWithChildren) => {
   const [activeHeading, setActiveHeading] = useState<string>("")
 
   return (
-    <Context.Provider {...props} value={{ activeHeading, setActiveHeading }}>
+    <Provider {...props} value={{ activeHeading, setActiveHeading }}>
       {children}
-    </Context.Provider>
+    </Provider>
   )
 }
 
-export const useBlogContext = () => useContext(Context)
+export { useBlogContext }
