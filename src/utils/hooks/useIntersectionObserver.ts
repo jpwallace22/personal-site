@@ -29,8 +29,8 @@ export const useIntersection = <T extends HTMLElement>(
     init: defaultInit,
   }
 ): [boolean, number | null] => {
-  if (!window.IntersectionObserver) {
-    throw new Error("Intersection Observer not supported")
+  if (typeof window !== "undefined" && !window.IntersectionObserver) {
+    throw new Error("[useIntersection]: Intersection Observer not supported")
   }
 
   const [intersectingIndex, setIntersectingIndex] = useState<number | null>(null)
