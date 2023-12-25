@@ -20,7 +20,11 @@ export const heading = renderNodeRule(isHeading, ({ node, children, key }) => {
   const ref = useRef<HTMLHeadingElement>(null)
   const { setActiveHeading } = useBlogContext()
   const id = headingToId(node)
-  useIntersection(ref, { onIntersection: () => setActiveHeading(id || "") })
+
+  useIntersection(ref, {
+    onIntersection: () => setActiveHeading(id || ""),
+    init: { rootMargin: "0px 0px -80%" },
+  })
 
   const Component = `h${node.level}` as const
 
