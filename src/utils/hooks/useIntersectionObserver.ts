@@ -29,6 +29,10 @@ export const useIntersection = <T extends HTMLElement>(
     init: defaultInit,
   }
 ): [boolean, number | null] => {
+  if (!window.IntersectionObserver) {
+    throw new Error("Intersection Observer not supported")
+  }
+
   const [intersectingIndex, setIntersectingIndex] = useState<number | null>(null)
   const hasMultipleRefs = Array.isArray(refs)
 
@@ -49,7 +53,7 @@ export const useIntersection = <T extends HTMLElement>(
 
     const registerObserver = (ref: RefObject<T> | MutableRefObject<T>, index: number) => {
       if (ref.current) {
-        const observer = new IntersectionObserver(observerCallback(index), { ...init })
+        const observer = new IntersectionObserver(observerCallback(index), init)
         observer.observe(ref.current)
         observers.push(observer)
       }

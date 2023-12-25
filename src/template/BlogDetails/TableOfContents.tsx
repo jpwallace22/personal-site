@@ -2,8 +2,7 @@
 
 import { FC } from "react"
 import { cva } from "class-variance-authority"
-import { isHeading } from "datocms-structured-text-utils"
-import { Heading } from "datocms-structured-text-utils"
+import { Heading, isHeading } from "datocms-structured-text-utils"
 import { renderNodeRule, StructuredText } from "react-datocms"
 import headingToId from "@components/StructuredText/utils/headingToId"
 import { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
@@ -57,13 +56,11 @@ const TableOfContents: FC<TableOfContentsProps> = ({ data }) => {
       customNodeRules={[
         renderNodeRule(isHeading, ({ node, children, key }) => {
           const id = headingToId(node)
+          // first heading active if no current active heading
+          const active = activeHeading ? id === activeHeading : key.split("-")[1] === "0"
 
           return (
-            <div
-              key={key}
-              className={styles({ active: id === activeHeading })}
-              onClick={() => smoothScrollToItem(id)}
-            >
+            <div key={key} className={styles({ active })} onClick={() => smoothScrollToItem(id)}>
               <span>{children}</span>
             </div>
           )
