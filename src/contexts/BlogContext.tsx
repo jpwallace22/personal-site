@@ -8,7 +8,11 @@ interface BlogContextProps {
   setActiveHeading: (heading: string) => void
 }
 
-const [Provider, useBlogContext] = createQuickContext<BlogContextProps>()
+const [Provider, useBlogContext] = createQuickContext<BlogContextProps>({
+  activeHeading: "",
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setActiveHeading: () => {},
+})
 
 export const BlogContextProvider = ({ children, ...props }: PropsWithChildren) => {
   const [activeHeading, setActiveHeading] = useState<string>("")
