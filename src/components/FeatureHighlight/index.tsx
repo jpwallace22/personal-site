@@ -9,7 +9,6 @@ import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import { FeatureCard } from "@components/FeatureHighlight/FeatureCard"
 import { splitAndColorArray } from "@components/FeatureHighlight/utils/splitAndColor"
-import { useImagePreloader } from "@utils/hooks/useImagePreloader"
 
 interface FeatureHighlightProps extends FeatureHighlightFragment, VariantProps<typeof wrapper> {}
 
@@ -31,8 +30,6 @@ const singleColumn = cva(["grid", "gap-8", "w-full", "lg:gap-12"], {
 })
 
 const FeatureHighlight: FC<FeatureHighlightProps> = ({ eyebrow, heading, body, cards }) => {
-  useImagePreloader(cards.map((card) => card.image?.url))
-
   const [activeIndex, setActiveIndex] = useState(0)
   const image = cards[activeIndex]?.image
   const twoArrays = splitAndColorArray(cards)
