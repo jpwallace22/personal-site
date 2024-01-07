@@ -10,13 +10,17 @@ const useDarkMode = (): [boolean, () => void] => {
   const setIsDark = useStore((state) => state.setIsDark)
 
   const toggleDarkMode = () => {
-    const body = document.documentElement
-    if (isDark) {
-      body.classList.remove("dark")
-    } else {
-      body.classList.add("dark")
-    }
-    setIsDark(body.classList.contains("dark"))
+    const toggle = document.documentElement.classList.toggle("dark")
+    const theme = toggle ? "dark" : "light"
+    window.localStorage.setItem("theme", theme)
+    setIsDark(toggle)
+    // const body = document.documentElement
+    // if (isDark) {
+    //   body.classList.remove("dark")
+    // } else {
+    //   body.classList.add("dark")
+    // }
+    // setIsDark(body.classList.contains("dark"))
   }
 
   return [isDark, toggleDarkMode]

@@ -1,8 +1,8 @@
-import "src/styles/global.css"
 import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google"
 import GlobalNav from "@components/GlobalNav"
 import GoogleAnalytics from "@components/GoogleAnalytics"
+import "src/styles/global.css"
 import renderMetadata from "src/template/renderMetadata"
 
 const darkerGrotesque = Darker_Grotesque({
@@ -38,8 +38,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${darkerGrotesque.variable} ${ibmPlex.variable} ${plexMono.variable} dark`}
+      className={`${darkerGrotesque.variable} ${ibmPlex.variable} ${plexMono.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            // added inline in head to avoid FOUC
+            __html: `
+            console.log(localStorage.theme)
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              console.log("setting dark from head")
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+      `,
+          }}
+        />
+      </head>
       <body>
         <GlobalNav />
         {children}
