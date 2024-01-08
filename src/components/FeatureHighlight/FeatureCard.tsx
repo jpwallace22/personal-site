@@ -46,6 +46,7 @@ export const FeatureCard: FC<FeatureCardProps> = ({
           width={500}
           height={500}
           className="mx-auto lg:hidden"
+          priority
         />
       )}
       <div className={twMerge(wrapper({ active }))} {...props}>
