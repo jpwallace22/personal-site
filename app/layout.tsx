@@ -1,6 +1,7 @@
 import "src/styles/global.css"
 import { Metadata } from "next"
 import { Darker_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google"
+import { BackgroundGrid } from "@components/BackgroundGrid"
 import GlobalNav from "@components/GlobalNav"
 import GoogleAnalytics from "@components/GoogleAnalytics"
 import renderMetadata from "src/template/renderMetadata"
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body>
         <GlobalNav />
+        <BackgroundGrid />
         {children}
         <GoogleAnalytics />
       </body>

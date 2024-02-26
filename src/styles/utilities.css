@@ -136,4 +136,11 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .test {
+    background-color: red;
+    outline-color: red;
+    border-color: red;
+    border-width: 1px;
+  }
 }
