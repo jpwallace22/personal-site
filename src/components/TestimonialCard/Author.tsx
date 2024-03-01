@@ -26,7 +26,7 @@ const Author: FC<AuthorProps> = ({
     >
       <div className={twMerge("flex w-fit flex-row items-center gap-4", className)}>
         {image && (
-          <Image src={image.url} alt={altText} width={80} height={80} className="rounded-full" />
+          <Image src={image.url} alt={altText} width={60} height={60} className="rounded-full" />
         )}
         <div className="flex flex-col text-purple-900 dark:text-common-white">
           {name && <span className="font-bold">{name}</span>}
