@@ -17,18 +17,21 @@ const LogoBar: FC<LogoBarProps> = ({ companies }) => {
       className="mb-16"
       speed={50}
     >
-      <div className="mr-16 flex gap-16">
-        {companies?.map((company) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={company?.name}
-            src={company.logo?.url || ""}
-            alt=""
-            width={200}
-            height={50}
-            className="h-12 w-auto max-w-xs brightness-50 grayscale dark:invert"
-          />
-        ))}
+      <div className="mr-8 flex gap-8 lg:mr-16 lg:gap-16">
+        {companies?.map(
+          (company) =>
+            company?.logo?.url && (
+              // eslint-disable-next-line @next/next/no-img-element -- next/image lazy loading loads poorly in marquee
+              <img
+                key={company?.name}
+                src={company.logo.url}
+                alt={company.name || ""}
+                width={200}
+                height={50}
+                className="h-8 w-auto max-w-[200px] brightness-50 grayscale dark:invert lg:h-12 lg:max-w-xs"
+              />
+            )
+        )}
       </div>
     </Marquee>
   )
