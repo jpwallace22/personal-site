@@ -1,7 +1,6 @@
 "use client"
 
 import { FC } from "react"
-import Image from "next/image"
 import Marquee from "react-fast-marquee"
 import useDarkMode from "@utils/hooks/useDarkMode"
 
@@ -15,18 +14,19 @@ const LogoBar: FC<LogoBarProps> = ({ companies }) => {
     <Marquee
       gradient
       gradientColor={isDark ? "var(--purple-950)" : ""}
-      className="mb-16 opacity-70"
-      speed={30}
+      className="mb-16"
+      speed={50}
     >
       <div className="mr-16 flex gap-16">
-        {companies?.slice(0, 6).map((company) => (
-          <Image
-            key={company.name}
+        {companies?.map((company) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={company?.name}
             src={company.logo?.url || ""}
             alt=""
             width={200}
             height={50}
-            className="h-12 w-auto brightness-0 dark:grayscale dark:invert"
+            className="h-12 w-auto max-w-xs brightness-50 grayscale dark:invert"
           />
         ))}
       </div>
