@@ -162,6 +162,7 @@ export const CompanyFragment = gql`
       ...Image
     }
     website
+    trust
   }
   ${ImageFragment}
 `
@@ -503,6 +504,59 @@ export type GlobalNavComponentLazyQueryHookResult = ReturnType<
 export type GlobalNavComponentQueryResult = Apollo.QueryResult<
   GlobalNavComponentQuery,
   GlobalNavComponentQueryVariables
+>
+export const GetTrustedCompaniesQuery = gql`
+  query GetTrustedCompanies {
+    allCompanies(filter: { trust: { eq: "true" } }) {
+      ...Company
+    }
+  }
+  ${CompanyFragment}
+`
+
+/**
+ * __useGetTrustedCompaniesQuery__
+ *
+ * To run a query within a React component, call `useGetTrustedCompaniesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetTrustedCompaniesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetTrustedCompaniesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetTrustedCompaniesQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetTrustedCompaniesQuery, GetTrustedCompaniesQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetTrustedCompaniesQuery, GetTrustedCompaniesQueryVariables>(
+    GetTrustedCompaniesQuery,
+    options
+  )
+}
+export function useGetTrustedCompaniesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetTrustedCompaniesQuery,
+    GetTrustedCompaniesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetTrustedCompaniesQuery, GetTrustedCompaniesQueryVariables>(
+    GetTrustedCompaniesQuery,
+    options
+  )
+}
+export type GetTrustedCompaniesQueryHookResult = ReturnType<typeof useGetTrustedCompaniesQuery>
+export type GetTrustedCompaniesLazyQueryHookResult = ReturnType<
+  typeof useGetTrustedCompaniesLazyQuery
+>
+export type GetTrustedCompaniesQueryResult = Apollo.QueryResult<
+  GetTrustedCompaniesQuery,
+  GetTrustedCompaniesQueryVariables
 >
 export const StpTestQuery = gql`
   query stpTest {

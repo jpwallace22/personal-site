@@ -142,6 +142,13 @@ declare global {
     image?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
+  export type GetTrustedCompaniesQueryVariables = Exact<{ [key: string]: never }>
+
+  export type GetTrustedCompaniesQuery = {
+    __typename?: "Query"
+    allCompanies: Array<{ __typename?: "CompanyRecord" } & CompanyFragment>
+  }
+
   export type StpTestQueryVariables = Exact<{ [key: string]: never }>
 
   export type StpTestQuery = {
@@ -184,6 +191,7 @@ declare global {
     __typename?: "CompanyRecord"
     name?: string | null
     website?: string | null
+    trust?: boolean | null
     logo?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 

@@ -13,6 +13,7 @@ fragment Company on CompanyRecord {
     ...Image
   }
   website
+  trust
 }
 
 fragment Person on PersonRecord {

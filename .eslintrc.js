@@ -38,6 +38,7 @@ module.exports = {
         ignoreDeclarationSort: true,
       },
     ],
+    "@typescript-eslint/no-empty-interface": "off",
     "import/order": [
       "error",
       {

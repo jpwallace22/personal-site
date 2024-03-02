@@ -1,0 +1,5 @@
+query GetTrustedCompanies {
+  allCompanies(filter: { trust: { eq: "true" } }) {
+    ...Company
+  }
+}
