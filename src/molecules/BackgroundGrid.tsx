@@ -1,20 +1,21 @@
 "use client"
-import { useEffect, useState } from "react"
 
-export const BackgroundGrid = () => {
+import { memo, useEffect, useState } from "react"
+import throttle from "lodash.throttle"
+
+export const BackgroundGrid = memo(function BackgroundGrid() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 }) // Default position
 
-  // Update mouse position state
-  const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
-    const xPercent = (clientX / window.innerWidth) * 100
-    const yPercent = (clientY / window.innerHeight) * 100
-    setMousePosition({ x: xPercent, y: yPercent })
-  }
-
   useEffect(() => {
+    const handleMouseMove = throttle(({ clientX, clientY }: MouseEvent) => {
+      const xPercent = (clientX / window.innerWidth) * 100
+      const yPercent = (clientY / window.innerHeight) * 100
+      setMousePosition({ x: xPercent, y: yPercent })
+    }, 200)
+
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
-  })
+  }, [])
 
   const dynamicMaskStyle = {
     maskImage: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, transparent 5%, black 66%)`,
@@ -29,4 +30,4 @@ export const BackgroundGrid = () => {
       />
     </div>
   )
-}
+})
