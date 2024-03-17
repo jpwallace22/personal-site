@@ -1,3 +1,4 @@
+import MillionCompiler from "@million/lint"
 import withBundleAnalyzer from "@next/bundle-analyzer"
 import withPlugins from "next-compose-plugins"
 
@@ -6,7 +7,7 @@ const shouldAnalyze = process.env.ANALYZE === "true"
 /**
  * @type {import('next').NextConfig}
  */
-const config = withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], {
+const config = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -25,6 +26,10 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], {
       permanent: true,
     },
   ],
-})
+}
 
-export default config
+export default shouldAnalyze
+  ? withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], config)
+  : MillionCompiler.next({
+      rsc: true,
+    })(config)
