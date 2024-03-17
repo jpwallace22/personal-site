@@ -13,6 +13,7 @@ import { splitAndColorArray } from "@components/FeatureHighlight/utils/splitAndC
 interface FeatureHighlightProps extends FeatureHighlightFragment, VariantProps<typeof wrapper> {}
 
 const wrapper = cva(["grid", "lg:grid-cols-12", "gap-12 "])
+
 const columns = cva([
   "grid",
   "gap-8",
@@ -21,6 +22,7 @@ const columns = cva([
   "lg:gap-12",
   "lg:col-span-8",
 ])
+
 const singleColumn = cva(["grid", "gap-8", "w-full", "lg:gap-12"], {
   variants: {
     shiftDown: {
@@ -29,19 +31,29 @@ const singleColumn = cva(["grid", "gap-8", "w-full", "lg:gap-12"], {
   },
 })
 
+const imageStyles = cva(["relative mt-16", "h-[450px]", "w-full", "hidden"], {
+  variants: {
+    active: {
+      true: ["lg:block"],
+    },
+  },
+})
+
 const FeatureHighlight: FC<FeatureHighlightProps> = ({ eyebrow, heading, body, cards }) => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const image = cards[activeIndex]?.image
   const twoArrays = splitAndColorArray(cards)
 
   return (
     <Section className={twMerge(wrapper())}>
       <div className="grid h-fit gap-3 lg:col-span-4">
         <Heading eyebrow={eyebrow} headline={heading} body={body} />
-        {image && (
-          <div className="relative mt-16 hidden h-[450px] w-full lg:block">
-            <Image src={image.url} alt={image.alt || ""} fill className="object-contain" />
-          </div>
+        {cards.map(
+          ({ image }, i) =>
+            image && (
+              <div key={i} className={twMerge(imageStyles({ active: i === activeIndex }))}>
+                <Image src={image.url} alt={image.alt || ""} fill className="object-contain" />
+              </div>
+            )
         )}
       </div>
       <Circle className="absolute -top-24 left-1/4 " dots />
