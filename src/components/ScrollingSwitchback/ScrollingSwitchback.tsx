@@ -21,6 +21,14 @@ const contentStyles = cva(["card", "p-8", "gradient-radial-mono", "gap-8", "grid
   },
 })
 
+const imageStyles = cva(["sticky top-1/4 w-full rounded-lg invisible"], {
+  variants: {
+    active: {
+      true: ["visible"],
+    },
+  },
+})
+
 const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
   switchbacks,
   className,
@@ -30,22 +38,24 @@ const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
   const refs = Array.from({ length: contentArray.length }, () => createRef<HTMLDivElement>())
   const [_, activeIndex] = useIntersection(refs, { init: { threshold: 1 } })
 
-  const image = images[activeIndex || 0].image
-
   return (
     <div className={twMerge("relative flex gap-12", className)} {...props}>
       <div className="relative flex-auto">
         <Circle className="absolute -left-2/3 -top-20" size="lg" contrast="low" />
         <Circle className="absolute -left-1/3 bottom-0" size="md" contrast="high" />
-        {image && (
-          <Image
-            src={image.url}
-            width={500}
-            height={200}
-            alt={image.alt || ""}
-            loading="eager"
-            className="sticky top-1/4 w-full rounded-lg"
-          />
+        {images.map(
+          ({ image }, i) =>
+            image && (
+              <Image
+                key={i}
+                src={image.url}
+                width={500}
+                height={200}
+                alt={image.alt || ""}
+                loading="eager"
+                className={twMerge(imageStyles({ active: i === activeIndex }))}
+              />
+            )
         )}
       </div>
       <div className="relative flex w-5/12 flex-col gap-[63vh] py-32">
