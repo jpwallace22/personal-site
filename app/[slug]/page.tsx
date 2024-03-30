@@ -9,9 +9,8 @@ type Params = {
 }
 
 export const generateStaticParams = async () => {
-  const { allTemplatePages } = await makeServerQuery<AllTemplatePageSlugsQuery>(
-    AllTemplatePageSlugsQuery
-  )
+  const { allTemplatePages } =
+    await makeServerQuery<AllTemplatePageSlugsQuery>(AllTemplatePageSlugsQuery)
 
   return allTemplatePages.map(({ slug }) => ({
     params: {
