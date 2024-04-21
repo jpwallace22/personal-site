@@ -1,4 +1,3 @@
-import MillionCompiler from "@million/lint"
 import withBundleAnalyzer from "@next/bundle-analyzer"
 import withPlugins from "next-compose-plugins"
 
@@ -29,7 +28,4 @@ const config = {
 }
 
 export default shouldAnalyze
-  ? withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], config)
-  : MillionCompiler.next({
-      rsc: true,
-    })(config)
+  ? withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], config) : config

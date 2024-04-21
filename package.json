@@ -23,7 +23,6 @@
   "dependencies": {
     "@apollo/client": "^3.8.1",
     "@apollo/experimental-nextjs-app-support": "^0.7.1",
-    "@million/lint": "^0.0.73",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.3",
@@ -45,7 +44,6 @@
     "graphql": "^16.8.1",
     "jest-axe": "^8.0.0",
     "lodash.throttle": "^4.1.1",
-    "million": "^3.0.6",
     "mini-svg-data-uri": "^1.4.4",
     "next": "^14.0.4",
     "prismjs": "^1.29.0",
