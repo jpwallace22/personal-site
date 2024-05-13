@@ -14,9 +14,6 @@ const inlineBlocks = (record: Record) => {
             width={record.width as number}
             height={record.height as number}
           />
-          {typeof record?.title === "string" && (
-            <div className="text-center text-base">{record?.title}</div>
-          )}
         </div>
       )
     default:
