@@ -54,8 +54,7 @@ export const blockQuote = renderNodeRule(isBlockquote, ({ node, children, key })
 
 export const paragraph = renderNodeRule(isParagraph, ({ children, key }) => {
   // prevents linked records from being wrapped in a <p> tag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const nodeData: any = children
+  const nodeData = children && children[0]
   const isText = nodeData?.props.children && typeof nodeData.props.children[0] === "string"
 
   return isText ? <p key={key}>{children}</p> : <div key={key}>{children}</div>
