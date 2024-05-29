@@ -1,4 +1,4 @@
-import { MutableRefObject, RefObject, useEffect, useState } from "react"
+import { RefObject, useEffect, useState } from "react"
 
 interface UseIntersectionArgs {
   onIntersection?: (index: number) => void
@@ -16,7 +16,7 @@ const defaultInit: IntersectionObserverInit = {
  * for most other use cases
  *
  * @template T - The type of the observed DOM element.
- * @param {React.RefObject<T>[] | React.MutableRefObject<T>} refs - The ref(s) to the observed DOM element(s).
+ * @param {RefObject<T>[]} refs - The ref(s) to the observed DOM element(s).
  * @param {UseIntersectionArgs} [utils] - Additional options for the useIntersection hook.
  * @param {IntersectionObserverInit} [utils.init] - Options to customize the Intersection Observer.
  * @param {(index: number) => void} [utils.onIntersection] - Callback function to execute when intersection occurs.
@@ -24,7 +24,7 @@ const defaultInit: IntersectionObserverInit = {
  * and the index of the intersecting element (if applicable).
  */
 export const useIntersection = <T extends HTMLElement>(
-  refs: React.RefObject<T>[] | React.MutableRefObject<T> | React.RefObject<T>,
+  refs: RefObject<T | null>[] | React.RefObject<T | null>,
   { init, ...utils }: UseIntersectionArgs = {
     init: defaultInit,
   }
@@ -51,7 +51,7 @@ export const useIntersection = <T extends HTMLElement>(
       })
     }
 
-    const registerObserver = (ref: RefObject<T> | MutableRefObject<T>, index: number) => {
+    const registerObserver = (ref: RefObject<T | null>, index: number) => {
       if (ref.current) {
         const observer = new IntersectionObserver(observerCallback(index), init)
         observer.observe(ref.current)
