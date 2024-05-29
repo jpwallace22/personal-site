@@ -1,4 +1,4 @@
-import { Children, ReactElement, useRef } from "react"
+import { Children, useRef } from "react"
 import { renderNodeRule } from "datocms-structured-text-to-plain-text"
 import {
   isBlockquote,
@@ -54,7 +54,8 @@ export const blockQuote = renderNodeRule(isBlockquote, ({ node, children, key })
 
 export const paragraph = renderNodeRule(isParagraph, ({ children, key }) => {
   // prevents linked records from being wrapped in a <p> tag
-  const nodeData = children && (children[0] as ReactElement)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const nodeData: any = children
   const isText = nodeData?.props.children && typeof nodeData.props.children[0] === "string"
 
   return isText ? <p key={key}>{children}</p> : <div key={key}>{children}</div>

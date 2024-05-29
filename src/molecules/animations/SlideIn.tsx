@@ -1,10 +1,10 @@
 "use client"
 
-import { HTMLMotionProps, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { twMerge } from "tailwind-merge"
-import type { FC } from "react"
+import type { ComponentPropsWithoutRef, FC } from "react"
 
-interface SlideInProps extends HTMLMotionProps<"div"> {
+interface SlideInProps extends ComponentPropsWithoutRef<"div"> {
   from?: "left" | "right"
 }
 

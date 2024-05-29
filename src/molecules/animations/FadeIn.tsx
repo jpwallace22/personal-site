@@ -1,9 +1,9 @@
 "use client"
 
-import { HTMLMotionProps, motion } from "framer-motion"
-import type { FC } from "react"
+import { motion } from "framer-motion"
+import type { ComponentPropsWithoutRef, FC } from "react"
 
-interface FadeInProps extends HTMLMotionProps<"div"> {
+interface FadeInProps extends ComponentPropsWithoutRef<"div"> {
   animated?: boolean
 }
 
