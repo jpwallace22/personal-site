@@ -14,7 +14,6 @@ const useLocalStorage = <T>(key: string, defaultValue: T) => {
       currentValue = defaultValue
     }
     setValue(currentValue as T)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const setLocalStorage = (newValue: T) => {
