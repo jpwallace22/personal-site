@@ -132,7 +132,7 @@
       "pre-push": "turbo types:check && turbo test && turbo build"
     }
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@4.2.2",
   "release": {
     "branches": [
       "main"
