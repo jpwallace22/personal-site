@@ -59,7 +59,9 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
       {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
       {extraInformation && (
         <Section>
-          <StructuredText data={extraInformation} />
+          <div className="lg:max-w-4xl">
+            <StructuredText data={extraInformation} />
+          </div>
         </Section>
       )}
       {nextProjectCard && <ProjectListing heading="Next Project" cards={nextProjectCard} />}
