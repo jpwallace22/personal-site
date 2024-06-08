@@ -8,13 +8,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    "next",
-    "prettier",
-    "react-app",
-    "react-app/jest",
-    "plugin:@typescript-eslint/recommended",
-  ],
+  extends: ["next", "prettier", "react-app", "react-app/jest"],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve("next/babel")],
