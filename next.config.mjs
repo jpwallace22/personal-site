@@ -7,6 +7,9 @@ const shouldAnalyze = process.env.ANALYZE === "true"
  * @type {import('next').NextConfig}
  */
 const config = {
+  experimental: {
+    reactCompiler: true,
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -28,4 +31,5 @@ const config = {
 }
 
 export default shouldAnalyze
-  ? withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], config) : config
+  ? withPlugins([[withBundleAnalyzer({ enabled: shouldAnalyze })]], config)
+  : config

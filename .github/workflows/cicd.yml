@@ -20,6 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Enable Corepack
+        run: corepack enable
+
       - run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
 
       - name: "use node ${{ env.NODE_VERSION }}"
@@ -54,6 +58,9 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
 
       - uses: actions/setup-node@v3
@@ -67,7 +74,7 @@ jobs:
       - uses: bahmutov/npm-install@v1
         with:
           useRollingCache: true
-          install-command: yarn --immutable
+          install-command: yarn install --immutable
 
       - name: "Build package"
         run: yarn build

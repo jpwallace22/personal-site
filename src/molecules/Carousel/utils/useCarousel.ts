@@ -1,10 +1,10 @@
-import { MutableRefObject, RefObject, useContext, useEffect } from "react"
+import { RefObject, useContext, useEffect } from "react"
 import { CarouselContext } from "@molecules/Carousel/utils/CarouselContext"
 import { getClosestIndexToScrollLeft } from "@molecules/Carousel/utils/getClosestIndexToLeft"
 
 const useCarousel = <Box extends HTMLElement, Card extends HTMLElement>(
-  scrollBox: MutableRefObject<Maybe<Box>>,
-  refs: RefObject<Card>[]
+  scrollBox: RefObject<Maybe<Box>>,
+  refs: RefObject<Maybe<Card>>[]
 ) => {
   const { activeIndex, setActiveIndex } = useContext(CarouselContext)
 

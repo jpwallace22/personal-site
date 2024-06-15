@@ -3,6 +3,7 @@ const fs = require("fs")
 
 module.exports = {
   ignorePatterns: ["**/*.cjs"],
+  plugins: ["eslint-plugin-react-compiler"], // @typescript-eslint is included in plugin
   env: {
     browser: true,
     es2021: true,
@@ -15,6 +16,7 @@ module.exports = {
     },
   },
   rules: {
+    "react-compiler/react-compiler": "error",
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "testing-library/prefer-screen-queries": "off",
     "@next/next/no-html-link-for-pages": "off",

@@ -1,8 +1,8 @@
-import { MutableRefObject, RefObject } from "react"
+import { RefObject } from "react"
 
 export const getClosestIndexToScrollLeft = <Box extends HTMLElement, Card extends HTMLElement>(
-  scrollBox: MutableRefObject<Maybe<Box>>,
-  refs: RefObject<Card>[]
+  scrollBox: RefObject<Maybe<Box>>,
+  refs: RefObject<Maybe<Card>>[]
 ): number => {
   if (!scrollBox.current || refs.length === 0) {
     return 0 // Default to the first index if no refs are available

@@ -1,8 +1,6 @@
-import { MutableRefObject, RefObject, useEffect, useState } from "react"
+import { RefObject, useEffect, useState } from "react"
 
-export const useAbsoluteRight = <T extends HTMLElement>(
-  ref: MutableRefObject<T> | RefObject<T>
-) => {
+export const useAbsoluteRight = <T extends HTMLElement>(ref: RefObject<T | null>) => {
   const [right, setRight] = useState<string>("0")
 
   useEffect(() => {
