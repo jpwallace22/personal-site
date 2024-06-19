@@ -46,7 +46,7 @@
     "jest-axe": "^8.0.0",
     "lodash.throttle": "^4.1.1",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "15.0.0-canary.19",
+    "next": "15.0.0-rc.0",
     "prismjs": "^1.29.0",
     "react": "^19.0.0-rc-6f23540c7d-20240528",
     "react-datocms": "^4.1.0",
