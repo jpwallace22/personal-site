@@ -8812,22 +8812,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datocms-structured-text-generic-html-renderer@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "datocms-structured-text-generic-html-renderer@npm:3.0.0"
+"datocms-structured-text-generic-html-renderer@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "datocms-structured-text-generic-html-renderer@npm:4.0.1"
   dependencies:
-    datocms-structured-text-utils: "npm:^3.0.0"
-  checksum: 10c0/fd7d186a7195f82a7e4482ea6dd86bc47df6e035d840a608726cb630410f119670f4876485b87caddc317c669bbc9912fd7872c9c78c1fec86781511e2446fb4
+    datocms-structured-text-utils: "npm:^4.0.1"
+  checksum: 10c0/261e7fae2bbde9164e3779bf95c016232b9ab0f01d5c34ec6085db9ce8cfd391d5d57b838bf105ea6857bc208b7d2086b76519b53888edc543eadfce27158bf7
   languageName: node
   linkType: hard
 
-"datocms-structured-text-to-plain-text@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "datocms-structured-text-to-plain-text@npm:3.0.2"
+"datocms-structured-text-to-plain-text@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "datocms-structured-text-to-plain-text@npm:4.0.1"
   dependencies:
-    datocms-structured-text-generic-html-renderer: "npm:^3.0.0"
-    datocms-structured-text-utils: "npm:^3.0.0"
-  checksum: 10c0/57a59376b7698e6774653b47a4406feb1fc73297a601acbdb4c740dd2746d18df49ef819801b3d875ba34afb37dc9a10a6a91e95bcc809fc97789bca55c083d5
+    datocms-structured-text-generic-html-renderer: "npm:^4.0.1"
+    datocms-structured-text-utils: "npm:^4.0.1"
+  checksum: 10c0/0de660d6749c5d6607107902e1e799654c3d213e2ce16c42d9b25a8bc3fa46e486a02ca62b656e38dfdd295fa9080c2ddefd6901e2665077d44feca1d2ebdb8b
   languageName: node
   linkType: hard
 
@@ -8840,12 +8840,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datocms-structured-text-utils@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "datocms-structured-text-utils@npm:3.0.0"
+"datocms-structured-text-utils@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "datocms-structured-text-utils@npm:4.0.1"
   dependencies:
     array-flatten: "npm:^3.0.0"
-  checksum: 10c0/1e6f32021308e4bb44861c2749064448da3a94d17987198a4e3e5f17d9cb0d9030c4703783b3b16e463c99f8edb4ad2e71265e289d148024a727821821079e55
+  checksum: 10c0/bf47d60783178250b0478f7ba9e7957b76032e45933db40c05688c31f5ee825e9b2e5e5862257227a2ad7b37bd7d359282192e20fcdb34168f691c831df88634
   languageName: node
   linkType: hard
 
@@ -14554,7 +14554,7 @@ __metadata:
     class-variance-authority: "npm:^0.7.0"
     cross-env: "npm:^7.0.3"
     cssnano: "npm:^6.0.3"
-    datocms-structured-text-to-plain-text: "npm:^3.0.2"
+    datocms-structured-text-to-plain-text: "npm:^4.0.1"
     eslint: "npm:^8.55.0"
     eslint-config-next: "npm:^14.1.0"
     eslint-config-prettier: "npm:^9.1.0"
