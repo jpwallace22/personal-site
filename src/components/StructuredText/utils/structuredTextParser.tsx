@@ -1,3 +1,4 @@
+import { FC } from "react"
 import { StructuredText, StructuredTextGraphQlResponse } from "react-datocms"
 import { code, strong } from "@components/StructuredText/utils/customMarks"
 import {
@@ -13,10 +14,11 @@ import inlineBlocks from "@components/StructuredText/utils/inlineBlocks"
 import inlineRecords, { InlineRecords } from "@components/StructuredText/utils/inlineRecords"
 
 export type StructuredData = StructuredTextGraphQlResponse | Record<string, unknown> | null
+interface StructuredTextParserProps {
+  data?: StructuredData
+}
 
-// TODO write tests
-
-const structuredTextParser = (data?: StructuredData) => {
+const StructuredTextParser: FC<StructuredTextParserProps> = ({ data }) => {
   if (data?.value) {
     return (
       <StructuredText
@@ -30,4 +32,4 @@ const structuredTextParser = (data?: StructuredData) => {
   }
 }
 
-export default structuredTextParser
+export default StructuredTextParser
