@@ -12,6 +12,7 @@ export const TracingBeam = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  /* eslint-disable react-compiler/react-compiler */
   const { scrollYProgress } = useScroll({
     // @ts-expect-error -- framer motion is out of date tracking this [PR](https://github.com/framer/motion/pull/2667)
     target: ref,
