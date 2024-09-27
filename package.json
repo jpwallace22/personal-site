@@ -52,7 +52,7 @@
     "react-datocms": "^4.1.0",
     "react-dom": "^19.0.0-rc-6f23540c7d-20240528",
     "react-fast-marquee": "^1.6.4",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.3.0",
     "zustand": "^4.3.8"
   },
