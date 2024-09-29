@@ -1,6 +1,6 @@
 {
   "name": "next-enterprise",
-  "version": "1.19.3",
+  "version": "1.19.7",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -29,7 +29,7 @@
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-form": "^0.0.3",
     "@radix-ui/react-label": "^2.0.1",
-    "@radix-ui/react-popover": "^1.0.5",
+    "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-radio-group": "^1.1.2",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-select": "1.2.2",
@@ -52,12 +52,12 @@
     "react-datocms": "^4.1.0",
     "react-dom": "^19.0.0-rc-6f23540c7d-20240528",
     "react-fast-marquee": "^1.6.4",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.3.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
+    "@babel/core": "^7.25.2",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@graphql-codegen/cli": "^4.0.0",
@@ -96,7 +96,7 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-compiler": "^0.0.0-experimental-0998c1e-20240625",
+    "eslint-plugin-react-compiler": "0.0.0-experimental-b8a7b48-20240830",
     "fetch-mock": "^9.11.0",
     "husky": "4.3.8",
     "jest": "^29.7.0",

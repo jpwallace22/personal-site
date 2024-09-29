@@ -57,6 +57,7 @@ const ScrollBox: FC<CarouselProps> = ({ children, pagination = true }) => {
   const scrollBoxRef = useRef<Maybe<HTMLDivElement>>(null)
   const wrapperRef = useRef<Maybe<HTMLDivElement>>(null)
   const height = useAbsoluteHeight(refs[0])
+  /* eslint-disable react-compiler/react-compiler */
   const right = useAbsoluteRight(wrapperRef)
   const { activeIndex, onPaginationClick, onLeftClick, onRightClick } = useCarousel(
     scrollBoxRef,
