@@ -1,0 +1,219 @@
+[
+  {
+    "__typename": "CompanyRecord",
+    "name": "NVIDIA",
+    "logo": {
+      "__typename": "FileField",
+      "id": "DzfhfptPRG2CjG8Go0x7TA",
+      "alt": null,
+      "blurhash": "LhOgczk$tht7~qWTofof_3M{RQt7",
+      "height": 206,
+      "width": 1094,
+      "url": "https://www.datocms-assets.com/85391/1727393069-nvidia-logo-horz-edited.png"
+    },
+    "website": "https://www.nvidia.com",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Trustmachines",
+    "logo": {
+      "__typename": "FileField",
+      "id": "DOdGZRtARjOp-FerDKsuBg",
+      "alt": null,
+      "blurhash": "L$S?DVayM{of~qayWBj[ofofj[j[",
+      "height": 339,
+      "width": 1920,
+      "url": "https://www.datocms-assets.com/85391/1709401067-trustmachinesdark_wuwbsi.avif"
+    },
+    "website": "https://trustmachines.co/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Justworks",
+    "logo": {
+      "__typename": "FileField",
+      "id": "G-DGLBmuSVm4zoWxMY_HJQ",
+      "alt": null,
+      "blurhash": null,
+      "height": 65,
+      "width": 350,
+      "url": "https://www.datocms-assets.com/85391/1709400829-justworks-onlight-logo.svg"
+    },
+    "website": "https://www.justworks.com/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Mutiny",
+    "logo": {
+      "__typename": "FileField",
+      "id": "TqtoAetLTgKbLnlFxQMPMA",
+      "alt": null,
+      "blurhash": null,
+      "height": 52,
+      "width": 160,
+      "url": "https://www.datocms-assets.com/85391/1709400689-mutiny-onlight-logo.svg"
+    },
+    "website": "https://www.mutinyhq.com/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Freshworks",
+    "logo": {
+      "__typename": "FileField",
+      "id": "UWNSoOQuRSqij-qMROTdRA",
+      "alt": null,
+      "blurhash": null,
+      "height": 65,
+      "width": 321,
+      "url": "https://www.datocms-assets.com/85391/1709400735-freshworks-logo-ondark.svg"
+    },
+    "website": "https://www.freshworks.com/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Solana",
+    "logo": {
+      "__typename": "FileField",
+      "id": "d1gqmEstQ_euMOsSDUKAXA",
+      "alt": null,
+      "blurhash": "LpO4F{tmS6tT_Mo{Scbt-;NFWUWn",
+      "height": 221,
+      "width": 1366,
+      "url": "https://www.datocms-assets.com/85391/1709400792-solana_logo_svg.webp"
+    },
+    "website": "https://solana.com/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Snowflake",
+    "logo": {
+      "__typename": "FileField",
+      "id": "fgFtmIyZQoK6xN8-bNLjhw",
+      "alt": null,
+      "blurhash": null,
+      "height": 34,
+      "width": 142,
+      "url": "https://www.datocms-assets.com/85391/1709400650-snowflake-onlight-logo.svg"
+    },
+    "website": "https://www.snowflake.com/en/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "PHS",
+    "logo": {
+      "__typename": "FileField",
+      "id": "J4SGKrvPRxq5-cETEdQcJg",
+      "alt": null,
+      "blurhash": null,
+      "height": 25,
+      "width": 225,
+      "url": "https://www.datocms-assets.com/85391/1709400565-presbyterian-logo-red.svg"
+    },
+    "website": "https://www.phs.org/",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Calendly",
+    "logo": {
+      "__typename": "FileField",
+      "id": "KiRzd0j1T9mVsFf1_mNljA",
+      "alt": null,
+      "blurhash": null,
+      "height": 381,
+      "width": 1580,
+      "url": "https://www.datocms-assets.com/85391/1709400525-calandly.svg"
+    },
+    "website": "https://www.calendly.com",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Webstacks",
+    "logo": {
+      "__typename": "FileField",
+      "id": "e_4ZkgnMTKubgMH--um-2w",
+      "alt": null,
+      "blurhash": null,
+      "height": 20,
+      "width": 149,
+      "url": "https://www.datocms-assets.com/85391/1709400500-stacks.svg"
+    },
+    "website": "https://www.webstacks.com",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "OctoAI",
+    "logo": {
+      "__typename": "FileField",
+      "id": "VmwxDROlS3-u338dTo9pSw",
+      "alt": null,
+      "blurhash": null,
+      "height": 336,
+      "width": 1295,
+      "url": "https://www.datocms-assets.com/85391/1709399321-1704222289-octoai_logo_light.svg"
+    },
+    "website": "https://www.octo.ai",
+    "trust": true
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Kaplan Early Learning",
+    "logo": {
+      "__typename": "FileField",
+      "id": "Hyop_oSIRT-czka_lsO-1g",
+      "alt": null,
+      "blurhash": "LWE:Sj%M00IokCofWCRj0KM{?Hxu",
+      "height": 225,
+      "width": 225,
+      "url": "https://www.datocms-assets.com/85391/1709003693-download-2.png"
+    },
+    "website": "https://www.kaplanco.com/",
+    "trust": null
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Alchemy",
+    "logo": {
+      "__typename": "FileField",
+      "id": "HfjWOAGqRcGKd95LGXHEjw",
+      "alt": null,
+      "blurhash": "LiO;0yxu_1t7~qoft5t7-oofIVWB",
+      "height": 256,
+      "width": 256,
+      "url": "https://www.datocms-assets.com/85391/1709003066-7953323.png"
+    },
+    "website": "https://www.alchemy.com/",
+    "trust": null
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Platt College, San Diego",
+    "logo": {
+      "__typename": "FileField",
+      "id": "25617329",
+      "alt": null,
+      "blurhash": "LkPs#Kxu_2xuogj[oyRk~pRkIVxt",
+      "height": 149,
+      "width": 216,
+      "url": "https://www.datocms-assets.com/85391/1670515734-305321533_551301540125414_3589984171540413294_n-edited.png"
+    },
+    "website": "https://platt.edu/",
+    "trust": null
+  },
+  {
+    "__typename": "CompanyRecord",
+    "name": "Consultant",
+    "logo": null,
+    "website": "",
+    "trust": null
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "globalNav": {
+    "__typename": "GlobalNavRecord",
+    "id": "123638598",
+    "links": [
+      {
+        "__typename": "ButtonRecord",
+        "id": "122267591",
+        "variant": "text",
+        "label": "about",
+        "url": "https://www.justinwallace.dev/about",
+        "disabled": false,
+        "startIcon": "",
+        "endIcon": ""
+      },
+      {
+        "__typename": "ButtonRecord",
+        "id": "122267592",
+        "variant": "text",
+        "label": "projects",
+        "url": "https://www.justinwallace.dev/#homepage-projects",
+        "disabled": false,
+        "startIcon": "",
+        "endIcon": ""
+      },
+      {
+        "__typename": "ButtonRecord",
+        "id": "122267593",
+        "variant": "text",
+        "label": "blog",
+        "url": "https://www.justinwallace.dev/blog",
+        "disabled": false,
+        "startIcon": "",
+        "endIcon": ""
+      },
+      {
+        "__typename": "ButtonRecord",
+        "id": "122267595",
+        "variant": "text",
+        "label": "contact",
+        "url": "https://www.justinwallace.dev/#page-footer",
+        "disabled": false,
+        "startIcon": "",
+        "endIcon": ""
+      }
+    ]
+  },
+  "_site": {
+    "favicon": {
+      "__typename": "FileField",
+      "id": "22586960",
+      "alt": "Personal logo of Justin Wallace",
+      "blurhash": null,
+      "height": 46,
+      "width": 55,
+      "url": "https://www.datocms-assets.com/85391/1668972867-thissite-1.svg"
+    },
+    "__typename": "Site"
+  }
+}

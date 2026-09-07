@@ -1,0 +1,342 @@
+[
+  {
+    "__typename": "TemplateInfoRecord",
+    "id": "139622885",
+    "slug": "cookies",
+    "information": {
+      "value": {
+        "schema": "dast",
+        "document": {
+          "type": "root",
+          "children": [
+            {
+              "type": "heading",
+              "level": 1,
+              "children": [
+                {
+                  "type": "span",
+                  "value": "Cookie Policy "
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "This is the Cookie Policy for Justin Wallace Development, accessible from https://justinwallace.dev/"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "Note"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "This site uses cookies for Google Analytics which is opted-in when you press \"Allow Cookies\". The rest of this page was generated with "
+                },
+                {
+                  "url": "https://www.termsfeed.com/cookies-policy-generator/",
+                  "meta": [
+                    {
+                      "id": "target",
+                      "value": "_blank"
+                    }
+                  ],
+                  "type": "link",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "Cookies Policy Generator"
+                    }
+                  ]
+                },
+                {
+                  "type": "span",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "What Are Cookies"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how I use it, and why I sometimes need to store these cookies. I will also share how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the site's functionality."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "How I Use Cookies"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "I use cookies for a variety of reasons detailed below. Unfortunately, in most cases, there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "Disabling Cookies"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of this site. Therefore it is recommended that you do not disable cookies. This Cookies Policy was created with the help of the "
+                },
+                {
+                  "url": "https://www.termsfeed.com/cookies-policy-generator/",
+                  "meta": [
+                    {
+                      "id": "target",
+                      "value": "_blank"
+                    }
+                  ],
+                  "type": "link",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "Cookies Policy Generator"
+                    }
+                  ]
+                },
+                {
+                  "type": "span",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "The Cookies I Set"
+                }
+              ]
+            },
+            {
+              "type": "list",
+              "style": "bulleted",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Site preferences cookies"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "In order to provide you with a great experience on this site I provide the functionality to set your preferences for how this site runs when you use it. In order to remember your preferences I need to set cookies so that this information can be called whenever you interact with a page that is affected by your preferences."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "Third Party Cookies"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "In some special cases, I also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site."
+                }
+              ]
+            },
+            {
+              "type": "list",
+              "style": "bulleted",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This site uses Google Analytics which is one of the most widespread and trusted analytics solutions on the web for helping us to understand how you use the site and ways that I can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so I can continue to produce engaging content."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "For more information on Google Analytics cookies, see the official Google Analytics page."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "marks": [
+                    "strong"
+                  ],
+                  "value": "More Information"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "Hopefully, that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on my site."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "For more general information on cookies, please read "
+                },
+                {
+                  "url": "https://www.cookiepolicygenerator.com/sample-cookies-policy/",
+                  "meta": [
+                    {
+                      "id": "target",
+                      "value": "_blank"
+                    }
+                  ],
+                  "type": "link",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "the Cookies Policy article"
+                    }
+                  ]
+                },
+                {
+                  "type": "span",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "span",
+                  "value": "However, if you are still looking for more information then you can contact us through one of my preferred contact methods:"
+                }
+              ]
+            },
+            {
+              "type": "list",
+              "style": "bulleted",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "LinkedIn: "
+                        },
+                        {
+                          "url": "https://www.linkedIn.com/in/thejustinwallace",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "https://www.linkedIn.com/in/thejustinwallace"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "links": [],
+      "__typename": "TemplateInfoModelInformationField"
+    }
+  }
+]

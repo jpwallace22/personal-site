@@ -1,0 +1,3878 @@
+[
+  {
+    "__typename": "TemplatePageRecord",
+    "id": "86279254",
+    "slug": "home",
+    "components": [
+      {
+        "__typename": "SwitchbackRecord",
+        "designAccent": "dots",
+        "heading": "A bit about me",
+        "headingAs": "h2",
+        "id": "58223176",
+        "reverse": false,
+        "sectionId": "about",
+        "bgColor": "purple-400",
+        "body": {
+          "value": {
+            "schema": "dast",
+            "document": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "I am a dedicated and driven T-shaped software engineer with a passion for fantastic frontends, intuitive interfaces, adept APIs, and alliteration. My educational and professional backgrounds combined with my "
+                    },
+                    {
+                      "type": "span",
+                      "marks": [
+                        "strong"
+                      ],
+                      "value": "product-oriented mindset"
+                    },
+                    {
+                      "type": "span",
+                      "value": " enable me to create accessible modern user experiences that resonate."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "I am currently a Sr. Software Engineer with NVIDIA where we are empowering the world to build the next generation of AI applications. Though I have been in the AI field for years, I love to dabble and am "
+                    },
+                    {
+                      "type": "span",
+                      "marks": [
+                        "strong"
+                      ],
+                      "value": "always learning"
+                    },
+                    {
+                      "type": "span",
+                      "value": ". I have an obsession with writing clean, readable, well-tested, and scalable code regardless of language or framework."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "I feel my greatest assets as an engineer are "
+                    },
+                    {
+                      "type": "span",
+                      "marks": [
+                        "strong"
+                      ],
+                      "value": "my grit, communication, curiosity, and product mindset."
+                    },
+                    {
+                      "type": "span",
+                      "value": " Building things is amazing, but watching them succeed is even amazing-er! 🤓"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "item": "58223041",
+                      "type": "inlineItem"
+                    },
+                    {
+                      "item": "58223042",
+                      "type": "inlineItem"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "links": [
+            {
+              "__typename": "ButtonRecord",
+              "id": "58223041",
+              "variant": "contained",
+              "label": "More about",
+              "url": "https://www.justinwallace.dev/about",
+              "disabled": false,
+              "startIcon": "",
+              "endIcon": ""
+            },
+            {
+              "__typename": "ButtonRecord",
+              "id": "58223042",
+              "variant": "outlined",
+              "label": "My Github",
+              "url": "https://www.github.com/jpwallace22",
+              "disabled": false,
+              "startIcon": "",
+              "endIcon": "github"
+            }
+          ],
+          "__typename": "SwitchbackModelBodyField"
+        },
+        "image": {
+          "__typename": "FileField",
+          "id": "40296511",
+          "alt": "A headshot of Justin Wallace wearing a cool shirt with lobsters on it",
+          "blurhash": "LyJu4Lfi_3tR^+j@R*oz~qoLt7xt",
+          "height": 821,
+          "width": 700,
+          "url": "https://www.datocms-assets.com/85391/1687393096-headshot-lobster-website.png"
+        }
+      },
+      {
+        "__typename": "CarouselRecord",
+        "id": "85889559",
+        "cards": [
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "He has a "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "knack for"
+                        },
+                        {
+                          "type": "span",
+                          "value": " "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "taking ownership of projects"
+                        },
+                        {
+                          "type": "span",
+                          "value": "—whether it’s leading frontend architecture decisions for AI interfaces, optimizing performance, or mentoring team members... His growth mindset, leadership skills, and technical prowess set him apart. It’s no wonder he has taken his talents to NVIDIA, where he will "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "continue to solve some of the hardest challenges"
+                        },
+                        {
+                          "type": "span",
+                          "value": " that the AI space has to offer."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Esther",
+              "lastName": "Cuan",
+              "role": "Sr Engineering Manager",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "TBRNag6MTDqFrrMQxaMOlA",
+                "alt": null,
+                "blurhash": "LLK,y{mk?^yEaxRjxat6yDo}M{-p",
+                "height": 512,
+                "width": 512,
+                "url": "https://www.datocms-assets.com/85391/1727391719-1666986709782.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "NVIDIA",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "DzfhfptPRG2CjG8Go0x7TA",
+                  "alt": null,
+                  "blurhash": "LhOgczk$tht7~qWTofof_3M{RQt7",
+                  "height": 206,
+                  "width": 1094,
+                  "url": "https://www.datocms-assets.com/85391/1727393069-nvidia-logo-horz-edited.png"
+                },
+                "website": "https://www.nvidia.com",
+                "trust": true
+              },
+              "website": "https://www.linkedin.com/in/esthercuan/"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Justin is the definition of "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "rockstar developer"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". Quick to learn, highly self-motivated, and constantly innovative, Justin is the ideal member for any web development team. Throughout the course of our work together on Webstacks' internal UI library, he pushed everyone on the team including himself to write better code, improve communication, and create better processes."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Daniel",
+              "lastName": "Slovinsky",
+              "role": "Frontend Software Engineer",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "30134740",
+                "alt": null,
+                "blurhash": "L#HCi@%LpINI_NxuxtRk%Kaxs+ax",
+                "height": 800,
+                "width": 800,
+                "url": "https://www.datocms-assets.com/85391/1672182695-1629380522516.jpeg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "Alchemy",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "HfjWOAGqRcGKd95LGXHEjw",
+                  "alt": null,
+                  "blurhash": "LiO;0yxu_1t7~qoft5t7-oofIVWB",
+                  "height": 256,
+                  "width": 256,
+                  "url": "https://www.datocms-assets.com/85391/1709003066-7953323.png"
+                },
+                "website": "https://www.alchemy.com/",
+                "trust": null
+              },
+              "website": "https://www.linkedin.com/in/daniel-slovinsky"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "A few of his strongest skills are his top-notch work ethic and innovative thinking. Whenever I threw him a unique design or interaction, he wouldn't just address the problem; "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "he'd offer multiple ways to nail it"
+                        },
+                        {
+                          "type": "span",
+                          "value": "... ensuring our end products were not only functional but visually impeccable. It’s rare to find a developer who gets both the technical and visual sides so spot-on."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Brandon",
+              "lastName": "Hampton",
+              "role": "Senior Product Designer",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "QHj1AIaBTY-Ru08sGNK9zw",
+                "alt": null,
+                "blurhash": "LXGRrMV=J9kW}+kEbIa{JXWA%1V@",
+                "height": 800,
+                "width": 800,
+                "url": "https://www.datocms-assets.com/85391/1709003890-1680895176133.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "Webstacks",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "e_4ZkgnMTKubgMH--um-2w",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 20,
+                  "width": 149,
+                  "url": "https://www.datocms-assets.com/85391/1709400500-stacks.svg"
+                },
+                "website": "https://www.webstacks.com",
+                "trust": true
+              },
+              "website": "https://www.bhamps.com"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I have been working with Justin since August of 2022, and have had nothing but great results and positive interactions. He is "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "punctual, thorough, and honest"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". I have thrown more than a few curveballs at him and the Webstacks team which they have handled with grace and curiosity. Nothing is impossible when I have an ask..."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Amie",
+              "lastName": "Guidry",
+              "role": "Senior Manager Web Strategy",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "55145574",
+                "alt": null,
+                "blurhash": "LVEeusj[0$xaM|WBj?f5ElkC-TWC",
+                "height": 500,
+                "width": 500,
+                "url": "https://www.datocms-assets.com/85391/1686772594-1575939510822.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "OctoAI",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "VmwxDROlS3-u338dTo9pSw",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 336,
+                  "width": 1295,
+                  "url": "https://www.datocms-assets.com/85391/1709399321-1704222289-octoai_logo_light.svg"
+                },
+                "website": "https://www.octo.ai",
+                "trust": true
+              },
+              "website": "https://www.linkedin.com/in/amie-guidry-b01357b/"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Alongside all of his great technical qualities, Justin is just genuinely a kind person. He is always happy to help with anything anyone needs while maintaining a "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "great sense of humor"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". He is easy to talk to and work with and makes sure that everyone feels welcome. He is fantastic at collaborating on projects, taking feedback in stride, and pivoting back to solve problems that may arise."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Chai",
+              "lastName": "Landau",
+              "role": "Frontend Engineer",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "55159758",
+                "alt": null,
+                "blurhash": "LDD]k^~m54S[?t-,?axZ4.M{%3s;",
+                "height": 800,
+                "width": 800,
+                "url": "https://www.datocms-assets.com/85391/1686781368-1600129138327.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "OctoAI",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "VmwxDROlS3-u338dTo9pSw",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 336,
+                  "width": 1295,
+                  "url": "https://www.datocms-assets.com/85391/1709399321-1704222289-octoai_logo_light.svg"
+                },
+                "website": "https://www.octo.ai",
+                "trust": true
+              },
+              "website": "https://chailandau.com/"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Justin made significant contributions to the team. He worked on a variety of projects... He worked on open-source software by contributing to others and writing his own. Justin has also been a "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "valuable member of the team"
+                        },
+                        {
+                          "type": "span",
+                          "value": ", providing valuable insights and guidance to his colleagues by helping them overcome challenges and reach their goals."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Joe",
+              "lastName": "DeSoto",
+              "role": "Software Engineer",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "55158669",
+                "alt": null,
+                "blurhash": "LnGuaws:NbR*8^RjNFWB%hfkt7of",
+                "height": 450,
+                "width": 450,
+                "url": "https://www.datocms-assets.com/85391/1686780946-1517616622136.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "Kaplan Early Learning",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "Hyop_oSIRT-czka_lsO-1g",
+                  "alt": null,
+                  "blurhash": "LWE:Sj%M00IokCofWCRj0KM{?Hxu",
+                  "height": 225,
+                  "width": 225,
+                  "url": "https://www.datocms-assets.com/85391/1709003693-download-2.png"
+                },
+                "website": "https://www.kaplanco.com/",
+                "trust": null
+              },
+              "website": "https://www.linkedin.com/in/joe-desoto/"
+            }
+          },
+          {
+            "__typename": "TestimonialCardRecord",
+            "quote": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I've watched Justin transform as a developer over the last few months working with Freshworks. He is talented, excellent with clients, and asks all the right questions to keep things on track for success... "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "Justin is a"
+                        },
+                        {
+                          "type": "span",
+                          "value": " "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "unit"
+                        },
+                        {
+                          "type": "span",
+                          "value": "! I hope that I get to work on another project with Justin soon."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TestimonialCardModelQuoteField"
+            },
+            "person": {
+              "__typename": "PersonRecord",
+              "firstName": "Lauren",
+              "lastName": "Sorge",
+              "role": "Sr. Product Designer",
+              "thumbnail": {
+                "__typename": "FileField",
+                "id": "55157583",
+                "alt": null,
+                "blurhash": "LXHxNcxuyD%M~qa#S4bIX9ozi_ay",
+                "height": 800,
+                "width": 800,
+                "url": "https://www.datocms-assets.com/85391/1686780798-1655881122807.jpg"
+              },
+              "company": {
+                "__typename": "CompanyRecord",
+                "name": "Webstacks",
+                "logo": {
+                  "__typename": "FileField",
+                  "id": "e_4ZkgnMTKubgMH--um-2w",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 20,
+                  "width": 149,
+                  "url": "https://www.datocms-assets.com/85391/1709400500-stacks.svg"
+                },
+                "website": "https://www.webstacks.com",
+                "trust": true
+              },
+              "website": "https://www.linkedin.com/in/laurensorge"
+            }
+          }
+        ]
+      },
+      {
+        "__typename": "ProjectListingRecord",
+        "id": "86279154",
+        "heading": "Some Projects",
+        "headingAs": "h3",
+        "sectionId": "homepage-projects",
+        "bgColor": "",
+        "body": {
+          "value": {
+            "schema": "dast",
+            "document": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "This section showcases a curated collection of endeavors that blend my"
+                    },
+                    {
+                      "type": "span",
+                      "marks": [
+                        "strong"
+                      ],
+                      "value": " passion"
+                    },
+                    {
+                      "type": "span",
+                      "value": " for software engineering with both professional and leisure pursuits. From "
+                    },
+                    {
+                      "type": "span",
+                      "marks": [
+                        "emphasis"
+                      ],
+                      "value": "innovative work solutions to whimsical experiments"
+                    },
+                    {
+                      "type": "span",
+                      "value": ", each project is a testament to my dedication to exploring the vast possibilities of technology (or just building things I want). This is not just a reflection of my skills but a journey through the challenges I've embraced and the fun I've had along the way. 🙌🏼"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "__typename": "ProjectListingModelBodyField"
+        },
+        "cards": [
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "OctoAI SaaS platform",
+            "subtitle": "Run, tune, & scale generative AI in the cloud",
+            "slug": "octoai",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Owned and led the development of the frontend architecture for a cutting-edge AI SaaS/IaaS platform, expertly leveraging modern tech on the bleeding edge including Remix, React 19, TypeScript, and RESTful Golang APIs and microservices."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "130005432",
+                "title": "Tailwind",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "54161063",
+                  "alt": null,
+                  "blurhash": "LXQ^Exx]^j%M%Mt6oLR+~AoeIpa|",
+                  "height": 2048,
+                  "width": 2048,
+                  "url": "https://www.datocms-assets.com/85391/1686280578-tailwind_css_logo-svg.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58217141",
+                "title": "React",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "22586632",
+                  "alt": "React Logo",
+                  "blurhash": null,
+                  "height": 3059,
+                  "width": 3454,
+                  "url": "https://www.datocms-assets.com/85391/1668918463-react.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "133276570",
+                "title": "Vite",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "49731647",
+                  "alt": null,
+                  "blurhash": "LZRMGFtm.m-noZX8NOjF?ts,MeR.",
+                  "height": 640,
+                  "width": 640,
+                  "url": "https://www.datocms-assets.com/85391/1680129419-logo-with-shadow.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "T0V5aGfaTQmy-22WMzur7w",
+                "title": "Remix",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "YR8HnqH5RE-_fisE9AsHNg",
+                  "alt": "remix logo",
+                  "blurhash": "LcBNKJj]8^oeozj[WAay9Ej[-=WB",
+                  "height": 200,
+                  "width": 200,
+                  "url": "https://www.datocms-assets.com/85391/1709264477-64235328.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "CJKp1aI3SBScvRLtLf7whw",
+                "title": "Go",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "bdSvQnKzQIC6cXkk-KQ_FQ",
+                  "alt": null,
+                  "blurhash": "LQ9w@nOZ9utSkrfkfQfk0gxZ-oR*",
+                  "height": 400,
+                  "width": 400,
+                  "url": "https://www.datocms-assets.com/85391/1712374263-o6aczwfv_400x400.png"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "bLrLk59IS2ajy5aZj0prEg",
+              "alt": "OctoAI Image Gen",
+              "blurhash": "LoI=4SNJs8xu}7WBWCjarqofWBay",
+              "height": 300,
+              "width": 570,
+              "url": "https://www.datocms-assets.com/85391/1712370871-image-gen-card.webp"
+            }
+          },
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "Webstacks UI Library",
+            "subtitle": "And a template repository too",
+            "slug": "webstacks-ui-library",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "A complete React UI/component library boasting SSR support, fully customizable responsive elements, and dark mode out of the box. Currently in production by 30+ tech companies including industry giants like Freshworks."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220522",
+                "title": "MUI",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634091",
+                  "alt": null,
+                  "blurhash": "LaQc*u%M?Bo$tSRnWDt5~Oj@Isod",
+                  "height": 820,
+                  "width": 820,
+                  "url": "https://www.datocms-assets.com/85391/1670115095-mui.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220523",
+                "title": "Styled Components",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634093",
+                  "alt": null,
+                  "blurhash": "LERymP-;FM_4^kt7OERkIuf,rpaI",
+                  "height": 225,
+                  "width": 225,
+                  "url": "https://www.datocms-assets.com/85391/1670115103-styledcomponents.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220524",
+                "title": "Storybook",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634087",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 23,
+                  "width": 19,
+                  "url": "https://www.datocms-assets.com/85391/1670115063-storybook.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "116339846",
+                "title": "Jest",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "42885117",
+                  "alt": null,
+                  "blurhash": "LZR.r#%g.mr?%Mx]ozMxyDayRPoz",
+                  "height": 512,
+                  "width": 512,
+                  "url": "https://www.datocms-assets.com/85391/1675826052-jest-js-icon.png"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "22586917",
+              "alt": "A computer screen with showing different aspects of web design",
+              "blurhash": "LyM7=et7-=offSWBogWY~pjYM{t7",
+              "height": 650,
+              "width": 650,
+              "url": "https://www.datocms-assets.com/85391/1668970289-webstacks-1.webp"
+            }
+          },
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "Spotify Widget",
+            "subtitle": "Full stack electron app",
+            "slug": "spotify-widget",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "A macOS utility bar application for quickly accessing my most needed Spotify actions. This was a full stack project using Electron, Vite, and SolidJS. I particularly enjoy this project because it's a piece of software I use every day. "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "133276569",
+                "title": "Electron",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "49731646",
+                  "alt": null,
+                  "blurhash": "LgF~?dof~WxuoffQj[fQ~Wjt?bt7",
+                  "height": 256,
+                  "width": 256,
+                  "url": "https://www.datocms-assets.com/85391/1680129377-electron_software_framework_logo-svg-1.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "133276570",
+                "title": "Vite",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "49731647",
+                  "alt": null,
+                  "blurhash": "LZRMGFtm.m-noZX8NOjF?ts,MeR.",
+                  "height": 640,
+                  "width": 640,
+                  "url": "https://www.datocms-assets.com/85391/1680129419-logo-with-shadow.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "133276572",
+                "title": "SolidJS",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "49731648",
+                  "alt": null,
+                  "blurhash": "L*Kej0e.~Vxux^%2jEoL-:ofWBoe",
+                  "height": 647,
+                  "width": 663,
+                  "url": "https://www.datocms-assets.com/85391/1680129474-logo.png"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "49731644",
+              "alt": "The spotify logo and a super cool looking widget on top of it",
+              "blurhash": "LuH{A#Inoyx[tQR%ayof~qIUV[xu",
+              "height": 275,
+              "width": 501,
+              "url": "https://www.datocms-assets.com/85391/1686280156-spotify-widget.png"
+            }
+          },
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "Solana Component Library",
+            "subtitle": "React components for a Rust blockchain",
+            "slug": "solana",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Lead engineer for a modern UI/Component library (npm package) to be used for Solana's NextJS site. The contains your smaller UI elements like buttons as well as full components. "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58217141",
+                "title": "React",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "22586632",
+                  "alt": "React Logo",
+                  "blurhash": null,
+                  "height": 3059,
+                  "width": 3454,
+                  "url": "https://www.datocms-assets.com/85391/1668918463-react.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "130005432",
+                "title": "Tailwind",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "54161063",
+                  "alt": null,
+                  "blurhash": "LXQ^Exx]^j%M%Mt6oLR+~AoeIpa|",
+                  "height": 2048,
+                  "width": 2048,
+                  "url": "https://www.datocms-assets.com/85391/1686280578-tailwind_css_logo-svg.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220524",
+                "title": "Storybook",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634087",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 23,
+                  "width": 19,
+                  "url": "https://www.datocms-assets.com/85391/1670115063-storybook.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220543",
+                "title": "Node",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634084",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2270,
+                  "url": "https://www.datocms-assets.com/85391/1670115006-node.svg"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "58525844",
+              "alt": "The word \"Solana\" set in front of a stylized glass \"S\"",
+              "blurhash": "LkP?]$oz~W%3.8ozaKVtt8j[f6af",
+              "height": 411,
+              "width": 658,
+              "url": "https://www.datocms-assets.com/85391/1688227057-floating-logo-set-copy.webp"
+            }
+          },
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "This Website",
+            "subtitle": "So Meta",
+            "slug": "this-site",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Initially conceived as a class project with a tight timeline, it has evolved into its present form—a statically generated, headless website created with TypeScript, NextJS RSC,  and Tailwind with CVA. Leveraging GraphQL delivered from DatoCMS."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "58217138",
+                "title": "NextJS",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634090",
+                  "alt": null,
+                  "blurhash": "LnOzSsxu00t7%Mj[WBfQ4nayD%Rj",
+                  "height": 629,
+                  "width": 629,
+                  "url": "https://www.datocms-assets.com/85391/1670115091-next.jpg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58217141",
+                "title": "React",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "22586632",
+                  "alt": "React Logo",
+                  "blurhash": null,
+                  "height": 3059,
+                  "width": 3454,
+                  "url": "https://www.datocms-assets.com/85391/1668918463-react.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "130005432",
+                "title": "Tailwind",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "54161063",
+                  "alt": null,
+                  "blurhash": "LXQ^Exx]^j%M%Mt6oLR+~AoeIpa|",
+                  "height": 2048,
+                  "width": 2048,
+                  "url": "https://www.datocms-assets.com/85391/1686280578-tailwind_css_logo-svg.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220536",
+                "title": "DatoCMS",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634094",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 95,
+                  "width": 94,
+                  "url": "https://www.datocms-assets.com/85391/1670115206-dato.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220539",
+                "title": "GraphQL",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634083",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 512,
+                  "width": 456,
+                  "url": "https://www.datocms-assets.com/85391/1670115005-graphql.svg"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "49563058",
+              "alt": "Justin Wallace's personal logo",
+              "blurhash": "LaM@yHRk~p%fM|%2xat7~Way9Gof",
+              "height": 605,
+              "width": 606,
+              "url": "https://www.datocms-assets.com/85391/1678640621-thissite.png"
+            }
+          },
+          {
+            "__typename": "TemplateProjectRecord",
+            "title": "React Lazify",
+            "subtitle": "A lazy way to make lazy imports",
+            "slug": "react-lazify",
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Recognizing the need for an efficient approach to update codebases with lazy/dynamic imports with the release of React v18, I developed a versatile and extensible VS Code extension to automate the process."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "TemplateProjectModelExcerptField"
+            },
+            "techStack": [
+              {
+                "__typename": "TechStackRecord",
+                "id": "58220521",
+                "title": "Typescript",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "24634086",
+                  "alt": null,
+                  "blurhash": null,
+                  "height": 2500,
+                  "width": 2500,
+                  "url": "https://www.datocms-assets.com/85391/1670115061-typescript.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "93899963",
+                "title": "Mocha",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "33736766",
+                  "alt": null,
+                  "blurhash": "LnL|lpoe?bxat7j@ayf6_NkC%Mt7",
+                  "height": 192,
+                  "width": 170,
+                  "url": "https://www.datocms-assets.com/85391/1673727280-mocha.png"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "58217141",
+                "title": "React",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "22586632",
+                  "alt": "React Logo",
+                  "blurhash": null,
+                  "height": 3059,
+                  "width": 3454,
+                  "url": "https://www.datocms-assets.com/85391/1668918463-react.svg"
+                }
+              },
+              {
+                "__typename": "TechStackRecord",
+                "id": "93899969",
+                "title": "VS Code",
+                "thumbnail": {
+                  "__typename": "FileField",
+                  "id": "33736767",
+                  "alt": null,
+                  "blurhash": "LQB}RlrW~8t.j[f5j[fl}%kW%inh",
+                  "height": 435,
+                  "width": 436,
+                  "url": "https://www.datocms-assets.com/85391/1673727354-pngwing-com-2-edited.png"
+                }
+              }
+            ],
+            "bannerImage": {
+              "__typename": "FileField",
+              "id": "33737432",
+              "alt": "The logo for React Lazify. Its a react logo with sleeping Z's",
+              "blurhash": "LTPa80x]~B-p-:t7R*jY~Bt6Naj[",
+              "height": 526,
+              "width": 537,
+              "url": "https://www.datocms-assets.com/85391/1686280440-react-lazy-1.png"
+            }
+          }
+        ]
+      },
+      {
+        "__typename": "BlogListingRecord",
+        "id": "145791062",
+        "heading": "Featured Blogs",
+        "headingAs": "h2",
+        "eyebrow": "",
+        "body": {
+          "value": {
+            "schema": "dast",
+            "document": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "__typename": "BlogListingModelBodyField"
+        },
+        "cards": [
+          {
+            "__typename": "TemplateBlogPostRecord",
+            "id": "XqCKJXUyQiKLcY--7jCVEA",
+            "internalName": "NeoVim made me fall in love with tech (again)",
+            "title": "NeoVim Made Me Fall in Love With Tech ",
+            "publishDate": "2024-05-12",
+            "slug": "how-neovim-made-me-fall-in-love-with-tech-again",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Rediscovering the Spark"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As engineers, we often find ourselves stuck in the trenches of deadlines, features, and tech debt. It’s "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "remarkably easy to slip into a monotonous grind"
+                        },
+                        {
+                          "type": "span",
+                          "value": ", each day blurring into the next under the constant pressure of 'just getting things done'. In this cycle, we lose the initial thrill of crafting code and the dopamine kicks of solving puzzles, replaced by the robotic ticking off of tasks. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Though this was "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "NOT"
+                        },
+                        {
+                          "type": "span",
+                          "value": " quite my routine yet, I could feel it creeping up on me. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Enter NeoVim. \""
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "A text editor? How is a text editor going to help?"
+                        },
+                        {
+                          "type": "span",
+                          "value": "\" you might say. Well, more than just a text editor, it's a tool that injected a dose of unexpected fun back into my work life. More than just about embracing a tool for its functionality; it was about how Vim transformed mundane coding sessions back into engaging challenges. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "It's clever keybindings and highly customizable features made each line of code feel like a small victory in a grand adventure. With NeoVim (nvim), "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "what was once a daily grind became an enjoyable quest"
+                        },
+                        {
+                          "type": "span",
+                          "value": ", reminding me that at the heart of technology, beyond the deadlines and demands, there's still plenty of room for play, discovery, and the ever-moving bar of optimization. "
+                        }
+                      ]
+                    },
+                    {
+                      "item": "YJTaNaOAQ8eH2f8xwnChBQ",
+                      "type": "block"
+                    },
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "A (very) Brief History of My Journey"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I kicked off my tech journey (like many) fueled by a mix of curiosity and eagerness to soak up "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "every ounce of knowledge"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". As I navigated through various roles—from building UI libraries to complex systems and SaaS apps—I saw my toolkit expand, evolve, and change. I even built my "
+                        },
+                        {
+                          "url": "https://www.justinwallace.dev/blog/building-my-first-vs-code-extension",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "very own VSCode plugins"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " to help it evolve with me. But as the novelty wore off, the tools I relied on started to feel more like shackles than wings. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I found myself adapting my workflow to the tech, and not the other way around. This realization struck me hard; it seemed as though I was losing the joy that initially drew me into this field. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Coding was becoming a repetitive task, something to get through rather than something to savor. I was becoming a well-oiled part of the machinery, executing tasks without the creative spark that once ignited my days. I had to do something desperate..."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "I decided to join the neckbeards in the land of pretentiousness"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and look into Vim. Initially, it was just another item in a long list of tools to try—another attempt to maybe recapture some of the old magic. Little did I know that I was about to change the way I looked at writing code "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "What is NeoVim?"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "NeoVim isn’t just a tweak on the classic Vim; it’s a total game-changer that takes the best of Vim and kicks it up a notch for the modern era. Born from a desire for more functionality and a smoother user experience, nvim injects new life into the solid base of Vim—known for its no-nonsense, efficient text manipulation, minimalistic approach, and inability to close."
+                        }
+                      ]
+                    },
+                    {
+                      "item": "ZqyZ8nRoRCql1e-sbpL8ew",
+                      "type": "block"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "In the bustling world of code and command lines, it stands out by integrating cool features like asynchronous job control. This means you can run all of the normal background tasks you've come to love (and face it, rely on)—think linting, auto-completing, and other nifty plugins"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The plugin system? It’s amazing. There is a whole ecosystem of "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "highly customizable"
+                        },
+                        {
+                          "type": "span",
+                          "value": " plugins that cater to nearly every coder's fantasy. Plugins that transform your code navigation into a breeze or weave Git integration so seamlessly that it feels like it was always part of the plan ("
+                        },
+                        {
+                          "url": "https://github.com/jesseduffield/lazygit",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "lazygit"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": "). "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "These plugins don’t just boost nvim's capabilities; they personalize it to fit your coding style perfectly, making your text editor distinctly yours. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The Learning Curve: Steep but Rewarding"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Diving into Vims modal editing was like stepping into a whole new world. At first, flipping between editing, command, and visual modes felt like learning to drive a stick shift in a bustling city—clunky, a bit scary, and slowing me down more than speeding me up. But, fueled by stories of its game-changing efficiency, I buckled up for the learning process."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I started with the "
+                        },
+                        {
+                          "url": "https://code.visualstudio.com/docs/getstarted/keybindings",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "Vim keybindings plugin VSCode extension"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": ". This way, I could continue with what I knew best, and start dipping my toes into the bindings. I used a "
+                        },
+                        {
+                          "url": "https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-settings-cycler",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "setting cycler"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " and "
+                        },
+                        {
+                          "url": "https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "multi-command plugin"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " to make it so I could cycle Vim mode (with relative line numbers) with a hotkey. I could then switch back and forth based on the urgency of a project. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "  // Settings Cycler and Multi-commands (to set more complex key bindings)\n  \"settings.cycle\": [\n    {\n      \"id\": \"lineNumbers\",\n      \"overrideWorkspaceSettings\": false,\n      \"values\": [\n        {\n          \"editor.lineNumbers\": \"on\"\n        },\n        {\n          \"editor.lineNumbers\": \"relative\"\n        }\n      ]\n    }\n  ],\n  \"multiCommand.commands\": [\n    {\n      \"command\": \"multiCommand.cycleVim\",\n      \"sequence\": [\"settings.cycle.lineNumbers\", \"toggleVim\"]\n    }\n  ],\n  \"editor.lineNumbers\": \"on\"\n}",
+                      "type": "code",
+                      "language": "javascript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I bound this action to "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "ctrl + opt + cmd + v"
+                        },
+                        {
+                          "type": "span",
+                          "value": " for quick snaps back and forth. I would do whatever I could in Vim mode, but if poop hit the fan, I would switch back to my normal flow. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Day by day, what felt awkward started to feel like second nature. The commands and keystrokes began to flow more smoothly ("
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "and I was looking at my keyboard less"
+                        },
+                        {
+                          "type": "span",
+                          "value": "). The more I practiced, the more those initial bumps in the road smoothed out, turning daunting tasks into a sequence of (slightly more) nimble, precise actions. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I got to the point that the limitations of the Vim plugin and VSCode environment were slowing down my learning process and it was time to spread my wings!"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "brew install neovim",
+                      "type": "code",
+                      "language": "shell"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "With a robust ecosystem of plugins, a flexible configuration system, and plenty of videos, I began tailoring my editor to fit my workflow. I integrated tools that anticipated my needs ("
+                        },
+                        {
+                          "url": "https://github.com/hrsh7th/nvim-cmp",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "nvim-cmp"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": "), automated mundane tasks ("
+                        },
+                        {
+                          "url": "https://www.chezmoi.io/",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "chezmoi"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " autocommands on save for dotfiles), and started to get everything running like a well-oiled machine. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I still had to jump over to VSCode a few times in the beginning while I was still learning the basics. But sooner or later I closed VSCode one day... "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "and just never opened it again"
+                        },
+                        {
+                          "type": "span",
+                          "value": "."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This journey through the learning curve wasn't just about mastering an editor; it was about rediscovering the joy of coding. Each session left me a bit more adept and a lot more inspired. The Vim ecosystem challenged me, rewarded me, and ultimately, transformed the way I interact with my code. It turned what was once a steep learning curve into a thrilling ride that I now can't really imagine being without."
+                        }
+                      ]
+                    },
+                    {
+                      "item": "KdKuamaGQ8C8RO69sR6DcA",
+                      "type": "block"
+                    },
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Tailoring to My Needs"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The real charm of nvim is in how it bends to your will and needs. Imagine an editor that not only follows your commands but also. over time, adapts to your style—this is what makes NeoVim really stand out to me. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I jumped headfirst into my customization, learning and using Lua scripting and nvims APIs to dial in a setup that could "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "get me into my flow state quicker, and keep me in for longer."
+                        },
+                        {
+                          "type": "span",
+                          "value": " Whether it was weaving in sleek task management solutions or tweaking the visual vibe with themes and key bindings, this customization journey turned my coding environment from functional to "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "FUN"
+                        },
+                        {
+                          "type": "span",
+                          "value": "ctional."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 4,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Some of the basics"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list",
+                      "style": "bulleted",
+                      "children": [
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "marks": [
+                                    "strong"
+                                  ],
+                                  "value": "LazyNvim"
+                                },
+                                {
+                                  "type": "span",
+                                  "value": ": My adventure began with LazyVim, a solid foundation stacked with all the essential plugins and smart defaults you could wish for. It’s like having a powerful base camp, making it super accessible yet potent enough to handle anything I throw at it. "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "list",
+                              "style": "bulleted",
+                              "children": [
+                                {
+                                  "type": "listItem",
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "children": [
+                                        {
+                                          "type": "span",
+                                          "value": "Starting this way can add to your learning curve though. You need to learn how to overwrite \"built-in\" plugins and navigate the LazyVim ecosystem as well. "
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "marks": [
+                                    "strong"
+                                  ],
+                                  "value": "LSP Integrations"
+                                },
+                                {
+                                  "type": "span",
+                                  "value": ": I rolled in several language servers thanks to nvims native LSP support, including your basics like auto-completion, real-time linting, and copilot (I'm lucky enough that my company gives us copilot). "
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "marks": [
+                                    "strong"
+                                  ],
+                                  "value": "Visual Enhancements"
+                                },
+                                {
+                                  "type": "span",
+                                  "value": ": Then there’s the eye candy—plugins like "
+                                },
+                                {
+                                  "url": "https://github.com/nvim-lualine/lualine.nvim",
+                                  "type": "link",
+                                  "children": [
+                                    {
+                                      "type": "span",
+                                      "value": "lualine"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "span",
+                                  "value": " for a snazzy customizable status line and "
+                                },
+                                {
+                                  "url": "https://github.com/nvim-tree/nvim-tree.lua",
+                                  "type": "link",
+                                  "children": [
+                                    {
+                                      "type": "span",
+                                      "value": "nvim-tree"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "span",
+                                  "value": " for a sleek, file explorer, and "
+                                },
+                                {
+                                  "url": "https://github.com/akinsho/bufferline.nvim",
+                                  "type": "link",
+                                  "children": [
+                                    {
+                                      "type": "span",
+                                      "value": "bufferline"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "span",
+                                  "value": " for tab-like experiences with buffers. "
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "It goes beyond the basic stuff you can get from any IDE though. You can edit EVERYTHING to your exact needs. You can even easily fork plugins and adjust them to your needs if you want. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 3,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The Impact: A Renewed Love for Tech"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Vim did more than just revamp my workflow—it rekindled my love for writing code.  Each time I get to zone out and dig into a repo I am not only building something, but I am also constantly further refining my workflow. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The more I dive into nvim and the lua community, the more it feels like I am rediscovering my tech roots—those days when every challenge was an adventure and every problem solved was a victory. I have that rush again, that sense of accomplishment and the sheer joy of crafting something great from nothing, for no reason other than I want to. It’s been like reigniting an old friendship where everything clicks just right, reminding me why I fell in love with tech in the first place."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As always, feel free to reach out to me by any means for more info, or if you just wanna talk tech. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Cheers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelBodyField"
+            },
+            "featuredImage": {
+              "__typename": "FileField",
+              "id": "Gp8szgQgTRCLiTIm5CGw2g",
+              "alt": "neovim logo floating over a terminal window showing neovim",
+              "blurhash": "LkIP3dWH^,t1x[f$jajJ~XobR$oN",
+              "height": 1080,
+              "width": 1342,
+              "url": "https://www.datocms-assets.com/85391/1715536170-untitled-design-edited.png"
+            },
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "NeoVim is more than just another evolution of Vi. It's a philosophy that technology should adapt to the user, not the other way around. This served as a reminder of what initially made me fall in love with tech. With the right tools, we can not only recover lost passion but also push our boundaries and redefine what’s possible."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelExcerptField"
+            }
+          },
+          {
+            "__typename": "TemplateBlogPostRecord",
+            "id": "133206042",
+            "internalName": "Building a Spotify widget using Electron",
+            "title": "Building a Spotify widget using Electron",
+            "publishDate": "2023-03-20",
+            "slug": "building-a-spotify-widget-using-electron",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "For a quick overview of the app you can check out its separate "
+                        },
+                        {
+                          "url": "https://www.justinwallace.dev/projects/spotify-widget",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "projects page"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " otherwise, read on for the full write-up! "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "How and why I chose the tech stack"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I started by jumping back and forth between "
+                        },
+                        {
+                          "url": "https://tauri.app/",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "Tauri"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " and "
+                        },
+                        {
+                          "url": "https://www.electronjs.org/",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "Electron"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": ". Both frameworks have so much to offer and pros and cons. I ended up sticking with Electron because (though I need to learn more Rust) my current Rust skills just aren't up to par. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I paired Electron with Vite because I just wanted to try something new. Vite had a minor learning curve, but boy is it fast!"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "For the frontend I the obvious choice would be React right? Well, I write React professionally all day and, though it's my bread and butter, I love to learn new things when I have the chance. So I went with "
+                        },
+                        {
+                          "url": "https://www.solidjs.com/",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "SolidJS"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": ", a reactive front-end library that ditches the shadow dom but maintains react-like syntax.  "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "With my frameworks decided upon, it comes down to styling and languages. Though I would have loved to use the new CSS-in-JS library I am working on with Daniel Slovinsky, Quarks, it's not yet production ready. So I went with the classic "
+                        },
+                        {
+                          "url": "https://github.com/solidjs/solid-styled-components",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "styled-components "
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": "(but for SolidJS). "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Lastly, I chose Typescript over Javascript. I don't think I need to explain why. 😉"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Setting up the authentication (and why I botched it)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This was my first time working with Electron. I thought for some reason that I would just make a standard Express API for all my Spotify work and call it a day. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Yeah, I was VERY wrong. I guess in a larger production application it would be beneficial to separate the API completely and manage it in a series of microservices. But that was a bit over the top for what I needed to accomplish. (Need to know when not to over-engineer!) "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I ran into nothing but trouble trying to securely run an Express API in an Electron application and in hindsight, I can see why it was such a bad idea."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "What I ended up doing was creating an invisible window for authentication that loads the Auth URL. Then, if it redirects showing the window so the user can authenticate. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const authFlow = (authWindow: BrowserWindow | null): void => {\n  const AUTH_URL = 'https://accounts.spotify.com/authorize?'\n  const { M_VITE_SPOTIFY_CLIENT_ID, M_VITE_SPOTIFY_URI_CALLBACK } = import.meta.env\n\n  const params = new URLSearchParams({\n    response_type: 'code',\n    client_id: M_VITE_SPOTIFY_CLIENT_ID,\n    scope:\n      'streaming user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-email user-read-private app-remote-control user-library-read user-library-modify playlist-modify-private playlist-modify-public',\n    redirect_uri: M_VITE_SPOTIFY_URI_CALLBACK\n  }).toString()\n\n  authWindow?.loadURL(AUTH_URL + params)\n\n  // Show window for callback\n  authWindow?.webContents.on('did-navigate', () => {\n    authWindow?.show()\n  })\n\n  authWindow?.on('closed', function () {\n    authWindow = null\n  })\n}",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Regardless if the user needs to re-authenticate or not, I catch the response using the Electron event listener \"open-url\" and grabbing the auth code out of the URL string to set up my credentials. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "app.on('open-url', (_, redirect) => {\n  const url = new URL(redirect)\n  const authCode = url.searchParams.get('code')\n\n  if (authCode) {\n    spotifyApi.authorizationCodeGrant(authCode).then(\n      ({ body: { access_token, refresh_token } }) => {\n        const credentials = {\n          accessToken: access_token,\n          refreshToken: refresh_token\n        }\n        authWindow?.close()\n        spotifyApi.setCredentials(credentials)\n      },\n      (err) => console.error('Error when retrieving access token', err)\n    )\n  }\n})",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This handled the basics of the authentication process. From here I could start actually rendering something to screen and getting to work on the UI."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Creating a custom Menu — hint, it's not a menu"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Electron had wonderful docs on creating menus. However, if you want a custom menu that looks nothing like a menu. You're going to have to create your own. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "For this use-case, I created a function that creates a custom tray (the little Icon in the top right for macOS and bottom right for Windows). And assigns a window to it's location when clicked (or right-clicked). "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is an example of the complete function, but I will walk through it as well. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const createCustomTray = ({ icon, clickWindow, rightClickWindow }: ICustomTray): Tray => {\n  const tray = new Tray(icon)\n  tray.setIgnoreDoubleClickEvents(true) // required for macOS\n\n  const getWindowPosition = (window: BrowserWindow): { x: number; y: number } => {\n    const windowBounds = window.getBounds()\n    const trayBounds = tray.getBounds()\n    const x = Math.round(trayBounds.x + trayBounds.width / 2 - windowBounds.width / 2)\n    const y = Math.round(trayBounds.y + trayBounds.height)\n    return { x, y }\n  }\n\n  const showWindow = (window: BrowserWindow): void => {\n    const position = getWindowPosition(window)\n    window.setPosition(position.x, position.y, false)\n    window.show()\n    window.setVisibleOnAllWorkspaces(true)\n    window.focus()\n    window.setVisibleOnAllWorkspaces(false)\n  }\n\n  const toggleWindow = (window: BrowserWindow): void => {\n    if (window.isVisible()) {\n      window.hide()\n    } else {\n      showWindow(window)\n    }\n  }\n\n  const defaultRightClick = (): void => {\n    const menu = [\n      {\n        role: 'quit',\n        accelerator: 'Command+Q'\n      } as const\n    ]\n    tray.popUpContextMenu(Menu.buildFromTemplate(menu))\n  }\n\n  tray.on('click', () => toggleWindow(clickWindow))\n  tray.on('right-click', () =>\n    rightClickWindow ? toggleWindow(rightClickWindow) : defaultRightClick()\n  )\n\n  return tray\n}",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "It takes an object with a mandatory "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "icon"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "clickWindow"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and an optional "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "rightClickMenu"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". The icon is the image that goes in the tray, and the window is whatever you want your \"menu\" to be. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "All the function is really doing is opening the window at the location of the tray icon whenever its clicked. You can assign a separate window for right clicks if you want, but otherwise, it will have a default menu with a quit option. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The best thing about this function is that it can easily be refactored to not create a tray and make custom popup windows where you want. I needed a tray though 🤘🏼"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is how its called in my main process"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const icon = nativeImage.createFromPath(join(__dirname, '../../resources/icon.png'))\nconst mainTray = createCustomTray({\n  icon,\n  clickWindow: mainWindow\n})",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Starting to build the UI (omg I'm not using React 😱)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "SolidJS may not be React— but it's so close that I forgot I wasn't writing in React more than once. There are some subtle differences you need to look out for. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list",
+                      "style": "bulleted",
+                      "children": [
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "value": "No destructuring props (Solid has utility functions to help with this)"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "value": "State is a function"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "span",
+                                  "value": "Every component runs one. Only once. Ever. (no dependency arrays!)"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Whenever I made a basic Solid mistake, the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "plugin:solid/typescript"
+                        },
+                        {
+                          "type": "span",
+                          "value": " ESlint rules where there to set me straight. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Here you can see just how close it is to React."
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const App: Component = () => {\n  const [track, { isLoading }] = useTrackInfo()\n\n  return (\n    <Base>\n      <Show when={!isLoading()} fallback={<Spinner />}>\n        <AlbumInfo track={track() as ITrack} />\n      </Show>\n    </Base>\n  )\n}",
+                      "type": "code",
+                      "language": "tsx"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The frontend is pretty basic in function. As shown above, it receives current track information from a listener subscribed to an "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "IpcMainEvent"
+                        },
+                        {
+                          "type": "span",
+                          "value": " (more to come on that) and uses basic prop drilling to pass it down. (Not a lot of frontend here, no good reason to build a context)."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "useTrackInfo"
+                        },
+                        {
+                          "type": "span",
+                          "value": " function. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const useTrackInfo = (): [Accessor<ITrack | null>, { isLoading: Accessor<boolean> }] => {\n  const [track, setTrack] = createSignal<ITrack | null>(null)\n  const [isLoading, setIsLoading] = createSignal<boolean>(true)\n\n  window.spotifyApi.getCurrentTrack((_, data) => {\n    setTrack(data)\n    setIsLoading(false)\n  })\n\n  return [track, { isLoading }]\n}",
+                      "type": "code",
+                      "language": "tsx"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "window"
+                        },
+                        {
+                          "type": "span",
+                          "value": " is where Electron steps in with the preload and allows you to subscribe API's to pass information back and forth between your renderer process and main process. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Before I get into that though, just want to show you one of the utilities that Solid provides for handling props without destructuring. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const Button: Component<IButton> = (props) => {\n  const [local, rest] = splitProps(props, ['tooltip', 'id'])\n  \n  const SVG = svgMap[local.id]\n  return (\n    <Tooltip tip={local.tooltip}>\n      <ButtonWrapper {...rest}>\n        <SVG class={classNames({ flipped: props.id === 'next' })} />\n      </ButtonWrapper>\n    </Tooltip>\n  )\n}",
+                      "type": "code",
+                      "language": "tsx"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Here you can see the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "splitProps"
+                        },
+                        {
+                          "type": "span",
+                          "value": " function takes in "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "props"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and an array of what props you want to use locally. You can then use those props locally and pass the rest however you want. It's just a fancy way to destructure.  "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Bridging from the renderer to the main"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As mentioned above. For security reasons, the best way to pass information from the main process to the renderer is to create a context bridge in the preload. "
+                        }
+                      ]
+                    },
+                    {
+                      "code": "contextBridge.exposeInMainWorld('spotifyApi', {\n    getCurrentTrack: (callback) => ipcRenderer.on('spotify:send-track', callback),\n    updateSavedTrack: () => ipcRenderer.invoke('spotify:update-saved'),\n    nextTrack: () => ipcRenderer.invoke('spotify:next-track'),\n    prevTrack: () => ipcRenderer.invoke('spotify:prev-track'),\n    togglePlay: () => ipcRenderer.invoke('spotify:toggle-play')\n  })",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is the context bridge from above where you saw me calling "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "window.spotifyApi"
+                        },
+                        {
+                          "type": "span",
+                          "value": " to get the current track information. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "getCurrentTrack"
+                        },
+                        {
+                          "type": "span",
+                          "value": " is an event listener that is invoked whenever the main process calls "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "spotify:send-track"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and the rest are invoking their respective calls on the main process. This creates a two-way path for data exchange. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "On the main process here, you can see where it is handling the call "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "spotfy:update-saved"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "ipcMain.handle('spotify:update-saved', async () => {\n  const updatedTrack = await updateSavedTrack(spotifyApi)\n  updatedTrack && mainWindow.webContents.send('spotify:send-track', updatedTrack)\n})",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "It runs the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "updateSavedTrack"
+                        },
+                        {
+                          "type": "span",
+                          "value": " function, and if successful, sends the updated track via the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "spotify:send-track"
+                        },
+                        {
+                          "type": "span",
+                          "value": " call. Then, as we've seen, the frontend event listener picks that up and drills down all the new information. Easy peasy! "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Of course, there is more to it, but that is the basic functionality of creating a two-way data exchange between your backend and frontend. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Is any project ever really done? "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is currently a functioning application and I literally use it every day, however, I can't quite call it done. And who knows if I ever will. I am really looking forward to refactoring the main process to reduce the size of the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "index.ts"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and maybe handle errors a bit better. But other than that, it does exactly what I need it to do and I don't have any complaints! "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Download link coming soon."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelBodyField"
+            },
+            "featuredImage": {
+              "__typename": "FileField",
+              "id": "49643682",
+              "alt": null,
+              "blurhash": "LG5%P+q,ZlYZoNkBfje:UgX|gLms",
+              "height": 420,
+              "width": 746,
+              "url": "https://www.datocms-assets.com/85391/1679359054-electron-spotify.jpg"
+            },
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Some of the failures and successes that go with creating a small Electron app utilizing the Spotify Web API. Overall, this was a super fun (and useful) project.  The main tech stack for this project was Electron, Vite, SolidJS, and Typescript. "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelExcerptField"
+            }
+          },
+          {
+            "__typename": "TemplateBlogPostRecord",
+            "id": "93192346",
+            "internalName": "Building my first VS Code extension",
+            "title": "My first VS Code extension",
+            "publishDate": "2023-01-12",
+            "slug": "building-my-first-vs-code-extension",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Before I begin: you can find the "
+                        },
+                        {
+                          "url": "https://github.com/jpwallace22/react-lazify",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "React Lazify repo here"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " And if you want to check it out on the VS code marketplace, "
+                        },
+                        {
+                          "url": "https://marketplace.visualstudio.com/items?itemName=jpwallace22.react-lazify",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "you can do that here."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As a prelude; we find ourselves in a lot of documentation, some of it is good, and some of it is (let's be nice here and say) not so good. Microsoft, and VSCode specifically, has some pretty darn good docs. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Digging into those docs!"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I'm not going to give a complete step-by-step process on how you can build your own VS Code extension. As I mentioned above, Microsoft has "
+                        },
+                        {
+                          "url": "https://code.visualstudio.com/api/get-started/your-first-extension",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "its own docs "
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": "on that and they are very detailed. Instead, I want to share my experience and ways and give some insight into ways you might be able to optimize."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Step one to creating your own extension is adding "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "yo"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "generator-code"
+                        },
+                        {
+                          "type": "span",
+                          "value": " to your global "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "node-modules"
+                        },
+                        {
+                          "type": "span",
+                          "value": " . I'm going to assume that if you're reading this you most likely have "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "node and"
+                        },
+                        {
+                          "type": "span",
+                          "value": " "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "npm"
+                        },
+                        {
+                          "type": "span",
+                          "value": " installed. If not, you should "
+                        },
+                        {
+                          "url": "https://docs.npmjs.com/downloading-and-installing-node-js-and-npm",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "check out the docs here"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " and knock that out first!"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The boilerplate code is as easy as running "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "yo code"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "From here you have a fully functioning "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "Hello World"
+                        },
+                        {
+                          "type": "span",
+                          "value": " extension ready to go. I took a while to simply dig around the source code and see what was going on. (As I would always recommend with a new code base.)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "On to my extension- React Lazify"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "93192465",
+                      "type": "block"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "url": "https://github.com/jpwallace22/react-lazify",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "React Lazify"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": " is a lazy way to write lazy imports (see what I did there?). I am in complete understanding that the use case of this extension might not warrant the amount of work that goes into it. But I also don't care. I like writing code, and I wanted to learn something new. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "With the release of React 18, Next13, and Gatsby 5, I've found myself making a LOT more lazy imports. When upgrading some codebases I would have to go through and re-write a ton of imports. Enter the lazy way."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "React Lazify just turns any selected import into a lazy import (and imports "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "lazy"
+                        },
+                        {
+                          "type": "span",
+                          "value": " from 'react' if not already imported). Easy peasy.   "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Using the VS Code API"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Like any other engineer, I went from skimming the docs a bit to just writing code and figuring it out. Why are we like this? I don't know, but it's fun. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I found that I needed to keep the docs up and on-screen pretty much the entire time I was writing this little program. The VS Code API is a beast. There is a lot to it and it can be pretty daunting at first. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Luckily it starts making sense pretty fast! "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "However, I did run into one major error that took a bit too long for me to figure out. You can see here in this code snippet that I am using the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "vscode.editor"
+                        },
+                        {
+                          "type": "span",
+                          "value": " to replace a line of code with a new line including an added module.\n"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "const editor = vscode.window.activeTextEditor;\nconst afterDefault = lineText.indexOf(\" \", 7);\n  newLineText =\n    lineText.slice(0, afterDefault) +\n    `, { ${module} }` +\n    lineText.slice(afterDefault, lineText.length);\n\n  await editor.edit(({replace}) => replace(line.range, newLineText));",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This code won't throw any errors in your IDE but will fail every time you run it, and it took me way too long to realize why. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "With the callback in the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": ".edit()"
+                        },
+                        {
+                          "type": "span",
+                          "value": " method you can NOT destructure the functions out of it. You need to state a property and use classic dot notation. such as:\n"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "await editor.edit(build => build.replace(line.range, newLineText));",
+                      "type": "code",
+                      "language": "typescript"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I am very used to functional-style programming so when I saw this line in the docs I just figured I could skip a step and destructure. I didn't even think about the fact that it actually returns an instance of a class. 🤦🏼‍♂️ "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Adding default keybinding"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This is another facepalm moment for me a guess. I got pretty lost in the docs at one point and couldn't quite figure out how to set default keybinding. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "It's actually done through the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "package.json"
+                        },
+                        {
+                          "type": "span",
+                          "value": " and NOT the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "keybinding.json"
+                        },
+                        {
+                          "type": "span",
+                          "value": " as I thought. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "In the "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "package.json"
+                        },
+                        {
+                          "type": "span",
+                          "value": " there is a "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "\"contributes\""
+                        },
+                        {
+                          "type": "span",
+                          "value": " section where you add your commands for your extension in. This is also where you can assign the keybindings"
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": ". "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "blockquote",
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "children": [
+                            {
+                              "type": "span",
+                              "marks": [
+                                "strong"
+                              ],
+                              "value": "Note: "
+                            },
+                            {
+                              "type": "span",
+                              "value": "Check and double-check to make sure that you aren't using a keybinding that is already defaulted. It will be a pain"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As for the actual rules for the binding. I would recommend using "
+                        },
+                        {
+                          "url": "https://code.visualstudio.com/docs/getstarted/keybindings",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "this doc"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "span",
+                          "value": ". It breaks down what you can and can't use and what not. (Though it won't tell you how to add it to your package.json) For reference, this is what it looks like:"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "---\n\"contributes\": {\n    \"commands\": [\n      {\n        \"command\": \"react-lazify.lazify\",\n        \"title\": \"Lazify\"\n      }\n    ],\n    \"keybindings\": [\n      {\n        \"key\": \"ctrl+alt+cmd+l\",\n        \"command\": \"react-lazify.lazify\",\n        \"when\": \"editorTextFocus && editorLangId == typescriptreact || editorLangId == javascriptreact\"\n      }\n    ]\n  }\n--- ",
+                      "type": "code",
+                      "language": "json"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "This binds "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": "ctrl+alt+cmd+l"
+                        },
+                        {
+                          "type": "span",
+                          "value": " to React Lazify's command \"Lazify\" whenever you have text focused in a "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": ".tsx"
+                        },
+                        {
+                          "type": "span",
+                          "value": " or "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "code"
+                          ],
+                          "value": ".jsx"
+                        },
+                        {
+                          "type": "span",
+                          "value": " file. Easy enough. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "heading",
+                      "level": 2,
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "The hardest part: Publishing"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Don't be scared. It's not that hard. Compared to NPM though, it's pretty intensive. The main thing is that you need to create an account with Microsoft and add a couple of packages to your global modules. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As I've mentioned before, the docs are pretty good and they "
+                        },
+                        {
+                          "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension",
+                          "type": "link",
+                          "children": [
+                            {
+                              "type": "span",
+                              "value": "cover everything here."
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I would like to note though, that they have it kind of backwards here. I would recommend scrolling down a little bit to the section about \"Getting a Personal Token\" and bouncing around from there as fit. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "I ran into a couple of internal errors the first time I was trying to publish. I didn't realize you need to package it the first time. So after you have everything squared away on the backend side, you need to run"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "cd path/to/your/extention\nvsce package\nvsce publish",
+                      "type": "code",
+                      "language": "shell-session"
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "And just like that you have created and published an extension. Now you get to pass it along to your friends and let them show you all of your bugs! And no, thats not sarcasm. I love it. Haha. "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelBodyField"
+            },
+            "featuredImage": {
+              "__typename": "FileField",
+              "id": "33513817",
+              "alt": null,
+              "blurhash": "LG5FwqRpVrtPxwWEj?j[U[oatRaj",
+              "height": 882,
+              "width": 1686,
+              "url": "https://www.datocms-assets.com/85391/1673585712-react-lazify-twitter.png"
+            },
+            "excerpt": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "A minor walk through the process behind how I made my first VS Code extension, React Lazify, a lazy way to create lazy imports. The process was actually a lot easier than I expected and it gave me a bit more respect for Microsoft. "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "__typename": "TemplateBlogPostModelExcerptField"
+            }
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "description": "This is the personal site and portfolio of Justin Wallace. Here I showcase some works and the progress of my career. I also write about dev-related experiences.",
+      "title": "Justin Wallace Development",
+      "image": {
+        "__typename": "FileField",
+        "id": "26082044",
+        "alt": null,
+        "blurhash": "LE7nUoW.9GV[ogj?juWB4ToI?aof",
+        "height": 630,
+        "width": 1200,
+        "url": "https://www.datocms-assets.com/85391/1670693320-jwdev.webp"
+      },
+      "__typename": "SeoField"
+    }
+  },
+  {
+    "__typename": "TemplatePageRecord",
+    "id": "135975886",
+    "slug": "about",
+    "components": [
+      {
+        "__typename": "FeatureHighlightRecord",
+        "id": "138277568",
+        "heading": "More than just an engineer",
+        "eyebrow": "",
+        "body": {
+          "value": {
+            "schema": "dast",
+            "document": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "From my humble beginnings to standing on mountains and everything in between. I am always trying to live to my fullest and show passion in everything I do. "
+                    }
+                  ]
+                },
+                {
+                  "type": "blockquote",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Here are a couple of snippets of my life to help paint a better picture of just who I am."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "links": [],
+          "__typename": "FeatureHighlightModelBodyField"
+        },
+        "cards": [
+          {
+            "__typename": "FeatureHighlightCardRecord",
+            "id": "138277569",
+            "heading": "Started with living in a van",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": " I started a blog to document my journey of traveling in a van and rock climbing. It was the creation of this blog that ignited my passion for the web and pushed me to end a 13+ year career with the Navy to follow my dreams."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "FeatureHighlightCardModelBodyField"
+            },
+            "image": {
+              "__typename": "FileField",
+              "id": "50553431",
+              "alt": null,
+              "blurhash": "LWMQ-Rt7~q%Mj[ayofof_3of?bof",
+              "height": 1201,
+              "width": 1201,
+              "url": "https://www.datocms-assets.com/85391/1681696294-aac.png"
+            }
+          },
+          {
+            "__typename": "FeatureHighlightCardRecord",
+            "id": "138277571",
+            "heading": "Problem solving on the wall 🧗🏼",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "As I mentioned previously, rock climbing has been a major part of my life. The art of climbing a mountain is the perfect combination of "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "preparation, dedication, and critical problem-solving"
+                        },
+                        {
+                          "type": "span",
+                          "value": "."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "FeatureHighlightCardModelBodyField"
+            },
+            "image": {
+              "__typename": "FileField",
+              "id": "50553452",
+              "alt": "Justin Wallace rock climbing in Red Rock Nevanda",
+              "blurhash": "LtQJAjtm?wxaxDV@kWtS?cr=MxX8",
+              "height": 710,
+              "width": 639,
+              "url": "https://www.datocms-assets.com/85391/1687393191-climbing-1.png"
+            }
+          },
+          {
+            "__typename": "FeatureHighlightCardRecord",
+            "id": "138277572",
+            "heading": "From mountains to the sea",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Surfing was the primary reason that I moved to San Diego in 2010 and though I don't paddle out as much as I would like to, (I live 8 miles from the beach now 😱) it still has a strong hold over me."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "FeatureHighlightCardModelBodyField"
+            },
+            "image": {
+              "__typename": "FileField",
+              "id": "50557283",
+              "alt": null,
+              "blurhash": "LoM%+iR*_M%f?ajZbvtR~qxaRjoz",
+              "height": 811,
+              "width": 700,
+              "url": "https://www.datocms-assets.com/85391/1687393264-surfing-1.png"
+            }
+          },
+          {
+            "__typename": "FeatureHighlightCardRecord",
+            "id": "138277573",
+            "heading": "Just being kinda goofy",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Life is more than just writing code and extreme sports. You need to know when to take it easy and "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "just be a little goofy"
+                        },
+                        {
+                          "type": "span",
+                          "value": "! I love to smile and I love to make others smile. 🫶"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "FeatureHighlightCardModelBodyField"
+            },
+            "image": {
+              "__typename": "FileField",
+              "id": "50578946",
+              "alt": null,
+              "blurhash": "LoPGv;_2?aMytSoIoJWC~qIoIoo#",
+              "height": 618,
+              "width": 700,
+              "url": "https://www.datocms-assets.com/85391/1687393340-surfing-2.png"
+            }
+          },
+          {
+            "__typename": "FeatureHighlightCardRecord",
+            "id": "138277575",
+            "heading": "Husband and dog dad",
+            "body": {
+              "value": {
+                "schema": "dast",
+                "document": {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "span",
+                          "value": "Last and "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": "far from least "
+                        },
+                        {
+                          "type": "span",
+                          "value": "I am the husband to an extremely amazing, motivating partner and father to the world's cutest little nugget."
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "emphasis"
+                          ],
+                          "value": " Lauren and Achilles are the rocks in my life"
+                        },
+                        {
+                          "type": "span",
+                          "value": ". "
+                        },
+                        {
+                          "type": "span",
+                          "marks": [
+                            "strong"
+                          ],
+                          "value": "They are perfect"
+                        },
+                        {
+                          "type": "span",
+                          "value": "."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "links": [],
+              "__typename": "FeatureHighlightCardModelBodyField"
+            },
+            "image": {
+              "__typename": "FileField",
+              "id": "50577505",
+              "alt": null,
+              "blurhash": "LpL|=e-;_3Rk?bWBRjV[~qR*bHs:",
+              "height": 904,
+              "width": 674,
+              "url": "https://www.datocms-assets.com/85391/1681701894-husband.png"
+            }
+          }
+        ]
+      }
+    ],
+    "seo": null
+  },
+  {
+    "__typename": "TemplatePageRecord",
+    "id": "86631441",
+    "slug": "blog",
+    "components": [
+      {
+        "__typename": "SwitchbackRecord",
+        "designAccent": "md",
+        "heading": "The Blog",
+        "headingAs": "h1",
+        "id": "61374460",
+        "reverse": false,
+        "sectionId": "",
+        "bgColor": "purple-900",
+        "body": {
+          "value": {
+            "schema": "dast",
+            "document": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "span",
+                      "value": "The humble beginnings of my personal blog. Here you can follow my journey through the world of coding. Hopefully, like me, you learn something along the way."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "links": [],
+          "__typename": "SwitchbackModelBodyField"
+        },
+        "image": {
+          "__typename": "FileField",
+          "id": "22586954",
+          "alt": "React Icon over the Mac Terminal",
+          "blurhash": "L?Jk_$ogw]s:?vj]slof~qj[ofof",
+          "height": 700,
+          "width": 700,
+          "url": "https://www.datocms-assets.com/85391/1668971669-reactworkflow-1.webp"
+        }
+      },
+      {
+        "__typename": "SingleUseComponentRecord",
+        "id": "137156397",
+        "componentName": "All Blogs Listing"
+      }
+    ],
+    "seo": {
+      "description": "The thoughts and ramblings of a software engineer. This is to keep me motivated and hopefully help some people along the way.",
+      "title": "Blog",
+      "image": null,
+      "__typename": "SeoField"
+    }
+  }
+]
