@@ -59,7 +59,7 @@ module.exports = {
 }
 
 function renderInternalOrder() {
-  const specifiedPaths = ["@codegen", "@atoms", "@molecules", "@components", "@utils"]
+  const specifiedPaths = ["@atoms", "@molecules", "@components", "@utils"]
   return [...specifiedPaths, ...getAllInternalDirectories()].map((singleDir) => ({
     pattern: `${singleDir}/**`,
     group: "internal",

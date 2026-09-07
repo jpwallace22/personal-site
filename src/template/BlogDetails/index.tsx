@@ -1,13 +1,12 @@
 import { FC } from "react"
 import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
-import { TemplateBlogPostQuery } from "@codegen/sdk"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import Socials from "@molecules/Socials"
 import BlogHero from "@components/BlogHero"
 import StructuredText from "@components/StructuredText"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getBlogPost } from "src/content"
 import { BlogContextProvider } from "src/contexts/BlogContext"
 import TableOfContents, { TocData } from "src/template/BlogDetails/TableOfContents"
 
@@ -18,9 +17,7 @@ interface BlogPostProps {
 }
 
 const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
-  const { templateBlogPost } = await makeServerQuery<TemplateBlogPostQuery>(TemplateBlogPostQuery, {
-    slug,
-  })
+  const templateBlogPost = getBlogPost(slug)
   if (!templateBlogPost || !slug) {
     return notFound()
   }

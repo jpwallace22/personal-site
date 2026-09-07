@@ -1,5 +1,4 @@
-import { AllTemplatePageSlugsQuery } from "@codegen/sdk"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getPageSlugs } from "src/content"
 import Page from "src/template/Page"
 
 type Params = {
@@ -9,10 +8,7 @@ type Params = {
 }
 
 export const generateStaticParams = async () => {
-  const { allTemplatePages } =
-    await makeServerQuery<AllTemplatePageSlugsQuery>(AllTemplatePageSlugsQuery)
-
-  return allTemplatePages.map(({ slug }) => ({
+  return getPageSlugs().map(({ slug }) => ({
     params: {
       slug,
     },

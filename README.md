@@ -8,8 +8,6 @@ This is still a work in progress. It IS live and good enough for me to use, but 
 - **Typescript** - Used for static typing and code completion/documentation.
 - **NextJS 13+** - Used because I wanted to build something with the new app directory.
 - **Tailwind** - Used because of its developer experience, flexibility, and the fact that it's zero runtime.
-- **DatoCMS** - I love the UI for DatoCMS and feel like they have a generous free tier.
-- **Apollo** - Used because of its popularity within the community and my familiarity.
 - **Jest** - A great testing framework that I have used in the past. It has great support and documentation.
 
 ## Features
@@ -22,8 +20,8 @@ This is still a work in progress. It IS live and good enough for me to use, but 
 - Husky (pre-commit & pre-push hooks)
 - Testing (unit and e2e)
 - Accessibility (axe)
-- Typescript Codegen (graphql-codegen)
-- Headless content, components, and pages
+- Local content (committed JSON, no CMS or API at build time)
+- Composable content-driven components and pages
 - Turbo for caching and template generation
 
 ## Icons

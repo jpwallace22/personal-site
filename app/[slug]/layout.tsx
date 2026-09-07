@@ -1,7 +1,6 @@
 import { Metadata } from "next"
-import { TemplatePageMetadataQuery } from "@codegen/sdk"
 import Footer from "@components/Footer"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getPageSeo } from "src/content"
 import renderMetadata from "src/template/renderMetadata"
 
 type Params = {
@@ -11,11 +10,7 @@ type Params = {
 }
 
 export const generateMetadata = async ({ params: { slug } }: Params): Promise<Metadata> => {
-  const { metaData } = await makeServerQuery<TemplatePageMetadataQuery>(TemplatePageMetadataQuery, {
-    slug,
-  })
-
-  return renderMetadata(slug, metaData?.seo)
+  return renderMetadata(slug, getPageSeo(slug))
 }
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {

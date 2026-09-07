@@ -1,6 +1,5 @@
 import { FC } from "react"
 import { notFound } from "next/navigation"
-import { ProjectPageQuery } from "@codegen/sdk"
 import { SlideIn } from "@molecules/animations"
 import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
@@ -9,7 +8,7 @@ import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import StructuredText from "@components/StructuredText"
 import Switchback from "@components/Switchback"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getPage, getProject } from "src/content"
 import { nextProjectFromPage } from "src/template/Project/utils/nextProjectFromPage"
 
 interface ProjectPageProps {
@@ -17,10 +16,8 @@ interface ProjectPageProps {
 }
 
 const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
-  const { templateProject, templatePage } = await makeServerQuery<ProjectPageQuery>(
-    ProjectPageQuery,
-    { slug }
-  )
+  const templateProject = getProject(slug)
+  const templatePage = getPage("home")
   if (!templateProject || !slug) {
     return notFound()
   }

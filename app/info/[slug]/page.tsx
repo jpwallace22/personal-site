@@ -1,5 +1,4 @@
-import { AllTemplateInfoSlugsQuery } from "@codegen/sdk"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getInfoSlugs } from "src/content"
 import Info from "src/template/Info"
 
 type Params = {
@@ -9,9 +8,7 @@ type Params = {
 }
 
 export const generateStaticParams = async () => {
-  const { slugs } = await makeServerQuery<AllTemplateInfoSlugsQuery>(AllTemplateInfoSlugsQuery)
-
-  return slugs.map(({ slug }) => ({
+  return getInfoSlugs().map(({ slug }) => ({
     params: {
       slug,
     },

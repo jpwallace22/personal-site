@@ -1,7 +1,0 @@
-query SiteMetaData {
-  _site {
-    favicon {
-      ...Image
-    }
-  }
-}

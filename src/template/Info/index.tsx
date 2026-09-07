@@ -1,16 +1,15 @@
 import { FC } from "react"
 import { notFound } from "next/navigation"
-import { TemplateInfoQuery } from "@codegen/sdk"
 import Section from "@molecules/Section"
 import StructuredText from "@components/StructuredText"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getInfo } from "src/content"
 
 interface PageProps {
   slug?: string
 }
 
 const Info: FC<PageProps> = async ({ slug }) => {
-  const { templateInfo } = await makeServerQuery<TemplateInfoQuery>(TemplateInfoQuery, { slug })
+  const templateInfo = getInfo(slug)
 
   if (!templateInfo) {
     return notFound()

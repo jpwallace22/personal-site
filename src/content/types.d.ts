@@ -1,3 +1,14 @@
+/**
+ * Content record shapes for the site.
+ *
+ * Ported verbatim from the graphql-codegen output (src/graphql/__gen__/types.d.ts)
+ * so the ~29 type references across the app keep resolving to identical shapes.
+ * Now hand-maintained: edit alongside src/content/data/*.json.
+ *
+ * The generated *QueryVariables types were dropped -- they referenced Exact<> and
+ * Scalars[], which this codegen config never emitted; only skipLibCheck:true kept
+ * that from erroring.
+ */
 declare global {
   export type BlogCardFragment = {
     __typename?: "TemplateBlogPostRecord"
@@ -20,8 +31,6 @@ declare global {
     body?: { __typename?: "BlogListingModelBodyField"; value: unknown } | null
     cards: Array<{ __typename?: "TemplateBlogPostRecord" } & BlogCardFragment>
   }
-
-  export type AllBlogCardsQueryVariables = Exact<{ [key: string]: never }>
 
   export type AllBlogCardsQuery = {
     __typename?: "Query"
@@ -65,8 +74,6 @@ declare global {
     cards: Array<{ __typename?: "FeatureHighlightCardRecord" } & FeatureCardFragment>
   }
 
-  export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never }>
-
   export type SiteMetaDataQuery = {
     __typename?: "Query"
     _site: { __typename?: "Site"; favicon?: ({ __typename?: "FileField" } & ImageFragment) | null }
@@ -77,8 +84,6 @@ declare global {
     id: string
     links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
   }
-
-  export type GlobalNavComponentQueryVariables = Exact<{ [key: string]: never }>
 
   export type GlobalNavComponentQuery = {
     __typename?: "Query"
@@ -142,39 +147,9 @@ declare global {
     image?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
-  export type GetTrustedCompaniesQueryVariables = Exact<{ [key: string]: never }>
-
   export type GetTrustedCompaniesQuery = {
     __typename?: "Query"
     allCompanies: Array<{ __typename?: "CompanyRecord" } & CompanyFragment>
-  }
-
-  export type StpTestQueryVariables = Exact<{ [key: string]: never }>
-
-  export type StpTestQuery = {
-    __typename?: "Query"
-    templateBlogPost?: {
-      __typename?: "TemplateBlogPostRecord"
-      body?: {
-        __typename?: "TemplateBlogPostModelBodyField"
-        value: unknown
-        links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-        blocks: Array<{
-          __typename?: "ImageRecord"
-          id: string
-          media?: {
-            __typename: "FileField"
-            title?: string | null
-            id: string
-            alt?: string | null
-            blurhash?: string | null
-            height?: number | null
-            width?: number | null
-            url: string
-          } | null
-        }>
-      } | null
-    } | null
   }
 
   export type ImageFragment = {
@@ -260,25 +235,15 @@ declare global {
     featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
-  export type TemplateBlogPostQueryVariables = Exact<{
-    slug: Scalars["String"]["input"]
-  }>
-
   export type TemplateBlogPostQuery = {
     __typename?: "Query"
     templateBlogPost?: ({ __typename?: "TemplateBlogPostRecord" } & BlogFragment) | null
   }
 
-  export type AllBlogPostSlugsQueryVariables = Exact<{ [key: string]: never }>
-
   export type AllBlogPostSlugsQuery = {
     __typename?: "Query"
     allTemplateBlogPosts: Array<{ __typename?: "TemplateBlogPostRecord"; slug?: string | null }>
   }
-
-  export type BlogMetaDataQueryVariables = Exact<{
-    slug: Scalars["String"]["input"]
-  }>
 
   export type BlogMetaDataQuery = {
     __typename?: "Query"
@@ -307,16 +272,10 @@ declare global {
     } | null
   }
 
-  export type AllTemplateInfoSlugsQueryVariables = Exact<{ [key: string]: never }>
-
   export type AllTemplateInfoSlugsQuery = {
     __typename?: "Query"
     slugs: Array<{ __typename?: "TemplateInfoRecord"; slug?: string | null }>
   }
-
-  export type TemplateInfoQueryVariables = Exact<{
-    slug?: InputMaybe<Scalars["String"]["input"]>
-  }>
 
   export type TemplateInfoQuery = {
     __typename?: "Query"
@@ -344,25 +303,15 @@ declare global {
     } | null
   }
 
-  export type AllTemplatePageSlugsQueryVariables = Exact<{ [key: string]: never }>
-
   export type AllTemplatePageSlugsQuery = {
     __typename?: "Query"
     allTemplatePages: Array<{ __typename?: "TemplatePageRecord"; slug?: string | null }>
   }
 
-  export type TemplatePageQueryVariables = Exact<{
-    slug?: InputMaybe<Scalars["String"]["input"]>
-  }>
-
   export type TemplatePageQuery = {
     __typename?: "Query"
     templatePage?: ({ __typename?: "TemplatePageRecord" } & PageFragment) | null
   }
-
-  export type TemplatePageMetadataQueryVariables = Exact<{
-    slug?: InputMaybe<Scalars["String"]["input"]>
-  }>
 
   export type TemplatePageMetadataQuery = {
     __typename?: "Query"
@@ -402,16 +351,10 @@ declare global {
       | null
   }
 
-  export type AllProjectSlugsQueryVariables = Exact<{ [key: string]: never }>
-
   export type AllProjectSlugsQuery = {
     __typename?: "Query"
     allSlugs: Array<{ __typename?: "TemplateProjectRecord"; slug?: string | null }>
   }
-
-  export type ProjectPageQueryVariables = Exact<{
-    slug: Scalars["String"]["input"]
-  }>
 
   export type ProjectPageQuery = {
     __typename?: "Query"
@@ -429,10 +372,6 @@ declare global {
       >
     } | null
   }
-
-  export type ProjectPageMetadataQueryVariables = Exact<{
-    slug: Scalars["String"]["input"]
-  }>
 
   export type ProjectPageMetadataQuery = {
     __typename?: "Query"

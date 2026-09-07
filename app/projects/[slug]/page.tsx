@@ -1,7 +1,6 @@
 import { Metadata } from "next"
-import { AllProjectSlugsQuery, ProjectPageMetadataQuery } from "@codegen/sdk"
 import Footer from "@components/Footer"
-import makeServerQuery from "@utils/makeServerQuery"
+import { getProjectSeo, getProjectSlugs } from "src/content"
 import ProjectPage from "src/template/Project"
 import renderMetadata from "src/template/renderMetadata"
 
@@ -12,17 +11,11 @@ type Params = {
 }
 
 export const generateMetadata = async ({ params: { slug } }: Params): Promise<Metadata> => {
-  const { metaData } = await makeServerQuery<ProjectPageMetadataQuery>(ProjectPageMetadataQuery, {
-    slug,
-  })
-
-  return renderMetadata(slug, metaData?.seo)
+  return renderMetadata(slug, getProjectSeo(slug))
 }
 
 export const generateStaticParams = async () => {
-  const { allSlugs } = await makeServerQuery<AllProjectSlugsQuery>(AllProjectSlugsQuery)
-
-  return allSlugs.map(({ slug }) => ({
+  return getProjectSlugs().map(({ slug }) => ({
     params: {
       slug,
     },

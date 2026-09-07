@@ -1,7 +1,4 @@
-export const nextProjectFromPage = (
-  page: ProjectPageQuery["templatePage"],
-  currentProject: string
-) => {
+export const nextProjectFromPage = (page: PageFragment | undefined, currentProject: string) => {
   const projectListing = page?.components.filter(
     (component) => component.__typename === "ProjectListingRecord"
   )[0] as ProjectListingFragment
