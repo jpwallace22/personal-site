@@ -4,9 +4,9 @@ import { SlideIn } from "@molecules/animations"
 import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import TechStack from "@molecules/TechStack"
+import Markdown from "@components/Markdown"
 import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
-import StructuredText from "@components/StructuredText"
 import Switchback from "@components/Switchback"
 import { getPage, getProject } from "src/content"
 import { nextProjectFromPage } from "src/template/Project/utils/nextProjectFromPage"
@@ -37,7 +37,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
         headingAs="h2"
         heading={heading}
         image={bannerImage}
-        body={body as SwitchbackFragment["body"]}
+        body={body}
         animated={false}
         designAccent="dots"
         reverse
@@ -57,7 +57,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
       {extraInformation && (
         <Section>
           <div className="lg:max-w-4xl">
-            <StructuredText data={extraInformation} />
+            <Markdown source={extraInformation} />
           </div>
         </Section>
       )}

@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import Circle from "@molecules/Circle"
 import Heading, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
+import Markdown from "@components/Markdown"
 import ProjectCard from "@components/ProjectsListing/ProjectCard"
 import { TracingBeam } from "@components/ProjectsListing/TracingBeam"
 
@@ -18,7 +19,11 @@ const ProjectListing: FC<ProjectListingProps> = ({
   return (
     <Section wrapperClass={`bg-${bgColor}`} id={sectionId || undefined} className="relative">
       <TracingBeam>
-        <Heading as={headingAs as HeadingMarkup} headline={heading} body={body} />
+        <Heading
+          as={headingAs as HeadingMarkup}
+          headline={heading}
+          body={<Markdown source={body} className="mt-8" />}
+        />
         <div className="mt-12 flex flex-col items-center gap-8">
           {cards.map((card, i) => (
             <ProjectCard key={card.title} reverse={i % 2 === 0} {...card} />

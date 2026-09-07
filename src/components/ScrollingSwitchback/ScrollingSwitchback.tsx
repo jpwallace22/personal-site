@@ -1,17 +1,19 @@
 "use client"
 
-import { ComponentPropsWithoutRef, createRef, FC } from "react"
+import { ComponentPropsWithoutRef, createRef, FC, type ReactNode } from "react"
 import { cva } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import Circle from "@molecules/Circle"
 import { separateSwitchbacks } from "@components/ScrollingSwitchback/utils/separateSwitchbacks"
-import StructuredText from "@components/StructuredText"
 import { useIntersection } from "@utils/hooks/useIntersectionObserver"
 
 export interface ScrollingSwitchbackProps
   extends Clean<ScrollingSwitchbackFragment>,
-    ComponentPropsWithoutRef<"div"> {}
+    ComponentPropsWithoutRef<"div"> {
+  /** Bodies are rendered on the server and passed in, index-aligned with switchbacks. */
+  bodies?: ReactNode[]
+}
 
 const contentStyles = cva(["card", "p-8", "gradient-radial-mono", "gap-8", "grid"], {
   variants: {
@@ -31,6 +33,7 @@ const imageStyles = cva(["sticky top-1/4 w-full rounded-lg invisible"], {
 
 const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
   switchbacks,
+  bodies,
   className,
   ...props
 }) => {
@@ -60,14 +63,14 @@ const ScrollingSwitchback: FC<ScrollingSwitchbackProps> = ({
       </div>
       <div className="relative flex w-5/12 flex-col gap-[63vh] py-32">
         <Circle className="absolute left-2/3 top-1/3" size="lg" contrast="low" />
-        {contentArray.map(({ heading, body }, i) => (
+        {contentArray.map(({ heading }, i) => (
           <div
             key={heading}
             ref={refs[i]}
             className={twMerge(contentStyles({ active: i === activeIndex }))}
           >
             <h3 className="text-4xl xl:text-5xl">{heading}</h3>
-            <StructuredText data={body} />
+            {bodies?.[i]}
           </div>
         ))}
       </div>

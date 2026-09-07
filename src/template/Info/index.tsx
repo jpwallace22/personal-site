@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { notFound } from "next/navigation"
 import Section from "@molecules/Section"
-import StructuredText from "@components/StructuredText"
+import Markdown from "@components/Markdown"
 import { getInfo } from "src/content"
 
 interface PageProps {
@@ -19,7 +19,7 @@ const Info: FC<PageProps> = async ({ slug }) => {
 
   return (
     <Section>
-      <StructuredText data={information} className="mx-auto max-w-4xl" />
+      <Markdown source={information} className="mx-auto max-w-4xl" />
     </Section>
   )
 }

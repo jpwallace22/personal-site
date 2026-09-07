@@ -17,9 +17,9 @@ declare global {
     title?: string | null
     publishDate?: string | null
     slug?: string | null
-    body?: { __typename?: "TemplateBlogPostModelBodyField"; value: unknown } | null
+    minutesToRead?: number | null
     featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
-    excerpt?: { __typename?: "TemplateBlogPostModelExcerptField"; value: unknown } | null
+    excerpt?: string | null
   }
 
   export type BlogListingFragment = {
@@ -28,7 +28,7 @@ declare global {
     heading?: string | null
     headingAs?: string | null
     eyebrow?: string | null
-    body?: { __typename?: "BlogListingModelBodyField"; value: unknown } | null
+    body?: string | null
     cards: Array<{ __typename?: "TemplateBlogPostRecord" } & BlogCardFragment>
   }
 
@@ -39,7 +39,7 @@ declare global {
 
   export type TestimonialCardFragment = {
     __typename?: "TestimonialCardRecord"
-    quote?: { __typename?: "TestimonialCardModelQuoteField"; value: unknown } | null
+    quote?: string | null
     person?: ({ __typename?: "PersonRecord" } & PersonFragment) | null
   }
 
@@ -53,11 +53,7 @@ declare global {
     __typename?: "FeatureHighlightCardRecord"
     id: string
     heading?: string | null
-    body?: {
-      __typename?: "FeatureHighlightCardModelBodyField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
+    body?: string | null
     image?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
@@ -66,11 +62,7 @@ declare global {
     id: string
     heading?: string | null
     eyebrow?: string | null
-    body?: {
-      __typename?: "FeatureHighlightModelBodyField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
+    body?: string | null
     cards: Array<{ __typename?: "FeatureHighlightCardRecord" } & FeatureCardFragment>
   }
 
@@ -96,11 +88,7 @@ declare global {
     title?: string | null
     subtitle?: string | null
     slug?: string | null
-    excerpt?: {
-      __typename?: "TemplateProjectModelExcerptField"
-      value: unknown
-      links: Array<string>
-    } | null
+    excerpt?: string | null
     techStack: Array<{ __typename?: "TechStackRecord" } & TechStackFragment>
     bannerImage?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
@@ -112,7 +100,7 @@ declare global {
     headingAs?: string | null
     sectionId?: string | null
     bgColor?: string | null
-    body?: { __typename?: "ProjectListingModelBodyField"; value: unknown } | null
+    body?: string | null
     cards: Array<{ __typename?: "TemplateProjectRecord" } & ProjectCardFragment>
   }
 
@@ -120,7 +108,7 @@ declare global {
     __typename?: "ScrollingSwitchbackRecord"
     id: string
     heading?: string | null
-    body?: { __typename?: "ScrollingSwitchbackModelBodyField"; value: unknown } | null
+    body?: string | null
     switchbacks: Array<{ __typename?: "SwitchbackRecord" } & SwitchbackFragment>
   }
 
@@ -139,11 +127,7 @@ declare global {
     reverse?: boolean | null
     sectionId?: string | null
     bgColor?: string | null
-    body?: {
-      __typename?: "SwitchbackModelBodyField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
+    body?: string | null
     image?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
@@ -213,25 +197,7 @@ declare global {
     publishDate?: string | null
     slug?: string | null
     categories: Array<{ __typename?: "CategoryRecord" } & CategoryFragment>
-    body?: {
-      __typename?: "TemplateBlogPostModelBodyField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-      blocks: Array<{
-        __typename?: "ImageRecord"
-        id: string
-        media?: {
-          __typename: "FileField"
-          title?: string | null
-          id: string
-          alt?: string | null
-          blurhash?: string | null
-          height?: number | null
-          width?: number | null
-          url: string
-        } | null
-      }>
-    } | null
+    body?: string | null
     featuredImage?: ({ __typename?: "FileField" } & ImageFragment) | null
   }
 
@@ -265,11 +231,7 @@ declare global {
     __typename?: "TemplateInfoRecord"
     id: string
     slug?: string | null
-    information?: {
-      __typename?: "TemplateInfoModelInformationField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
+    information?: string | null
   }
 
   export type AllTemplateInfoSlugsQuery = {
@@ -334,16 +296,8 @@ declare global {
     title?: string | null
     subtitle?: string | null
     heading?: string | null
-    body?: {
-      __typename?: "TemplateProjectModelBodyField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
-    extraInformation?: {
-      __typename?: "TemplateProjectModelExtraInformationField"
-      value: unknown
-      links: Array<{ __typename?: "ButtonRecord" } & ButtonFragment>
-    } | null
+    body?: string | null
+    extraInformation?: string | null
     bannerImage?: ({ __typename?: "FileField" } & ImageFragment) | null
     techStack: Array<{ __typename?: "TechStackRecord" } & TechStackFragment>
     switchbacks?:

@@ -6,6 +6,7 @@ import { FadeIn } from "@molecules/animations"
 import Circle from "@molecules/Circle"
 import HeadingComp, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
+import Markdown from "@components/Markdown"
 import circleStyleFromCMS from "@components/Switchback/utils/circleStyleFromCMS"
 
 const wrapper = cva(
@@ -60,7 +61,11 @@ const Switchback: FC<SwitchbackProps> = ({
       <FadeIn animated={animated}>
         <div className={twMerge(wrapper({ reverse, imageTop }))}>
           <div className={content()}>
-            <HeadingComp headline={heading} as={headingAs as HeadingMarkup} body={body} />
+            <HeadingComp
+              headline={heading}
+              as={headingAs as HeadingMarkup}
+              body={<Markdown source={body} className="mt-8" />}
+            />
           </div>
           <div className={asset()}>
             {designAccent && (

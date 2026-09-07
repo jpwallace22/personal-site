@@ -2,12 +2,9 @@
 
 import { FC } from "react"
 import { cva } from "class-variance-authority"
-import { Heading, isHeading } from "datocms-structured-text-utils"
-import { renderNodeRule, StructuredText } from "react-datocms"
-import headingToId from "@components/StructuredText/utils/headingToId"
-import { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
 import { smoothScrollToItem } from "@utils/smoothScrollToItem"
 import { useBlogContext } from "src/contexts/BlogContext"
+import type { Heading } from "src/content"
 
 const styles = cva(
   "cursor-pointer my-2 rounded-lg px-4 py-2 hover:bg-gray-50 hover:dark:bg-purple-900 hover:border-gradient-primary",
@@ -21,52 +18,29 @@ const styles = cva(
 )
 
 interface TableOfContentsProps {
-  data?: TocData
-  slug?: string | null
+  headings?: Heading[]
 }
 
-export type TocData = StructuredData & {
-  value: {
-    document: {
-      children: Heading[]
-    }
-  }
-}
-
-const TableOfContents: FC<TableOfContentsProps> = ({ data }) => {
+const TableOfContents: FC<TableOfContentsProps> = ({ headings }) => {
   const { activeHeading } = useBlogContext()
 
-  if (!data?.value) {
+  if (!headings?.length) {
     return null
   }
 
-  const onlyHeadings = {
-    value: {
-      schema: "dast",
-      document: {
-        type: "root",
-        children: data.value.document.children.filter((node: Heading) => node.type === "heading"),
-      },
-    },
-  } as const
-
   return (
-    <StructuredText
-      data={onlyHeadings}
-      customNodeRules={[
-        renderNodeRule(isHeading, ({ node, children, key }) => {
-          const id = headingToId(node)
-          // first heading active if no current active heading
-          const active = activeHeading ? id === activeHeading : key.split("-")[1] === "0"
+    <>
+      {headings.map(({ id, text }, index) => {
+        // first heading is active until one scrolls into view
+        const active = activeHeading ? id === activeHeading : index === 0
 
-          return (
-            <div key={key} className={styles({ active })} onClick={() => smoothScrollToItem(id)}>
-              <span>{children}</span>
-            </div>
-          )
-        }),
-      ]}
-    />
+        return (
+          <div key={id} className={styles({ active })} onClick={() => smoothScrollToItem(id)}>
+            <span>{text}</span>
+          </div>
+        )
+      })}
+    </>
   )
 }
 

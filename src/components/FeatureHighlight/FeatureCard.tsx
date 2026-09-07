@@ -2,13 +2,14 @@ import React, { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
-import StructuredText from "@components/StructuredText"
 
 export interface FeatureCardProps
   extends VariantProps<typeof wrapper>,
-    Clean<FeatureCardFragment>,
+    Omit<Clean<FeatureCardFragment>, "body">,
     ComponentPropsWithoutRef<"div"> {
   color: "purple" | "green" | "lightPurple" | "lightGreen"
+  /** Pre-rendered rich text, supplied by the server wrapper. */
+  body?: React.ReactNode
 }
 
 const wrapper = cva(["card", "grid", "gap-2", "gradient-radial-mono"], {
@@ -51,7 +52,7 @@ export const FeatureCard: FC<FeatureCardProps> = ({
       )}
       <div className={twMerge(wrapper({ active }))} {...props}>
         <h3 className={twMerge(featureStyles({ color }))}>{heading}</h3>
-        {body && <StructuredText data={body} />}
+        {body}
       </div>
     </>
   )

@@ -2,7 +2,7 @@ import "./styles/testimonialCard.css"
 import { ComponentPropsWithoutRef, FC } from "react"
 import Circle from "@molecules/Circle"
 import Icon from "@molecules/Icon"
-import StructuredText from "@components/StructuredText"
+import Markdown from "@components/Markdown"
 import Author from "@components/TestimonialCard/Author"
 
 interface TestimonialCardProps extends TestimonialCardFragment, ComponentPropsWithoutRef<"div"> {}
@@ -24,8 +24,8 @@ const TestimonialCard: FC<TestimonialCardProps> = ({ quote, person }) => {
           </div>
         )}
         <div className="z-20 p-6 lg:p-8">
-          <StructuredText
-            data={quote}
+          <Markdown
+            source={quote}
             className="text-xl font-normal leading-8 lg:text-3xl xl:text-4xl"
           />
         </div>

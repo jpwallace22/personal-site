@@ -4,8 +4,7 @@ import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import Button from "@molecules/Button"
 import Link from "@molecules/Link"
-import timeToReadStructuredText from "@components/BlogListing/utils/timeToRead"
-import StructuredText from "@components/StructuredText"
+import Markdown from "@components/Markdown"
 
 interface BlogCardProps
   extends Clean<BlogCardFragment>,
@@ -29,14 +28,13 @@ const BlogCard: FC<BlogCardProps> = ({
   title,
   featuredImage,
   excerpt,
-  body,
+  minutesToRead,
   slug,
   className,
   internalName: _internalName,
   publishDate: _publishDate,
   ...props
 }) => {
-  const minutes = timeToReadStructuredText(body)
   const path = `/blog/${slug}`
 
   return (
@@ -54,12 +52,12 @@ const BlogCard: FC<BlogCardProps> = ({
         )}
         <div className={content()}>
           <h3 className="font-body text-lg leading-tight">{title}</h3>
-          <StructuredText data={excerpt} className="line-clamp-child text-base" />
+          <Markdown source={excerpt} className="line-clamp-child text-base" />
           <div className={footer()}>
             <Button variant="text" size="sm" endIcon="right-arrow" className="w-fit">
               See Full Article
             </Button>
-            <span className="eyebrow">{minutes} minute read</span>
+            <span className="eyebrow">{minutesToRead} minute read</span>
           </div>
         </div>
       </article>

@@ -5,12 +5,10 @@ import { twMerge } from "tailwind-merge"
 import { BreadCrumbs } from "@molecules/BreadCrumbs"
 import HeadingComp, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
-import timeToReadStructuredText from "@components/BlogListing/utils/timeToRead"
-import { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
 
 export type BlogHeroProps = Clean<Omit<SwitchbackFragment, "body">> &
   ComponentPropsWithoutRef<"div"> & {
-    body?: StructuredData
+    minutesToRead?: Maybe<number>
     headingAs: ElementType
     animated?: boolean
     imageTop?: boolean
@@ -41,7 +39,7 @@ const BlogHero: FC<BlogHeroProps> = ({
   heading,
   headingAs = "h2",
   image,
-  body,
+  minutesToRead,
   subtitle,
   sectionId,
   publishDate,
@@ -66,7 +64,7 @@ const BlogHero: FC<BlogHeroProps> = ({
           <h2 className="text-4xl !font-normal text-gray-800 dark:text-gray-500">{subtitle}</h2>
           <div className="text-purple-900 dark:text-common-white">
             {formattedDate && <span>{formattedDate} • </span>}
-            {<span>{timeToReadStructuredText(body)} minute read</span>}
+            {<span>{minutesToRead} minute read</span>}
           </div>
         </div>
         <div className={asset()}>
