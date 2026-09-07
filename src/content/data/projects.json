@@ -1,26 +1,6 @@
 [
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Owned and led the development of the frontend architecture for a cutting-edge AI SaaS/IaaS platform, expertly leveraging modern tech on the bleeding edge including Remix, React 19, TypeScript, and RESTful Golang APIs and microservices."
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "Owned and led the development of the frontend architecture for a cutting-edge AI SaaS/IaaS platform, expertly leveraging modern tech on the bleeding edge including Remix, React 19, TypeScript, and RESTful Golang APIs and microservices.\n",
     "seo": {
       "title": "OctoAI",
       "description": "Empowering builders to launch the next generation of AI applications.",
@@ -33,107 +13,8 @@
     "title": "OctoAI SaaS platform",
     "subtitle": "Run, tune, & scale generative AI in the cloud",
     "heading": "OctoAI SaaS platform",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "As a staff engineer, I owned and led the frontend development for an advanced multimedia generative AI SaaS platform, utilizing a contemporary tech stack comprised of Remix, React, Express, TypeScript, and RESTful Golang APIs and microservices. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "My responsibilities spanned the complete lifecycle of the product, from initial architecture design through to deployment and ongoing maintenance. I collaborated closely with cross-functional teams, including UX designers, backend, and MLsys engineers to ensure seamless integration and optimal performance. "
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "The product is still very young, but we make great strides forward every day. So there is a 99% chance that we have already improved from what is seen here. "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "We have a small UX team that runs the frontend, but every feature is highly collaborative and cross-functional. "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Runs on the bleeding edge. At the time of writing this, I just pushed the migration to "
-                        },
-                        {
-                          "type": "span",
-                          "marks": [
-                            "code"
-                          ],
-                          "value": "react@rc"
-                        },
-                        {
-                          "type": "span",
-                          "value": "."
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "As a staff engineer, I owned and led the frontend development for an advanced multimedia generative AI SaaS platform, utilizing a contemporary tech stack comprised of Remix, React, Express, TypeScript, and RESTful Golang APIs and microservices.&#x20;\n\nMy responsibilities spanned the complete lifecycle of the product, from initial architecture design through to deployment and ongoing maintenance. I collaborated closely with cross-functional teams, including UX designers, backend, and MLsys engineers to ensure seamless integration and optimal performance.&#x20;\n",
+    "extraInformation": "- The product is still very young, but we make great strides forward every day. So there is a 99% chance that we have already improved from what is seen here.&#x20;\n\n- We have a small UX team that runs the frontend, but every feature is highly collaborative and cross-functional.&#x20;\n\n- Runs on the bleeding edge. At the time of writing this, I just pushed the migration to ``react@rc``.\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "bLrLk59IS2ajy5aZj0prEg",
@@ -233,26 +114,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "YkAi8S2ZSd6wm5lfxL3VYw",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -263,84 +125,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This Image Generation Service aims to provide users with a seamless and intuitive platform for generating high-quality images/animations using cutting-edge generative AI technology. The WebUI enables users the ability to:"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "list",
-                    "style": "bulleted",
-                    "children": [
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Generate Images with complete customizability "
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Upload and use their own LoRA's, checkpoints, or textual inversions "
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Create animations from their generated images"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "And more! "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "This Image Generation Service aims to provide users with a seamless and intuitive platform for generating high-quality images/animations using cutting-edge generative AI technology. The WebUI enables users the ability to:\n\n- Generate Images with complete customizability&#x20;\n\n- Upload and use their own LoRA's, checkpoints, or textual inversions&#x20;\n\n- Create animations from their generated images\n\nAnd more!&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "A455IeYiRLq5bs5CXmHKoA",
@@ -360,36 +145,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Our project aimed to enhance a generative AI text generation service, hosting the latest large language models (LLMs) for inference. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The speed of change in AI means we needed to build a flexible system that allowed us to add/remove models quickly, use multiple chat API formats (streaming and non), and show users dynamically generated code snippets for our SDKs. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Our project aimed to enhance a generative AI text generation service, hosting the latest large language models (LLMs) for inference.&#x20;\n\nThe speed of change in AI means we needed to build a flexible system that allowed us to add/remove models quickly, use multiple chat API formats (streaming and non), and show users dynamically generated code snippets for our SDKs.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "dB9VB4mxRzCeB_mZAhPqzw",
@@ -409,36 +165,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The OctoAI Asset Library is where users manage their upload assets such as checkpoints, LoRA's, controlnets, and textual inversions. These assets can easily push into the double digits of GB in size and needed a robust upload pipeline to support them. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "More than just a CRUD, these assets are deep linked to image generation so users can users them  when generating images or animations."
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The OctoAI Asset Library is where users manage their upload assets such as checkpoints, LoRA's, controlnets, and textual inversions. These assets can easily push into the double digits of GB in size and needed a robust upload pipeline to support them.&#x20;\n\nMore than just a CRUD, these assets are deep linked to image generation so users can users them  when generating images or animations.\n",
           "image": {
             "__typename": "FileField",
             "id": "UBY_kTjZSvutkqmIxneH0Q",
@@ -453,27 +180,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Recognizing the need for an efficient approach to update codebases with lazy/dynamic imports with the release of React v18, I developed a versatile and extensible VS Code extension to automate the process."
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "Recognizing the need for an efficient approach to update codebases with lazy/dynamic imports with the release of React v18, I developed a versatile and extensible VS Code extension to automate the process.\n",
     "seo": {
       "title": "React Lazify",
       "description": "Showcasing my first VS Code extension React Lazify. A lazy way to make lazy imports. ",
@@ -494,220 +201,8 @@
     "title": "React Lazify",
     "subtitle": "A lazy way to make lazy imports",
     "heading": "A VS Code extension for React",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "url": "https://github.com/jpwallace22/react-lazify",
-                  "type": "link",
-                  "children": [
-                    {
-                      "type": "span",
-                      "value": "React Lazify"
-                    }
-                  ]
-                },
-                {
-                  "type": "span",
-                  "value": " is a lazy way to write lazy imports (see what I did there?). Back with the release of React 18, Next13, and Gatsby 5, I've found myself making a LOT more lazy imports and needing to go back to refactor old sites as we upgraded. I found myself having to go through and re-write a ton of imports. Thus an extension was born."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Instead of just writing a quick bash script or codemod, I figured I would take the time to make something a bit more robust and shareable. (This was also for fun) Now I am maintaining my own VS code extension and am already starting to iterate on it too. "
-                }
-              ]
-            },
-            {
-              "type": "blockquote",
-              "children": [
-                {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "type": "span",
-                      "marks": [
-                        "strong"
-                      ],
-                      "value": "Note"
-                    },
-                    {
-                      "type": "span",
-                      "marks": [
-                        "strong",
-                        "emphasis"
-                      ],
-                      "value": ": "
-                    },
-                    {
-                      "type": "span",
-                      "marks": [
-                        "emphasis"
-                      ],
-                      "value": "This might be slightly out of date with the current version of the extension"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "93899974",
-                  "type": "inlineItem"
-                },
-                {
-                  "item": "93899975",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "93899974",
-          "variant": "contained",
-          "label": "Repository",
-          "url": "https://github.com/jpwallace22/react-lazify",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "github"
-        },
-        {
-          "__typename": "ButtonRecord",
-          "id": "93899975",
-          "variant": "outlined",
-          "label": "VS Code Marketplace",
-          "url": "https://marketplace.visualstudio.com/items?itemName=jpwallace22.react-lazify",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "external"
-        }
-      ],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Created to solve the problem of needing to convert a large number of imports"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Currently 98% test coverage (macOS, Windows, & Linux) with Mocha "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Published to the VS Code marketplace for free use by anyone"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "A larger longer write up can be found"
-                        },
-                        {
-                          "url": "https://www.justinwallace.dev/blog/building-my-first-vs-code-extension",
-                          "type": "link",
-                          "children": [
-                            {
-                              "type": "span",
-                              "value": " on my blog"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "I still maintain this project and iterate on it (over 500 downloads! yay!)"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "[React Lazify](https://github.com/jpwallace22/react-lazify) is a lazy way to write lazy imports (see what I did there?). Back with the release of React 18, Next13, and Gatsby 5, I've found myself making a LOT more lazy imports and needing to go back to refactor old sites as we upgraded. I found myself having to go through and re-write a ton of imports. Thus an extension was born.\n\nInstead of just writing a quick bash script or codemod, I figured I would take the time to make something a bit more robust and shareable. (This was also for fun) Now I am maintaining my own VS code extension and am already starting to iterate on it too.&#x20;\n\n> **Note**<em><strong>: </strong></em>*This might be slightly out of date with the current version of the extension*\n\n<div><BtnGroup><Btn __typename=\"ButtonRecord\" id=\"93899974\" variant=\"contained\" label=\"Repository\" url=\"https://github.com/jpwallace22/react-lazify\" startIcon=\"\" endIcon=\"github\" /><Btn __typename=\"ButtonRecord\" id=\"93899975\" variant=\"outlined\" label=\"VS Code Marketplace\" url=\"https://marketplace.visualstudio.com/items?itemName=jpwallace22.react-lazify\" startIcon=\"\" endIcon=\"external\" /></BtnGroup></div>\n",
+    "extraInformation": "### Key Points\n\n- Created to solve the problem of needing to convert a large number of imports\n\n- Currently 98% test coverage (macOS, Windows, & Linux) with Mocha&#x20;\n\n- Published to the VS Code marketplace for free use by anyone\n\n- A larger longer write up can be found[ on my blog](https://www.justinwallace.dev/blog/building-my-first-vs-code-extension)\n\n- I still maintain this project and iterate on it (over 500 downloads! yay!)\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "33737432",
@@ -779,26 +274,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "136216464",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -809,79 +285,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This shows the basic functionality of the extension, which is quite simple."
-                      }
-                    ]
-                  },
-                  {
-                    "type": "list",
-                    "style": "bulleted",
-                    "children": [
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Select an import with your cursor"
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "marks": [
-                                  "strong",
-                                  "code"
-                                ],
-                                "value": "ctrl+alt+cmd+L"
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Supports multiple cursor selections and highlighted selections"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "This shows the basic functionality of the extension, which is quite simple.\n\n- Select an import with your cursor\n\n- <div><Code><strong>ctrl+alt+cmd+L</strong></Code></div>\n\n- Supports multiple cursor selections and highlighted selections\n",
           "image": {
             "__typename": "FileField",
             "id": "33713650",
@@ -901,92 +305,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "list",
-                    "style": "bulleted",
-                    "children": [
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Select the component you wish to covert within the JSX return"
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Use the keyboard shortcut "
-                              },
-                              {
-                                "type": "span",
-                                "marks": [
-                                  "strong",
-                                  "code"
-                                ],
-                                "value": "ctrl+opt+cmd+L"
-                              },
-                              {
-                                "type": "span",
-                                "value": " to make it lazy"
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "Supports selections with multiple cursors and highlighting "
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "listItem",
-                        "children": [
-                          {
-                            "type": "paragraph",
-                            "children": [
-                              {
-                                "type": "span",
-                                "value": "will STILL ignore non-default imports even if selected"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "- Select the component you wish to covert within the JSX return\n\n- Use the keyboard shortcut <Code><strong>ctrl+opt+cmd+L</strong></Code> to make it lazy\n\n- Supports selections with multiple cursors and highlighting&#x20;\n\n- will STILL ignore non-default imports even if selected\n",
           "image": {
             "__typename": "FileField",
             "id": "49676178",
@@ -1006,27 +325,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Tested on Mac, Linux, and Windows OS with 98% test coverage. Though I would typically prefer to write my tests with Jest. Mocha integrates well with the VS Code environment and its always better to choose the right tool for the job."
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Tested on Mac, Linux, and Windows OS with 98% test coverage. Though I would typically prefer to write my tests with Jest. Mocha integrates well with the VS Code environment and its always better to choose the right tool for the job.\n",
           "image": {
             "__typename": "FileField",
             "id": "55791569",
@@ -1046,27 +345,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "With a VS code marketplace ranking of 5 stars, 9 Github stars, and 259 downloads (as of writing this) it's starting to gain (a very little bit) of popularity. It's just nice to build software that people are using!"
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "With a VS code marketplace ranking of 5 stars, 9 Github stars, and 259 downloads (as of writing this) it's starting to gain (a very little bit) of popularity. It's just nice to build software that people are using!\n",
           "image": {
             "__typename": "FileField",
             "id": "55747300",
@@ -1081,27 +360,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Lead engineer for a modern UI/Component library (npm package) to be used for Solana's NextJS site. The contains your smaller UI elements like buttons as well as full components. "
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "Lead engineer for a modern UI/Component library (npm package) to be used for Solana's NextJS site. The contains your smaller UI elements like buttons as well as full components.&#x20;\n",
     "seo": {
       "title": "Solana UI Library",
       "description": "I led the development efforts for the Solana UI/Component library that is currently used on their Next site (Solana.com)",
@@ -1122,163 +381,8 @@
     "title": "Solana Component Library",
     "subtitle": "React components for a Rust blockchain",
     "heading": "Modern React Component/UI Library",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Problem: "
-                },
-                {
-                  "type": "span",
-                  "value": "Solana didn't have an effective method to create new pages on their marketing site without having it done by an engineer. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Solution:"
-                },
-                {
-                  "type": "span",
-                  "value": " Spearheaded the development of an industry-leading component library for Solana using React, TypeScript, Tailwind, & Storybook and seamlessly integrated it into Solana’s NextJS website with Builder.io for accelerated development cycles and heightened productivity."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "From buttons and icons to heroes and card decks, the library had everything necessary to quickly and efficiently create a stunning website. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "145144434",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "145144434",
-          "variant": "contained",
-          "label": "Check it out",
-          "url": "https://www.solana.com",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "external"
-        }
-      ],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "My responsibilities included every aspect of the SDLC from choosing the tech stack to the CI/CD pipeline and everything in between"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Highly composable and well-documented component library"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Solved the problem of the client not having a way to effectively build new pages"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Optimized, tree-shakable components with injected styles for maximum modularity  "
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "<div><strong>Problem: </strong>Solana didn't have an effective method to create new pages on their marketing site without having it done by an engineer. </div>\n\n**Solution:** Spearheaded the development of an industry-leading component library for Solana using React, TypeScript, Tailwind, & Storybook and seamlessly integrated it into Solana’s NextJS website with Builder.io for accelerated development cycles and heightened productivity.\n\nFrom buttons and icons to heroes and card decks, the library had everything necessary to quickly and efficiently create a stunning website.&#x20;\n\n<div><Btn __typename=\"ButtonRecord\" id=\"145144434\" variant=\"contained\" label=\"Check it out\" url=\"https://www.solana.com\" startIcon=\"\" endIcon=\"external\" /></div>\n",
+    "extraInformation": "### Key Points\n\n- My responsibilities included every aspect of the SDLC from choosing the tech stack to the CI/CD pipeline and everything in between\n\n- Highly composable and well-documented component library\n\n- Solved the problem of the client not having a way to effectively build new pages\n\n- Optimized, tree-shakable components with injected styles for maximum modularity&#x20;&#x20;\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "58525844",
@@ -1364,26 +468,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "145146102",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -1394,64 +479,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The library is a comprehensive and modular NPM package bundled with "
-                      },
-                      {
-                        "url": "https://rollupjs.org/",
-                        "type": "link",
-                        "children": [
-                          {
-                            "type": "span",
-                            "value": "Rollup"
-                          }
-                        ]
-                      },
-                      {
-                        "type": "span",
-                        "value": " and "
-                      },
-                      {
-                        "url": "https://postcss.org/",
-                        "type": "link",
-                        "children": [
-                          {
-                            "type": "span",
-                            "value": "PostCSS"
-                          }
-                        ]
-                      },
-                      {
-                        "type": "span",
-                        "value": " using a component-centric approach for efficient style management (injecting styles at the component level). "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The library enables developers to create scalable and maintainable applications, leveraging industry-standard practices"
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The library is a comprehensive and modular NPM package bundled with [Rollup](https://rollupjs.org/) and [PostCSS](https://postcss.org/) using a component-centric approach for efficient style management (injecting styles at the component level).&#x20;\n\nThe library enables developers to create scalable and maintainable applications, leveraging industry-standard practices\n",
           "image": {
             "__typename": "FileField",
             "id": "58668885",
@@ -1471,43 +499,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "marks": [
-                          "strong"
-                        ],
-                        "value": "What's the point of an NPM package if it's not strongly typed? "
-                      },
-                      {
-                        "type": "span",
-                        "value": "The API for every component is strongly typed with literals and accompanied by JSDoc notations for improved intellisense and developer experience. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Proper typing and documentation are equally important as performance optimizations if you ask me. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "<div><strong>What's the point of an NPM package if it's not strongly typed? </strong>The API for every component is strongly typed with literals and accompanied by JSDoc notations for improved intellisense and developer experience. </div>\n\nProper typing and documentation are equally important as performance optimizations if you ask me.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "58668886",
@@ -1527,38 +519,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Solana not only leverages the cutting edge of the modern jamstack, but it stays at the forefront of current design techniques while still maintaining its top-notch performance metrics. Knowing "
-                      },
-                      {
-                        "type": "span",
-                        "marks": [
-                          "strong"
-                        ],
-                        "value": "when and how to perform animations when rending from the server"
-                      },
-                      {
-                        "type": "span",
-                        "value": " is a more modern challenge. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Solana not only leverages the cutting edge of the modern jamstack, but it stays at the forefront of current design techniques while still maintaining its top-notch performance metrics. Knowing **when and how to perform animations when rending from the server** is a more modern challenge.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "58673833",
@@ -1578,34 +539,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "I created a single Icon \"molecule\" that renders SVG's from a singular sprite. The sprite is created (and optimized) at build time from all SVG's in the icons directory. Being strongly typed, rendering the icon you need is as easy as "
-                      },
-                      {
-                        "type": "span",
-                        "marks": [
-                          "code"
-                        ],
-                        "value": "<Icon id=\"x-close\" />"
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "I created a single Icon \"molecule\" that renders SVG's from a singular sprite. The sprite is created (and optimized) at build time from all SVG's in the icons directory. Being strongly typed, rendering the icon you need is as easy as ``<Icon id=\"x-close\" />``\n",
           "image": {
             "__typename": "FileField",
             "id": "58673835",
@@ -1620,27 +554,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "A complete React UI/component library boasting SSR support, fully customizable responsive elements, and dark mode out of the box. Currently in production by 30+ tech companies including industry giants like Freshworks."
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "A complete React UI/component library boasting SSR support, fully customizable responsive elements, and dark mode out of the box. Currently in production by 30+ tech companies including industry giants like Freshworks.\n",
     "seo": {
       "title": "Webstacks UI Library",
       "description": "Showcasing my roles and responsibilities in the production of the Webstacks internal UI library, as well as some of its features. ",
@@ -1661,207 +575,8 @@
     "title": "Webstacks UI Library",
     "subtitle": "And a template repository too",
     "heading": "Framework Agnostic Template Repository",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Problem: "
-                },
-                {
-                  "type": "span",
-                  "value": "Onboarding new clients and implementing unique non-templated designs for each of them took a lot of manpower from the engineering team. (especially when you need to support multiple frameworks)"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Solution: "
-                },
-                {
-                  "type": "span",
-                  "value": " I, along with two others, architected and developed a framework-agnostic highly extensible template repository/UI library. The library consists of all your basic UI elements, atomic design variables, and all supporting documentation (with Storybook) for its use. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "The library is currently "
-                },
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "in production by 30+ "
-                },
-                {
-                  "type": "span",
-                  "value": "large to medium-scale tech companies including "
-                },
-                {
-                  "url": "https://www.freshworks.com/",
-                  "type": "link",
-                  "children": [
-                    {
-                      "type": "span",
-                      "value": "Freshworks"
-                    }
-                  ]
-                },
-                {
-                  "type": "span",
-                  "value": ", "
-                },
-                {
-                  "url": "https://www.justworks.com/",
-                  "type": "link",
-                  "children": [
-                    {
-                      "type": "span",
-                      "value": "Justworks"
-                    }
-                  ]
-                },
-                {
-                  "type": "span",
-                  "value": ", & "
-                },
-                {
-                  "url": "https://learn.snowflake.com/en/",
-                  "type": "link",
-                  "children": [
-                    {
-                      "type": "span",
-                      "value": "Snowflake."
-                    }
-                  ]
-                },
-                {
-                  "type": "span",
-                  "value": "  Check them out!"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "This library is currently "
-                        },
-                        {
-                          "type": "span",
-                          "marks": [
-                            "strong"
-                          ],
-                          "value": "in production by 30+ "
-                        },
-                        {
-                          "type": "span",
-                          "value": "large to medium-scale tech companies including Freshworks, Justworks, & Snowflake. "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Developed by a small team with high levels of communication (regarding complex ideas, architecture, and strategy) and collaboration."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Personally managed and maintained the UI library as an internal open-source project. "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Built with developer experience and development speed as the two main priorities to ensure we could pass it off to contractors and not have to worry about ramp time. "
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "<div><strong>Problem: </strong>Onboarding new clients and implementing unique non-templated designs for each of them took a lot of manpower from the engineering team. (especially when you need to support multiple frameworks)</div>\n\n<div><strong>Solution: </strong> I, along with two others, architected and developed a framework-agnostic highly extensible template repository/UI library. The library consists of all your basic UI elements, atomic design variables, and all supporting documentation (with Storybook) for its use. </div>\n\nThe library is currently <strong>in production by 30+ </strong>large to medium-scale tech companies including [Freshworks](https://www.freshworks.com/), [Justworks](https://www.justworks.com/), & [Snowflake.](https://learn.snowflake.com/en/)  Check them out!\n",
+    "extraInformation": "### Key Points\n\n- This library is currently <strong>in production by 30+ </strong>large to medium-scale tech companies including Freshworks, Justworks, & Snowflake.&#x20;\n\n- Developed by a small team with high levels of communication (regarding complex ideas, architecture, and strategy) and collaboration.\n\n- Personally managed and maintained the UI library as an internal open-source project.&#x20;\n\n- Built with developer experience and development speed as the two main priorities to ensure we could pass it off to contractors and not have to worry about ramp time.&#x20;\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "22586917",
@@ -1947,26 +662,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "136200290",
       "heading": "This is a test heading",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": "While employed at Webstacks as a frontend engineer, I, along with two others, architected and developed a framework agnostic template repository/UI library. The library consists of all your basic UI elements, atomic design variables, and all supporting documentation for its use."
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "While employed at Webstacks as a frontend engineer, I, along with two others, architected and developed a framework agnostic template repository/UI library. The library consists of all your basic UI elements, atomic design variables, and all supporting documentation for its use.\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -1977,36 +673,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Here you can see the Storybook section for the colors. Just one of the many building blocks of the UI library. Aka, the atoms. Since the UI library also functions as a template repository, the atoms must remain flexible and easy to change. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This shows the storybook switching between light and dark modes. Light and dark functionality us baked in with a context. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Here you can see the Storybook section for the colors. Just one of the many building blocks of the UI library. Aka, the atoms. Since the UI library also functions as a template repository, the atoms must remain flexible and easy to change.&#x20;\n\nThis shows the storybook switching between light and dark modes. Light and dark functionality us baked in with a context.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "22586918",
@@ -2026,27 +693,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The typography atom is another essential building block of any good UI library. Like colors, it was imperative that this stayed equally as easy to change. The Webstacks UI library uses a Tailwind-esque naming system for its theme. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The typography atom is another essential building block of any good UI library. Like colors, it was imperative that this stayed equally as easy to change. The Webstacks UI library uses a Tailwind-esque naming system for its theme.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "22586921",
@@ -2066,27 +713,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This is just one of many \"molecules\" within the UI library that are used to create full-fledged components. The molecules are highly accessible and well documented UI components like switches and text fields that build the foundation of good components. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "This is just one of many \"molecules\" within the UI library that are used to create full-fledged components. The molecules are highly accessible and well documented UI components like switches and text fields that build the foundation of good components.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "22586920",
@@ -2106,27 +733,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "All utilities and functions are tested with the Jest unit testing package. The library is tested end-to-end for visual and interaction changes using Chromatic (from the creators of Storybook)."
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "All utilities and functions are tested with the Jest unit testing package. The library is tested end-to-end for visual and interaction changes using Chromatic (from the creators of Storybook).\n",
           "image": {
             "__typename": "FileField",
             "id": "42885133",
@@ -2141,27 +748,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Headless marketing site with GraphQL, DatoCMS, and GatsbyJS. With OctoML I managed the full SDLC, CI/CD pipeline setup, linting standards, code reviews, sprint planning, and UX design review. "
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "Headless marketing site with GraphQL, DatoCMS, and GatsbyJS. With OctoML I managed the full SDLC, CI/CD pipeline setup, linting standards, code reviews, sprint planning, and UX design review.&#x20;\n",
     "seo": {
       "title": "OctoAI Marketing Site",
       "description": "With OctoML i was responsible for peer and junior code reviews, sprint planning, UX design review, and much much more. ",
@@ -2182,189 +769,8 @@
     "title": "OctoAI (OctoML) Marketing Site ",
     "subtitle": "Automate Model Deployment",
     "heading": "A Headless SSG Marketing Site",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "While working at Webstacks as the lead developer for OctoAI, I had the pleasure of being able to take responsibility for an entire repository. I owned the software development lifecycle from establishing the CI/CD pipeline to creating the linting standards. I was also responsible for peer and junior code reviews, sprint planning, and UX design reviews."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Problem:"
-                },
-                {
-                  "type": "span",
-                  "value": " Content creators were limited in the choices they had and needed more control over their site. Each page was a separate content model and engineers were required to create new unique pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Solution:"
-                },
-                {
-                  "type": "span",
-                  "value": " We solved this with a component generation model based on DatoCMS and GraphQL queries to dynamically create page sections. The system (the same pattern used in this site) allowed the content creators to create complete pages within minutes with nearly complete control over everything. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "I was later hired by OctoAI to join their platform team as a Senior Engineer and was able to refer an engineer to take over their marketing site. Though no longer responsible for the site, I still help consult and do the occasional PR review. "
-                }
-              ]
-            },
-            {
-              "type": "blockquote",
-              "children": [
-                {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "type": "span",
-                      "marks": [
-                        "emphasis"
-                      ],
-                      "value": "Note: This has been redesigned since the initial development of it. "
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "58220541",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "58220541",
-          "variant": "contained",
-          "label": "Check it out",
-          "url": "https://www.octoml.ai",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "external"
-        }
-      ],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "The first project that I was able to take full control of/was responsible for."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Worked directly with OctoAI stakeholders (and even got job out of it) to provide an optimized experience for their content creators. "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Modeled with DatoCMS and queried with GraphQL utilizing fragments and GraphQL Codegen for the types."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Includes full documentation for use of components created with Storybook."
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "While working at Webstacks as the lead developer for OctoAI, I had the pleasure of being able to take responsibility for an entire repository. I owned the software development lifecycle from establishing the CI/CD pipeline to creating the linting standards. I was also responsible for peer and junior code reviews, sprint planning, and UX design reviews.\n\n**Problem:** Content creators were limited in the choices they had and needed more control over their site. Each page was a separate content model and engineers were required to create new unique pages.\n\n**Solution:** We solved this with a component generation model based on DatoCMS and GraphQL queries to dynamically create page sections. The system (the same pattern used in this site) allowed the content creators to create complete pages within minutes with nearly complete control over everything.&#x20;\n\nI was later hired by OctoAI to join their platform team as a Senior Engineer and was able to refer an engineer to take over their marketing site. Though no longer responsible for the site, I still help consult and do the occasional PR review.&#x20;\n\n> <div><em>Note: This has been redesigned since the initial development of it. </em></div>\n\n<div><Btn __typename=\"ButtonRecord\" id=\"58220541\" variant=\"contained\" label=\"Check it out\" url=\"https://www.octoml.ai\" startIcon=\"\" endIcon=\"external\" /></div>\n",
+    "extraInformation": "### Key Points\n\n- The first project that I was able to take full control of/was responsible for.\n\n- Worked directly with OctoAI stakeholders (and even got job out of it) to provide an optimized experience for their content creators.&#x20;\n\n- Modeled with DatoCMS and queried with GraphQL utilizing fragments and GraphQL Codegen for the types.\n\n- Includes full documentation for use of components created with Storybook.\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "22586948",
@@ -2464,26 +870,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "136216353",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -2494,27 +881,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The animated variant of the hero utilized framer motion to create smooth multi-leveled animations at all large breakpoints. Each circle has two circles revolving around them as well as a flag that pivots up. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The animated variant of the hero utilized framer motion to create smooth multi-leveled animations at all large breakpoints. Each circle has two circles revolving around them as well as a flag that pivots up.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "23129843",
@@ -2534,36 +901,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The animated conversion panel and footer are two separate components. The conversion panel has multiple variants and is modeled to give content creators a lot of control."
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Pictured here is just one of the variants that includes a couple animated atoms that move on repeat and an octopus that pops up on hover. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The animated conversion panel and footer are two separate components. The conversion panel has multiple variants and is modeled to give content creators a lot of control.\n\nPictured here is just one of the variants that includes a couple animated atoms that move on repeat and an octopus that pops up on hover.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "23129845",
@@ -2583,36 +921,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This component utilizes the scroll position, state, and clever use of a background gradient to create the dotted line when scrolling."
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This was a very fun component to create and I feel as though It makes for an appealing UX. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "This component utilizes the scroll position, state, and clever use of a background gradient to create the dotted line when scrolling.\n\nThis was a very fun component to create and I feel as though It makes for an appealing UX.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "23129844",
@@ -2632,38 +941,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The one and only global navigation component (or global header/navbar). The first to be judged and utilized by all. As you can see OctoML follows modern design standards with icons, sections, and images. Best of all though, "
-                      },
-                      {
-                        "type": "span",
-                        "marks": [
-                          "strong"
-                        ],
-                        "value": "it's 100% headless"
-                      },
-                      {
-                        "type": "span",
-                        "value": "."
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The one and only global navigation component (or global header/navbar). The first to be judged and utilized by all. As you can see OctoML follows modern design standards with icons, sections, and images. Best of all though, **it's 100% headless**.\n",
           "image": {
             "__typename": "FileField",
             "id": "23129846",
@@ -2678,27 +956,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Initially conceived as a class project with a tight timeline, it has evolved into its present form—a statically generated, headless website created with TypeScript, NextJS RSC,  and Tailwind with CVA. Leveraging GraphQL delivered from DatoCMS."
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "Initially conceived as a class project with a tight timeline, it has evolved into its present form—a statically generated, headless website created with TypeScript, NextJS RSC,  and Tailwind with CVA. Leveraging GraphQL delivered from DatoCMS.\n",
     "seo": {
       "title": "This site",
       "description": "The inner workings of this site and why it is highlighted in my portfolio. This site is made with the latest frameworks, technologies, and tooling. ",
@@ -2719,196 +977,8 @@
     "title": "This Website",
     "subtitle": "So Meta",
     "heading": "The ever changing and evolving",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "This portfolio site goes beyond being a mere showcase of my work; it embodies the essence of my craftsmanship, and it would be remiss not to delve into its creation process and evolutionary journey."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "My site started as a class project with a 5-week deadline (design, development, and style guide) with hardcoded content and has transformed into what you see today. Now, it's headless (DatoCMS & GraphQL), ISR, Typescript, Next, and, the latest addition, Tailwind."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "58220554",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "58220554",
-          "variant": "contained",
-          "label": "Repository",
-          "url": "https://github.com/jpwallace22/personal-site",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "github"
-        }
-      ],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Built with NextJS (app dir), DatoCMS utilizing SSG, ISR, and GraphQL"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Styled with, Tailwind, "
-                        },
-                        {
-                          "type": "span",
-                          "marks": [
-                            "code"
-                          ],
-                          "value": "class-variance-authority"
-                        },
-                        {
-                          "type": "span",
-                          "value": ", and love"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "100% designed, developed, and maintained by yours truly"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "CICD pipeline, Semantic-release, unit-testing, end-to-end testing"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "The "
-                        },
-                        {
-                          "type": "span",
-                          "marks": [
-                            "strong"
-                          ],
-                          "value": "website and the code speak for themselves"
-                        },
-                        {
-                          "type": "span",
-                          "value": ". If for no other, you should check out the repo for this. "
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "58220554",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "58220554",
-          "variant": "contained",
-          "label": "Repository",
-          "url": "https://github.com/jpwallace22/personal-site",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "github"
-        }
-      ],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "This portfolio site goes beyond being a mere showcase of my work; it embodies the essence of my craftsmanship, and it would be remiss not to delve into its creation process and evolutionary journey.\n\nMy site started as a class project with a 5-week deadline (design, development, and style guide) with hardcoded content and has transformed into what you see today. Now, it's headless (DatoCMS & GraphQL), ISR, Typescript, Next, and, the latest addition, Tailwind.\n\n<div><Btn __typename=\"ButtonRecord\" id=\"58220554\" variant=\"contained\" label=\"Repository\" url=\"https://github.com/jpwallace22/personal-site\" startIcon=\"\" endIcon=\"github\" /></div>\n",
+    "extraInformation": "### Key Points\n\n- Built with NextJS (app dir), DatoCMS utilizing SSG, ISR, and GraphQL\n\n- Styled with, Tailwind, ``class-variance-authority``, and love\n\n- 100% designed, developed, and maintained by yours truly\n\n- CICD pipeline, Semantic-release, unit-testing, end-to-end testing\n\n- The **website and the code speak for themselves**. If for no other, you should check out the repo for this.&#x20;\n\n<div><Btn __typename=\"ButtonRecord\" id=\"58220554\" variant=\"contained\" label=\"Repository\" url=\"https://github.com/jpwallace22/personal-site\" startIcon=\"\" endIcon=\"github\" /></div>\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "49563058",
@@ -3008,26 +1078,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "136390556",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -3038,43 +1089,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "marks": [
-                          "strong"
-                        ],
-                        "value": "Back to the basics"
-                      },
-                      {
-                        "type": "span",
-                        "value": "! The first thing I did when creating this site was styling. I started with my basic logo and went from there. This is the original design for my light mode. As you can see, not much has changed. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "This was also the debut of my new logo. I still maintain my original logomark, but this put a development spin on it. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "**Back to the basics**! The first thing I did when creating this site was styling. I started with my basic logo and went from there. This is the original design for my light mode. As you can see, not much has changed.&#x20;\n\nThis was also the debut of my new logo. I still maintain my original logomark, but this put a development spin on it.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "22586962",
@@ -3094,27 +1109,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The dark mode style is near and dear to me (hence why it's the default). Obviously, I have the ability to make it use the browser preference, but I WANT people to see the dark mode. Not to mention this is a dev site.. for developers. Dark mode is where it's at. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The dark mode style is near and dear to me (hence why it's the default). Obviously, I have the ability to make it use the browser preference, but I WANT people to see the dark mode. Not to mention this is a dev site.. for developers. Dark mode is where it's at.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "22586961",
@@ -3134,27 +1129,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Currently, all utilities, hooks, and molecules are unit tested for a total of about 86% coverage. I know, not great and nothing to boast about. However, as soon as I can get this new version launched I will continue to finish the tests. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Currently, all utilities, hooks, and molecules are unit tested for a total of about 86% coverage. I know, not great and nothing to boast about. However, as soon as I can get this new version launched I will continue to finish the tests.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "55791761",
@@ -3174,43 +1149,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Not only is the codebase built to scale, "
-                      },
-                      {
-                        "type": "span",
-                        "marks": [
-                          "strong"
-                        ],
-                        "value": "but it's also built to be performant. "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Though using Next13's default React server components makes it pretty easy, it still makes you need to rethink your state management and architecture. In doing so I was able to hit 100 on all required KPI's for the lighthouse ranking system"
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Not only is the codebase built to scale, <strong>but it's also built to be performant. </strong>\n\nThough using Next13's default React server components makes it pretty easy, it still makes you need to rethink your state management and architecture. In doing so I was able to hit 100 on all required KPI's for the lighthouse ranking system\n",
           "image": {
             "__typename": "FileField",
             "id": "56565244",
@@ -3225,27 +1164,7 @@
     }
   },
   {
-    "excerpt": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "value": "A macOS utility bar application for quickly accessing my most needed Spotify actions. This was a full stack project using Electron, Vite, and SolidJS. I particularly enjoy this project because it's a piece of software I use every day. "
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExcerptField"
-    },
+    "excerpt": "A macOS utility bar application for quickly accessing my most needed Spotify actions. This was a full stack project using Electron, Vite, and SolidJS. I particularly enjoy this project because it's a piece of software I use every day.&#x20;\n",
     "seo": {
       "title": "Spotify Widget",
       "description": "A macOS Spotify Widget to perform the most needed actions without having to open Spotify.",
@@ -3266,193 +1185,8 @@
     "title": "Spotify Widget",
     "subtitle": "Full stack electron app",
     "heading": "Fullstack Electron App for the macOS",
-    "body": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Problem"
-                },
-                {
-                  "type": "span",
-                  "value": ": I would be in the "
-                },
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "ZONE"
-                },
-                {
-                  "type": "span",
-                  "value": " hammering out code and having a good time. I needed to save this song to a playlist! Sadly, finding my Spotify app and achieving this task would distract me and take me out of the zone.. womp, womp. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "span",
-                  "marks": [
-                    "strong"
-                  ],
-                  "value": "Solution"
-                },
-                {
-                  "type": "span",
-                  "value": ": Create a widget that I can just keep in the menubar that does everything I need, quickly and efficiently. Switch songs (though I mainly use the keyboard for that), save songs to my library, add them to a playlist, or check out the album art in full size. "
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "item": "133276580",
-                  "type": "inlineItem"
-                },
-                {
-                  "item": "133580299",
-                  "type": "inlineItem"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [
-        {
-          "__typename": "ButtonRecord",
-          "id": "133276580",
-          "variant": "contained",
-          "label": "Repository",
-          "url": "https://github.com/jpwallace22/spotify-widget",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": "github"
-        },
-        {
-          "__typename": "ButtonRecord",
-          "id": "133580299",
-          "variant": "outlined",
-          "label": "Full Writeup",
-          "url": "https://www.justinwallace.dev/blog/building-a-spotify-widget-using-electron",
-          "disabled": false,
-          "startIcon": "",
-          "endIcon": ""
-        }
-      ],
-      "__typename": "TemplateProjectModelBodyField"
-    },
-    "extraInformation": {
-      "value": {
-        "schema": "dast",
-        "document": {
-          "type": "root",
-          "children": [
-            {
-              "type": "heading",
-              "level": 3,
-              "children": [
-                {
-                  "type": "span",
-                  "value": "Key Points"
-                }
-              ]
-            },
-            {
-              "type": "list",
-              "style": "bulleted",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Full stack Electron-based macOS application (Linux and Windows coming soon)"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Uses Auth0 and persists token with automatic refreshing"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Buttery smooth animation using a perfect blend of CSS and Typescript"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Designed and built 100% by me. (Though the design is Spotify inspired)"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "span",
-                          "value": "Personal project to test out Electron & SolidJS and create something I wanted."
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "links": [],
-      "__typename": "TemplateProjectModelExtraInformationField"
-    },
+    "body": "**Problem**: I would be in the **ZONE** hammering out code and having a good time. I needed to save this song to a playlist! Sadly, finding my Spotify app and achieving this task would distract me and take me out of the zone.. womp, womp.&#x20;\n\n**Solution**: Create a widget that I can just keep in the menubar that does everything I need, quickly and efficiently. Switch songs (though I mainly use the keyboard for that), save songs to my library, add them to a playlist, or check out the album art in full size.&#x20;\n\n<div><BtnGroup><Btn __typename=\"ButtonRecord\" id=\"133276580\" variant=\"contained\" label=\"Repository\" url=\"https://github.com/jpwallace22/spotify-widget\" startIcon=\"\" endIcon=\"github\" /><Btn __typename=\"ButtonRecord\" id=\"133580299\" variant=\"outlined\" label=\"Full Writeup\" url=\"https://www.justinwallace.dev/blog/building-a-spotify-widget-using-electron\" startIcon=\"\" endIcon=\"\" /></BtnGroup></div>\n",
+    "extraInformation": "### Key Points\n\n- Full stack Electron-based macOS application (Linux and Windows coming soon)\n\n- Uses Auth0 and persists token with automatic refreshing\n\n- Buttery smooth animation using a perfect blend of CSS and Typescript\n\n- Designed and built 100% by me. (Though the design is Spotify inspired)\n\n- Personal project to test out Electron & SolidJS and create something I wanted.\n",
     "bannerImage": {
       "__typename": "FileField",
       "id": "49731644",
@@ -3524,26 +1258,7 @@
       "__typename": "ScrollingSwitchbackRecord",
       "id": "136214496",
       "heading": "",
-      "body": {
-        "value": {
-          "schema": "dast",
-          "document": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "span",
-                    "value": ""
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "__typename": "ScrollingSwitchbackModelBodyField"
-      },
+      "body": "<p></p>\n",
       "switchbacks": [
         {
           "__typename": "SwitchbackRecord",
@@ -3554,27 +1269,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Using Electron with Vite I created a custom window that opens at the current mouse location with an event listener on the menu icon. This made for a composable way to get an extremely customizable \"menu\" from the menu bar. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Using Electron with Vite I created a custom window that opens at the current mouse location with an event listener on the menu icon. This made for a composable way to get an extremely customizable \"menu\" from the menu bar.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "55738763",
@@ -3594,27 +1289,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The Tooltip component wraps any element and adds a smoothly animated tooltip that slides down for improved UX. Though the icons are probably enough to get the point across, you can never be too careful when it comes to creating clean understandable UI's."
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The Tooltip component wraps any element and adds a smoothly animated tooltip that slides down for improved UX. Though the icons are probably enough to get the point across, you can never be too careful when it comes to creating clean understandable UI's.\n",
           "image": {
             "__typename": "FileField",
             "id": "55738788",
@@ -3634,36 +1309,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "The main reason I build this app was for these two features right here. There is no quick and easy way to save a song to a playlist on Spotify. But now there is for me! "
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "If the song already exists in the playlist, instead of the confusing menu asking if I want to add it anyway, my app does not duplicate songs in your playlist and informs you that it's added. It's exactly what I wanted. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "The main reason I build this app was for these two features right here. There is no quick and easy way to save a song to a playlist on Spotify. But now there is for me!&#x20;\n\nIf the song already exists in the playlist, instead of the confusing menu asking if I want to add it anyway, my app does not duplicate songs in your playlist and informs you that it's added. It's exactly what I wanted.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "55738818",
@@ -3683,27 +1329,7 @@
           "reverse": false,
           "sectionId": "",
           "bgColor": "",
-          "body": {
-            "value": {
-              "schema": "dast",
-              "document": {
-                "type": "root",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "type": "span",
-                        "value": "Using a bit of CSS and JS (but really TS) magic I created a feature to inspect the album art in greater detail. I am one of those people that REALLY enjoys good album art and love to quickly check out a new artist or album when I hear something I like. "
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "links": [],
-            "__typename": "SwitchbackModelBodyField"
-          },
+          "body": "Using a bit of CSS and JS (but really TS) magic I created a feature to inspect the album art in greater detail. I am one of those people that REALLY enjoys good album art and love to quickly check out a new artist or album when I hear something I like.&#x20;\n",
           "image": {
             "__typename": "FileField",
             "id": "55740621",

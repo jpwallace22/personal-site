@@ -1,0 +1,126 @@
+Have you ever started to build a little utility and found yourself going down a rabbit hole? Well, that's exactly what brought me here. It started with wanting a quick and easy way to free up the main thread for a simple timer function and has ended as a [full-on npm package](https://www.npmjs.com/package/use-react-workers) to assist with using Web Workers in a React environment.&#x20;
+
+## The Web Worker API
+
+All the package **really** is is a way to wrap the [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) provided by Mozilla and present it in quick and easily consumable React Hooks. Web Workers go beyond something like async/await and utilize a completely separate thread. To quote Mozilla:&#x20;
+
+> Web Workers are a simple means for web content to run scripts in background threads. The worker thread can perform tasks without interfering with the user interface.
+
+To put it in layman's terms— *you can run multiple functions and heavy calculations at the same time without slowing down the UI*. Pretty neat, yeah? The only downside to this is probably all of the boilerplate code and odd syntax you need to deal with. Luckily though, this should help!
+
+&#x20;Beyond just wrapping the Web Worker API and reducing boilerplate, there are some added features to make life a bit easier. Things like:&#x20;
+
+- Ability to run compute-heavy functions <strong>without blocking UI </strong>(obviously)
+
+- Returns **Promise** instead of event messages (for certain hooks)
+
+- Bundler agnostic
+
+- Strongly Typed (**Typescript first**)
+
+- Built-in clean-up and garbage collection
+
+- Exposed controller with statuses and other options
+
+## Getting Started
+
+There is more extensive (and up-to-date) documentation on the [official docs site](https://jpwallace22.github.io/use-react-workers/), but I'll give a basic breakdown of how to install and utilize some of the packages' utilities.  Since (as previously stated) this is an npm package you can install it with your preferred package manager of choice.&#x20;
+
+```bash
+# yarn
+yarn add use-react-workers
+
+# pnpm
+pnpm add use-react-workers
+
+# npm
+npm install use-react-workers
+```
+
+There are a couple of different hooks in the package depending on your use case, and I would recommend reading the docs to decide which hooks work best for current implementations, but I will be showing the ``useWorkerFunc`` hook in this demonstration. The ``useWorkerFunc`` hook exposes a function that offloads its computations to an isolated thread facilitated by a web worker and returns a promise for ease of consumption.
+
+You can import the ``useWorkerFunc`` hook into your project using the named import syntax.
+
+```typescript
+import { useWorkerFunc } from 'use-react-hooks';
+```
+
+Next, we are going to need to define a function that we want to offload to our Web Worker. For the sake of demonstration, I am going to use a function that famously takes forever to compute. The one and only [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence). This is just a compute-heavy function that calculates the nth number in the Fibonacci sequence using a recursive approach.
+
+```typescript
+function fibonacci(n: number): number {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+```
+
+We can then pass this function as an argument to our ``useWorkerFunc`` utility. The utility returns a new function that offloads to a worker thread. Easy as that!&#x20;
+
+```typescript
+const [fibWorker] = useWorkerFunc(fibonacci);
+```
+
+If you want, you can also expose the controller options from the 1st index of the return. That way you can see the status of your worker (idle, running, error, etc) as well as terminate if needed. The controller is useful, but not required in most cases.
+
+```typescript
+const [fibWorker, { status, terminate }] = useWorkerFunc(fibonacci)
+```
+
+Now that we have a function that runs on a separate thread, we just need to use it! Let's mock up a quick React Component that has a couple of buttons. One <strong>with </strong>the web worker fibonacci function and one without.
+
+## Complete Demo Code
+
+```tsx
+import React from 'react';
+import { useWorkerFunc } from 'use-react-workers';
+
+function fibonacci(n: number): number {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+const MyCoolComponent = () => {
+  const [fibWorker] = useWorkerFunc(fibonacci);
+
+  const withWorker = async () => {
+    const result = await fibWorker(45); // Will not block the main thread 🥳
+    console.log(result); // 1134903170
+  };
+
+  const without = () => {
+    const result = fibonacci(45); // Main thread is blocked 😪
+    console.log(result); // 1134903170
+  };
+
+  return (
+    <div>
+      <button onClick={withWorker}>
+        With Worker
+      </button>
+      <button onClick={without}>
+        Without Worker
+      </button>
+    </div>
+  );
+};
+```
+
+Alright. Lots of code at once. Let's break down what's going on here real fast. Lines 1-9 are just repeats of what we have already done. They are importing the package, creating our heavy compute function, and building the web worker with the ``use-react-workers`` package.
+
+The rest is a demonstration of how you would use the ``fibWorker`` in comparison to the normal run-of-the-mill ``fibonacci``. The biggest thing to note that when using the ``fibWorker``, your response is going to be a promise! This means you need to use async/await.&#x20;
+
+Below demonstrates the same code, but with some styles, a spinning logo in the middle to show when the UI is being blocked, and the status of the worker/return. When clicking on the without worker button, the UI freezes for several seconds while calculating the 45th digit of the fibonacci sequence.
+
+<Figure src="https://www.datocms-assets.com/85391/1704063556-ezgif-2-d7bad26bfc.gif" alt="demo of the main thread being blocked" width="544" height="550" />
+
+Yeah, that's quite the freeze right there. Let's see how it holds up when clicking the <em>With Worker </em>button.&#x20;
+
+<Figure src="https://www.datocms-assets.com/85391/1704063766-ezgif-2-996e3e0d01.gif" alt="Demo the the main thread staying free" width="544" height="550" />
+
+**Much better**! The user can still do whatever they need while offloading the heavy calculations to a background thread. Perfect! Think of all the possibilities.&#x20;
+
+This implementation uses automatic garbage collection and clean-up. Meaning if the user mashed that button 80 times or clicked off the screen during load there is **nothing to worry about**. Sometimes you will want your utility to continue across multiple screens though. That's why there are multiple hooks and a decent amount of interface options for each of them. [The docs ](https://jpwallace22.github.io/use-react-workers/)have all the information.
+
+## Wrap up
+
+The ``use-react-workers`` package is a JavaScript library designed to leverage the [Web Worker Web API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) seamlessly within React Hooks. It empowers you to execute **resource-intensive functions** without stalling the user interface. Its straightforward syntax, utilization of [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), and multiple hooks ensure a smooth user AND developer experience.
+
+If there are any questions about implementing the utilities, features request, or bugs, please feel free to reach out to me or cut an [issue in Github](https://github.com/jpwallace22/use-react-workers/issues/new/choose). I love to hear from people, I love to collaborate, and I love to help. Happy hacking!

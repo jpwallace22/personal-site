@@ -1,0 +1,251 @@
+For a quick overview of the app you can check out its separate [projects page](https://www.justinwallace.dev/projects/spotify-widget) otherwise, read on for the full write-up!&#x20;
+
+## How and why I chose the tech stack
+
+I started by jumping back and forth between [Tauri](https://tauri.app/) and [Electron](https://www.electronjs.org/). Both frameworks have so much to offer and pros and cons. I ended up sticking with Electron because (though I need to learn more Rust) my current Rust skills just aren't up to par.&#x20;
+
+I paired Electron with Vite because I just wanted to try something new. Vite had a minor learning curve, but boy is it fast!
+
+For the frontend I the obvious choice would be React right? Well, I write React professionally all day and, though it's my bread and butter, I love to learn new things when I have the chance. So I went with [SolidJS](https://www.solidjs.com/), a reactive front-end library that ditches the shadow dom but maintains react-like syntax.&#x20;&#x20;
+
+With my frameworks decided upon, it comes down to styling and languages. Though I would have loved to use the new CSS-in-JS library I am working on with Daniel Slovinsky, Quarks, it's not yet production ready. So I went with the classic [styled-components ](https://github.com/solidjs/solid-styled-components)(but for SolidJS).&#x20;
+
+Lastly, I chose Typescript over Javascript. I don't think I need to explain why. 😉
+
+## Setting up the authentication (and why I botched it)
+
+This was my first time working with Electron. I thought for some reason that I would just make a standard Express API for all my Spotify work and call it a day.&#x20;
+
+Yeah, I was VERY wrong. I guess in a larger production application it would be beneficial to separate the API completely and manage it in a series of microservices. But that was a bit over the top for what I needed to accomplish. (Need to know when not to over-engineer!)&#x20;
+
+I ran into nothing but trouble trying to securely run an Express API in an Electron application and in hindsight, I can see why it was such a bad idea.
+
+What I ended up doing was creating an invisible window for authentication that loads the Auth URL. Then, if it redirects showing the window so the user can authenticate.&#x20;
+
+```typescript
+const authFlow = (authWindow: BrowserWindow | null): void => {
+  const AUTH_URL = 'https://accounts.spotify.com/authorize?'
+  const { M_VITE_SPOTIFY_CLIENT_ID, M_VITE_SPOTIFY_URI_CALLBACK } = import.meta.env
+
+  const params = new URLSearchParams({
+    response_type: 'code',
+    client_id: M_VITE_SPOTIFY_CLIENT_ID,
+    scope:
+      'streaming user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-email user-read-private app-remote-control user-library-read user-library-modify playlist-modify-private playlist-modify-public',
+    redirect_uri: M_VITE_SPOTIFY_URI_CALLBACK
+  }).toString()
+
+  authWindow?.loadURL(AUTH_URL + params)
+
+  // Show window for callback
+  authWindow?.webContents.on('did-navigate', () => {
+    authWindow?.show()
+  })
+
+  authWindow?.on('closed', function () {
+    authWindow = null
+  })
+}
+```
+
+Regardless if the user needs to re-authenticate or not, I catch the response using the Electron event listener "open-url" and grabbing the auth code out of the URL string to set up my credentials.&#x20;
+
+```typescript
+app.on('open-url', (_, redirect) => {
+  const url = new URL(redirect)
+  const authCode = url.searchParams.get('code')
+
+  if (authCode) {
+    spotifyApi.authorizationCodeGrant(authCode).then(
+      ({ body: { access_token, refresh_token } }) => {
+        const credentials = {
+          accessToken: access_token,
+          refreshToken: refresh_token
+        }
+        authWindow?.close()
+        spotifyApi.setCredentials(credentials)
+      },
+      (err) => console.error('Error when retrieving access token', err)
+    )
+  }
+})
+```
+
+This handled the basics of the authentication process. From here I could start actually rendering something to screen and getting to work on the UI.
+
+## Creating a custom Menu — hint, it's not a menu
+
+Electron had wonderful docs on creating menus. However, if you want a custom menu that looks nothing like a menu. You're going to have to create your own.&#x20;
+
+For this use-case, I created a function that creates a custom tray (the little Icon in the top right for macOS and bottom right for Windows). And assigns a window to it's location when clicked (or right-clicked).&#x20;
+
+This is an example of the complete function, but I will walk through it as well.&#x20;
+
+```typescript
+const createCustomTray = ({ icon, clickWindow, rightClickWindow }: ICustomTray): Tray => {
+  const tray = new Tray(icon)
+  tray.setIgnoreDoubleClickEvents(true) // required for macOS
+
+  const getWindowPosition = (window: BrowserWindow): { x: number; y: number } => {
+    const windowBounds = window.getBounds()
+    const trayBounds = tray.getBounds()
+    const x = Math.round(trayBounds.x + trayBounds.width / 2 - windowBounds.width / 2)
+    const y = Math.round(trayBounds.y + trayBounds.height)
+    return { x, y }
+  }
+
+  const showWindow = (window: BrowserWindow): void => {
+    const position = getWindowPosition(window)
+    window.setPosition(position.x, position.y, false)
+    window.show()
+    window.setVisibleOnAllWorkspaces(true)
+    window.focus()
+    window.setVisibleOnAllWorkspaces(false)
+  }
+
+  const toggleWindow = (window: BrowserWindow): void => {
+    if (window.isVisible()) {
+      window.hide()
+    } else {
+      showWindow(window)
+    }
+  }
+
+  const defaultRightClick = (): void => {
+    const menu = [
+      {
+        role: 'quit',
+        accelerator: 'Command+Q'
+      } as const
+    ]
+    tray.popUpContextMenu(Menu.buildFromTemplate(menu))
+  }
+
+  tray.on('click', () => toggleWindow(clickWindow))
+  tray.on('right-click', () =>
+    rightClickWindow ? toggleWindow(rightClickWindow) : defaultRightClick()
+  )
+
+  return tray
+}
+```
+
+It takes an object with a mandatory ``icon`` and ``clickWindow`` and an optional ``rightClickMenu``. The icon is the image that goes in the tray, and the window is whatever you want your "menu" to be.&#x20;
+
+All the function is really doing is opening the window at the location of the tray icon whenever its clicked. You can assign a separate window for right clicks if you want, but otherwise, it will have a default menu with a quit option.&#x20;
+
+The best thing about this function is that it can easily be refactored to not create a tray and make custom popup windows where you want. I needed a tray though 🤘🏼
+
+This is how its called in my main process
+
+```typescript
+const icon = nativeImage.createFromPath(join(__dirname, '../../resources/icon.png'))
+const mainTray = createCustomTray({
+  icon,
+  clickWindow: mainWindow
+})
+```
+
+## Starting to build the UI (omg I'm not using React 😱)
+
+SolidJS may not be React— but it's so close that I forgot I wasn't writing in React more than once. There are some subtle differences you need to look out for.&#x20;
+
+- No destructuring props (Solid has utility functions to help with this)
+
+- State is a function
+
+- Every component runs one. Only once. Ever. (no dependency arrays!)
+
+Whenever I made a basic Solid mistake, the ``plugin:solid/typescript`` ESlint rules where there to set me straight.&#x20;
+
+Here you can see just how close it is to React.
+
+```tsx
+const App: Component = () => {
+  const [track, { isLoading }] = useTrackInfo()
+
+  return (
+    <Base>
+      <Show when={!isLoading()} fallback={<Spinner />}>
+        <AlbumInfo track={track() as ITrack} />
+      </Show>
+    </Base>
+  )
+}
+```
+
+The frontend is pretty basic in function. As shown above, it receives current track information from a listener subscribed to an ``IpcMainEvent`` (more to come on that) and uses basic prop drilling to pass it down. (Not a lot of frontend here, no good reason to build a context).
+
+This is the ``useTrackInfo`` function.&#x20;
+
+```tsx
+const useTrackInfo = (): [Accessor<ITrack | null>, { isLoading: Accessor<boolean> }] => {
+  const [track, setTrack] = createSignal<ITrack | null>(null)
+  const [isLoading, setIsLoading] = createSignal<boolean>(true)
+
+  window.spotifyApi.getCurrentTrack((_, data) => {
+    setTrack(data)
+    setIsLoading(false)
+  })
+
+  return [track, { isLoading }]
+}
+```
+
+The ``window`` is where Electron steps in with the preload and allows you to subscribe API's to pass information back and forth between your renderer process and main process.&#x20;
+
+Before I get into that though, just want to show you one of the utilities that Solid provides for handling props without destructuring.&#x20;
+
+```tsx
+const Button: Component<IButton> = (props) => {
+  const [local, rest] = splitProps(props, ['tooltip', 'id'])
+  
+  const SVG = svgMap[local.id]
+  return (
+    <Tooltip tip={local.tooltip}>
+      <ButtonWrapper {...rest}>
+        <SVG class={classNames({ flipped: props.id === 'next' })} />
+      </ButtonWrapper>
+    </Tooltip>
+  )
+}
+```
+
+Here you can see the ``splitProps`` function takes in ``props`` and an array of what props you want to use locally. You can then use those props locally and pass the rest however you want. It's just a fancy way to destructure.&#x20;&#x20;
+
+## Bridging from the renderer to the main
+
+As mentioned above. For security reasons, the best way to pass information from the main process to the renderer is to create a context bridge in the preload.&#x20;
+
+```typescript
+contextBridge.exposeInMainWorld('spotifyApi', {
+    getCurrentTrack: (callback) => ipcRenderer.on('spotify:send-track', callback),
+    updateSavedTrack: () => ipcRenderer.invoke('spotify:update-saved'),
+    nextTrack: () => ipcRenderer.invoke('spotify:next-track'),
+    prevTrack: () => ipcRenderer.invoke('spotify:prev-track'),
+    togglePlay: () => ipcRenderer.invoke('spotify:toggle-play')
+  })
+```
+
+This is the context bridge from above where you saw me calling ``window.spotifyApi`` to get the current track information.&#x20;
+
+The ``getCurrentTrack`` is an event listener that is invoked whenever the main process calls ``spotify:send-track`` and the rest are invoking their respective calls on the main process. This creates a two-way path for data exchange.&#x20;
+
+On the main process here, you can see where it is handling the call ``spotfy:update-saved``
+
+```typescript
+ipcMain.handle('spotify:update-saved', async () => {
+  const updatedTrack = await updateSavedTrack(spotifyApi)
+  updatedTrack && mainWindow.webContents.send('spotify:send-track', updatedTrack)
+})
+```
+
+It runs the ``updateSavedTrack`` function, and if successful, sends the updated track via the ``spotify:send-track`` call. Then, as we've seen, the frontend event listener picks that up and drills down all the new information. Easy peasy!&#x20;
+
+Of course, there is more to it, but that is the basic functionality of creating a two-way data exchange between your backend and frontend.&#x20;
+
+## Is any project ever really done?&#x20;
+
+This is currently a functioning application and I literally use it every day, however, I can't quite call it done. And who knows if I ever will. I am really looking forward to refactoring the main process to reduce the size of the ``index.ts`` and maybe handle errors a bit better. But other than that, it does exactly what I need it to do and I don't have any complaints!&#x20;
+
+Download link coming soon.

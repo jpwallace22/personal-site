@@ -1,0 +1,111 @@
+### Rediscovering the Spark
+
+As engineers, we often find ourselves stuck in the trenches of deadlines, features, and tech debt. It’s *remarkably easy to slip into a monotonous grind*, each day blurring into the next under the constant pressure of 'just getting things done'. In this cycle, we lose the initial thrill of crafting code and the dopamine kicks of solving puzzles, replaced by the robotic ticking off of tasks.&#x20;
+
+Though this was **NOT** quite my routine yet, I could feel it creeping up on me.&#x20;
+
+Enter NeoVim. "*A text editor? How is a text editor going to help?*" you might say. Well, more than just a text editor, it's a tool that injected a dose of unexpected fun back into my work life. More than just about embracing a tool for its functionality; it was about how Vim transformed mundane coding sessions back into engaging challenges.&#x20;
+
+It's clever keybindings and highly customizable features made each line of code feel like a small victory in a grand adventure. With NeoVim (nvim), **what was once a daily grind became an enjoyable quest**, reminding me that at the heart of technology, beyond the deadlines and demands, there's still plenty of room for play, discovery, and the ever-moving bar of optimization.&#x20;
+
+<Figure src="https://www.datocms-assets.com/85391/1715552731-1_justsmqrgpdaadwwt0rqag.png" alt="A bar graph of &quot;What gives people feelings of power&quot; with money, then status, and the biggest being &quot;using vim&quot;" width="800" height="606" />
+
+### A (very) Brief History of My Journey
+
+I kicked off my tech journey (like many) fueled by a mix of curiosity and eagerness to soak up **every ounce of knowledge**. As I navigated through various roles—from building UI libraries to complex systems and SaaS apps—I saw my toolkit expand, evolve, and change. I even built my [very own VSCode plugins](https://www.justinwallace.dev/blog/building-my-first-vs-code-extension) to help it evolve with me. But as the novelty wore off, the tools I relied on started to feel more like shackles than wings.&#x20;
+
+I found myself adapting my workflow to the tech, and not the other way around. This realization struck me hard; it seemed as though I was losing the joy that initially drew me into this field.&#x20;
+
+Coding was becoming a repetitive task, something to get through rather than something to savor. I was becoming a well-oiled part of the machinery, executing tasks without the creative spark that once ignited my days. I had to do something desperate...
+
+*I decided to join the neckbeards in the land of pretentiousness* and look into Vim. Initially, it was just another item in a long list of tools to try—another attempt to maybe recapture some of the old magic. Little did I know that I was about to change the way I looked at writing code&#x20;
+
+### What is NeoVim?
+
+NeoVim isn’t just a tweak on the classic Vim; it’s a total game-changer that takes the best of Vim and kicks it up a notch for the modern era. Born from a desire for more functionality and a smoother user experience, nvim injects new life into the solid base of Vim—known for its no-nonsense, efficient text manipulation, minimalistic approach, and inability to close.
+
+<Figure src="https://www.datocms-assets.com/85391/1715551688-952c5854-623d-4ec3-a720-724519c84833.jpg" alt="A meme about being stuck in vim. Comparing it to the &quot;help me step-bro&quot; jokes." width="758" height="464" />
+
+In the bustling world of code and command lines, it stands out by integrating cool features like asynchronous job control. This means you can run all of the normal background tasks you've come to love (and face it, rely on)—think linting, auto-completing, and other nifty plugins
+
+The plugin system? It’s amazing. There is a whole ecosystem of **highly customizable** plugins that cater to nearly every coder's fantasy. Plugins that transform your code navigation into a breeze or weave Git integration so seamlessly that it feels like it was always part of the plan ([lazygit](https://github.com/jesseduffield/lazygit)).&#x20;
+
+These plugins don’t just boost nvim's capabilities; they personalize it to fit your coding style perfectly, making your text editor distinctly yours.&#x20;
+
+### The Learning Curve: Steep but Rewarding
+
+Diving into Vims modal editing was like stepping into a whole new world. At first, flipping between editing, command, and visual modes felt like learning to drive a stick shift in a bustling city—clunky, a bit scary, and slowing me down more than speeding me up. But, fueled by stories of its game-changing efficiency, I buckled up for the learning process.
+
+I started with the [Vim keybindings plugin VSCode extension](https://code.visualstudio.com/docs/getstarted/keybindings). This way, I could continue with what I knew best, and start dipping my toes into the bindings. I used a [setting cycler](https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-settings-cycler) and [multi-command plugin](https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command) to make it so I could cycle Vim mode (with relative line numbers) with a hotkey. I could then switch back and forth based on the urgency of a project.&#x20;
+
+```javascript
+  // Settings Cycler and Multi-commands (to set more complex key bindings)
+  "settings.cycle": [
+    {
+      "id": "lineNumbers",
+      "overrideWorkspaceSettings": false,
+      "values": [
+        {
+          "editor.lineNumbers": "on"
+        },
+        {
+          "editor.lineNumbers": "relative"
+        }
+      ]
+    }
+  ],
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.cycleVim",
+      "sequence": ["settings.cycle.lineNumbers", "toggleVim"]
+    }
+  ],
+  "editor.lineNumbers": "on"
+}
+```
+
+I bound this action to ``ctrl + opt + cmd + v`` for quick snaps back and forth. I would do whatever I could in Vim mode, but if poop hit the fan, I would switch back to my normal flow.&#x20;
+
+Day by day, what felt awkward started to feel like second nature. The commands and keystrokes began to flow more smoothly (*and I was looking at my keyboard less*). The more I practiced, the more those initial bumps in the road smoothed out, turning daunting tasks into a sequence of (slightly more) nimble, precise actions.&#x20;
+
+I got to the point that the limitations of the Vim plugin and VSCode environment were slowing down my learning process and it was time to spread my wings!
+
+```shell
+brew install neovim
+```
+
+With a robust ecosystem of plugins, a flexible configuration system, and plenty of videos, I began tailoring my editor to fit my workflow. I integrated tools that anticipated my needs ([nvim-cmp](https://github.com/hrsh7th/nvim-cmp)), automated mundane tasks ([chezmoi](https://www.chezmoi.io/) autocommands on save for dotfiles), and started to get everything running like a well-oiled machine.&#x20;
+
+I still had to jump over to VSCode a few times in the beginning while I was still learning the basics. But sooner or later I closed VSCode one day... **and just never opened it again**.
+
+This journey through the learning curve wasn't just about mastering an editor; it was about rediscovering the joy of coding. Each session left me a bit more adept and a lot more inspired. The Vim ecosystem challenged me, rewarded me, and ultimately, transformed the way I interact with my code. It turned what was once a steep learning curve into a thrilling ride that I now can't really imagine being without.
+
+<Figure src="https://www.datocms-assets.com/85391/1715557618-screenshot-2024-05-12-at-4-46-30-pm.png" alt="neovim setup" width="2040" height="1527" />
+
+### Tailoring to My Needs
+
+The real charm of nvim is in how it bends to your will and needs. Imagine an editor that not only follows your commands but also. over time, adapts to your style—this is what makes NeoVim really stand out to me.&#x20;
+
+I jumped headfirst into my customization, learning and using Lua scripting and nvims APIs to dial in a setup that could **get me into my flow state quicker, and keep me in for longer.** Whether it was weaving in sleek task management solutions or tweaking the visual vibe with themes and key bindings, this customization journey turned my coding environment from functional to *FUN*ctional.
+
+#### Some of the basics
+
+- **LazyNvim**: My adventure began with LazyVim, a solid foundation stacked with all the essential plugins and smart defaults you could wish for. It’s like having a powerful base camp, making it super accessible yet potent enough to handle anything I throw at it.&#x20;
+
+  - Starting this way can add to your learning curve though. You need to learn how to overwrite "built-in" plugins and navigate the LazyVim ecosystem as well.&#x20;
+
+- **LSP Integrations**: I rolled in several language servers thanks to nvims native LSP support, including your basics like auto-completion, real-time linting, and copilot (I'm lucky enough that my company gives us copilot).&#x20;
+
+- **Visual Enhancements**: Then there’s the eye candy—plugins like [lualine](https://github.com/nvim-lualine/lualine.nvim) for a snazzy customizable status line and [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) for a sleek, file explorer, and [bufferline](https://github.com/akinsho/bufferline.nvim) for tab-like experiences with buffers.&#x20;
+
+It goes beyond the basic stuff you can get from any IDE though. You can edit EVERYTHING to your exact needs. You can even easily fork plugins and adjust them to your needs if you want.&#x20;
+
+### The Impact: A Renewed Love for Tech
+
+Vim did more than just revamp my workflow—it rekindled my love for writing code.  Each time I get to zone out and dig into a repo I am not only building something, but I am also constantly further refining my workflow.&#x20;
+
+The more I dive into nvim and the lua community, the more it feels like I am rediscovering my tech roots—those days when every challenge was an adventure and every problem solved was a victory. I have that rush again, that sense of accomplishment and the sheer joy of crafting something great from nothing, for no reason other than I want to. It’s been like reigniting an old friendship where everything clicks just right, reminding me why I fell in love with tech in the first place.
+
+As always, feel free to reach out to me by any means for more info, or if you just wanna talk tech.&#x20;
+
+Cheers

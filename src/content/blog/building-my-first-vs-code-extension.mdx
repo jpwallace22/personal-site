@@ -1,0 +1,106 @@
+Before I begin: you can find the [React Lazify repo here](https://github.com/jpwallace22/react-lazify) And if you want to check it out on the VS code marketplace, [you can do that here.](https://marketplace.visualstudio.com/items?itemName=jpwallace22.react-lazify)&#x20;
+
+As a prelude; we find ourselves in a lot of documentation, some of it is good, and some of it is (let's be nice here and say) not so good. Microsoft, and VSCode specifically, has some pretty darn good docs.&#x20;
+
+## Digging into those docs!
+
+I'm not going to give a complete step-by-step process on how you can build your own VS Code extension. As I mentioned above, Microsoft has [its own docs ](https://code.visualstudio.com/api/get-started/your-first-extension)on that and they are very detailed. Instead, I want to share my experience and ways and give some insight into ways you might be able to optimize.
+
+Step one to creating your own extension is adding ``yo`` and ``generator-code`` to your global ``node-modules`` . I'm going to assume that if you're reading this you most likely have ``node and`` ``npm`` installed. If not, you should [check out the docs here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and knock that out first!
+
+The boilerplate code is as easy as running ``yo code``.&#x20;
+
+From here you have a fully functioning ``Hello World`` extension ready to go. I took a while to simply dig around the source code and see what was going on. (As I would always recommend with a new code base.)
+
+## On to my extension- React Lazify
+
+<Figure src="https://www.datocms-assets.com/85391/1673670376-demo.gif" alt="A gif showing the basic function of React Lazify" width="800" height="450" />
+
+[React Lazify](https://github.com/jpwallace22/react-lazify) is a lazy way to write lazy imports (see what I did there?). I am in complete understanding that the use case of this extension might not warrant the amount of work that goes into it. But I also don't care. I like writing code, and I wanted to learn something new.&#x20;
+
+With the release of React 18, Next13, and Gatsby 5, I've found myself making a LOT more lazy imports. When upgrading some codebases I would have to go through and re-write a ton of imports. Enter the lazy way.
+
+React Lazify just turns any selected import into a lazy import (and imports ``lazy`` from 'react' if not already imported). Easy peasy.&#x20;&#x20;&#x20;
+
+## Using the VS Code API
+
+Like any other engineer, I went from skimming the docs a bit to just writing code and figuring it out. Why are we like this? I don't know, but it's fun.&#x20;
+
+I found that I needed to keep the docs up and on-screen pretty much the entire time I was writing this little program. The VS Code API is a beast. There is a lot to it and it can be pretty daunting at first.&#x20;
+
+Luckily it starts making sense pretty fast!&#x20;
+
+However, I did run into one major error that took a bit too long for me to figure out. You can see here in this code snippet that I am using the ``vscode.editor`` to replace a line of code with a new line including an added module.<br />
+
+```typescript
+const editor = vscode.window.activeTextEditor;
+const afterDefault = lineText.indexOf(" ", 7);
+  newLineText =
+    lineText.slice(0, afterDefault) +
+    `, { ${module} }` +
+    lineText.slice(afterDefault, lineText.length);
+
+  await editor.edit(({replace}) => replace(line.range, newLineText));
+```
+
+This code won't throw any errors in your IDE but will fail every time you run it, and it took me way too long to realize why.&#x20;
+
+With the callback in the ``.edit()`` method you can NOT destructure the functions out of it. You need to state a property and use classic dot notation. such as:<br />
+
+```typescript
+await editor.edit(build => build.replace(line.range, newLineText));
+```
+
+I am very used to functional-style programming so when I saw this line in the docs I just figured I could skip a step and destructure. I didn't even think about the fact that it actually returns an instance of a class. 🤦🏼‍♂️&#x20;
+
+## Adding default keybinding
+
+This is another facepalm moment for me a guess. I got pretty lost in the docs at one point and couldn't quite figure out how to set default keybinding.&#x20;
+
+It's actually done through the ``package.json`` and NOT the ``keybinding.json`` as I thought.&#x20;
+
+In the ``package.json`` there is a ``"contributes"`` section where you add your commands for your extension in. This is also where you can assign the keybindings<strong>. </strong>
+
+> <div><strong>Note: </strong>Check and double-check to make sure that you aren't using a keybinding that is already defaulted. It will be a pain</div>
+
+As for the actual rules for the binding. I would recommend using [this doc](https://code.visualstudio.com/docs/getstarted/keybindings). It breaks down what you can and can't use and what not. (Though it won't tell you how to add it to your package.json) For reference, this is what it looks like:
+
+```json
+---
+"contributes": {
+    "commands": [
+      {
+        "command": "react-lazify.lazify",
+        "title": "Lazify"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+alt+cmd+l",
+        "command": "react-lazify.lazify",
+        "when": "editorTextFocus && editorLangId == typescriptreact || editorLangId == javascriptreact"
+      }
+    ]
+  }
+--- 
+```
+
+This binds ``ctrl+alt+cmd+l`` to React Lazify's command "Lazify" whenever you have text focused in a ``.tsx`` or ``.jsx`` file. Easy enough.&#x20;
+
+## The hardest part: Publishing
+
+Don't be scared. It's not that hard. Compared to NPM though, it's pretty intensive. The main thing is that you need to create an account with Microsoft and add a couple of packages to your global modules.&#x20;
+
+As I've mentioned before, the docs are pretty good and they [cover everything here.](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+
+I would like to note though, that they have it kind of backwards here. I would recommend scrolling down a little bit to the section about "Getting a Personal Token" and bouncing around from there as fit.&#x20;
+
+I ran into a couple of internal errors the first time I was trying to publish. I didn't realize you need to package it the first time. So after you have everything squared away on the backend side, you need to run
+
+```shell-session
+cd path/to/your/extention
+vsce package
+vsce publish
+```
+
+And just like that you have created and published an extension. Now you get to pass it along to your friends and let them show you all of your bugs! And no, thats not sarcasm. I love it. Haha.&#x20;
