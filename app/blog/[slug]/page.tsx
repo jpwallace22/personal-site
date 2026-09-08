@@ -15,11 +15,7 @@ export const generateMetadata = async ({ params: { slug } }: Params): Promise<Me
 }
 
 export const generateStaticParams = async () => {
-  return getBlogSlugs().map(({ slug }) => ({
-    params: {
-      slug,
-    },
-  }))
+  return getBlogSlugs().map(({ slug }) => ({ slug }))
 }
 
 const BlogPostPage = ({ params: { slug } }: Params) => {

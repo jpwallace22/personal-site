@@ -8,11 +8,7 @@ type Params = {
 }
 
 export const generateStaticParams = async () => {
-  return getInfoSlugs().map(({ slug }) => ({
-    params: {
-      slug,
-    },
-  }))
+  return getInfoSlugs().map(({ slug }) => ({ slug }))
 }
 
 const InfoPage = ({ params: { slug } }: Params) => {
