@@ -1,14 +1,7 @@
 import { render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import { fakeImage } from "@utils/mockDataForTest"
-import type { Tech } from "src/content/schema"
+import { fakeTechs } from "@utils/mockDataForTest"
 import TechStack from ".."
-
-export const fakeTechs: Tech[] = [
-  { title: "Tech 1", thumbnail: fakeImage },
-  { title: "Tech 2", thumbnail: fakeImage },
-  { title: "Tech 3", thumbnail: fakeImage },
-]
 
 describe("TechStack Component", () => {
   expect.extend(toHaveNoViolations)

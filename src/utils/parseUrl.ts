@@ -38,7 +38,7 @@ const parseUrl: ParseUrl = (href) => {
       rel: isInternalLink ? undefined : "noreferrer noopener",
       target: isInternalLink ? undefined : "_blank",
     } as const
-  } catch (e) {
+  } catch {
     console.warn(`${href} is an invalid URL`)
     return baseState
   }

@@ -1,0 +1,1 @@
+yarn types:check && yarn test && yarn build

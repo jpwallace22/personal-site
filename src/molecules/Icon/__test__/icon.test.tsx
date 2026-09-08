@@ -1,5 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
+// This test renders in a loop, and RTL's automatic cleanup only runs between tests.
+// eslint-disable-next-line testing-library/no-manual-cleanup
 import { cleanup, render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
 import Icon from "@molecules/Icon"
