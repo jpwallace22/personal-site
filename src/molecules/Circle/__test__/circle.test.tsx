@@ -18,7 +18,9 @@ describe("Circle Component", () => {
 
   test("renders with dots", () => {
     setup({ dots: true })
-    const imageElement = renderResult.getByRole("img", { hidden: true })
+    // The dots variant renders a decorative <img alt="">, which maps to the
+    // presentation role. The other variants are a <div role="img">.
+    const imageElement = renderResult.getByRole("presentation", { hidden: true })
     expect(imageElement).toBeInTheDocument()
   })
 

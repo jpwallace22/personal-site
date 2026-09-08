@@ -5,12 +5,13 @@ import BlogPost from "src/template/BlogDetails"
 import renderMetadata from "src/template/renderMetadata"
 
 type Params = {
-  params: {
+  params: Promise<{
     slug?: string
-  }
+  }>
 }
 
-export const generateMetadata = async ({ params: { slug } }: Params): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: Params): Promise<Metadata> => {
+  const { slug } = await params
   return renderMetadata(slug, getBlogPost(slug)?.seo)
 }
 
@@ -18,7 +19,8 @@ export const generateStaticParams = async () => {
   return getBlogSlugs().map((slug) => ({ slug }))
 }
 
-const BlogPostPage = ({ params: { slug } }: Params) => {
+const BlogPostPage = async ({ params }: Params) => {
+  const { slug } = await params
   return (
     <>
       <BlogPost slug={slug} />

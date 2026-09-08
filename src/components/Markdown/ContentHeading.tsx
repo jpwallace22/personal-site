@@ -18,12 +18,10 @@ const ContentHeading = ({ level, id, children }: ContentHeadingProps) => {
   const ref = useRef<HTMLHeadingElement>(null)
   const { setActiveHeading } = useBlogContext()
 
-  /* eslint-disable react-compiler/react-compiler -- the hook only reads ref.current inside its effect */
   useIntersection(ref, {
     onIntersection: () => setActiveHeading(id || ""),
     init: { rootMargin: "0px 0px -80%" },
   })
-  /* eslint-enable react-compiler/react-compiler */
 
   const Component = `h${level}` as const
 

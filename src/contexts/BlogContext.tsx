@@ -10,7 +10,6 @@ interface BlogContextProps {
 
 const [Provider, useBlogContext] = createQuickContext<BlogContextProps>({
   activeHeading: "",
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setActiveHeading: () => {},
 })
 

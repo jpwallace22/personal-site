@@ -14,13 +14,9 @@ interface CodeBlockProps {
 const CodeBlock: FC<CodeBlockProps> = ({ code: source, language }) => {
   const [copied, copy] = useCopyToClipboard()
   useEffect(() => {
-    import("prismjs").then((Prism) => {
-      require("./styles/prism-theme.css")
-      require("prismjs/components/prism-typescript.min.js")
-      require("prismjs/components/prism-shell-session.min.js")
-      require("prismjs/components/prism-jsx.min.js")
-      require("prismjs/components/prism-tsx.min.js")
-      require("prismjs/components/prism-json.min.js")
+    // Prism, its grammars and its theme live behind this import so they stay in a
+    // lazily-loaded chunk rather than shipping with every page.
+    import("./prism").then(({ default: Prism }) => {
       Prism.highlightAll()
     })
   }, [])

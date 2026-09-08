@@ -1,6 +1,0 @@
-.next
-node_modules
-
-# content documents, not source
-src/content/blog
-src/content/info

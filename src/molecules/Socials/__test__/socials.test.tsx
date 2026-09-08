@@ -1,3 +1,5 @@
+// This test renders in a loop, and RTL's automatic cleanup only runs between tests.
+// eslint-disable-next-line testing-library/no-manual-cleanup
 import { cleanup, render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
 import Socials, { sizeMap } from ".."
@@ -34,7 +36,6 @@ describe("Socials component", () => {
       try {
         const { getAllByRole } = render(<Socials size={size} />)
         const socialIcons = getAllByRole("img")
-        // eslint-disable-next-line no-loop-func
         socialIcons.forEach((icon) => {
           expect(icon).toHaveAttribute("width", sizeMap[size].toString())
         })

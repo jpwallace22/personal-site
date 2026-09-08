@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react"
 import { axe, toHaveNoViolations } from "jest-axe"
-import { fakeTechs } from "@molecules/TechStack/__test__/techStack.test"
-import { fakeImage } from "@utils/mockDataForTest"
+import { fakeImage, fakeTechs } from "@utils/mockDataForTest"
 import ProjectCard from "../ProjectCard"
 
 describe("ProjectCard", () => {
