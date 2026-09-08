@@ -5,7 +5,7 @@ import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import Circle from "@molecules/Circle"
-import Heading from "@molecules/Heading"
+import Heading, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
 import { FeatureCard } from "@components/FeatureHighlight/FeatureCard"
 import { splitAndColorArray } from "@components/FeatureHighlight/utils/splitAndColor"
@@ -13,6 +13,7 @@ import type { FeatureCard as FeatureCardData } from "src/content/about"
 
 interface FeatureHighlightGridProps extends VariantProps<typeof wrapper> {
   heading: string
+  headingAs?: HeadingMarkup
   eyebrow?: string
   /** Rich text arrives pre-rendered so the MDX runtime stays out of the client bundle. */
   body?: ReactNode
@@ -46,14 +47,20 @@ const imageStyles = cva(["relative mt-16", "h-[450px]", "w-full", "hidden"], {
   },
 })
 
-const FeatureHighlightGrid: FC<FeatureHighlightGridProps> = ({ eyebrow, heading, body, cards }) => {
+const FeatureHighlightGrid: FC<FeatureHighlightGridProps> = ({
+  eyebrow,
+  heading,
+  headingAs,
+  body,
+  cards,
+}) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const twoArrays = splitAndColorArray(cards)
 
   return (
     <Section className={twMerge(wrapper())}>
       <div className="grid h-fit gap-3 lg:col-span-4">
-        <Heading eyebrow={eyebrow} headline={heading} body={body} />
+        <Heading as={headingAs} eyebrow={eyebrow} headline={heading} body={body} />
         {cards.map(
           ({ image }, i) =>
             image && (

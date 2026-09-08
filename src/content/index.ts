@@ -39,8 +39,9 @@ const toPlainText = (body: string) =>
 
 const WORDS_PER_MINUTE = 200
 
-const readingTime = (body: string) =>
-  Math.ceil(toPlainText(body).split(" ").length / WORDS_PER_MINUTE)
+const wordCount = (body: string) => toPlainText(body).split(" ").length
+
+const readingTime = (words: number) => Math.ceil(words / WORDS_PER_MINUTE)
 
 /**
  * Heading ids match what the renderer generates, which derives them from the
@@ -86,6 +87,7 @@ interface Frontmatter {
   excerpt: string
   featuredImage: BlogPost["featuredImage"]
   seo: BlogPost["seo"]
+  noindex?: boolean
 }
 
 const parse = (slug: string): { data: Frontmatter; body: string } => {
@@ -104,11 +106,14 @@ const blogSlugs = () =>
 
 const post = (slug: string): BlogPost => {
   const { data, body } = parse(slug)
+  const words = wordCount(body)
+
   return {
     slug,
     ...data,
     body,
-    minutesToRead: readingTime(body),
+    words,
+    minutesToRead: readingTime(words),
     headings: extractHeadings(body),
   }
 }
@@ -161,6 +166,9 @@ const toCard = ({
 })
 
 export const getFeaturedProjects = (): ProjectCard[] => featuredProjects.map(toCard)
+
+/** Everything with a page, for the projects index and the sitemap. */
+export const getAllProjectCards = (): ProjectCard[] => allProjects.map(toCard)
 
 /** The next project in the featured order, or nothing at the end of the list. */
 export const getNextProject = (slug: string): ProjectCard | undefined => {

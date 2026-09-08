@@ -17,21 +17,6 @@ export type BlogHeroProps = Omit<Switchback, "body"> &
     publishDate?: Maybe<string>
   }
 
-const breadcrumbs = [
-  {
-    label: "Home",
-    link: "/",
-  },
-  {
-    label: "All Blogs",
-    link: "/blog",
-  },
-  {
-    label: "Blog",
-    link: "",
-  },
-]
-
 const wrapper = cva(["flex", "w-full", "flex-col lg:flex-row", "items-center", "gap-12 xl:gap-32"])
 const content = cva(["w-full lg:w-7/12 xl:w-1/2", "flex flex-col gap-8"])
 const asset = cva(["relative", "lg:w-5/12 xl:w-1/2"])
@@ -45,26 +30,38 @@ const BlogHero: FC<BlogHeroProps> = ({
   sectionId,
   publishDate,
 }) => {
-  const formattedDate =
-    publishDate &&
-    new Date(publishDate).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
+  // Publish dates are plain calendar days, so they are formatted in UTC. The
+  // machine's own zone would render a date west of UTC as the day before.
+  const date = publishDate ? new Date(publishDate) : undefined
+  const formattedDate = date?.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  })
 
   return (
     <Section
       id={sectionId || undefined}
       wrapperClass="bg-gradient-to-t from-gray-50 dark:from-purple-900 to-transparent"
     >
-      <BreadCrumbs breadcrumbs={breadcrumbs} />
+      <BreadCrumbs
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "All Blogs", link: "/blog" },
+          { label: typeof heading === "string" ? heading : "Blog", link: "" },
+        ]}
+      />
       <div className={twMerge(wrapper())}>
         <div className={content()}>
           <HeadingComp headline={heading} as={headingAs as HeadingMarkup} />
           <h2 className="text-4xl !font-normal text-gray-800 dark:text-gray-500">{subtitle}</h2>
           <div className="text-purple-900 dark:text-common-white">
-            {formattedDate && <span>{formattedDate} • </span>}
+            {formattedDate && (
+              <span>
+                <time dateTime={date!.toISOString().slice(0, 10)}>{formattedDate}</time> •{" "}
+              </span>
+            )}
             {<span>{minutesToRead} minute read</span>}
           </div>
         </div>

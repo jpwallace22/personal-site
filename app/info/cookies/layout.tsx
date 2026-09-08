@@ -1,5 +1,15 @@
 import { FC, PropsWithChildren } from "react"
+import { Metadata } from "next"
 import Section from "@molecules/Section"
+import renderMetadata from "src/template/renderMetadata"
+
+export const metadata: Metadata = renderMetadata({
+  path: "/info/cookies",
+  seo: {
+    title: "Cookie Policy",
+    description: "How justinwallace.dev uses cookies, and what you can do about it.",
+  },
+})
 
 /**
  * Chrome for the cookie policy. The page itself is plain MDX, so the layout
