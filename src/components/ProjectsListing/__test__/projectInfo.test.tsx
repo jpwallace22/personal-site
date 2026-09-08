@@ -18,6 +18,7 @@ describe("ProjectInfo", () => {
         reverse={reverse}
         subtitle={subtitle}
         techStack={fakeTechs}
+        excerpt=""
         className={className}
       />
     )

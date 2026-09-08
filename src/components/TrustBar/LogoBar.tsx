@@ -3,9 +3,10 @@
 import { FC } from "react"
 import Marquee from "react-fast-marquee"
 import useDarkMode from "@utils/hooks/useDarkMode"
+import type { Company } from "src/content/schema"
 
 interface LogoBarProps {
-  companies?: GetTrustedCompaniesQuery["allCompanies"]
+  companies?: Company[]
 }
 
 const LogoBar: FC<LogoBarProps> = ({ companies }) => {

@@ -1,9 +1,0 @@
-fragment Button on ButtonRecord {
-  id
-  variant
-  label
-  url
-  disabled
-  startIcon
-  endIcon
-}

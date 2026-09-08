@@ -1,0 +1,153 @@
+import type { Company, Image, Link } from "src/content/schema"
+
+/** The logo used in the nav and footer. */
+export const favicon: Image = {
+  url: "https://www.datocms-assets.com/85391/1668972867-thissite-1.svg",
+  alt: "Personal logo of Justin Wallace",
+  width: 55,
+  height: 46,
+}
+
+export const navLinks: Link[] = [
+  {
+    label: "about",
+    url: "https://www.justinwallace.dev/about",
+  },
+  {
+    label: "projects",
+    url: "https://www.justinwallace.dev/#homepage-projects",
+  },
+  {
+    label: "blog",
+    url: "https://www.justinwallace.dev/blog",
+  },
+  {
+    label: "contact",
+    url: "https://www.justinwallace.dev/#page-footer",
+  },
+]
+
+/** Shown in the home page trust bar. */
+export const companies: Company[] = [
+  {
+    name: "NVIDIA",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1727393069-nvidia-logo-horz-edited.png",
+      alt: "",
+      width: 1094,
+      height: 206,
+    },
+    website: "https://www.nvidia.com",
+    trusted: true,
+  },
+  {
+    name: "Trustmachines",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709401067-trustmachinesdark_wuwbsi.avif",
+      alt: "",
+      width: 1920,
+      height: 339,
+    },
+    website: "https://trustmachines.co/",
+    trusted: true,
+  },
+  {
+    name: "Justworks",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400829-justworks-onlight-logo.svg",
+      alt: "",
+      width: 350,
+      height: 65,
+    },
+    website: "https://www.justworks.com/",
+    trusted: true,
+  },
+  {
+    name: "Mutiny",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400689-mutiny-onlight-logo.svg",
+      alt: "",
+      width: 160,
+      height: 52,
+    },
+    website: "https://www.mutinyhq.com/",
+    trusted: true,
+  },
+  {
+    name: "Freshworks",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400735-freshworks-logo-ondark.svg",
+      alt: "",
+      width: 321,
+      height: 65,
+    },
+    website: "https://www.freshworks.com/",
+    trusted: true,
+  },
+  {
+    name: "Solana",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400792-solana_logo_svg.webp",
+      alt: "",
+      width: 1366,
+      height: 221,
+    },
+    website: "https://solana.com/",
+    trusted: true,
+  },
+  {
+    name: "Snowflake",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400650-snowflake-onlight-logo.svg",
+      alt: "",
+      width: 142,
+      height: 34,
+    },
+    website: "https://www.snowflake.com/en/",
+    trusted: true,
+  },
+  {
+    name: "PHS",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400565-presbyterian-logo-red.svg",
+      alt: "",
+      width: 225,
+      height: 25,
+    },
+    website: "https://www.phs.org/",
+    trusted: true,
+  },
+  {
+    name: "Calendly",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400525-calandly.svg",
+      alt: "",
+      width: 1580,
+      height: 381,
+    },
+    website: "https://www.calendly.com",
+    trusted: true,
+  },
+  {
+    name: "Webstacks",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709400500-stacks.svg",
+      alt: "",
+      width: 149,
+      height: 20,
+    },
+    website: "https://www.webstacks.com",
+    trusted: true,
+  },
+  {
+    name: "OctoAI",
+    logo: {
+      url: "https://www.datocms-assets.com/85391/1709399321-1704222289-octoai_logo_light.svg",
+      alt: "",
+      width: 1295,
+      height: 336,
+    },
+    website: "https://www.octo.ai",
+    trusted: true,
+  },
+]

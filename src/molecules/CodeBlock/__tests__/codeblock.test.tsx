@@ -12,13 +12,13 @@ describe("CodeBlock component", () => {
   }
 
   test("renders the code block", () => {
-    const { getByText } = render(<CodeBlock node={node} />)
+    const { getByText } = render(<CodeBlock code={node.code} language={node.language} />)
     const codeElement = getByText(node.code)
     expect(codeElement).toBeInTheDocument()
   })
 
   test("renders the correct language label", () => {
-    const { getByText } = render(<CodeBlock node={node} />)
+    const { getByText } = render(<CodeBlock code={node.code} language={node.language} />)
     const languageLabel = getByText(node.language)
     expect(languageLabel).toBeInTheDocument()
   })
@@ -29,14 +29,14 @@ describe("CodeBlock component", () => {
     }
     // @ts-expect-error not in browser environment
     global.navigator.clipboard = clipboardData
-    const { getByRole } = render(<CodeBlock node={node} />)
+    const { getByRole } = render(<CodeBlock code={node.code} language={node.language} />)
     const copyButton = getByRole("button", { name: "Copy" })
     copyButton.click()
     expect(clipboardData.writeText).toHaveBeenCalledWith(node.code)
   })
 
   it("renders without accessibility violations", async () => {
-    const { container } = render(<CodeBlock node={node} />)
+    const { container } = render(<CodeBlock code={node.code} language={node.language} />)
     expect(await axe(container)).toHaveNoViolations()
   })
 })

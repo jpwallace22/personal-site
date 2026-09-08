@@ -14,4 +14,16 @@ const config = {
   moduleDirectories: ["node_modules", "src"],
 }
 
-export default createJestConfig(config)
+// next/jest replaces moduleNameMapper wholesale, so the MDX stub is merged in
+// after it has built the config.
+export default async () => {
+  const resolved = await createJestConfig(config)()
+
+  return {
+    ...resolved,
+    moduleNameMapper: {
+      "^next-mdx-remote/rsc$": "<rootDir>/src/components/Markdown/__mocks__/nextMdxRemote.tsx",
+      ...resolved.moduleNameMapper,
+    },
+  }
+}

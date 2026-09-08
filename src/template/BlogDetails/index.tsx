@@ -1,15 +1,14 @@
 import { FC } from "react"
 import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
-import { TemplateBlogPostQuery } from "@codegen/sdk"
 import Circle from "@molecules/Circle"
 import Section from "@molecules/Section"
 import Socials from "@molecules/Socials"
 import BlogHero from "@components/BlogHero"
-import StructuredText from "@components/StructuredText"
-import makeServerQuery from "@utils/makeServerQuery"
+import Markdown from "@components/Markdown"
+import { getBlogPost } from "src/content"
 import { BlogContextProvider } from "src/contexts/BlogContext"
-import TableOfContents, { TocData } from "src/template/BlogDetails/TableOfContents"
+import TableOfContents from "src/template/BlogDetails/TableOfContents"
 
 const ScrollPercentageBar = dynamic(() => import("@components/ScrollPercentageBar"))
 
@@ -18,14 +17,13 @@ interface BlogPostProps {
 }
 
 const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
-  const { templateBlogPost } = await makeServerQuery<TemplateBlogPostQuery>(TemplateBlogPostQuery, {
-    slug,
-  })
+  const templateBlogPost = getBlogPost(slug)
   if (!templateBlogPost || !slug) {
     return notFound()
   }
 
-  const { title, featuredImage, subtitle, publishDate, body } = templateBlogPost
+  const { title, featuredImage, subtitle, publishDate, body, minutesToRead, headings } =
+    templateBlogPost
 
   const sharingSocials = [
     {
@@ -51,7 +49,7 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
         image={featuredImage}
         subtitle={subtitle}
         publishDate={publishDate}
-        body={body}
+        minutesToRead={minutesToRead}
         animated={false}
       />
       <Section>
@@ -64,14 +62,14 @@ const BlogPost: FC<BlogPostProps> = async ({ slug }) => {
               <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
                 In this Article
               </p>
-              <TableOfContents data={body as TocData} />
+              <TableOfContents headings={headings} />
               <p className="font-display text-xl font-bold text-primary-500 dark:text-common-white">
                 Share
               </p>
               <Socials size="sm" className="p-4" socials={sharingSocials} />
             </div>
-            <StructuredText
-              data={body}
+            <Markdown
+              source={body}
               className="col-span-10 col-start-2 gap-8 text-xl dark:text-gray-300 lg:col-span-9 lg:col-start-4 xl:col-span-7"
             />
           </div>

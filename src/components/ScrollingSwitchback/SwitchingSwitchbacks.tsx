@@ -2,10 +2,11 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import { twMerge } from "tailwind-merge"
 import Circle from "@molecules/Circle"
 import Switchback, { SwitchbackProps } from "@components/Switchback"
+import type { Switchback as SwitchbackData } from "src/content/schema"
 
-export interface SwitchingSwitchbacksProps
-  extends Clean<ScrollingSwitchbackFragment>,
-    ComponentPropsWithoutRef<"div"> {}
+export interface SwitchingSwitchbacksProps extends ComponentPropsWithoutRef<"div"> {
+  switchbacks: SwitchbackData[]
+}
 
 const SwitchingSwitchbacks: FC<SwitchingSwitchbacksProps> = ({
   switchbacks,
@@ -18,7 +19,7 @@ const SwitchingSwitchbacks: FC<SwitchingSwitchbacksProps> = ({
       <Circle className="absolute -left-1/3 bottom-0" size="md" contrast="high" />
       {switchbacks.map((switchback, i) => (
         <Switchback
-          key={switchback.id}
+          key={switchback.heading}
           {...(switchback as SwitchbackProps)}
           reverse={i % 2 === 0}
         />

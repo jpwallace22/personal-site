@@ -1,7 +1,0 @@
-fragment TechStack on TechStackRecord {
-  id
-  title
-  thumbnail {
-    ...Image
-  }
-}

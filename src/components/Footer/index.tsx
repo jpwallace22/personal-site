@@ -1,12 +1,11 @@
 import { cva } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
-import { SiteMetaDataQuery } from "@codegen/sdk"
 import Link from "@molecules/Link"
 import Section from "@molecules/Section"
 import Socials from "@molecules/Socials"
-import makeServerQuery from "@utils/makeServerQuery"
 import logoPath from "src/assets/images/logo-gradient.webp"
+import { favicon } from "src/content/site"
 
 const wrapper = cva(["grid", "place-items-center", "h-[65dvh]", "relative"], {
   variants: {
@@ -32,10 +31,6 @@ const link = cva([
   "md:text-8xl",
 ])
 const Footer = async ({ full }: { full?: boolean }) => {
-  const {
-    _site: { favicon },
-  } = await makeServerQuery<SiteMetaDataQuery>(SiteMetaDataQuery)
-
   return (
     <Section
       id="page-footer"

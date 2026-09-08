@@ -1,0 +1,153 @@
+---
+title: "Upgrading from Next.js 12 to Next.js 13 and some quirks"
+subtitle: "And some of the analytics"
+publishDate: "2022-12-10"
+excerpt: "I made the recent jump from Next12 to Next13 and these are some of the things that I learned along the way with the new Next Link, Image, and @next/font google font loader.&#x20;\n"
+featuredImage:
+  url: "https://www.datocms-assets.com/85391/1670717828-twitter-card.jpg"
+  alt: ""
+  width: 1686
+  height: 882
+seo:
+  title: "Moving from NextJS 12 to NextJS 13"
+  description: "Some of the highlights and quirks from migrating my personal site from NextJS 12 to NextJS 13. Overall, not a bad experience and I'm happy with the update. "
+  image:
+    url: "https://www.datocms-assets.com/85391/1670717828-twitter-card.jpg"
+    alt: ""
+    width: 1686
+    height: 882
+---
+
+## The new Nextjs 13 Link broke everything
+
+The first thing I did was run ``yarn upgrade next@latest && yarn dev`` with my fingers crossed hoping it would at least get the dev working and I can start testing from there.&#x20;
+
+Oh, boy was I wrong. Instead, I was greeted by a dozen UI mismatch hydration errors and an endless stream of console errors. After a little bit of digging, I realized it was the Link. **Fantastic!**
+
+It turned out to be a relatively simple fix for me based on how I utilize the Next Link in this repo. For other repos, this could potentially be a pain in the butt (cmd + shift + H). The way I use links on my site is by parsing the URL and then deciding if it's an internal link or not. If internal, use the Next Link, if not, I just use a styled tag.  Like this:
+
+```tsx
+return isInternal ? (
+    <NextLink href={url || ''} passHref>
+      <StyledLink {...props} aria-label={href}>
+        {children}
+      </StyledLink>
+    </NextLink>
+  ) : (
+    <StyledLink href={url} {...rest} {...props}>
+      {children}
+    </StyledLink>
+  );
+```
+
+Since every link in this repo uses this single instance of a Next Link, I could simply add the new ``legacyBehavior`` tag to my Next Link. Easy peasy.&#x20;
+
+**Note**: This is also required if using libraries like styled-components as per [Next Docs](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag).&#x20;&#x20;
+
+```tsx
+<NextLink href={url || ''} passHref legacyBehavior>
+  <StyledLink {...props} aria-label={href}>
+    {children}
+  </StyledLink>
+</NextLink>
+```
+
+Now with the hydration error solved, I was able to navigate my dev build and see all errors being thrown from my images. Yay!&#x20;
+
+## Moving the Nextjs Image from 12 to 13
+
+NextJS 13 made a lot of (in my opinion, much-needed) improvements to the Image component.  The biggest changes for the new Image are that it:&#x20;
+
+- Has less client-side JavaScript
+
+- Is MUCH easier to style (thanks to removing the span that wrapped it)
+
+- Uses the native lazy loading
+
+- Now requires an alt tag (as it should have)
+
+What does this all mean for migrating over your current Image though? Well, quite a lot actually, they changed the entire API.&#x20;
+
+Since I made heavy use of the ``layout="fill"`` property, I was shocked to see it throw errors. That was until I realized that it was changed for a simple ``fill`` boolean that I am actually quite a fan of.
+
+Along with using the ``fill`` prop  I also made heavy use of ``objectFit`` which is also removed in the new Image. This is because all styles are now passed into the ``style`` prop. A bit of cmd + shift + f magic and I quicky had everything squared away.&#x20;
+
+### The new Image lazy loading and sizes
+
+As I mentioned above, the new Image now uses native lazy loading. This also means that they've done away with ``loading="eager"`` for all of our images above the fold. There is a simple ``priority`` prop to give it.. well, priority. And when they say priority.. they mean it.&#x20;
+
+<Figure src="https://www.datocms-assets.com/85391/1670714308-screen-shot-2022-12-10-at-11-14-53-am-edited.png" alt="Network waterfall showing image load" width="533" height="355" />
+
+As you can see in the waterfall above. The image was the second thing to load on the page, only second the to markup (which I guess you need first). So their priority tag does NOT mess around. I would use it sparingly, to say the least.&#x20;
+
+As for the new ``sizes`` prop. So far I'm not a fan. Maybe when I can see the performance aspects of it make a large difference, but so far the prop is a pain to write and I don't see much of a performance increase.&#x20;
+
+You are supposed to write it like this:
+
+```tsx
+<Image
+ src="/example.png"
+ fill
+ sizes="(max-width: 768px) 100vw,
+        (max-width: 1200px) 50vw,
+         33vw"
+ />
+```
+
+To get the most of out it. As for me right now, I'm simply adding a single viewport width and seeing if the reduction in quality is noticeable.
+
+## Using the new @next/font package
+
+I'm not going to break down how to install the package and set up the fonts, [the docs](https://nextjs.org/docs/api-reference/next/font) break that down pretty well. What I would like to point out though that is super rad about this is:&#x20;
+
+- Removes external network requests 
+
+- Automatically optimizes your fonts
+
+- Built-in automatic self-hosting for any font file
+
+- And my personal favorite — <em>no layout shift </em>automatically using the CSS ``size-adjust`` property
+
+The docs show a couple of different ways to set it up. I had to kind of do my own thing because I have it set up through a typography atom that handles most of the heaving lifting with my typographic styles. But this is what it looks like:
+
+```tsx
+import { Darker_Grotesque, IBM_Plex_Sans } from '@next/font/google';
+
+const darkerGrotesque = Darker_Grotesque({
+  weight: ['700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
+const ibmPlex = IBM_Plex_Sans({
+  weight: ['200', '300', '400', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
+
+const secondaryFont = darkerGrotesque.style.fontFamily;
+const primaryFont = ibmPlex.style.fontFamily;
+```
+
+And I then reference those ``primaryFont`` and ``secondaryFont`` variables throughout my stylesheet/website when needed.&#x20;
+
+But this was the complete setup for the fonts. Not bad at all.&#x20;
+
+As for the performance, I'm actually not sure if it's helping all that much right now. Honestly, it might be ever so slightly harming it. At least on the initial load of the site.&#x20;
+
+<Figure src="https://www.datocms-assets.com/85391/1670716490-screen-shot-2022-12-10-at-11-14-31-am.png" alt="waterfall" width="1067" height="768" />
+
+You can see where the fonts are loading on the original site (red box) and the FCP from the arrow and green line. About 1.3 for the FCP and fonts are loading after the HTML and chunks. Now:
+
+<Figure src="https://www.datocms-assets.com/85391/1670716595-screen-shot-2022-12-10-at-11-14-53-am.png" alt="waterfall" width="1051" height="882" />
+
+Just ignore the image stuff (from the last section) but in blue, you can see the fonts be loaded **directly** after the image and before the chunks. Ultimately slowing down the FCP by a couple of ms. Is this really hurting performance? Doubt it. But it did make my numbers drop ever so slightly.&#x20;
+
+**Note**: This package is still in beta
+
+## Wrapping it up
+
+I pushed this to the current site (the one you are reading this on) so I am obviously pleased with the newest update. I feel like It was one of the more jarring upgrades from Vercel as a whole, but then again, you need to break a few eggs to make an omelet. I'm hyped and grateful the for Vercel team.
+
+I hope to start implementing the new ``appDir`` system in the near future. I poked around at it and it was a significantly larger lift than I expected. I should have probably read the docs a little more completely before jumping into it. But what can I say, I'm excited!&#x20;

@@ -2,11 +2,12 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
+import type { Image as ContentImage } from "src/content/schema"
 
 interface TechStackProps extends VariantProps<typeof techStack>, ComponentPropsWithoutRef<"ul"> {
   techs: {
     title?: Maybe<string>
-    thumbnail?: Maybe<ImageFragment>
+    thumbnail: ContentImage
   }[]
   thumbSize?: number
   showTitles?: boolean

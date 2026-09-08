@@ -1,8 +1,6 @@
 import { ComponentPropsWithoutRef, FC, ReactNode } from "react"
 import { cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
-import StructuredText from "@components/StructuredText"
-import { StructuredData } from "@components/StructuredText/utils/structuredTextParser"
 
 export type HeadingLevels = 1 | 2 | 3 | 4 | 5 | 6
 export type HeadingMarkup = `h${HeadingLevels}`
@@ -12,7 +10,8 @@ interface HeadingProps extends ComponentPropsWithoutRef<"h1"> {
   as?: HeadingMarkup
   eyebrow?: ReactNode
   size?: "sm" | "md" | "lg"
-  body?: StructuredData
+  /** Pre-rendered rich text. Callers render it, so Heading stays usable from client components. */
+  body?: ReactNode
 }
 
 const hGroup = cva(["flex", "flex-col-reverse", "gap-3"])
@@ -52,7 +51,7 @@ const Heading: FC<HeadingProps> = ({
         {/* Renders the eyebrow semantically below but visually above (for better screen reader UX) */}
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       </HGroup>
-      {body && <StructuredText data={body} className="mt-8" />}
+      {body}
     </div>
   )
 }

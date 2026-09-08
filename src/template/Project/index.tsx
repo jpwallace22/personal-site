@@ -1,31 +1,26 @@
 import { FC } from "react"
 import { notFound } from "next/navigation"
-import { ProjectPageQuery } from "@codegen/sdk"
 import { SlideIn } from "@molecules/animations"
 import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import TechStack from "@molecules/TechStack"
+import Markdown from "@components/Markdown"
 import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
-import StructuredText from "@components/StructuredText"
 import Switchback from "@components/Switchback"
-import makeServerQuery from "@utils/makeServerQuery"
-import { nextProjectFromPage } from "src/template/Project/utils/nextProjectFromPage"
+import { getNextProject, getProject } from "src/content"
 
 interface ProjectPageProps {
   slug?: string
 }
 
 const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
-  const { templateProject, templatePage } = await makeServerQuery<ProjectPageQuery>(
-    ProjectPageQuery,
-    { slug }
-  )
+  const templateProject = getProject(slug)
   if (!templateProject || !slug) {
     return notFound()
   }
 
-  const nextProjectCard = nextProjectFromPage(templatePage, slug)
+  const nextProject = getNextProject(slug)
   const { title, subtitle, heading, bannerImage, body, techStack, switchbacks, extraInformation } =
     templateProject
 
@@ -40,7 +35,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
         headingAs="h2"
         heading={heading}
         image={bannerImage}
-        body={body as SwitchbackFragment["body"]}
+        body={body}
         animated={false}
         designAccent="dots"
         reverse
@@ -56,15 +51,15 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
           />
         </Section>
       )}
-      {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
+      {switchbacks.length > 0 && <ScrollingSwitchbackComponent switchbacks={switchbacks} />}
       {extraInformation && (
         <Section>
           <div className="lg:max-w-4xl">
-            <StructuredText data={extraInformation} />
+            <Markdown source={extraInformation} />
           </div>
         </Section>
       )}
-      {nextProjectCard && <ProjectListing heading="Next Project" cards={nextProjectCard} />}
+      {nextProject && <ProjectListing heading="Next Project" cards={[nextProject]} />}
     </>
   )
 }

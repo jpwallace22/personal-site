@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge"
 import { SlideIn } from "@molecules/animations"
 import Link from "@molecules/Link"
 import ProjectInfo from "@components/ProjectsListing/ProjectInfo"
+import type { ProjectCard as ProjectCardData } from "src/content/schema"
 
 const transition = "transition-transform duration-1000 ease-in-out"
 const wrapper = cva(
@@ -36,7 +37,7 @@ const image = cva(
   }
 )
 
-export type ProjectCardProps = ProjectCardFragment &
+export type ProjectCardProps = ProjectCardData &
   Omit<ComponentPropsWithoutRef<"a">, "title"> &
   VariantProps<typeof wrapper>
 

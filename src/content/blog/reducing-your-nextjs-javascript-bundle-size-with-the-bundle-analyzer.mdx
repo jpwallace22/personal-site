@@ -1,0 +1,131 @@
+---
+title: "Reducing your NextJS javascript bundle size with the bundle analyzer"
+subtitle: "An optimized NextJS plugin"
+publishDate: "2022-12-04"
+excerpt: "A quick exploration and overview of the NextJS bundle analyzer and how it can be used to analyze (obviously )and reduce the bundle size of your applications.\n"
+featuredImage:
+  url: "https://www.datocms-assets.com/85391/1670176339-nextjs-bundle-analyzer.png"
+  alt: ""
+  width: 781
+  height: 496
+seo:
+  title: "Reducing your NextJS javascript bundle size"
+  description: "Analyzing your NextJS application bundle size with the NextJS webpack bundle analyzer and implementing the information. "
+  image:
+    url: "https://www.datocms-assets.com/85391/1670176339-nextjs-bundle-analyzer.png"
+    alt: ""
+    width: 781
+    height: 496
+---
+
+## What is the bundle analyzer and how can I use it?
+
+It's difficult to know precisely what the final bundle output will look like or where you might have some inefficient code.
+
+Luckily, the NextJS framework provides a quick and easy tool that you can set up to analyze your JS bundle and get an overview of your application.&#x20;
+
+### How to install the NextJS bundle analyzer
+
+As with any node package, step one is to install it with your preferred package manager.
+
+```bash
+# with yarn
+yarn add @next/bundle-analyzer -D
+
+# with npm
+npm install @next/bundle-analyzer --save-dev
+```
+
+We then need to define it in our ``next.config.js`` file. Or, if you don't currently have a ``next.config.js`` you need to make one at the root of your project directory, then define it.&#x20;
+
+```javascript
+// next.config.js
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+```
+
+The ``env`` variable will be used when we run the build (and to create a script in our ``package.json``.) And finally, we add it to our exports. *This will depend on your current config setup*.&#x20;
+
+###### If you have zero configuration in your current config file
+
+```javascript
+module.exports = withBundleAnalyzer({});
+```
+
+###### If you have any existing configuration in your file.
+
+```javascript
+// next.config.js
+ 
+module.exports = withBundleAnalyzer({
+  images: {
+    domains: ['www.datocms-assets.com'],
+  },
+});
+```
+
+### Time to run that analyzer
+
+To run our freshly installed bundle analyzer we simple need to use the command
+
+```bash
+# with yarn
+ANALYZE=true yarn build
+
+# with npm
+ANALYZE=true npm run build
+```
+
+Assigning an env varies if you are using a Windows operating system. With Powershell it's ``$env:ANALYZE=true`` and with CMD (no longer maintained) it's ``set ANALYZE=true``.
+
+Personally, at this time, I would also set it up as a script in my ``package.json``
+
+```json
+// package.json
+scripts": {
+    ...
+    "build": "next build",
+    "analyze": "ANALYZE=true yarn build"
+    ...
+},
+```
+
+### Analyzing the analyzer (reading your data)
+
+After running the script (and your app successfully builds) your browser will open up to three windows.
+
+1. The client-side bundle analysis
+
+2. The server-side bundle analysis
+
+3. The edge bundle analysis
+
+They will all look like some variation of these
+
+<Figure src="https://www.datocms-assets.com/85391/1670174669-client-side-analysis.png" alt="Foamtree of client side JS bundle analysis" width="1672" height="1209" />
+
+<Figure src="https://www.datocms-assets.com/85391/1670174760-server-side-analysis.png" alt="Foamtree of server side JS bundle analysis" width="1672" height="1209" />
+
+Using this data we can now
+
+- See what is REALLY inside our bundle
+
+- Find out what modules are taking up the most space
+
+- See if we have any modules being added by accident
+
+### Wrapping it all up
+
+Now that we have set up the analysis portion, the real heavy lifting begins! Optimization!&#x20;
+
+I don't currently have an in-depth article explaining some of the ways to reduce your bundle size or split your code. But I can recommend one until I do.&#x20;
+
+Here, [Adrian Bece writes a fantastic piece](https://www.smashingmagazine.com/2022/02/javascript-bundle-performance-code-splitting/) on improving your bundle performance with code-splitting on Smashing Magazine. Until I can get an in-depth article, I hope you can get everything you need from there.
+
+#### I hope I helped
+
+Above all, I hope this was useful to someone out there. If it was, feel free to let me know. Or if you see something wrong, I love feedback. Reach out, and let's chat.&#x20;
+
+<p></p>
