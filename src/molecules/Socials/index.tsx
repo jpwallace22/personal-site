@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge"
 import Icon from "@molecules/Icon"
 import { IconIds } from "@molecules/Icon/iconIds"
 import Link from "@molecules/Link"
+import { socialProfiles } from "src/content/site"
 
 interface SocialData {
   social: IconIds
@@ -11,27 +12,8 @@ interface SocialData {
 }
 
 interface SocialProps extends VariantProps<typeof styles>, ComponentPropsWithoutRef<"div"> {
-  socials?: SocialData[]
+  socials?: readonly SocialData[]
 }
-
-const defaultSocialData = [
-  {
-    social: "github",
-    link: "https://www.github.com/jpwallace22",
-  },
-  {
-    social: "linkedIn",
-    link: "https://www.linkedin.com/in/thejustinwallace",
-  },
-  {
-    social: "instagram",
-    link: "https://www.instagram.com/van.surf.climb",
-  },
-  {
-    social: "threads",
-    link: "https://www.threads.net/@thejustinwallace",
-  },
-]
 
 const styles = cva(["flex items-center"], {
   variants: {
@@ -60,7 +42,7 @@ const Socials: FC<SocialProps> = ({
   size,
   colors,
   className,
-  socials = defaultSocialData,
+  socials = socialProfiles,
   ...props
 }) => {
   return (

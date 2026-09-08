@@ -33,7 +33,7 @@ export interface Image {
 export interface Seo {
   title: string
   description: string
-  /** Falls back to the record's own image when absent. */
+  /** Falls back to the record's own art (featured/banner image) when absent. */
   image?: Image
 }
 
@@ -102,9 +102,15 @@ export interface BlogPost {
   seo: Seo
   /** MDX body, loaded from the file. */
   body: string
-  /** Derived from the body, so it cannot go stale. */
+  /** Derived from the body, so they cannot go stale. */
+  words: number
   minutesToRead: number
   headings: Heading[]
+  /**
+   * Keeps the post out of search results and the sitemap while leaving it
+   * reachable and linked, for drafts and scratch posts.
+   */
+  noindex?: boolean
 }
 
 /** What a listing card needs. A post minus its body. */

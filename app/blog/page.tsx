@@ -5,10 +5,13 @@ import Switchback from "@components/Switchback"
 import { mdx } from "src/content/schema"
 import renderMetadata from "src/template/renderMetadata"
 
-export const metadata: Metadata = renderMetadata("blog", {
-  title: "Blog",
-  description:
-    "The thoughts and ramblings of a software engineer. This is to keep me motivated and hopefully help some people along the way.",
+export const metadata: Metadata = renderMetadata({
+  path: "/blog",
+  seo: {
+    title: "Blog",
+    description:
+      "The thoughts and ramblings of a software engineer. This is to keep me motivated and hopefully help some people along the way.",
+  },
 })
 
 const BlogIndex = () => (

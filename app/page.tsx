@@ -39,7 +39,7 @@ const Home = () => (
     <Carousel cards={testimonials} />
     <ProjectListing
       heading="Some Projects"
-      headingAs="h3"
+      headingAs="h2"
       sectionId="homepage-projects"
       bgColor=""
       cards={getFeaturedProjects()}

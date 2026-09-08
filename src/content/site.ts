@@ -1,5 +1,31 @@
 import type { Company, Image, Link } from "src/content/schema"
 
+/**
+ * Canonical origin. Every absolute URL the site emits — canonicals, OG tags,
+ * the sitemap, the feed — is built from this, so a deploy preview never leaks
+ * its own hostname into metadata.
+ */
+export const SITE_URL = "https://www.justinwallace.dev"
+
+/** Used for og:site_name and the title template. */
+export const SITE_NAME = "Justin Wallace"
+
+export const AUTHOR_NAME = "Justin Wallace"
+
+/** Absolute URL for a route path, which must start with a slash (or be empty). */
+export const siteUrl = (path = "") => `${SITE_URL}${path}`
+
+/**
+ * Justin's profiles elsewhere. Rendered by the social icon rows and emitted as
+ * `sameAs` in the Person structured data, so both stay in step.
+ */
+export const socialProfiles = [
+  { social: "github", link: "https://www.github.com/jpwallace22" },
+  { social: "linkedIn", link: "https://www.linkedin.com/in/thejustinwallace" },
+  { social: "instagram", link: "https://www.instagram.com/van.surf.climb" },
+  { social: "threads", link: "https://www.threads.net/@thejustinwallace" },
+] as const
+
 /** The logo used in the nav and footer. */
 export const favicon: Image = {
   url: "https://www.datocms-assets.com/85391/1668972867-thissite-1.svg",
@@ -11,19 +37,19 @@ export const favicon: Image = {
 export const navLinks: Link[] = [
   {
     label: "about",
-    url: "https://www.justinwallace.dev/about",
+    url: siteUrl("/about"),
   },
   {
     label: "projects",
-    url: "https://www.justinwallace.dev/#homepage-projects",
+    url: siteUrl("/projects"),
   },
   {
     label: "blog",
-    url: "https://www.justinwallace.dev/blog",
+    url: siteUrl("/blog"),
   },
   {
     label: "contact",
-    url: "https://www.justinwallace.dev/#page-footer",
+    url: siteUrl("/#page-footer"),
   },
 ]
 

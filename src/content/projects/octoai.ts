@@ -4,7 +4,7 @@ export default defineProject({
   slug: "octoai",
   title: "OctoAI SaaS platform",
   subtitle: "Run, tune, & scale generative AI in the cloud",
-  heading: "OctoAI SaaS platform",
+  heading: "A multimedia generative AI platform",
   excerpt: mdx`
     Owned and led the development of the frontend architecture for a cutting-edge AI SaaS/IaaS platform, expertly leveraging modern tech on the bleeding edge including Remix, React 19, TypeScript, and RESTful Golang APIs and microservices.
   `,
