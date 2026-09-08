@@ -1,17 +1,7 @@
 import { Metadata } from "next"
+import type { Seo } from "src/content/schema"
 
-interface SEO {
-  __typename?: "SeoField"
-  description?: Maybe<string>
-  title?: Maybe<string>
-  image?: Maybe<
-    {
-      __typename?: "FileField"
-    } & ImageFragment
-  >
-}
-
-const renderMetadata = (slug?: Maybe<string>, seo?: Maybe<SEO>): Metadata => {
+const renderMetadata = (slug?: string, seo?: Partial<Seo>): Metadata => {
   const description =
     seo?.description ||
     "The personal site and portfolio of Justin Wallace the Software Engineer. Here I showcase some projects and the progress of my career. I also write about dev-related experiences."

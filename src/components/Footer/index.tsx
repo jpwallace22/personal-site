@@ -5,7 +5,7 @@ import Link from "@molecules/Link"
 import Section from "@molecules/Section"
 import Socials from "@molecules/Socials"
 import logoPath from "src/assets/images/logo-gradient.webp"
-import { getFavicon } from "src/content"
+import { favicon } from "src/content/site"
 
 const wrapper = cva(["grid", "place-items-center", "h-[65dvh]", "relative"], {
   variants: {
@@ -31,8 +31,6 @@ const link = cva([
   "md:text-8xl",
 ])
 const Footer = async ({ full }: { full?: boolean }) => {
-  const favicon = getFavicon()
-
   return (
     <Section
       id="page-footer"

@@ -5,8 +5,9 @@ import { twMerge } from "tailwind-merge"
 import { BreadCrumbs } from "@molecules/BreadCrumbs"
 import HeadingComp, { HeadingMarkup } from "@molecules/Heading"
 import Section from "@molecules/Section"
+import type { Switchback } from "src/content/schema"
 
-export type BlogHeroProps = Clean<Omit<SwitchbackFragment, "body">> &
+export type BlogHeroProps = Omit<Switchback, "body"> &
   ComponentPropsWithoutRef<"div"> & {
     minutesToRead?: Maybe<number>
     headingAs: ElementType

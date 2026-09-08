@@ -5,8 +5,16 @@ import Section from "@molecules/Section"
 import Markdown from "@components/Markdown"
 import ProjectCard from "@components/ProjectsListing/ProjectCard"
 import { TracingBeam } from "@components/ProjectsListing/TracingBeam"
+import type { ProjectCard as ProjectCardData } from "src/content/schema"
 
-export type ProjectListingProps = Clean<ProjectListingFragment> & ComponentPropsWithoutRef<"div">
+export type ProjectListingProps = ComponentPropsWithoutRef<"div"> & {
+  heading: string
+  headingAs?: string
+  sectionId?: string
+  bgColor?: string
+  body?: string
+  cards: ProjectCardData[]
+}
 
 const ProjectListing: FC<ProjectListingProps> = ({
   cards,

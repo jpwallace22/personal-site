@@ -6,6 +6,7 @@ import Burger from "@components/GlobalNav/Burger"
 import NavMenu from "@components/GlobalNav/NavMenu"
 import useOpenState from "@utils/hooks/useOpenState"
 import type { ComponentPropsWithoutRef, FC } from "react"
+import type { Image as ContentImage, Link as NavLink } from "src/content/schema"
 
 const styles = {
   common: ["will-change-transform", "bg-gray-200/95", "dark:bg-purple-800/95", "-ml-4", "sm:-ml-6"],
@@ -24,8 +25,8 @@ const styles = {
 }
 
 interface MobileSlideOutProps extends ComponentPropsWithoutRef<"div"> {
-  logo?: Maybe<ImageFragment>
-  links?: GlobalNavFragment["links"]
+  logo?: ContentImage
+  links?: NavLink[]
 }
 
 const MobileSlideOut: FC<MobileSlideOutProps> = ({ logo, links, ...props }) => {

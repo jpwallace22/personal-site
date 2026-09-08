@@ -4,12 +4,9 @@ import Link from "@molecules/Link"
 import { GLOBAL_MAX_WIDTH, GLOBAL_PADDING } from "@molecules/Section"
 import MobileSlideOut from "@components/GlobalNav/MobileSlideOut"
 import NavMenu from "@components/GlobalNav/NavMenu"
-import { getFavicon, getGlobalNav } from "src/content"
+import { favicon, navLinks } from "src/content/site"
 
 const GlobalNav = async () => {
-  const favicon = getFavicon()
-  const globalNav = getGlobalNav()
-
   const styles = {
     wrapper: [
       GLOBAL_PADDING,
@@ -28,8 +25,8 @@ const GlobalNav = async () => {
   return (
     <div className={twMerge(styles.wrapper)}>
       <nav className={twMerge(styles.nav)}>
-        <MobileSlideOut logo={favicon} links={globalNav?.links} className="lg:hidden" />
-        <NavMenu links={globalNav?.links} className="hidden lg:flex" />
+        <MobileSlideOut logo={favicon} links={navLinks} className="lg:hidden" />
+        <NavMenu links={navLinks} className="hidden lg:flex" />
         {favicon?.url && (
           <Link href="/">
             <Image src={favicon?.url} width={50} height={50} alt={favicon.alt || ""} />

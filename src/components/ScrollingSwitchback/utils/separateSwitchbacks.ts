@@ -1,7 +1,8 @@
 import { ScrollingSwitchbackProps } from "@components/ScrollingSwitchback"
+import type { Switchback } from "src/content/schema"
 
-type SwitchbackContent = Pick<SwitchbackFragment, "heading" | "body">
-type SwitchbackImage = Pick<SwitchbackFragment, "image">
+type SwitchbackContent = Pick<Switchback, "heading" | "body">
+type SwitchbackImage = Pick<Switchback, "image">
 
 export const separateSwitchbacks = (
   switchbacks: ScrollingSwitchbackProps["switchbacks"]

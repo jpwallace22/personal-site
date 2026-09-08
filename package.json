@@ -20,6 +20,9 @@
     "gen:icons": "node lib/gen-sprite.mjs -s src/assets/icons -o public/sprite.svg"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.3.4",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.3",
@@ -49,6 +52,7 @@
     "react-fast-marquee": "^1.6.4",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.3.0",
+    "yaml": "^2.9.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {

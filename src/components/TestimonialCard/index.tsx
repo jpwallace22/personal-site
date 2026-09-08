@@ -4,8 +4,9 @@ import Circle from "@molecules/Circle"
 import Icon from "@molecules/Icon"
 import Markdown from "@components/Markdown"
 import Author from "@components/TestimonialCard/Author"
+import type { Testimonial } from "src/content/schema"
 
-interface TestimonialCardProps extends TestimonialCardFragment, ComponentPropsWithoutRef<"div"> {}
+interface TestimonialCardProps extends Testimonial, ComponentPropsWithoutRef<"div"> {}
 
 const TestimonialCard: FC<TestimonialCardProps> = ({ quote, person }) => {
   return (

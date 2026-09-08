@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import Footer from "@components/Footer"
-import { getProjectSeo, getProjectSlugs } from "src/content"
+import { getProject, getProjectSlugs } from "src/content"
 import ProjectPage from "src/template/Project"
 import renderMetadata from "src/template/renderMetadata"
 
@@ -11,11 +11,11 @@ type Params = {
 }
 
 export const generateMetadata = async ({ params: { slug } }: Params): Promise<Metadata> => {
-  return renderMetadata(slug, getProjectSeo(slug))
+  return renderMetadata(slug, getProject(slug)?.seo)
 }
 
 export const generateStaticParams = async () => {
-  return getProjectSlugs().map(({ slug }) => ({ slug }))
+  return getProjectSlugs().map((slug) => ({ slug }))
 }
 
 const Page = ({ params: { slug } }: Params) => {

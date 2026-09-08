@@ -1,7 +1,7 @@
-export const fakeImage = {
+import type { Image } from "src/content/schema"
+
+export const fakeImage: Image = {
   url: "/fake-image.jpg",
-  __typename: "FileField" as const,
-  id: "test",
   alt: "Fake Image",
   width: 500,
   height: 500,

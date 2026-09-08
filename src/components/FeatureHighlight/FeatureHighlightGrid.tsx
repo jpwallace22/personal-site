@@ -9,13 +9,14 @@ import Heading from "@molecules/Heading"
 import Section from "@molecules/Section"
 import { FeatureCard } from "@components/FeatureHighlight/FeatureCard"
 import { splitAndColorArray } from "@components/FeatureHighlight/utils/splitAndColor"
+import type { FeatureCard as FeatureCardData } from "src/content/about"
 
-interface FeatureHighlightGridProps
-  extends Omit<FeatureHighlightFragment, "body" | "cards">,
-    VariantProps<typeof wrapper> {
+interface FeatureHighlightGridProps extends VariantProps<typeof wrapper> {
+  heading: string
+  eyebrow?: string
   /** Rich text arrives pre-rendered so the MDX runtime stays out of the client bundle. */
   body?: ReactNode
-  cards: (Omit<FeatureHighlightFragment["cards"][number], "body"> & { body?: ReactNode })[]
+  cards: (Omit<FeatureCardData, "body"> & { body?: ReactNode })[]
 }
 
 const wrapper = cva(["grid", "lg:grid-cols-12", "gap-12 "])
@@ -74,7 +75,7 @@ const FeatureHighlightGrid: FC<FeatureHighlightGridProps> = ({ eyebrow, heading,
               const activeIndexCalc = index ? i + 2 : i
               return (
                 <FeatureCard
-                  key={feature.id}
+                  key={feature.heading}
                   onMouseEnter={() => setActiveIndex(i + index * 2)}
                   active={activeIndexCalc === activeIndex}
                   {...feature}

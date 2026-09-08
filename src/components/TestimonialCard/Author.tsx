@@ -2,8 +2,9 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import Link from "@molecules/Link"
+import type { Person } from "src/content/schema"
 
-interface AuthorProps extends PersonFragment, Omit<ComponentPropsWithoutRef<"div">, "role"> {}
+interface AuthorProps extends Person, Omit<ComponentPropsWithoutRef<"div">, "role"> {}
 
 const Author: FC<AuthorProps> = ({
   firstName,

@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge"
 import Heading from "@molecules/Heading"
 import TechStack from "@molecules/TechStack"
 import Markdown from "@components/Markdown"
+import type { ProjectCard as ProjectCardData } from "src/content/schema"
 
 const projectInfo = cva(
   [
@@ -26,7 +27,10 @@ const projectInfo = cva(
   }
 )
 
-export type ProjectInfoProps = Omit<ProjectCardFragment, "__typename"> &
+export type ProjectInfoProps = Pick<
+  ProjectCardData,
+  "title" | "subtitle" | "excerpt" | "techStack"
+> &
   Omit<ComponentPropsWithoutRef<"div">, "title"> &
   VariantProps<typeof projectInfo>
 

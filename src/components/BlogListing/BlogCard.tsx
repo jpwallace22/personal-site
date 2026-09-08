@@ -5,10 +5,15 @@ import { twMerge } from "tailwind-merge"
 import Button from "@molecules/Button"
 import Link from "@molecules/Link"
 import Markdown from "@components/Markdown"
+import type { Image as ContentImage } from "src/content/schema"
 
-interface BlogCardProps
-  extends Clean<BlogCardFragment>,
-    Omit<ComponentPropsWithoutRef<"div">, "title"> {}
+interface BlogCardProps extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
+  title: string
+  slug: string
+  excerpt: string
+  featuredImage: ContentImage
+  minutesToRead: number
+}
 
 const blogCard = cva([
   "card",
@@ -31,8 +36,6 @@ const BlogCard: FC<BlogCardProps> = ({
   minutesToRead,
   slug,
   className,
-  internalName: _internalName,
-  publishDate: _publishDate,
   ...props
 }) => {
   const path = `/blog/${slug}`

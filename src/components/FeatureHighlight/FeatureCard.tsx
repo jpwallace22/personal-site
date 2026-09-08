@@ -2,10 +2,11 @@ import React, { ComponentPropsWithoutRef, FC } from "react"
 import { cva, VariantProps } from "class-variance-authority"
 import Image from "next/image"
 import { twMerge } from "tailwind-merge"
+import type { FeatureCard as FeatureCardData } from "src/content/about"
 
 export interface FeatureCardProps
   extends VariantProps<typeof wrapper>,
-    Omit<Clean<FeatureCardFragment>, "body">,
+    Omit<FeatureCardData, "body">,
     ComponentPropsWithoutRef<"div"> {
   color: "purple" | "green" | "lightPurple" | "lightGreen"
   /** Pre-rendered rich text, supplied by the server wrapper. */

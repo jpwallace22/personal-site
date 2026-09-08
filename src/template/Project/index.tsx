@@ -8,8 +8,7 @@ import Markdown from "@components/Markdown"
 import ProjectListing from "@components/ProjectsListing"
 import ScrollingSwitchbackComponent from "@components/ScrollingSwitchback"
 import Switchback from "@components/Switchback"
-import { getPage, getProject } from "src/content"
-import { nextProjectFromPage } from "src/template/Project/utils/nextProjectFromPage"
+import { getNextProject, getProject } from "src/content"
 
 interface ProjectPageProps {
   slug?: string
@@ -17,12 +16,11 @@ interface ProjectPageProps {
 
 const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
   const templateProject = getProject(slug)
-  const templatePage = getPage("home")
   if (!templateProject || !slug) {
     return notFound()
   }
 
-  const nextProjectCard = nextProjectFromPage(templatePage, slug)
+  const nextProject = getNextProject(slug)
   const { title, subtitle, heading, bannerImage, body, techStack, switchbacks, extraInformation } =
     templateProject
 
@@ -53,7 +51,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
           />
         </Section>
       )}
-      {switchbacks && <ScrollingSwitchbackComponent {...switchbacks} />}
+      {switchbacks.length > 0 && <ScrollingSwitchbackComponent switchbacks={switchbacks} />}
       {extraInformation && (
         <Section>
           <div className="lg:max-w-4xl">
@@ -61,7 +59,7 @@ const ProjectPage: FC<ProjectPageProps> = async ({ slug }) => {
           </div>
         </Section>
       )}
-      {nextProjectCard && <ProjectListing heading="Next Project" cards={nextProjectCard} />}
+      {nextProject && <ProjectListing heading="Next Project" cards={[nextProject]} />}
     </>
   )
 }

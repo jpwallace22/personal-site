@@ -1,15 +1,22 @@
 import { FC } from "react"
 import FeatureHighlightGrid from "@components/FeatureHighlight/FeatureHighlightGrid"
 import Markdown from "@components/Markdown"
+import type { FeatureCard } from "src/content/about"
+
+interface FeatureHighlightProps {
+  heading: string
+  eyebrow?: string
+  body: string
+  cards: FeatureCard[]
+}
 
 /**
  * Server wrapper: renders the MDX and hands finished nodes to the interactive
  * grid, which needs client state for its hover behaviour. Keeping the render
  * here is what stops the MDX compiler being bundled for the browser.
  */
-const FeatureHighlight: FC<FeatureHighlightFragment> = ({ id, eyebrow, heading, body, cards }) => (
+const FeatureHighlight: FC<FeatureHighlightProps> = ({ eyebrow, heading, body, cards }) => (
   <FeatureHighlightGrid
-    id={id}
     eyebrow={eyebrow}
     heading={heading}
     body={<Markdown source={body} className="mt-8" />}

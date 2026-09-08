@@ -8,10 +8,11 @@ import Link from "@molecules/Link"
 import Socials from "@molecules/Socials"
 import Switch from "@molecules/Switch"
 import useDarkMode from "@utils/hooks/useDarkMode"
+import type { Image as ContentImage, Link as NavLink } from "src/content/schema"
 
 export interface NavMenuProps extends ComponentPropsWithoutRef<"div"> {
-  logo?: Maybe<ImageFragment>
-  links?: GlobalNavFragment["links"]
+  logo?: ContentImage
+  links?: NavLink[]
   setOpen?: Dispatch<SetStateAction<boolean>>
 }
 
@@ -62,7 +63,7 @@ const NavMenu: FC<NavMenuProps> = ({ logo, links, setOpen, className, ...props }
       </div>
       <ul className={twMerge(styles.list)}>
         {links?.map((link) => (
-          <li key={link.id} className="flex w-full items-center" onClick={handleClick}>
+          <li key={link.label} className="flex w-full items-center" onClick={handleClick}>
             <Link className={twMerge(styles.navLink)} href={link.url || ""}>
               {link.label}
             </Link>

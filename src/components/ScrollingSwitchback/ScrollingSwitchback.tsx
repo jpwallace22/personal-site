@@ -7,10 +7,10 @@ import { twMerge } from "tailwind-merge"
 import Circle from "@molecules/Circle"
 import { separateSwitchbacks } from "@components/ScrollingSwitchback/utils/separateSwitchbacks"
 import { useIntersection } from "@utils/hooks/useIntersectionObserver"
+import type { Switchback } from "src/content/schema"
 
-export interface ScrollingSwitchbackProps
-  extends Clean<ScrollingSwitchbackFragment>,
-    ComponentPropsWithoutRef<"div"> {
+export interface ScrollingSwitchbackProps extends ComponentPropsWithoutRef<"div"> {
+  switchbacks: Switchback[]
   /** Bodies are rendered on the server and passed in, index-aligned with switchbacks. */
   bodies?: ReactNode[]
 }
