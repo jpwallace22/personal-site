@@ -16,7 +16,7 @@ jobs:
     name: Check & Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       - name: Enable Corepack
         run: corepack enable
@@ -24,7 +24,7 @@ jobs:
       - run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
 
       - name: "use node ${{ env.NODE_VERSION }}"
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version: "${{ env.NODE_VERSION }}"
 
@@ -50,7 +50,7 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -60,7 +60,7 @@ jobs:
 
       - run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           # cache: "yarn"
@@ -77,7 +77,6 @@ jobs:
         run: yarn build
 
       - name: "Release"
-        id: "release"
-        uses: codfish/semantic-release-action@v2.2.0
+        run: yarn semantic-release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
